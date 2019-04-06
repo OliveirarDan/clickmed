@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 
 
 @Entity
-@Table(name = "Paciente")
+@Table(name = "pacientes")
 public class Paciente {
 
 	// Atributos

@@ -57,6 +57,13 @@ public class Medico {
 		super();
 	}
 
+	public Medico(@NotNull String nome, @NotNull String crm, Usuario usuario) {
+		super();
+		this.nome = nome;
+		this.crm = crm;
+		this.usuario = usuario;
+	}
+	
 	public Medico(Long id, @NotNull String crm, String nome, String sobrenome, String experienciaProfissional,
 			int telefone1, int telefone2, String cidade, String estado, String rua, String numero,
 			String horarioAtendimento, String especialidade, String foto, Usuario usuario, List<Convenio> convenios) {

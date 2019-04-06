@@ -51,8 +51,8 @@ public class PacienteService {
 	}
 
 	public List<Paciente> listaPacientes() {
-
-		return null;
+		
+		return pacienteDAO.findAll();
 	}
 
 }

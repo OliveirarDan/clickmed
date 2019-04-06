@@ -19,6 +19,6 @@ public class PacienteController {
 	@RequestMapping(value = "/listaPacientes", method = RequestMethod.GET)
 	public String listaPacientes(ModelMap model) {
 		model.put("pacientes", pacienteService.listaPacientes());
-		return "listaPacientes";
+		return "pacientes";
 	}
 }

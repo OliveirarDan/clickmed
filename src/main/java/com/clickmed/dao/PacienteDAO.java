@@ -11,33 +11,23 @@ import org.springframework.stereotype.Repository;
 import com.clickmed.entity.Paciente;
 
 @Repository
-public interface PacienteDAO extends JpaRepository<Paciente, Integer>{
+public interface PacienteDAO extends JpaRepository<Paciente, Long> {
 
-
-	
-
-	/*
+	/*s
 	 * 
-	 * ##Métodos a serem excluídos
-	public int inserePaciente(Paciente paciente) throws IOException{
-		manager.persist(paciente);
-		return paciente.getIdPaciente();		
-	}
-	
-	public Paciente buscaPaciente(int idPaciente) throws IOException{
-		return manager.find(Paciente.class, idPaciente);
-	}
-	
-	public Paciente atualizaPaciente(Paciente paciente) throws IOException{
-		manager.merge(paciente);
-		return paciente;
-	}
-	
-	public void removePaciente (int id) throws IOException{
-		manager.remove(manager.find(Paciente.class, id));
-	}
-	
-	*/
-	
-	
+	 * ##Métodos a serem excluídos public int inserePaciente(Paciente paciente)
+	 * throws IOException{ manager.persist(paciente); return
+	 * paciente.getIdPaciente(); }
+	 * 
+	 * public Paciente buscaPaciente(int idPaciente) throws IOException{ return
+	 * manager.find(Paciente.class, idPaciente); }
+	 * 
+	 * public Paciente atualizaPaciente(Paciente paciente) throws IOException{
+	 * manager.merge(paciente); return paciente; }
+	 * 
+	 * public void removePaciente (int id) throws IOException{
+	 * manager.remove(manager.find(Paciente.class, id)); }
+	 * 
+	 */
+
 }

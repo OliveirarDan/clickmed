@@ -1,118 +1,77 @@
 package com.clickmed.entity;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "Convenio")
+@Table(name = "convenios")
 public class Convenio {
 
 	// Atributos
+
 	@Id
-	@NotNull
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idConvenio;
+	private Long id;
 	@NotNull
 	private String codConvenio;
 	@NotNull
-	private String convenio;
-	@ManyToMany(mappedBy = "convenios")
-	private Set<Medico> medicos = new HashSet<>();
+	private String nome;
+	
+	
+	public Convenio(Long id, @NotNull String codConvenio, @NotNull String nome) {
+		super();
+		this.id = id;
+		this.codConvenio = codConvenio;
+		this.nome = nome;
+	}
 
-	// Construtores
 
-	/**
-	 * 
-	 */
 	public Convenio() {
 		super();
 	}
 
-	/**
-	 * @param idConvenio
-	 * @param codConvenio
-	 * @param convenio
-	 * @param medicos
-	 */
-	public Convenio(int idConvenio, String codConvenio, String convenio, Set<Medico> medicos) {
-		super();
-		this.idConvenio = idConvenio;
-		this.codConvenio = codConvenio;
-		this.convenio = convenio;
-		this.medicos = medicos;
+
+	public Long getId() {
+		return id;
 	}
 
-	// Getters
-	/**
-	 * @return the idConvenio
-	 */
-	public int getIdConvenio() {
-		return idConvenio;
-	}
 
-	/**
-	 * @return the codConvenio
-	 */
 	public String getCodConvenio() {
 		return codConvenio;
 	}
 
-	/**
-	 * @return the convenio
-	 */
-	public String getConvenio() {
-		return convenio;
+
+	public String getNome() {
+		return nome;
 	}
 
-	/**
-	 * @return the medicos
-	 */
-	public Set<Medico> getMedicos() {
-		return medicos;
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
-	// Setters
-	/**
-	 * @param idConvenio the idConvenio to set
-	 */
-	public void setIdConvenio(int idConvenio) {
-		this.idConvenio = idConvenio;
-	}
 
-	/**
-	 * @param codConvenio the codConvenio to set
-	 */
 	public void setCodConvenio(String codConvenio) {
 		this.codConvenio = codConvenio;
 	}
 
-	/**
-	 * @param convenio the convenio to set
-	 */
-	public void setConvenio(String convenio) {
-		this.convenio = convenio;
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	/**
-	 * @param medicos the medicos to set
-	 */
-	public void setMedicos(Set<Medico> medicos) {
-		this.medicos = medicos;
-	}
 
-	// ToString
 	@Override
 	public String toString() {
-		return "Convenio [idConvenio=" + idConvenio + ", codConvenio=" + codConvenio + ", convenio=" + convenio
-				+ ", medicos=" + medicos + "]";
+		return "Convenio [id=" + id + ", codConvenio=" + codConvenio + ", nome=" + nome + "]";
 	}
-
+	
+	
+	
+	
+	
 }

@@ -17,7 +17,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "Medico")
+@Table(name = "medicos")
 public class Medico {
 
 	// Atributos

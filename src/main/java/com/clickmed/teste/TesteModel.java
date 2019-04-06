@@ -29,7 +29,7 @@ public class TesteModel {
 	public static void main(String[] args) throws IOException, ParseException {
 		// Execute os comando para teste da model aqui
 		
-		teste4();
+		teste1();
 		//teste2();
 		
 		
@@ -40,7 +40,7 @@ public class TesteModel {
 		
 		Paciente paciente =  new Paciente();
 		
-			paciente.setIdPaciente(0);
+			
 			paciente.setNome("Danilo");
 			paciente.setSobrenome("Rodrigues");
 			paciente.setCpf("09909");
@@ -60,6 +60,7 @@ public class TesteModel {
 
 			System.out.println(paciente.toString());
 		
+			
 		   pacienteService.inserePaciente(paciente);
 		  
 		

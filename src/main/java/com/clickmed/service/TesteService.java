@@ -40,5 +40,11 @@ public class TesteService {
 	public List<Teste> listaTestes(){
 		return testeDAO.findAll();
 	}
+
+
+	public Teste editateste(Teste teste) {
+		
+		return testeDAO.save(teste);
+	}
 	
 }

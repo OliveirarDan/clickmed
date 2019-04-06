@@ -9,23 +9,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.clickmed.dao.AvaliacaoDAO;
-import com.clickmed.dao.PacienteDAO;
 import com.clickmed.entity.Avaliacao;
 import com.clickmed.entity.Paciente;
+import com.clickmed.entity.Teste;
 import com.clickmed.service.AvaliacaoService;
 import com.clickmed.service.PacienteService;
+import com.clickmed.service.TesteService;
 
 @Controller
 public class TesteModel {
 	
 	//Importe os parametros necessários aqui
 	@Autowired
-	static PacienteService pacienteService;
+	static	PacienteService pacienteService;
+	
+	@Autowired
+	static TesteService testeService;
 	
 	public static void main(String[] args) throws IOException, ParseException {
 		// Execute os comando para teste da model aqui
 		
-		teste1();
+		teste4();
 		//teste2();
 		
 		
@@ -35,7 +39,6 @@ public class TesteModel {
 		
 		
 		Paciente paciente =  new Paciente();
-		PacienteDAO pacDAO = new PacienteDAO();
 		
 			paciente.setIdPaciente(0);
 			paciente.setNome("Danilo");
@@ -54,8 +57,9 @@ public class TesteModel {
 			paciente.setCep(8888);
 			paciente.setFoto("....");
 			
-			pacienteService = new PacienteService(pacDAO);
+
 			System.out.println(paciente.toString());
+		
 		   pacienteService.inserePaciente(paciente);
 		  
 		
@@ -88,22 +92,25 @@ public class TesteModel {
 		
 	}
 	
-	public static void teste3()  {
+	public static void teste3() throws IOException  {
 		Paciente paciente = new Paciente();
-		PacienteDAO pDao = new PacienteDAO();
-		pacienteService = new PacienteService(pDao);
+	
 		
-		try {
-			paciente = pacienteService.buscaPaciente(1);
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-		}
+		
+			paciente = pacienteService.buscaPaciente(1).get();
+	
 		System.out.println(paciente.toString());
 		
 	
 	}
 
+	public static void teste4() {
+		Teste teste = new Teste(00, "olá!");
+		
+		testeService.insereTeste(teste);
+		
+		
+	}
 	
 
 }

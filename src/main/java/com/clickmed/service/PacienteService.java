@@ -12,9 +12,10 @@ import com.clickmed.dao.PacienteDAO;
 import com.clickmed.entity.Paciente;
 
 @Service
+@Transactional
 public class PacienteService {
 
-	PacienteDAO pacienteDAO;
+	private PacienteDAO pacienteDAO;
 	
 	@Autowired
 	public PacienteService(PacienteDAO pacienteDAO) {
@@ -22,7 +23,6 @@ public class PacienteService {
 	}
 	
 	
-	@Transactional
 	public Paciente inserePaciente(Paciente paciente) throws IOException{
 		this.pacienteDAO.save(paciente);
 		return paciente;

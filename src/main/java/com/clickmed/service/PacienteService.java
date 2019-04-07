@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.clickmed.dao.PacienteDAO;
+import com.clickmed.dao.UsuarioDAO;
 import com.clickmed.entity.Paciente;
 
 @Service
@@ -18,12 +19,14 @@ public class PacienteService {
 
 	private PacienteDAO pacienteDAO;
 
+	
 	@Autowired
 	public PacienteService(PacienteDAO pacienteDAO) {
 		this.pacienteDAO = pacienteDAO;
 	}
 
 	public Paciente inserePaciente(Paciente paciente) throws IOException {
+		
 		this.pacienteDAO.save(paciente);
 		return paciente;
 	}

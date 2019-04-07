@@ -23,7 +23,7 @@ public class Usuario {
 	@NotNull
 	private String senha;
 
-	@NotNull
+	
 	private String permissao;
 
 	public Usuario(Long id, @NotNull String email, @NotNull String senha, @NotNull String permissao) {

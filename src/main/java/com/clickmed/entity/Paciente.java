@@ -11,6 +11,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 
 @Entity
@@ -28,9 +30,10 @@ public class Paciente {
 	@NotNull
 	private String sobrenome;
 	private String sexo;
+	 @DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataNascimento;
-	private int telefone1;
-	private int telefone2;
+	private String telefone1;
+	private String telefone2;
 	private String cidade;
 	private String estado;
 	private String nomeRua;
@@ -49,8 +52,11 @@ public class Paciente {
 		super();
 	}
 
+	
+	
+	
 	public Paciente(Long id, @NotNull String cpf, @NotNull String nome, @NotNull String sobrenome, String sexo,
-			Date dataNascimento, int telefone1, int telefone2, String cidade, String estado, String nomeRua,
+			Date dataNascimento, String telefone1, String telefone2, String cidade, String estado, String nomeRua,
 			String numero, int cep, Blob foto, Usuario usuario) {
 		super();
 		this.id = id;
@@ -94,11 +100,11 @@ public class Paciente {
 		return dataNascimento;
 	}
 
-	public int getTelefone1() {
+	public String getTelefone1() {
 		return telefone1;
 	}
 
-	public int getTelefone2() {
+	public String getTelefone2() {
 		return telefone2;
 	}
 
@@ -154,11 +160,11 @@ public class Paciente {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public void setTelefone1(int telefone1) {
+	public void setTelefone1(String telefone1) {
 		this.telefone1 = telefone1;
 	}
 
-	public void setTelefone2(int telefone2) {
+	public void setTelefone2(String telefone2) {
 		this.telefone2 = telefone2;
 	}
 

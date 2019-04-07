@@ -27,7 +27,7 @@ public class TesteController {
 		return "teste";
 	}
 	
-	@RequestMapping(value="/cadastrateste", method = RequestMethod.POST)
+	@RequestMapping(value="/cadastrateste", method = RequestMethod.GET)
 	public String insereTeste(Teste teste, ModelMap model ) {
 		testeService.insereTeste(teste);
 		return abrirTelaDeTestes(model, teste);	

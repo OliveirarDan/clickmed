@@ -43,11 +43,11 @@ public class ClickmedApplicationTests {
 //		assertThat(medicos).hasAtLeastOneElementOfType(Medico.class);
 //	}
 
-	@Test
-	public void should_save_a_medico() {
-		Optional<Usuario> usr = usarioDAO.findById(1L);
-		Medico medico = medicoDAO.save(new Medico("Medico D", "987", usr.get()));
-
-		assertThat(medico).hasFieldOrPropertyWithValue("nome", "Medico D");
-	}
+//	@Test
+//	public void should_save_a_medico() {
+//		Optional<Usuario> usr = usarioDAO.findById(1L);
+//		Medico medico = medicoDAO.save(new Medico("Medico D", "987", usr.get()));
+//
+//		assertThat(medico).hasFieldOrPropertyWithValue("nome", "Medico D");
+//	}
 }

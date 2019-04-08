@@ -13,13 +13,7 @@ import com.clickmed.service.TesteService;
 public class TesteController {
 	
 	@Autowired
-	TesteService testeService;
-	
-	@RequestMapping(value ="/", method = RequestMethod.GET)
-	public String abrirTelaDeTeste(ModelMap model, Teste teste) {
-		return "cadastrateste";
-	}
-	
+	TesteService testeService;	
 	
 	@RequestMapping(value ="/testes", method = RequestMethod.GET)
 	public String abrirTelaDeTestes(ModelMap model, Teste teste) {

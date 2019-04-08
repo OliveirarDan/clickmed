@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.clickmed.entity.Paciente;
+import com.clickmed.entity.Teste;
 import com.clickmed.service.PacienteService;
 import com.clickmed.service.UsuarioService;
 
@@ -22,6 +23,11 @@ public class PacienteController {
 	@Autowired
 	UsuarioService usuarioService;
 	
+	@RequestMapping(value ="/", method = RequestMethod.GET)
+	public String index(ModelMap model, Teste teste) {
+		return "index";
+	}
+	
 	@RequestMapping(value = "/listaPacientes", method = RequestMethod.GET)
 	public String listaPacientes(ModelMap model) {
 		model.put("pacientes", pacienteService.listaPacientes());
@@ -31,7 +37,7 @@ public class PacienteController {
 	
 	@RequestMapping(value = "/Paciente", method = RequestMethod.GET)
 	public String carregaCadastro(ModelMap model) {
-		return "cadPaciente";
+		return "cadastro-paciente";
 	}
 	
 	

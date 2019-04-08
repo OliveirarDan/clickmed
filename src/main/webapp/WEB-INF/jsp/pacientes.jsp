@@ -10,10 +10,10 @@
 	<h1>Hello Wolrd</h1>
 	<!-- ${pcs} -->
 	
-	<c:forEach items="${pcs}" var="p">
+	<c:forEach items="${pacientes}" var="p">
 	    <tr>      
-	        <td>${p.id}</td>
-	        <td>${p.nome}</td>
+	        <td>${p}</td>
+	        
 	    </tr>
 	    <br />
 	</c:forEach>

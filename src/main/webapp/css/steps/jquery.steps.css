@@ -1,5 +1,5 @@
 ﻿/*
-    Common 
+Common 
 */
 
 .wizard,
@@ -49,7 +49,7 @@
 
 
 /*
-    Wizard
+Wizard
 */
 
 .wizard > .steps
@@ -97,7 +97,7 @@
     margin: 0 0.5em 0.5em;
     padding: 1em 1em;
     text-decoration: none;
-
+    
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -107,8 +107,10 @@
 .wizard > .steps .disabled a:hover,
 .wizard > .steps .disabled a:active
 {
-    background: #eee;
-    color: #aaa;
+    background: #f8f9fa;
+    color: #f8b600;
+    font-weight:bold;
+    border:1px solid #f8b600;
     cursor: default;
 }
 
@@ -116,16 +118,17 @@
 .wizard > .steps .current a:hover,
 .wizard > .steps .current a:active
 {
-    background: #2184be;
+    background: #f8b600;
     color: #fff;
     cursor: default;
+    font-weight: bold;
 }
 
 .wizard > .steps .done a,
 .wizard > .steps .done a:hover,
 .wizard > .steps .done a:active
 {
-    background: #9dc8e2;
+    background: #f8b60099;
     color: #fff;
 }
 
@@ -139,17 +142,15 @@
 
 .wizard > .content
 {
-    background: #eee;
     display: block;
     margin: 0.5em;
     min-height: 35em;
-    overflow: hidden;
     position: relative;
     width: auto;
-
-    -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 .wizard.vertical > .content
@@ -163,10 +164,9 @@
 .wizard > .content > .body
 {
     float: left;
-    position: absolute;
-    width: 95%;
+    width: 100%;
     height: 95%;
-    padding: 2.5%;
+    position: absolute;
 }
 
 .wizard > .content > .body ul
@@ -188,7 +188,6 @@
 
 .wizard > .content > .body input
 {
-    display: block;
     border: 1px solid #ccc;
 }
 
@@ -253,12 +252,12 @@
 .wizard > .actions a:hover,
 .wizard > .actions a:active
 {
-    background: #2184be;
+    background: #f8b600;
     color: #fff;
+    font-weight: bold;
     display: block;
     padding: 0.5em 1em;
     text-decoration: none;
-
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -283,7 +282,7 @@
 
 
 /*
-    Tabcontrol
+Tabcontrol
 */
 
 .tabcontrol > .steps
@@ -306,7 +305,7 @@
     float: left;
     margin: 5px 2px 0 0;
     padding: 1px;
-
+    
     -webkit-border-top-left-radius: 5px;
     -webkit-border-top-right-radius: 5px;
     -moz-border-radius-topleft: 5px;

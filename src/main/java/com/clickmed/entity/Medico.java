@@ -31,10 +31,6 @@ public class Medico {
 	private String experienciaProfissional;
 	private int telefone1;
 	private int telefone2;
-	private String cidade;
-	private String estado;
-	private String rua;
-	private String numero;
 	private String horarioAtendimento;
 	private String especialidade;
 	
@@ -75,10 +71,6 @@ public class Medico {
 		this.experienciaProfissional = experienciaProfissional;
 		this.telefone1 = telefone1;
 		this.telefone2 = telefone2;
-		this.cidade = cidade;
-		this.estado = estado;
-		this.rua = rua;
-		this.numero = numero;
 		this.horarioAtendimento = horarioAtendimento;
 		this.especialidade = especialidade;
 		this.foto = foto;
@@ -112,22 +104,6 @@ public class Medico {
 
 	public int getTelefone2() {
 		return telefone2;
-	}
-
-	public String getCidade() {
-		return cidade;
-	}
-
-	public String getEstado() {
-		return estado;
-	}
-
-	public String getRua() {
-		return rua;
-	}
-
-	public String getNumero() {
-		return numero;
 	}
 
 	public String getHorarioAtendimento() {
@@ -178,22 +154,6 @@ public class Medico {
 		this.telefone2 = telefone2;
 	}
 
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
-	public void setRua(String rua) {
-		this.rua = rua;
-	}
-
-	public void setNumero(String numero) {
-		this.numero = numero;
-	}
-
 	public void setHorarioAtendimento(String horarioAtendimento) {
 		this.horarioAtendimento = horarioAtendimento;
 	}
@@ -218,8 +178,7 @@ public class Medico {
 	public String toString() {
 		return "Medico [id=" + id + ", crm=" + crm + ", nome=" + nome + ", sobrenome=" + sobrenome
 				+ ", experienciaProfissional=" + experienciaProfissional + ", telefone1=" + telefone1 + ", telefone2="
-				+ telefone2 + ", cidade=" + cidade + ", estado=" + estado + ", rua=" + rua + ", numero=" + numero
-				+ ", horarioAtendimento=" + horarioAtendimento + ", especialidade=" + especialidade + ", foto=" + foto
+				+ telefone2  + ", horarioAtendimento=" + horarioAtendimento + ", especialidade=" + especialidade + ", foto=" + foto
 				+ ", usuario=" + usuario + ", convenios=" + convenios + "]";
 	}
 

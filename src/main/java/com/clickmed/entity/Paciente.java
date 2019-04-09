@@ -38,7 +38,7 @@ public class Paciente {
 	private String estado;
 	private String nomeRua;
 	private String numero;
-	private int cep;
+	private String cep;
 	private Blob foto;
 
 	@OneToOne
@@ -57,7 +57,7 @@ public class Paciente {
 	
 	public Paciente(Long id, @NotNull String cpf, @NotNull String nome, @NotNull String sobrenome, String sexo,
 			Date dataNascimento, String telefone1, String telefone2, String cidade, String estado, String nomeRua,
-			String numero, int cep, Blob foto, Usuario usuario) {
+			String numero, String cep, Blob foto, Usuario usuario) {
 		super();
 		this.id = id;
 		this.cpf = cpf;
@@ -124,7 +124,7 @@ public class Paciente {
 		return numero;
 	}
 
-	public int getCep() {
+	public String getCep() {
 		return cep;
 	}
 
@@ -184,7 +184,7 @@ public class Paciente {
 		this.numero = numero;
 	}
 
-	public void setCep(int cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
 

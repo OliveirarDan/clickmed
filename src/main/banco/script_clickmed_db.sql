@@ -23,7 +23,7 @@ USE `clickmed_db` ;
 CREATE TABLE IF NOT EXISTS `clickmed_db`.`usuarios` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(255) NOT NULL,
-  `permissao` VARCHAR(255) NOT NULL,
+  `permissao` VARCHAR(255),
   `senha` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `UK_kfsp0s1tflm1cwlj8idhqsad0` (`email` ASC))
@@ -36,16 +36,12 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `clickmed_db`.`medicos` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
-  `cidade` VARCHAR(255) NULL DEFAULT NULL,
   `crm` VARCHAR(255) NOT NULL,
-  `especialidade` VARCHAR(255) NULL DEFAULT NULL,
-  `estado` VARCHAR(255) NULL DEFAULT NULL,
-  `experienciaProfissional` VARCHAR(255) NULL DEFAULT NULL,
+  `especialidade` LONGTEXT NULL DEFAULT NULL,
+  `experienciaProfissional` LONGTEXT NULL DEFAULT NULL,
   `foto` VARCHAR(255) NULL DEFAULT NULL,
   `horarioAtendimento` VARCHAR(255) NULL DEFAULT NULL,
   `nome` VARCHAR(255) NULL DEFAULT NULL,
-  `numero` VARCHAR(255) NULL DEFAULT NULL,
-  `rua` VARCHAR(255) NULL DEFAULT NULL,
   `sobrenome` VARCHAR(255) NULL DEFAULT NULL,
   `telefone1` INT(11) NOT NULL,
   `telefone2` INT(11) NOT NULL,
@@ -64,6 +60,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `clickmed_db`.`clinicas` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+  `cep` VARCHAR(255) NOT NULL,
   `cidade` VARCHAR(255) NULL DEFAULT NULL,
   `cnpj` VARCHAR(14) NULL DEFAULT NULL,
   `email` VARCHAR(255) NULL DEFAULT NULL,
@@ -149,7 +146,7 @@ DEFAULT CHARACTER SET = utf8;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `clickmed_db`.`pacientes` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
-  `cep` INT(11) NOT NULL,
+  `cep` VARCHAR(255) NOT NULL,
   `cidade` VARCHAR(255) NULL DEFAULT NULL,
   `cpf` VARCHAR(255) NOT NULL,
   `dataNascimento` DATETIME NULL DEFAULT NULL,

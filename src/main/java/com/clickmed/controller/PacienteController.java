@@ -35,9 +35,14 @@ public class PacienteController {
 	}
 	
 	
-	@RequestMapping(value = "/Paciente", method = RequestMethod.GET)
-	public String carregaCadastro(ModelMap model) {
+	@RequestMapping(value = "/paciente", method = RequestMethod.GET)
+	public String cadastroPaciente(ModelMap model) {
 		return "cadastro-paciente";
+	}
+	
+	@RequestMapping(value = "/medico", method = RequestMethod.GET)
+	public String cadastroMedico(ModelMap model) {
+		return "cadastro-medico";
 	}
 	
 	
@@ -46,6 +51,7 @@ public class PacienteController {
 	public String cadastraPaciente( Paciente paciente,  ModelMap model) {
 		System.out.println(paciente.toString());
 		try {
+			System.out.println(paciente.toString());
 			paciente.setUsuario(usuarioService.insereUsuario(paciente.getUsuario()));
 			System.out.println(paciente.toString());
 			pacienteService.inserePaciente(paciente);

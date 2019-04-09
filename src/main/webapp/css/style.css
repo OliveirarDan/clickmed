@@ -1710,7 +1710,7 @@ button:focus {
     .contact_form .form-group textarea.form-control {
       height: 134px; }
 .contact_form .primary-btn {
-  margin-top: 20px;
+  margin-bottom: 20px;
   border: 0; }
 
 /* Contact Success and error Area css

@@ -12,12 +12,7 @@
 <title>ClickMed</title>
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="vendors/linericon/style.css">
-<link rel="stylesheet" href="css/login-register.css" />
 <link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-<link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
-<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
 <link rel="stylesheet" href="vendors/animate-css/animate.css">
 <!-- main css -->
 <link rel="stylesheet" href="css/style.css">
@@ -26,15 +21,7 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/popper.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/login-register.js"></script>
 <script src="js/stellar.js"></script>
-<script src="vendors/lightbox/simpleLightbox.min.js"></script>
-<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
-<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<script src="vendors/counter-up/jquery.waypoints.min.js"></script>
-<script src="vendors/counter-up/jquery.counterup.js"></script>
-<script src="js/mail-script.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/jquery.mask.min.js"></script>
 
@@ -81,22 +68,26 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<form class="row contact_form" action="cadastraPaciente"
-						method="post" id="cadastro-paciente" novalidate="">
+						method="post" id="cadastro-paciente">
 						<div class="col-md-12">
 							<div class="row">
 								<div class="col-md-8 col-6">
 									<div class="form-group">
-										<input type="text" class="single-input" id="name" name="name"
-											placeholder="Nome" required>
+										<input type="text" class="single-input" id="name" name="nome"
+											placeholder="Nome" required />
 									</div>
 									<div class="form-group">
 										<input type="text" class="single-input" id="sobrenome"
-											name="sobrenome" placeholder="Sobrenome" required>
+											name="sobrenome" placeholder="Sobrenome" required />
 									</div>
 
 									<div class="form-group">
 										<input type="email" class="single-input" id="email"
-											name="email" placeholder="E-mail (login)" required>
+											name="usuario.email" placeholder="E-mail (login)" required />
+									</div>
+									<div class="form-group">
+										<input type="cpf" class="single-input" id="cpf"
+											name="cpf" placeholder="CPF" data-mask="000.000.000-00" data-mask-selectonfocus="true" required />
 									</div>
 								</div>
 								<!-- Foto de perfil -->
@@ -136,55 +127,55 @@
 								<div class="form-group col-md-2">
 									<input type="date" class="single-input" id="datanasc"
 										name="dataNascimento" placeholder="Data de nascimento"
-										required>
+										required />
 								</div>
 								<div class="form-group col-md-4">
 									<input type="tel" class="single-input" id="telresidencial"
 										name="telefone1" placeholder="Telefone residencial"
 										data-mask="(00) 0000-0000" data-mask-selectonfocus="true"
-										required>
+										required />
 								</div>
 								<div class="form-group col-md-4">
 									<input type="tel" class="single-input" id="telcelular"
 										name="telefone2" placeholder="Telefone celular"
 										data-mask="(00) 0000-00000" data-mask-selectonfocus="true"
-										required>
+										required />
 								</div>
 								<div class="form-group col-md-2">
 									<input type="text" class="single-input" id="cep" name="cep"
 										placeholder="CEP" data-mask="00000-000"
-										data-mask-selectonfocus="true" required>
+										data-mask-selectonfocus="true" required />
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-md-8">
 									<input type="text" class="single-input" id="rua" name="nomeRua"
-										placeholder="Rua, Av, Logradouro" required>
+										placeholder="Rua, Av, Logradouro" required />
 								</div>
 								<div class="form-group col-md-4">
 									<input type="text" class="single-input" id="numero"
-										name="numero" placeholder="Nº" required>
+										name="numero" placeholder="Nº" required />
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-md-8">
 									<input type="text" class="single-input" id="cidade"
-										name="cidade" placeholder="Cidade" required>
+										name="cidade" placeholder="Cidade" required />
 								</div>
 								<div class="form-group col-md-4">
 									<input type="text" class="single-input" id="uf" name="estado"
-										placeholder="UF" maxlength="2" required>
+										placeholder="UF" maxlength="2" required />
 								</div>
 							</div>
 						</div>
 						<div class="form-group col-md-4">
 							<label for="pass">Crie uma senha</label> <input
 								class="single-input" type="password" id="senha"
-								name="usuario.senha" maxlength="8" minlength="8" required>
+								name="usuario.senha" maxlength="8" minlength="8" required />
 						</div>
 						<div class="form-group">
 							<input type="hidden" class="single-input" id="permissao"
-								name="permissao" value="paciente">
+								name="usuario.permissao" value="paciente" >
 						</div>
 						<div class="col-md-12 text-center">
 							<button type="submit" name="cadastraPaciente"
@@ -217,8 +208,5 @@
 		</div>
 		</div>
 	</footer>
-	<!--================ Fim Area Rodapé   =================-->
-
 </body>
-
 </html>

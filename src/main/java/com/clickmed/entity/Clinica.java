@@ -28,6 +28,7 @@ public class Clinica {
 	private String cnpj;
 	private int telefone1;
 	private int telefone2;
+	private String cep;
 	private String cidade;
 	private String estado;
 	private String rua;
@@ -136,8 +137,13 @@ public class Clinica {
 				+ ", localAtendimento=" + localAtendimento + ", foto=" + foto + ", medicos=" + medicos + "]";
 	}
 
-	
-	
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}	
 	
 	
 }

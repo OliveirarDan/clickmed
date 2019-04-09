@@ -23,10 +23,9 @@ public class Usuario {
 	@NotNull
 	private String senha;
 
-	
 	private String permissao;
 
-	public Usuario(Long id, @NotNull String email, @NotNull String senha, @NotNull String permissao) {
+	public Usuario(Long id, @NotNull String email, @NotNull String senha, String permissao) {
 		super();
 		this.id = id;
 		this.email = email;

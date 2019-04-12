@@ -13,53 +13,57 @@ import com.clickmed.entity.Teste;
 import com.clickmed.service.PacienteService;
 import com.clickmed.service.UsuarioService;
 
-@Controller 
+@Controller
 public class PacienteController {
 
-	
 	@Autowired
 	PacienteService pacienteService;
-	
 	@Autowired
 	UsuarioService usuarioService;
-	
-	@RequestMapping(value ="/", method = RequestMethod.GET)
-	public String index(ModelMap model, Teste teste) {
-		return "index";
+
+	@RequestMapping(value = "/novoPaciente", method = RequestMethod.GET)
+	public String novoPaciente(ModelMap model) {
+		return "cadastro-paciente";
 	}
-	
+
+	@RequestMapping(value = "/cadastraPaciente", method = { RequestMethod.POST })
+	public String cadastraPaciente(Paciente paciente, ModelMap model) {
+		try {
+			pacienteService.inserePaciente(paciente);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return listaPacientes(model);
+	}
+
 	@RequestMapping(value = "/listaPacientes", method = RequestMethod.GET)
 	public String listaPacientes(ModelMap model) {
 		model.put("pacientes", pacienteService.listaPacientes());
 		return "pacientes";
 	}
 	
-	
-	@RequestMapping(value = "/paciente", method = RequestMethod.GET)
-	public String cadastroPaciente(ModelMap model) {
-		return "cadastro-paciente";
-	}
-	
-	@RequestMapping(value = "/medico", method = RequestMethod.GET)
-	public String cadastroMedico(ModelMap model) {
-		return "cadastro-medico";
-	}
-	
-	
-	
-	@RequestMapping(value = "/cadastraPaciente", method = {RequestMethod.POST})
-	public String cadastraPaciente( Paciente paciente,  ModelMap model) {
-		System.out.println(paciente.toString());
-		try {
-			System.out.println(paciente.toString());
-			paciente.setUsuario(usuarioService.insereUsuario(paciente.getUsuario()));
-			System.out.println(paciente.toString());
-			pacienteService.inserePaciente(paciente);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		System.out.println(paciente.toString());
+	@RequestMapping(value = "/selecionaPaciente", method = RequestMethod.POST)
+	public String selecionaPaciente(Paciente paciente, ModelMap model) {
 		
-		return listaPacientes(model);
+		paciente = pacienteService.buscaPaciente(paciente.getId());
+		System.out.println(paciente.toString());
+		model.addAttribute(paciente);
+		return editaPaciente(model);
 	}
+	
+	@RequestMapping(value = "/editaPaciente", method = { RequestMethod.POST })
+	public String editaPaciente( ModelMap model) {
+		return "edicao-paciente";
+	}
+	
+	
+	@RequestMapping(value = "/salvaPaciente", method = { RequestMethod.POST })
+	public String salvaPaciente( ModelMap model, Paciente paciente) {
+		System.out.println(paciente.toString());
+//			pacienteService.atualizaPaciente(paciente);
+		
+		return "paciente";
+	}
+	
+
 }

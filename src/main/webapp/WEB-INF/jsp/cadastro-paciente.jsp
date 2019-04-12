@@ -21,10 +21,25 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/popper.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mask.min.js"></script>
 <script src="js/stellar.js"></script>
 <script src="js/theme.js"></script>
-<script src="js/jquery.mask.min.js"></script>
 
+<!-- JS Opcional  -->
+<script type="text/javascript">
+$(document).ready(function(){
+	  $('.data').mask('11/11/1111', {reverse: true});
+	  $('.time').mask('00:00:00' , {reverse: true});
+	  $('.date_time').mask('00/00/0000 00:00:00' , {reverse: true});
+	  $('.cep').mask('00000-000', {reverse: true});
+	  $('.tel1').mask('(00) 0000-0000');
+	  $('.tel2').mask('(00) 00000-0000');
+	  $('.phone_us').mask('(000) 000-0000', {reverse: true});
+	  $('.mixed').mask('AAA 000-S0S', {reverse: true});
+	  $('.cpf').mask('000.000.000-00', {reverse: true});
+	  $('.money').mask('000.000.000.000.000,00', {reverse: true});
+	});
+</script>
 
 </head>
 
@@ -86,8 +101,8 @@
 											name="usuario.email" placeholder="E-mail (login)" required />
 									</div>
 									<div class="form-group">
-										<input type="cpf" class="single-input" id="cpf"
-											name="cpf" placeholder="CPF" data-mask="000.000.000-00" data-mask-selectonfocus="true" required />
+										<input type="cpf" class="single-input cpf" id="cpf"
+											name="cpf" placeholder="CPF" required />
 									</div>
 								</div>
 								<!-- Foto de perfil -->
@@ -130,21 +145,18 @@
 										required />
 								</div>
 								<div class="form-group col-md-4">
-									<input type="tel" class="single-input" id="telresidencial"
+									<input type="tel" class="single-input tel1" id="telresidencial"
 										name="telefone1" placeholder="Telefone residencial"
-										data-mask="(00) 0000-0000" data-mask-selectonfocus="true"
 										required />
 								</div>
 								<div class="form-group col-md-4">
-									<input type="tel" class="single-input" id="telcelular"
+									<input type="tel" class="single-input tel2" id="telcelular"
 										name="telefone2" placeholder="Telefone celular"
-										data-mask="(00) 0000-00000" data-mask-selectonfocus="true"
 										required />
 								</div>
 								<div class="form-group col-md-2">
-									<input type="text" class="single-input" id="cep" name="cep"
-										placeholder="CEP" data-mask="00000-000"
-										data-mask-selectonfocus="true" required />
+									<input type="text" class="single-input cep" id="cep" name="cep"
+										placeholder="CEP" required />
 								</div>
 							</div>
 							<div class="row">
@@ -154,7 +166,7 @@
 								</div>
 								<div class="form-group col-md-4">
 									<input type="text" class="single-input" id="numero"
-										name="numero" placeholder="Nº" required />
+										name="numero" placeholder="Nº" maxlength="5" required />
 								</div>
 							</div>
 							<div class="row">
@@ -205,7 +217,6 @@
 						class="fa fa-twitter"></i></a>
 				</div>
 			</div>
-		</div>
 		</div>
 	</footer>
 </body>

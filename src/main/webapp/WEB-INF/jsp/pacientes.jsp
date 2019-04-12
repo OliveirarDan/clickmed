@@ -11,9 +11,11 @@
 	<!-- ${pcs} -->
 	
 	<c:forEach items="${pacientes}" var="p">
-	    <tr>      
+	    <tr>  
+	    
+	       
 	        <td>${p}</td>
-	        
+	        <hr>
 	    </tr>
 	    <br />
 	</c:forEach>

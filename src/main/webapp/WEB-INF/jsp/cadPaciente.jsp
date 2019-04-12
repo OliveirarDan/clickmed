@@ -78,7 +78,7 @@
 									</div>
 									<div class="form-group">
 										<input type="text" class="single-input" id="cpf" name="cpf"
-											placeholder="cpf" required>
+											placeholder="cpf" data-mask="000.000.000-00" data-mask-selectonfocus="true" required>
 									</div>
 
 									<div class="form-group">

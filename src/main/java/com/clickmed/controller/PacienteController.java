@@ -41,29 +41,45 @@ public class PacienteController {
 		model.put("pacientes", pacienteService.listaPacientes());
 		return "pacientes";
 	}
-	
+
 	@RequestMapping(value = "/selecionaPaciente", method = RequestMethod.POST)
 	public String selecionaPaciente(Paciente paciente, ModelMap model) {
-		
 		paciente = pacienteService.buscaPaciente(paciente.getId());
 		System.out.println(paciente.toString());
 		model.addAttribute(paciente);
-		return editaPaciente(model);
-	}
-	
-	@RequestMapping(value = "/editaPaciente", method = { RequestMethod.POST })
-	public String editaPaciente( ModelMap model) {
 		return "edicao-paciente";
 	}
 	
-	
+	/**
+	 * -----ATENçÃO------
+	 * Neste método é necessário ter todos os dados do paciente antes de modificalo no BD,
+	 * Você pode usar uma variável nPaciente para carregar os itens pelo id e depois altera-lo.
+	 * Ou pode pegar a entidade completa da VIEW.
+	 * 
+	 */
 	@RequestMapping(value = "/salvaPaciente", method = { RequestMethod.POST })
-	public String salvaPaciente( ModelMap model, Paciente paciente) {
-		System.out.println(paciente.toString());
-//			pacienteService.atualizaPaciente(paciente);
-		
-		return "paciente";
+	public String salvaPaciente(ModelMap model, Paciente paciente) throws IOException {
+		//nPaciente criada para armazenar o paciente atualizado da View temporariamente		
+		Paciente nPaciente = paciente;
+		//Carregando o objeto paciente completo do banco
+		paciente = pacienteService.buscaPaciente(paciente.getId());
+		//Exibindo como está no banco
+		System.out.println("Atual: " + paciente.toString());
+		//Exibindo como ficou depois da alteração na view
+		System.out.println("Novo: " +nPaciente.toString());
+		//Atualizando objeto
+		paciente.setNome(nPaciente.getNome());
+		//Salvando no banco
+		pacienteService.atualizaPaciente(paciente);
+		return listaPacientes(model);
+	}
+
+	
+	@RequestMapping(value = "/removePaciente", method = { RequestMethod.POST })
+	public String removePaciente(ModelMap model, Paciente paciente) throws IOException {
+		pacienteService.removePaciente(paciente.getId());
+		return listaPacientes(model);
 	}
 	
-
+	
 }

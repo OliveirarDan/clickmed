@@ -25,15 +25,11 @@ public class ConvenioController {
 	 */
 	@RequestMapping(value = "/novoConvenio", method = RequestMethod.GET)
 	public String novoConvenio(ModelMap model) {
-		return "cadastro-convenio";
+		return "teste/convenio/cadastro-convenio";
 	}
 
 	/**
-	 * ----TESTANDO---- Falta criar tela cadastro-convenio
-	 * 
-	 * @param convenio
-	 * @param model
-	 * @return
+	 * ok
 	 */
 	@RequestMapping(value = "/cadastraConvenio", method = { RequestMethod.POST })
 	public String cadastraConvenio(Convenio convenio, ModelMap model) {
@@ -47,61 +43,39 @@ public class ConvenioController {
 
 	
 	/**
-	 * ----TESTANDO----	Falta criar tela convenios
-	 * @param model
-	 * @return
+	 * ok
 	 */
 	@RequestMapping(value = "/listaConvenios", method = RequestMethod.GET)
 	private String listaConvenios(ModelMap model) {
-		model.put("convenios", this.convenioService.listaConvenios());
-		return "convenios";
+		model.put("convenios", convenioService.listaConvenios());
+		return "teste/convenio/convenios";
 	}
 	
 	/**
-	 * ----TESTANDO----	Falta criar tela edicao-convenio
-	 * @param model
-	 * @return
+	 * ok
 	 */
 	@RequestMapping(value = "/selecionaConvenio", method = RequestMethod.POST)
 	public String selecionaConvenio(Convenio convenio, ModelMap model) {
 		convenio = convenioService.buscaConvenio(convenio.getId());
 		System.out.println(convenio.toString());
 		model.addAttribute(convenio);
-		return "edicao-convenio";
+		return "teste/convenio/edicao-convenio";
 	}
 	
 	
 	
 	/**
-	 * ----TESTANDO----
-	 * -----ATENçÃO------
-	 * Neste método é necessário ter todos os dados do convenio antes de modificalo no BD,
-	 * Você pode usar uma variável nConvenio para carregar os itens pelo id e depois altera-lo.
-	 * Ou pode pegar a entidade completa da VIEW.
-	 * 
+	 * ok
 	 */
 	@RequestMapping(value = "/salvaConvenio", method = { RequestMethod.POST })
 	public String salvaConvenio(ModelMap model, Convenio convenio) throws IOException {
-		//nConvenio criada para armazenar o convenio atualizado da View temporariamente		
-		Convenio nConvenio = convenio;
-		//Carregando o objeto convenio completo do banco
-		convenio = convenioService.buscaConvenio(convenio.getId());
-		//Exibindo como está no banco
-		System.out.println("Atual: " + convenio.toString());
-		//Exibindo como ficou depois da alteração na view
-		System.out.println("Novo: " +nConvenio.toString());
-		//Atualizando nome do objeto
-		convenio.setNome(nConvenio.getNome());
-		//Salvando no banco
 		convenioService.atualizaConvenio(convenio);
 		return listaConvenios(model);
 	}
 	
 	
 	/**
-	 * ----TESTANDO----	Falta criar tela edicao-convenio
-	 * @param model
-	 * @return
+	 * ok
 	 */	
 	@RequestMapping(value = "/removeConvenio", method = { RequestMethod.POST })
 	public String removeConvenio(ModelMap model, Convenio convenio) throws IOException {

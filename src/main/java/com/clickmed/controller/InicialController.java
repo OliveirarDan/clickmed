@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.clickmed.entity.Teste;
 
+
 public class InicialController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -13,9 +14,6 @@ public class InicialController {
 		return "index";
 	}
 
-	@RequestMapping(value = "/medico", method = RequestMethod.GET)
-	public String cadastroMedico(ModelMap model) {
-		return "cadastro-medico";
-	}
+	
 	
 }

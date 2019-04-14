@@ -1,5 +1,8 @@
 package com.clickmed.service;
 
+import java.io.IOException;
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +22,55 @@ public class UsuarioService {
 		this.usuarioDAO = usuarioDAO;
 	}
 
-	public Usuario insereUsuario(Usuario usuario) {
+	/**
+	 * Insere Usuario, precisa ser feito antes do cadastro do Paciente/Médico
+	 * @param usuario
+	 * @return Usuario cadastrado
+	 */
+	public Usuario insereUsuario(Usuario usuario) throws IOException {
 		this.usuarioDAO.save(usuario);
 		return usuario;
 	}
+	
+	/**
+	 * Verifica o id recebido, caso ele exista atualiza, se não retorna null
+	 * @param usuario
+	 * @return usuario atualizado ou não caso não exista.
+	 */
+	public Usuario atualizaUsuario(Usuario usuario) throws IOException {
+		if (this.usuarioDAO.existsById(usuario.getId())==true) {
+			return this.usuarioDAO.save(usuario);
+		}
+		return null;
+	}
+	
+	/**
+	 * Remove um usuario de acordo com o id recebido.
+	 * @param idUsuario id do usuario a ser excluído.
+	 * @throws IOException
+	 */
+	public void removeUsuario(Long idUsuario) throws IOException {
+		this.usuarioDAO.deleteById(idUsuario);
+	}
+	
+	
+	/**
+	 * Busca um usuario pelo ID
+	 * @param idUsuario
+	 * @return Um objeto Usuario.
+	 */
+	public Usuario buscaUsuario(Long idUsuario) {
+		return this.usuarioDAO.getOne(idUsuario);
+	}
+	
+	
+	/**
+	 * Lista todos os usuários cadastrados.
+	 * @return List<Usuario>
+	 */
+	public List<Usuario> listaUsuarios(){
+		return usuarioDAO.findAll();
+	}	
+	
+	
 }

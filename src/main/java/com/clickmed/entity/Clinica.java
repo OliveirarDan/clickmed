@@ -37,12 +37,11 @@ public class Clinica {
 	private String email;
 	private String localAtendimento;
 	private String foto;
-	
+
 	@ManyToMany
 	@JoinTable(name = "clinica_has_medicos", joinColumns = { @JoinColumn(name = "clinica_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "medico_id") })
 	private List<Medico> medicos;
-
 
 	public Clinica() {
 		super();
@@ -69,6 +68,70 @@ public class Clinica {
 		this.medicos = medicos;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public String getNomeFantasia() {
+		return nomeFantasia;
+	}
+
+	public String getRazaoSocial() {
+		return razaoSocial;
+	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public int getTelefone1() {
+		return telefone1;
+	}
+
+	public int getTelefone2() {
+		return telefone2;
+	}
+
+	public String getCep() {
+		return cep;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public String getRua() {
+		return rua;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public String getSite() {
+		return site;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getLocalAtendimento() {
+		return localAtendimento;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public List<Medico> getMedicos() {
+		return medicos;
+	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -91,6 +154,10 @@ public class Clinica {
 
 	public void setTelefone2(int telefone2) {
 		this.telefone2 = telefone2;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
 	}
 
 	public void setCidade(String cidade) {
@@ -137,13 +204,4 @@ public class Clinica {
 				+ ", localAtendimento=" + localAtendimento + ", foto=" + foto + ", medicos=" + medicos + "]";
 	}
 
-	public String getCep() {
-		return cep;
-	}
-
-	public void setCep(String cep) {
-		this.cep = cep;
-	}	
-	
-	
 }

@@ -42,7 +42,7 @@ public class PacienteService {
 	}
 
 	/**
-	 * **TESTANDO** - Compara o id recebido, caso já exista um paciente com este id, atualiza. 
+	 * Compara o id recebido, caso já exista um paciente com este id, atualiza. 
 	 * @param paciente 
 	 * @return paciente atualizado.
 	 * @throws IOException

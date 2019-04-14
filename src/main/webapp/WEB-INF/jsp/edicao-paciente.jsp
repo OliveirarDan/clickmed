@@ -4,27 +4,27 @@
 <html lang="pt">
 
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="icon" href="img/favicon.png" type="image/png">
-<title>ClickMed</title>
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="vendors/animate-css/animate.css">
-<!-- main css -->
-<link rel="stylesheet" href="css/style.css">
-
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/stellar.js"></script>
-<script src="js/theme.js"></script>
-<script src="js/jquery.mask.min.js"></script>
-
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="img/favicon.png" type="image/png">
+	<title>ClickMed</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendors/animate-css/animate.css">
+	<!-- main css -->
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/stellar.js"></script>
+	<script src="js/theme.js"></script>
+	<script src="js/jquery.mask.min.js"></script>
+	
 
 </head>
 
@@ -45,8 +45,8 @@
 				</div>
 			</div>
 		</section>
-		
-		
+
+
 	</header>
 
 	<!--================ Final Header Area =================-->
@@ -69,8 +69,8 @@
 			<!--================Início dos campos de Cadastro =================-->
 			<div class="row">
 				<div class="col-lg-12">
-					<form class="row contact_form" action="salvaPaciente"
-						method="post" id="cadastro-paciente">
+					<form class="row contact_form" action="salvaPaciente" method="post"
+						id="cadastro-paciente">
 						<div class="col-md-12">
 							<div class="row">
 								<div class="col-md-8 col-6">
@@ -90,12 +90,18 @@
 											name="usuario.email" placeholder="E-mail (login)"
 											value="${paciente.usuario.email} " required />
 									</div>
+									
+									
 									<div class="form-group">
-										<input type="number" disabled="disabled" class="single-input" id="cpf" name="cpf"
-											placeholder="CPF" data-mask="000.000.000-00"
-											data-mask-selectonfocus="true"
+										<input type="text" class="single-input" id="cpf"
+											name="cpf" placeholder="CPF" 
 											value="${paciente.cpf}" required />
+											<input type="hidden" class="single-input" id="id"
+											name="id" placeholder="id" 
+											value="${paciente.id}" required />
 									</div>
+										
+									<	
 								</div>
 								<!-- Foto de perfil -->
 								<div class="col-md-4 col-6">
@@ -114,11 +120,11 @@
 									</div>
 								</div>
 								<!-- Final da Foto de perfil -->
-		
-						<div class="col-md-12 text-center">
-							<button type="submit" name="cadastraPaciente"
-								value="cadastraPaciente" class="primary-btn text-uppercase">Cadastrar</button>
-						</div>
+
+								<div class="col-md-12 text-center">
+									<button type="submit" name="cadastraPaciente"
+										value="salvaPaciente" class="primary-btn text-uppercase">Cadastrar</button>
+								</div>
 					</form>
 				</div>
 			</div>

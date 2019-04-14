@@ -67,7 +67,7 @@ public class PacienteController {
 		System.out.println("Atual: " + paciente.toString());
 		//Exibindo como ficou depois da alteração na view
 		System.out.println("Novo: " +nPaciente.toString());
-		//Atualizando objeto
+		//Atualizando nome do objeto
 		paciente.setNome(nPaciente.getNome());
 		//Salvando no banco
 		pacienteService.atualizaPaciente(paciente);

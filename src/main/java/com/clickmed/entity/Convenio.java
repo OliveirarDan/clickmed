@@ -22,6 +22,13 @@ public class Convenio {
 	private String nome;
 	
 	
+
+	public Convenio( @NotNull String codConvenio, @NotNull String nome) {
+		super();
+		this.codConvenio = codConvenio;
+		this.nome = nome;
+	}
+	
 	public Convenio(Long id, @NotNull String codConvenio, @NotNull String nome) {
 		super();
 		this.id = id;

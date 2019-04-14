@@ -18,7 +18,7 @@ public class TesteController {
 	@RequestMapping(value ="/testes", method = RequestMethod.GET)
 	public String abrirTelaDeTestes(ModelMap model, Teste teste) {
 		model.put("tes", testeService.listaTestes());
-		return "teste";
+		return "teste/teste/teste";
 	}
 	
 	@RequestMapping(value="/cadastrateste", method = RequestMethod.GET)
@@ -30,7 +30,7 @@ public class TesteController {
 	@RequestMapping(value ="/editar", method = RequestMethod.GET)
 	public String editar(ModelMap model, Teste teste) {
 		model.put("teste",testeService.buscaTeste(3));
-		return "editateste";
+		return "teste/teste/editateste";
 	}
 	
 	

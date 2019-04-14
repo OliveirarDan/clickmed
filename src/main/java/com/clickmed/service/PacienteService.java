@@ -33,12 +33,11 @@ public class PacienteService {
 	 * @return Retorna o objeto Paciente completo.
 	 * @throws IOException
 	 */
-	@Transactional
 	public Paciente inserePaciente(Paciente paciente) throws IOException {
 		// Cadastra o usuario e retorna o ID
 		paciente.setUsuario(usuarioService.insereUsuario(paciente.getUsuario()));
-		this.pacienteDAO.save(paciente);
-		return paciente;
+		// Cadastra o paciente
+		return this.pacienteDAO.save(paciente);
 	}
 
 	/**
@@ -48,7 +47,6 @@ public class PacienteService {
 	 * @return paciente atualizado ou null caso não exista.
 	 * @throws IOException
 	 */
-	@Transactional
 	public Paciente atualizaPaciente(Paciente paciente) throws IOException {
 		if (this.pacienteDAO.existsById(paciente.getId()) == true) {
 			return this.pacienteDAO.save(paciente);
@@ -62,7 +60,6 @@ public class PacienteService {
 	 * @param idPaciente id do paciente a ser excluído.
 	 * @throws IOException
 	 */
-	@Transactional
 	public void removePaciente(Long idPaciente) throws IOException {
 		this.pacienteDAO.deleteById(idPaciente);
 	}
@@ -73,7 +70,7 @@ public class PacienteService {
 	 * @param idPaciente
 	 * @return Um objeto Paciente.
 	 */
-	public Paciente buscaPaciente(Long idPaciente) {
+	public Paciente buscaPaciente(Long idPaciente)  {
 		return this.pacienteDAO.getOne(idPaciente);
 	}
 
@@ -83,7 +80,7 @@ public class PacienteService {
 	 * @return List<Paciente>
 	 */
 	public List<Paciente> listaPacientes() {
-		return pacienteDAO.findAll();
+		return this.pacienteDAO.findAll();
 	}
 
 }

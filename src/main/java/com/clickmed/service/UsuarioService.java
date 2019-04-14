@@ -28,14 +28,13 @@ public class UsuarioService {
 	 * @return Usuario cadastrado
 	 */
 	public Usuario insereUsuario(Usuario usuario) throws IOException {
-		this.usuarioDAO.save(usuario);
-		return usuario;
+		return this.usuarioDAO.save(usuario);
 	}
 	
 	/**
 	 * Verifica o id recebido, caso ele exista atualiza, se não retorna null
 	 * @param usuario
-	 * @return usuario atualizado ou não caso não exista.
+	 * @return usuario atualizado ou null caso não exista.
 	 */
 	public Usuario atualizaUsuario(Usuario usuario) throws IOException {
 		if (this.usuarioDAO.existsById(usuario.getId())==true) {

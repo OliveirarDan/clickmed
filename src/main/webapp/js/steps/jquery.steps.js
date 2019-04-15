@@ -58,6 +58,7 @@ if (!String.prototype.format)
     };
 }
 
+
 /**
  * A global unique id count.
  *

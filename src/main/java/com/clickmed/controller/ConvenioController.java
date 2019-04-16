@@ -18,10 +18,7 @@ public class ConvenioController {
 	ConvenioService convenioService;
 
 	/**
-	 * ----TESTANDO---- Falta criar tela cadastro-convenio
-	 * 
-	 * @param model
-	 * @return
+	 * ok
 	 */
 	@RequestMapping(value = "/novoConvenio", method = RequestMethod.GET)
 	public String novoConvenio(ModelMap model) {

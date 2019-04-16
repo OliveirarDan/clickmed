@@ -47,7 +47,7 @@ public class PacienteController {
 		paciente = pacienteService.buscaPaciente(paciente.getId());
 		System.out.println(paciente.toString());
 		model.addAttribute(paciente);
-		return "edicao-paciente";
+		return "/teste/paciente/edicao-paciente";
 	}
 	
 	/**
@@ -59,16 +59,16 @@ public class PacienteController {
 	 */
 	@RequestMapping(value = "/salvaPaciente", method = { RequestMethod.POST })
 	public String salvaPaciente(ModelMap model, Paciente paciente) throws IOException {
-		//nPaciente criada para armazenar o paciente atualizado da View temporariamente		
-		Paciente nPaciente = paciente;
-		//Carregando o objeto paciente completo do banco
-		paciente = pacienteService.buscaPaciente(paciente.getId());
-		//Exibindo como está no banco
-		System.out.println("Atual: " + paciente.toString());
-		//Exibindo como ficou depois da alteração na view
-		System.out.println("Novo: " +nPaciente.toString());
-		//Atualizando nome do objeto
-		paciente.setNome(nPaciente.getNome());
+//		//nPaciente criada para armazenar o paciente atualizado da View temporariamente		
+//		Paciente nPaciente = paciente;
+//		//Carregando o objeto paciente completo do banco
+//		paciente = pacienteService.buscaPaciente(paciente.getId());
+//		//Exibindo como está no banco
+//		System.out.println("Atual: " + paciente.toString());
+//		//Exibindo como ficou depois da alteração na view
+//		System.out.println("Novo: " +nPaciente.toString());
+//		//Atualizando nome do objeto
+//		paciente.setNome(nPaciente.getNome());
 		//Salvando no banco
 		pacienteService.atualizaPaciente(paciente);
 		return listaPacientes(model);

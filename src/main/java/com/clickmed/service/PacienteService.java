@@ -47,6 +47,7 @@ public class PacienteService {
 	 * @return paciente atualizado ou null caso não exista.
 	 * @throws IOException
 	 */
+	@Transactional
 	public Paciente atualizaPaciente(Paciente paciente) throws IOException {
 		if (this.pacienteDAO.existsById(paciente.getId()) == true) {
 			return this.pacienteDAO.save(paciente);

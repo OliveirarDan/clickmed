@@ -21,14 +21,15 @@
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/popper.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/steps/jquery.steps.js"></script>
 <script src="js/jquery.mask.js"></script>
-<script src="js/selectize/selectize.js"></script>
 <script src="js/theme.js"></script>
-<script src="js/stellar.js"></script>
-<script src="js/steps/modernizr-2.6.2.min.js"></script>
+<script src="js/steps/jquery.steps.js"></script>
+<script src="js/selectize/selectize.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/javascript.js"></script>
+
+
 
 <!-- JS Opcional  -->
 <script type="text/javascript">
@@ -95,9 +96,12 @@ $(document).ready(function(){
 			<!--================Fim da Paginação de Cadastro =================-->
 
 			<!--================Início do Formulário de Cadastro =================-->
+		<form class="row contact_form" action="cadastraMedico" method="post" id="cadastro-medico" autocomplete="off">
+			
 			<div id="wizard">
 				<h2>Dados pessoais</h2>
 				<!--================Início da Primeira Etapa =================-->
+			
 				<section>
 					<div class="row">
 						<div class="col-md-12">
@@ -107,29 +111,28 @@ $(document).ready(function(){
 					</div>
 					<div class="row">
 						<div class="col-lg-12">
-							<form class="row contact_form" action="cadastraMedico" method="post" id="cadastro-medico">
 								<div class="col-md-12">
 									<div class="row">
 										<div class="col-md-4">
 											<div class="form-group">
 												<input type="number" class="single-input required" id="crm"
-													name="crm" placeholder="CRM" maxlength="8" required>
+													name="crm" placeholder="CRM" maxlength="8">
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-8 col-6">
 											<div class="form-group">
-												<input type="text" class="single-input" id="name"
-													name="name" placeholder="Nome" required>
+												<input type="text" class="single-input required" id="name"
+													name="name" placeholder="Nome">
 											</div>
 											<div class="form-group">
-												<input type="text" class="single-input" id="sobrenome"
-													name="sobrenome" placeholder="Sobrenome" required>
+												<input type="text" class="single-input required" id="sobrenome"
+													name="sobrenome" placeholder="Sobrenome">
 											</div>
 
 											<div class="form-group">
-												<input type="email" class="single-input" id="email"
+												<input type="email" class="single-input required" id="email"
 													name="email" placeholder="E-mail (login)" required>
 											</div>
 										</div>
@@ -167,14 +170,13 @@ $(document).ready(function(){
 										</div>
 									</div>
 									<div class="row">
-										<div class="form-group col-md-4">
+										<div class="form-group col-md-4 required">
 											<label for="pass">Crie uma senha</label> <input
 												class="single-input" type="password" id="senha" name="senha"
 												maxlength="8" minlength="8" required>
 										</div>
 									</div>
 								</div>
-							</form>
 						</div>
 					</div>
 				</section>
@@ -193,7 +195,7 @@ $(document).ready(function(){
 						<div class="col-md-12">
 							<div class="control-group">
 								<label for="especialidades">Especilidades:</label> <select
-									id="especialidades" placeholder="Selecione suas especialidades"></select>
+									id="especialidades" placeholder="Começe a digitar para pesquisar"></select>
 							</div>
 						</div>
 						<script>
@@ -241,37 +243,41 @@ $(document).ready(function(){
 				<h2>Dados de atendimento</h2>
 				<section>
 					<div class="row">
-						<div class="col-md-12">
-							<span><p>Informe mais dados sobre sua localidade e
-									atendimento.</p></span>
+						<div class="form-group col-md-12">
+							<div class="control-group">
+								<label for="local-atendimento">Selecione qual o seu local de atendimento</label> 
+								<select id="local-atendimento" placeholder="Começe a digitar para pesquisar" required></select>
+							</div>
 						</div>
+						<script>
+							// <select id="select-tools"></select>							
+							$('#local-atendimento').selectize({
+								maxItems : 1,
+								valueField : 'id',
+								labelField : 'title',
+								searchField : 'title',
+								options : [ {
+									id : 1,
+									title : 'Hospital das Clinicas' + ' - ' + 'Av Nações Unidas, 7221'
+								}, {
+									id : 2,
+									title : 'Hospital das Clinicas' + ' - ' + 'Av Nações Unidas, 7221'
+								}, {
+									id : 3,
+									title : 'Hospital das Clinicas' + ' - ' + 'Av Nações Unidas, 7221'
+								}],
+								create : false
+							});
+						</script>
 					</div>
 					<div class="row">
-						<div class="form-group col-md-2">
-							<input type="text" class="single-input cep" id="cep" name="cep"
-								placeholder="CEP" required>
+						<div class="form-group col-md-12">
+							<div class="control-group">
+								<span>Não encontrou sua clínica ou consultório? <a href=""> Clique aqui e cadastre.</a> </span>
+							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="form-group col-md-8">
-							<input type="text" class="single-input" id="rua" name="rua"
-								placeholder="Rua, Av, Logradouro" required>
-						</div>
-						<div class="form-group col-md-2">
-							<input type="text" class="single-input" id="numero" name="numero"
-								placeholder="Nº" maxlength="5" required>
-						</div>
-					</div>
-					<div class="row">
-						<div class="form-group col-md-8">
-							<input type="text" class="single-input" id="cidade" name="cidade"
-								placeholder="Cidade" required>
-						</div>
-						<div class="form-group col-md-2">
-							<input type="text" class="single-input" id="uf" name="uf"
-								placeholder="UF" maxlength="2" required>
-						</div>
-					</div>
+					
 					<div class="row">
 						<div class="form-group col-md-4">
 							<input type="tel" class="single-input tel1" id="telprimario"
@@ -289,7 +295,7 @@ $(document).ready(function(){
 							<div class="control-group">
 								<label for="dia-atendimento">Quais dias da semana há
 									atendimento?</label> <select id="dia-atendimento"
-									placeholder="Indique os dias da semana"></select>
+									placeholder="Começe a digitar para pesquisar" required></select>
 							</div>
 						</div>
 						<script>
@@ -338,7 +344,7 @@ $(document).ready(function(){
 						<div class="col-md-12">
 							<div class="control-group">
 								<label for="convenios">Convênios atendidos:</label> <select
-									id="convenios" placeholder="Selecione os convênios que atende"></select>
+									id="convenios" placeholder="Começe a digitar para pesquisar" required></select>
 							</div>
 						</div>
 						<script>
@@ -372,15 +378,24 @@ $(document).ready(function(){
 							</div>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<button type="submit" name="cadastraPaciente"
+								value="cadastraMedico" class="primary-btn text-uppercase">Cadastrar</button>
+						</div>
+					</div>
+					
 				</section>
 				<!--================Fim da Terceira Etapa =================-->
-			</div>
-			</form>
+			
+			</div>		
+			</form>	
+			<script>
+				$("#cadastro-medico").validate();
+			</script>
 		</div>
 	</section>
-
 	<!--================Fim do Formulário de Cadastro =================-->
-	<!--================Fim do Cadastro =================-->
 
 	<!--================ Começo Area Rodapé  =================-->
 	<footer class="footer-bottom">
@@ -400,5 +415,6 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</footer>
+	
 </body>
 </html>

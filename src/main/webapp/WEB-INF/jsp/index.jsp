@@ -37,8 +37,7 @@
 <script src="js/mail-script.js"></script>
 
 <!--gmaps Js-->
-<script
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+<script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="js/gmaps.min.js"></script>
 <script src="js/theme.js"></script>
 </head>
@@ -483,11 +482,11 @@
 							<div class="form loginBox">
 								<form method="" action="" accept-charset="UTF-8">
 									<input id="email" class="form-control" type="text"
-										placeholder="E-mail" name="email"> <input
-										id="password" class="form-control" type="password"
-										placeholder="Senha" name="password"> <input
-										class="btn btn-default btn-login" type="button" value="Login"
-										onclick="loginAjax()">
+										placeholder="E-mail" name="email">
+									 <input	id="password" class="form-control" type="password"
+										placeholder="Senha" name="password"> 
+									<input class="btn btn-default btn-login" type="button" value="Login"
+										onclick="">
 								</form>
 								<span><p>
 										<a href="#">Esqueci minha senha</a>

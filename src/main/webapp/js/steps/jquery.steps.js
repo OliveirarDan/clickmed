@@ -57,7 +57,6 @@ if (!String.prototype.format)
         return formattedString;
     };
 }
-
 /**
  * A global unique id count.
  *
@@ -1804,7 +1803,7 @@ var defaults = $.fn.steps.defaults = {
      * @default true
      * @for defaults
      **/
-    enableFinishButton: true,
+    enableFinishButton: false,
 
     /**
      * Not yet implemented.
@@ -2039,4 +2038,6 @@ var defaults = $.fn.steps.defaults = {
         loading: "Carregando..."
     }
 };
+
+
 })(jQuery);

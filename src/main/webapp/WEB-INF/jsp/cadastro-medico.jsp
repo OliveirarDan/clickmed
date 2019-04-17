@@ -33,17 +33,33 @@
 
 <!-- JS Opcional  -->
 <script type="text/javascript">
-$(document).ready(function(){
-	  $('.data').mask('11/11/1111', {reverse: true});
-	  $('.time').mask('00:00:00' , {reverse: true});
-	  $('.time').mask('00h00' , {reverse: true});
-	  $('.cep').mask('00000-000', {reverse: true});
-	  $('.tel1').mask('(00) 0000-0000');
-	  $('.tel2').mask('(00) 00000-0000');
-	  $('.phone_us').mask('(000) 000-0000', {reverse: true});
-	  $('.mixed').mask('AAA 000-S0S', {reverse: true});
-	  $('.cpf').mask('000.000.000-00', {reverse: true});
-	  $('.money').mask('000.000.000.000.000,00', {reverse: true});
+	$(document).ready(function() {
+		$('.data').mask('11/11/1111', {
+			reverse : true
+		});
+		$('.time').mask('00:00:00', {
+			reverse : true
+		});
+		$('.time').mask('00h00', {
+			reverse : true
+		});
+		$('.cep').mask('00000-000', {
+			reverse : true
+		});
+		$('.tel1').mask('(00) 0000-0000');
+		$('.tel2').mask('(00) 00000-0000');
+		$('.phone_us').mask('(000) 000-0000', {
+			reverse : true
+		});
+		$('.mixed').mask('AAA 000-S0S', {
+			reverse : true
+		});
+		$('.cpf').mask('000.000.000-00', {
+			reverse : true
+		});
+		$('.money').mask('000.000.000.000.000,00', {
+			reverse : true
+		});
 	});
 </script>
 
@@ -84,33 +100,26 @@ $(document).ready(function(){
 				</div>
 			</div>
 			<!--================Início da Paginação de Cadastro =================-->
-			<script>
-				$(function() {
-					$("#wizard").steps({
-						headerTag : "h2",
-						bodyTag : "section",
-						transitionEffect : "slideLeft"
-					});
-				});
-			</script>
+
 			<!--================Fim da Paginação de Cadastro =================-->
 
 			<!--================Início do Formulário de Cadastro =================-->
-		<form class="row contact_form" action="cadastraMedico" method="post" id="cadastro-medico" autocomplete="off">
-			
-			<div id="wizard">
-				<h2>Dados pessoais</h2>
-				<!--================Início da Primeira Etapa =================-->
-			
-				<section>
-					<div class="row">
-						<div class="col-md-12">
-							<span><p>Nos informe seus dados pessoais abaixo, e
-									também já crie sua conta para acesso.</p></span>
+			<form class="row contact_form" action="cadastraMedico" method="post"
+				id="cadastro-medico" autocomplete="off">
+
+				<div id="wizard">
+					<h2>Dados pessoais</h2>
+					<!--================Início da Primeira Etapa =================-->
+
+					<section>
+						<div class="row">
+							<div class="col-md-12">
+								<span><p>Nos informe seus dados pessoais abaixo, e
+										também já crie sua conta para acesso.</p></span>
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-12">
+						<div class="row">
+							<div class="col-lg-12">
 								<div class="col-md-12">
 									<div class="row">
 										<div class="col-md-4">
@@ -123,17 +132,17 @@ $(document).ready(function(){
 									<div class="row">
 										<div class="col-md-8 col-6">
 											<div class="form-group">
-												<input type="text" class="single-input required" id="name"
-													name="name" placeholder="Nome">
+												<input type="text" class="single-input required" id="nome"
+													name="nome" placeholder="Nome">
 											</div>
 											<div class="form-group">
-												<input type="text" class="single-input required" id="sobrenome"
-													name="sobrenome" placeholder="Sobrenome">
+												<input type="text" class="single-input required"
+													id="sobrenome" name="sobrenome" placeholder="Sobrenome">
 											</div>
 
 											<div class="form-group">
 												<input type="email" class="single-input required" id="email"
-													name="email" placeholder="E-mail (login)" required>
+													name="email" placeholder="E-mail (login)">
 											</div>
 										</div>
 										<!-- Foto de perfil -->
@@ -155,7 +164,7 @@ $(document).ready(function(){
 										<!-- Final da Foto de perfil -->
 									</div>
 									<div class="row">
-										<label class="col-md-12" for="radios">Gênero</label>
+										<label class="col-md-12 required" for="radios">Gênero</label>
 										<div class="col-md-8">
 											<label class="radio-inline" for="radios-0"> <input
 												type="radio" name="radios" id="radios-0" value="1">
@@ -172,226 +181,143 @@ $(document).ready(function(){
 									<div class="row">
 										<div class="form-group col-md-4 required">
 											<label for="pass">Crie uma senha</label> <input
-												class="single-input" type="password" id="senha" name="senha"
-												maxlength="8" minlength="8" required>
+												class="single-input required" type="password" id="senha" name="senha"
+												maxlength="8" minlength="8">
 										</div>
 									</div>
 								</div>
-						</div>
-					</div>
-				</section>
-				<!--================Fim da Primeira Etapa =================-->
-				<!--================Início da Segunda Etapa =================-->
-				<h2>Dados profissionais</h2>
-				<section>
-					<div class="row">
-						<div class="col-md-12">
-							<span><p>Agora descreva um pouco sobre você, isso
-									aumenta a segurança dos pacientes e aumenta a chance de
-									agendamento de consultas.</p></span>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="control-group">
-								<label for="especialidades">Especilidades:</label> <select
-									id="especialidades" placeholder="Começe a digitar para pesquisar"></select>
 							</div>
 						</div>
-						<script>
-							// <select id="select-tools"></select>							
-							$('#especialidades').selectize({
-								maxItems : null,
-								valueField : 'id',
-								labelField : 'title',
-								searchField : 'title',
-								options : [ {
-									id : 1,
-									title : 'Cardiologista'
-								}, {
-									id : 2,
-									title : 'Otorrino'
-								}, {
-									id : 3,
-									title : 'Psicólogo'
-								} ],
-								create : false
-							});
-						</script>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<label><span> Formação acadêmica:</span></label>
-							<div class="form-group">
-								<textarea class="single-input" id="formacao-academica"
-									name="formacao-academica" rows="5" required> </textarea>
+					</section>
+					<!--================Fim da Primeira Etapa =================-->
+					<!--================Início da Segunda Etapa =================-->
+					<h2>Dados profissionais</h2>
+					<section>
+						<div class="row">
+							<div class="col-md-12">
+								<span><p>Agora descreva um pouco sobre você, isso
+										aumenta a segurança dos pacientes e aumenta a chance de
+										agendamento de consultas.</p></span>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<label><span> Experiência profissional:</span></label>
-							<div class="form-group">
-								<textarea class="single-input" id="formacao-academica"
-									name="formacao-academica" rows="5" required> </textarea>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="control-group">
+									<label for="especialidades">Especilidades:</label> <select
+										id="especialidades"
+										placeholder="Começe a digitar para pesquisar"></select>
+								</div>
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label><span> Formação acadêmica:</span></label>
+								<div class="form-group">
+									<textarea class="single-input" id="formacao-academica"
+										name="formacao-academica" rows="5" required> </textarea>
+								</div>
 							</div>
 						</div>
-					</div>
-				</section>
-				<!--================Fim da Segunda Etapa =================-->
-				<!--================Início da Terceira Etapa =================-->
-				<h2>Dados de atendimento</h2>
-				<section>
-					<div class="row">
-						<div class="form-group col-md-12">
-							<div class="control-group">
-								<label for="local-atendimento">Selecione qual o seu local de atendimento</label> 
-								<select id="local-atendimento" placeholder="Começe a digitar para pesquisar" required></select>
+						<div class="row">
+							<div class="col-md-12">
+								<label><span> Experiência profissional:</span></label>
+								<div class="form-group">
+									<textarea class="single-input" id="experiencia-profissional"
+										name="experiencia-profissional" rows="5" required> </textarea>
+								</div>
 							</div>
 						</div>
-						<script>
-							// <select id="select-tools"></select>							
-							$('#local-atendimento').selectize({
-								maxItems : 1,
-								valueField : 'id',
-								labelField : 'title',
-								searchField : 'title',
-								options : [ {
-									id : 1,
-									title : 'Hospital das Clinicas' + ' - ' + 'Av Nações Unidas, 7221'
-								}, {
-									id : 2,
-									title : 'Hospital das Clinicas' + ' - ' + 'Av Nações Unidas, 7221'
-								}, {
-									id : 3,
-									title : 'Hospital das Clinicas' + ' - ' + 'Av Nações Unidas, 7221'
-								}],
-								create : false
-							});
-						</script>
-					</div>
-					<div class="row">
-						<div class="form-group col-md-12">
-							<div class="control-group">
-								<span>Não encontrou sua clínica ou consultório? <a href=""> Clique aqui e cadastre.</a> </span>
+					</section>
+					<!--================Fim da Segunda Etapa =================-->
+					<!--================Início da Terceira Etapa =================-->
+					<h2>Dados de atendimento</h2>
+					<section>
+						<div class="row">
+							<div class="form-group col-md-12">
+								<div class="control-group">
+									<label for="local-atendimento">Selecione qual o seu
+										local de atendimento</label> <select id="local-atendimento"
+										placeholder="Começe a digitar para pesquisar" required></select>
+								</div>
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="form-group col-md-12">
+								<div class="control-group">
+									<span>Não encontrou sua clínica ou consultório? <a
+										href=""> Clique aqui e cadastre.</a>
+									</span>
+								</div>
 							</div>
 						</div>
-					</div>
-					
-					<div class="row">
-						<div class="form-group col-md-4">
-							<input type="tel" class="single-input tel1" id="telprimario"
-								name="telprimario" placeholder="Telefone principal"
-								required>
-						</div>
-						<div class="form-group col-md-4">
-							<input type="tel" class="single-input tel1" id="telsecundario"
-								name="telsecundario" placeholder="Outro telefone (caso possua)"
-								required>
-						</div>
-					</div>
-					<div class="row">
-						<div class="form-group col-md-8">
-							<div class="control-group">
-								<label for="dia-atendimento">Quais dias da semana há
-									atendimento?</label> <select id="dia-atendimento"
-									placeholder="Começe a digitar para pesquisar" required></select>
+
+						<div class="row">
+							<div class="form-group col-md-4">
+								<input type="tel" class="single-input tel1" id="telprimario"
+									name="telprimario" placeholder="Telefone principal" required>
+							</div>
+							<div class="form-group col-md-4">
+								<input type="tel" class="single-input tel1" id="telsecundario"
+									name="telsecundario" placeholder="Outro telefone (caso possua)"
+									required>
 							</div>
 						</div>
-						<script>
-							// <select id="select-tools"></select>							
-							$('#dia-atendimento').selectize({
-								maxItems : null,
-								valueField : 'id',
-								labelField : 'title',
-								searchField : 'title',
-								options : [ {
-									id : 1,
-									title : 'Domingo'
-								}, {
-									id : 2,
-									title : 'Segunda-feira'
-								}, {
-									id : 3,
-									title : 'Terça-feira'
-								}, {
-									id : 4,
-									title : 'Quarta-feira'
-								}, {
-									id : 5,
-									title : 'Quinta-feira'
-								}, {
-									id : 6,
-									title : 'Sexta-feira'
-								}, {
-									id : 7,
-									title : 'Sábado'
-								} ],
-								create : false
-							});
-						</script>
-						<div class="form-group col-md-2">
-							<label for="dia-atendimento">Hora de início:</label> <input
-								type="text" class="single-input hora" id="hora-inicio"
-								name="hora-inicio" placeholder="00h00" required>
-						</div>
-						<div class="form-group col-md-2">
-							<label for="dia-atendimento">Até:</label> <input type="text"
-								class="single-input hora" id="hora-fim" placeholder="00h00" name="hora-fim" required>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="control-group">
-								<label for="convenios">Convênios atendidos:</label> <select
-									id="convenios" placeholder="Começe a digitar para pesquisar" required></select>
+						<div class="row">
+							<div class="form-group col-md-8">
+								<div class="control-group">
+									<label for="dia-atendimento">Quais dias da semana há
+										atendimento?</label> <select id="dia-atendimento"
+										placeholder="Começe a digitar para pesquisar" required></select>
+								</div>
+							</div>
+
+							<div class="form-group col-md-2">
+								<label for="hora-inicio">Hora de início:</label> <input
+									type="text" class="single-input hora" id="hora-inicio"
+									name="hora-inicio" placeholder="00h00" required>
+							</div>
+							<div class="form-group col-md-2">
+								<label for="hora-fim">Até:</label> <input type="text"
+									class="single-input hora" id="hora-fim" placeholder="00h00"
+									name="hora-fim" required>
 							</div>
 						</div>
-						<script>
-							// <select id="select-tools"></select>							
-							$('#convenios').selectize({
-								maxItems : null,
-								valueField : 'id',
-								labelField : 'title',
-								searchField : 'title',
-								options : [ {
-									id : 1,
-									title : 'Bradesco'
-								}, {
-									id : 2,
-									title : 'Mediservice'
-								}, {
-									id : 3,
-									title : 'Blabla'
-								} ],
-								create : false
-							});
-						</script>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<label><span> Descreva quais planos destes
-									convênios atende?:</span></label>
-							<div class="form-group">
-								<textarea class="single-input" id="formacao-academica"
-									name="formacao-academica" rows="5" required> </textarea>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="control-group">
+									<label for="convenios">Convênios atendidos:</label> <select
+										id="convenios" placeholder="Começe a digitar para pesquisar"
+										required></select>
+								</div>
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label><span> Descreva quais planos destes
+										convênios atende?:</span></label>
+								<div class="form-group">
+									<textarea class="single-input" id="convenio" name="convenio"
+										rows="5" required> </textarea>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 text-center">
-							<button type="submit" name="cadastraPaciente"
-								value="cadastraMedico" class="primary-btn text-uppercase">Cadastrar</button>
+						<div class="row">
+							<div class="col-md-12 text-center">
+								<button type="submit" name="cadastraPaciente"
+									value="cadastraMedico" class="primary-btn text-uppercase">Cadastrar</button>
+							</div>
 						</div>
-					</div>
-					
-				</section>
-				<!--================Fim da Terceira Etapa =================-->
-			
-			</div>		
-			</form>	
+
+					</section>
+					<!--================Fim da Terceira Etapa =================-->
+
+				</div>
+			</form>
 			<script>
-				$("#cadastro-medico").validate();
+				
 			</script>
 		</div>
 	</section>
@@ -415,6 +341,5 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</footer>
-	
 </body>
 </html>

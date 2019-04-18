@@ -86,12 +86,8 @@ public class MedicoService {
 	 * 
 	 * @return List<Medico>
 	 */
-	public List<Medico> listarNomeMedico() {
+	public List<Medico> listaMedicos() {
 		return this.medicoDAO.findAll();
-	}
-	
-	public List<Medico> listarNomeMedico(String nome) throws IOException{
-		return medicoDAO.findByNome(nome);
 	}
 
 }

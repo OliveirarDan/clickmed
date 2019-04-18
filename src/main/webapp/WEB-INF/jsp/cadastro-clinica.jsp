@@ -86,12 +86,12 @@ $(document).ready(function(){
 							<div class="row">
 								<div class="form-group col-md-8 col-12">
 									<input type="text" class="single-input" id="fantasia"
-										name="nomeFantasia" placeholder="Nome Fantasia" required />
+										name="fantasia" placeholder="Nome Fantasia" required />
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-md-8 col-12">
-									<input type="text" class="single-input" id="razao" name="razaoSocial"
+									<input type="text" class="single-input" id="razao" name="razao"
 										placeholder="Razão Social" required />
 								</div>
 							</div>
@@ -125,7 +125,7 @@ $(document).ready(function(){
 							</div>
 							<div class="row">
 								<div class="form-group col-md-6">
-									<input type="text" class="single-input" id="rua" name="rua"
+									<input type="text" class="single-input" id="rua" name="nomeRua"
 										placeholder="Rua, Av, Logradouro" required />
 								</div>
 								<div class="form-group col-md-2">

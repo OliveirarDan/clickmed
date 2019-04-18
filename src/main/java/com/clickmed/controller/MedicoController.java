@@ -1,4 +1,4 @@
-package com.clickmed.controller;
+/*package com.clickmed.controller;
 
 import java.io.IOException;
 
@@ -18,24 +18,24 @@ public class MedicoController {
 	MedicoService medicoService;
 	
 
-	/**
+	*//**
 	 * ----TESTANDO---- Falta Testar na tela cadastro-medico
 	 * 
 	 * @param model
 	 * @return
-	 */
+	 *//*
 	@RequestMapping(value = "/novoMedico", method = RequestMethod.GET)
 	public String novoMedico(ModelMap model) {
 		return "cadastro-medico";
 	}
 
-	/**
+	*//**
 	 * ----TESTANDO---- Falta criar tela cadastro-medico
 	 * 
 	 * @param medico
 	 * @param model
 	 * @return
-	 */
+	 *//*
 	@RequestMapping(value = "/cadastraMedico", method = { RequestMethod.POST })
 	public String cadastraMedico(Medico medico, ModelMap model) {
 		try {
@@ -47,22 +47,22 @@ public class MedicoController {
 	}
 
 	
-	/**
+	*//**
 	 * ----TESTANDO----	Falta criar tela medicos
 	 * @param model
 	 * @return
-	 */
+	 *//*
 	@RequestMapping(value = "/listaMedicos", method = RequestMethod.GET)
 	private String listaMedicos(ModelMap model) {
 		model.put("medicos", this.medicoService.listaMedicos());
 		return "medicos";
 	}
 	
-	/**
+	*//**
 	 * ----TESTANDO----	Falta criar tela edicao-medico
 	 * @param model
 	 * @return
-	 */
+	 *//*
 	@RequestMapping(value = "/selecionaMedico", method = RequestMethod.POST)
 	public String selecionaMedico(Medico medico, ModelMap model) {
 		medico = medicoService.buscaMedico(medico.getId());
@@ -73,14 +73,14 @@ public class MedicoController {
 	
 	
 	
-	/**
+	*//**
 	 * ----TESTANDO----
 	 * -----ATENçÃO------
 	 * Neste método é necessário ter todos os dados do medico antes de modificalo no BD,
 	 * Você pode usar uma variável nMedico para carregar os itens pelo id e depois altera-lo.
 	 * Ou pode pegar a entidade completa da VIEW.
 	 * 
-	 */
+	 *//*
 	@RequestMapping(value = "/salvaMedico", method = { RequestMethod.POST })
 	public String salvaMedico(ModelMap model, Medico medico) throws IOException {
 		//nMedico criada para armazenar o medico atualizado da View temporariamente		
@@ -102,3 +102,4 @@ public class MedicoController {
 	
 	
 }
+*/

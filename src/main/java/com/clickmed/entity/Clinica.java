@@ -26,8 +26,8 @@ public class Clinica {
 	private String razaoSocial;
 	@Column(unique = true, length = 14)
 	private String cnpj;
-	private String telefone1;
-	private String telefone2;
+	private int telefone1;
+	private int telefone2;
 	private String cep;
 	private String cidade;
 	private String estado;
@@ -47,7 +47,7 @@ public class Clinica {
 		super();
 	}
 
-	public Clinica(Long id, String nomeFantasia, @NotNull String razaoSocial, String cnpj, String telefone1, String telefone2,
+	public Clinica(Long id, String nomeFantasia, @NotNull String razaoSocial, String cnpj, int telefone1, int telefone2,
 			String cidade, String estado, String rua, String numero, String site, String email, String localAtendimento,
 			String foto, List<Medico> medicos) {
 		super();
@@ -84,11 +84,11 @@ public class Clinica {
 		return cnpj;
 	}
 
-	public String getTelefone1() {
+	public int getTelefone1() {
 		return telefone1;
 	}
 
-	public String getTelefone2() {
+	public int getTelefone2() {
 		return telefone2;
 	}
 
@@ -148,11 +148,11 @@ public class Clinica {
 		this.cnpj = cnpj;
 	}
 
-	public void setTelefone1(String telefone1) {
+	public void setTelefone1(int telefone1) {
 		this.telefone1 = telefone1;
 	}
 
-	public void setTelefone2(String telefone2) {
+	public void setTelefone2(int telefone2) {
 		this.telefone2 = telefone2;
 	}
 

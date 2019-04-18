@@ -71,7 +71,7 @@ $(document).ready(function(){
 			<div class="row">
 				<div class="col-md-12">
 					<span>
-						<h3>Cadastre a sua clínica</h3>
+						<h3>Edite a clínica </h3>
 					</span>
 				</div>
 			</div>
@@ -81,72 +81,74 @@ $(document).ready(function(){
 			<!--================Início dos campos de Cadastro =================-->
 			<div class="row">
 				<div class="col-lg-12">
-					<form class="row contact_form" action="cadastraClinica" method="post" id="cadastro-clinica">
+					<form class="row contact_form" action="salvaClinica" method="post" id="cadastro-clinica">
 						<div class="col-md-12">
 							<div class="row">
 								<div class="form-group col-md-8 col-12">
+								<input type="hidden" class="single-input" id="id"
+										name="id" placeholder="Nome Fantasia" value="${clinica.id}" required />
 									<input type="text" class="single-input" id="fantasia"
-										name="nomeFantasia" placeholder="Nome Fantasia" required />
+										name="nomeFantasia" placeholder="Nome Fantasia" value="${clinica.nomeFantasia}" required />
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-md-8 col-12">
-									<input type="text" class="single-input" id="razao" name="razaoSocial"
-										placeholder="Razão Social" required />
+									<input type="text" class="single-input" id="razao"  name="razaoSocial"
+										placeholder="Razão Social" value="${clinica.razaoSocial}"required />
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-md-4 col-12">
 									<input type="text" class="single-input cnpj" id="cnpj"
-										name="cnpj" placeholder="CNPJ" required />
+										name="cnpj" value="${clinica.cnpj}"placeholder="CNPJ" required />
 								</div>
 								<div class="form-group col-md-4 col-12">
 									<input type="email" class="single-input" id="email"
-										name="email" placeholder="E-mail de atendimento" required />
+										name="email" placeholder="E-mail de atendimento" value="${clinica.email}"required />
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-md-4 col-12">
 									<input type="tel" class="single-input tel1" id="telresidencial"
-										name="telefone1" placeholder="Telefone principal"
+										name="telefone1" placeholder="Telefone principal" value="${clinica.telefone1}"
 										required />
 								</div>
 								<div class="form-group col-md-4 col-12">
 									<input type="tel" class="single-input tel1" id="telcelular"
-										name="telefone2" placeholder="Outro telefone"
+										name="telefone2" placeholder="Outro telefone" value="${clinica.telefone2}"
 										/>
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-md-2 col-12">
 									<input type="text" class="single-input cep" id="cep" name="cep"
-										placeholder="CEP" required />
+										placeholder="CEP" value="${clinica.cep}" required />
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-md-6">
 									<input type="text" class="single-input" id="rua" name="rua"
-										placeholder="Rua, Av, Logradouro" required />
+										placeholder="Rua, Av, Logradouro" value="${clinica.rua}" required />
 								</div>
 								<div class="form-group col-md-2">
 									<input type="text" class="single-input" id="numero"
-										name="numero" placeholder="Nº" maxlength="5" required />
+										name="numero" placeholder="Nº" maxlength="5" value="${clinica.numero}" required />
 								</div>
 							</div>
 							<div class="row">
 								<div class="form-group col-md-6">
 									<input type="text" class="single-input" id="cidade"
-										name="cidade" placeholder="Cidade" required />
+										name="cidade" placeholder="Cidade"value="${clinica.cidade}" required />
 								</div>
 								<div class="form-group col-md-2">
-									<input type="text" class="single-input" id="uf" name="estado"
+									<input type="text" class="single-input" id="uf" name="estado" value="${clinica.estado}"
 										placeholder="UF" maxlength="2" required />
 								</div>
 							</div>
 						</div>
 						<div class="col-md-12 text-center">
 							<button type="submit" name="cadastraClinica"
-								value="cadastraClinica" class="primary-btn text-uppercase">Cadastrar</button>
+								value="salvaClinica" class="primary-btn text-uppercase">Salvar</button>
 						</div>
 					</form>
 				</div>

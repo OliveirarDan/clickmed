@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `clickmed_db`.`usuarios` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `UK_kfsp0s1tflm1cwlj8idhqsad0` (`email` ASC))
 ENGINE = InnoDB
-AUTO_INCREMENT = 13
+AUTO_INCREMENT = 20
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `clickmed_db`.`clinicas` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `cep` VARCHAR(255) NULL DEFAULT NULL,
   `cidade` VARCHAR(255) NULL DEFAULT NULL,
-  `cnpj` VARCHAR(14) NULL DEFAULT NULL,
+  `cnpj` VARCHAR(30) NULL DEFAULT NULL,
   `email` VARCHAR(255) NULL DEFAULT NULL,
   `estado` VARCHAR(255) NULL DEFAULT NULL,
   `foto` VARCHAR(255) NULL DEFAULT NULL,
@@ -74,12 +74,13 @@ CREATE TABLE IF NOT EXISTS `clickmed_db`.`clinicas` (
   `razaoSocial` VARCHAR(255) NOT NULL,
   `rua` VARCHAR(255) NULL DEFAULT NULL,
   `site` VARCHAR(255) NULL DEFAULT NULL,
-  `telefone1` INT(11) NOT NULL,
-  `telefone2` INT(11) NOT NULL,
+  `telefone1` VARCHAR(20) NOT NULL,
+  `telefone2` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `UK_61qxyvlu93rcr1pa9auc7l68k` (`razaoSocial` ASC),
   UNIQUE INDEX `UK_4grrphddw3v9abj71t6or7190` (`cnpj` ASC))
 ENGINE = InnoDB
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -110,6 +111,7 @@ CREATE TABLE IF NOT EXISTS `clickmed_db`.`convenios` (
   `nome` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -168,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `clickmed_db`.`pacientes` (
     FOREIGN KEY (`usuario_id`)
     REFERENCES `clickmed_db`.`usuarios` (`id`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 11
+AUTO_INCREMENT = 17
 DEFAULT CHARACTER SET = utf8;
 
 

@@ -140,7 +140,7 @@ Wizard
     color: #fff;
 }
 
-.wizard > .content
+..wizard > .content
 {
     display: block;
     margin: 0.5em;
@@ -165,9 +165,10 @@ Wizard
 {
     float: left;
     width: 100%;
-    height: 95%;
-    position: absolute;
+    position: relative;
+    padding:10px;
 }
+
 
 .wizard > .content > .body ul
 {
@@ -217,6 +218,7 @@ Wizard
     display: block;
     text-align: right;
     width: 100%;
+    /* margin-top: -415px; */
 }
 
 .wizard.vertical > .actions

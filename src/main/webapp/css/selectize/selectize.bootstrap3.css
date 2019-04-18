@@ -142,7 +142,7 @@
   display: inline-block;
   width: 100%;
   overflow: hidden;
-  position: relative;
+  /* position: relative; */
   z-index: 1;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

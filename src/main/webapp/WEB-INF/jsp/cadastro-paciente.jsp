@@ -19,25 +19,45 @@
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/popper.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mask.min.js"></script>
-<script src="js/stellar.js"></script>
+<script src="js/jquery.mask.js"></script>
 <script src="js/theme.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/javascript.js"></script>
+
+<!-- Main JS -->
+<script src="js/javascript.js"></script>
+
 
 <!-- JS Opcional  -->
 <script type="text/javascript">
-$(document).ready(function(){
-	  $('.data').mask('11/11/1111', {reverse: true});
-	  $('.time').mask('00:00:00' , {reverse: true});
-	  $('.date_time').mask('00/00/0000 00:00:00' , {reverse: true});
-	  $('.cep').mask('00000-000', {reverse: true});
-	  $('.tel1').mask('(00) 0000-0000');
-	  $('.tel2').mask('(00) 00000-0000');
-	  $('.phone_us').mask('(000) 000-0000', {reverse: true});
-	  $('.mixed').mask('AAA 000-S0S', {reverse: true});
-	  $('.cpf').mask('000.000.000-00', {reverse: true});
-	  $('.money').mask('000.000.000.000.000,00', {reverse: true});
+	$(document).ready(function() {
+		$('.data').mask('11/11/1111', {
+			reverse : true
+		});
+		$('.time').mask('00:00:00', {
+			reverse : true
+		});
+		$('.date_time').mask('00/00/0000 00:00:00', {
+			reverse : true
+		});
+		$('.cep').mask('00000-000', {
+			reverse : true
+		});
+		$('.tel1').mask('(00) 0000-0000');
+		$('.tel2').mask('(00) 00000-0000');
+		$('.phone_us').mask('(000) 000-0000', {
+			reverse : true
+		});
+		$('.mixed').mask('AAA 000-S0S', {
+			reverse : true
+		});
+		$('.cpf').mask('000.000.000-00', {
+			reverse : true
+		});
+		$('.money').mask('000.000.000.000.000,00', {
+			reverse : true
+		});
 	});
 </script>
 
@@ -50,8 +70,7 @@ $(document).ready(function(){
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-lg-4 col-4 header-left">
-						<a class="" href="index.jsp"> <i
-							class="fa fa-chevron-circle-left"></i>
+						<a class="" href="/"> <i class="fa fa-chevron-circle-left"></i>
 						</a>
 					</div>
 					<div class="col-md-8 col-lg-8 col-8 header-right">
@@ -61,10 +80,7 @@ $(document).ready(function(){
 			</div>
 		</section>
 	</header>
-
 	<!--================ Final Header Area =================-->
-
-
 	<!--================Início do Cadastro =================-->
 	<section class="contact_area section_gap">
 		<div class="container">
@@ -76,8 +92,6 @@ $(document).ready(function(){
 					</span>
 				</div>
 			</div>
-
-
 			<!--================Fim da Paginação Cadastro =================-->
 			<!--================Início dos campos de Cadastro =================-->
 			<div class="row">
@@ -101,9 +115,10 @@ $(document).ready(function(){
 											name="usuario.email" placeholder="E-mail (login)" required />
 									</div>
 									<div class="form-group">
-										<input type="cpf" class="single-input cpf" id="cpf"
-											name="cpf" placeholder="CPF" required />
+										<input type="cpf" class="single-input cpf" id="cpf" name="cpf"
+											placeholder="CPF" required />
 									</div>
+									<input class="profile-pic" id="permissao" name="foto" id="foto" value="">
 								</div>
 								<!-- Foto de perfil -->
 								<div class="col-md-4 col-6">
@@ -111,7 +126,7 @@ $(document).ready(function(){
 										<div class="foto-circle">
 											<!-- User Profile Image -->
 											<img class="profile-pic" src="img/person.jpg">
-
+											
 											<!-- Default Image -->
 											<i class="fa fa-user fa-5x"></i>
 										</div>
@@ -146,13 +161,11 @@ $(document).ready(function(){
 								</div>
 								<div class="form-group col-md-4">
 									<input type="tel" class="single-input tel1" id="telresidencial"
-										name="telefone1" placeholder="Telefone residencial"
-										required />
+										name="telefone1" placeholder="Telefone residencial" required />
 								</div>
 								<div class="form-group col-md-4">
 									<input type="tel" class="single-input tel2" id="telcelular"
-										name="telefone2" placeholder="Telefone celular"
-										required />
+										name="telefone2" placeholder="Telefone celular" required />
 								</div>
 								<div class="form-group col-md-2">
 									<input type="text" class="single-input cep" id="cep" name="cep"
@@ -187,7 +200,7 @@ $(document).ready(function(){
 						</div>
 						<div class="form-group">
 							<input type="hidden" class="single-input" id="permissao"
-								name="usuario.permissao" value="paciente" >
+								name="usuario.permissao" value="paciente">
 						</div>
 						<div class="col-md-12 text-center">
 							<button type="submit" name="cadastraPaciente"
@@ -198,9 +211,7 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</section>
-	<!--================Fim dos campos de Cadastro =================-->
 	<!--================Fim do Cadastro =================-->
-
 	<!--================ Começo Area Rodapé  =================-->
 	<footer class="footer-bottom">
 		<div class="container">

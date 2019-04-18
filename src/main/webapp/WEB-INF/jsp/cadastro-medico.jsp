@@ -29,8 +29,6 @@
 <script src="js/jquery.validate.js"></script>
 <script src="js/javascript.js"></script>
 
-
-
 <!-- JS Opcional  -->
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -40,7 +38,7 @@
 		$('.time').mask('00:00:00', {
 			reverse : true
 		});
-		$('.time').mask('00h00', {
+		$('.hora').mask('00:00', {
 			reverse : true
 		});
 		$('.cep').mask('00000-000', {
@@ -74,12 +72,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-lg-4 col-4 header-left">
-						<a class="" href="index.jsp"> <i
+						<a href="/"> <i
 							class="fa fa-chevron-circle-left"></i>
 						</a>
 					</div>
 					<div class="col-md-8 col-lg-8 col-8 header-right">
-						<span class="header-title"><h2>Cadastro</h2></span>
+						<span class="header-title">Cadastro</span>
 					</div>
 				</div>
 			</div>
@@ -94,9 +92,7 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<span>
-						<h3>Crie sua conta</h3>
-					</span>
+					<h3>Crie sua conta</h3>
 				</div>
 			</div>
 			<!--================Início da Paginação de Cadastro =================-->
@@ -125,7 +121,7 @@
 										<div class="col-md-4">
 											<div class="form-group">
 												<input type="number" class="single-input required" id="crm"
-													name="crm" placeholder="CRM" maxlength="8">
+													name="crm" placeholder="CRM" minlenght="7" maxlength="13">
 											</div>
 										</div>
 									</div>
@@ -205,7 +201,7 @@
 								<div class="control-group">
 									<label for="especialidades">Especilidades:</label> <select
 										id="especialidades"
-										placeholder="Começe a digitar para pesquisar"></select>
+										placeholder="Começe a digitar para pesquisar" required></select>
 								</div>
 							</div>
 
@@ -215,7 +211,7 @@
 								<label><span> Formação acadêmica:</span></label>
 								<div class="form-group">
 									<textarea class="single-input" id="formacao-academica"
-										name="formacao-academica" rows="5" required> </textarea>
+										name="formacao-academica" rows="5"> </textarea>
 								</div>
 							</div>
 						</div>
@@ -224,7 +220,7 @@
 								<label><span> Experiência profissional:</span></label>
 								<div class="form-group">
 									<textarea class="single-input" id="experiencia-profissional"
-										name="experiencia-profissional" rows="5" required> </textarea>
+										name="experiencia-profissional" rows="5"> </textarea>
 								</div>
 							</div>
 						</div>
@@ -255,13 +251,12 @@
 
 						<div class="row">
 							<div class="form-group col-md-4">
-								<input type="tel" class="single-input tel1" id="telprimario"
-									name="telprimario" placeholder="Telefone principal" required>
+								<input type="tel" class="single-input tel1 required" id="telprimario"
+									name="telprimario" placeholder="Telefone principal">
 							</div>
 							<div class="form-group col-md-4">
 								<input type="tel" class="single-input tel1" id="telsecundario"
-									name="telsecundario" placeholder="Outro telefone (caso possua)"
-									required>
+									name="telsecundario" placeholder="Outro telefone (caso possua)">
 							</div>
 						</div>
 						<div class="row">
@@ -274,14 +269,14 @@
 							</div>
 
 							<div class="form-group col-md-2">
-								<label for="hora-inicio">Hora de início:</label> <input
-									type="text" class="single-input hora" id="hora-inicio"
-									name="hora-inicio" placeholder="00h00" required>
+								<label for="hora-inicio">Início</label> <input
+									type="text" class="single-input hora required" id="hora-inicio"
+									name="hora-inicio" placeholder="00h00">
 							</div>
 							<div class="form-group col-md-2">
 								<label for="hora-fim">Até:</label> <input type="text"
-									class="single-input hora" id="hora-fim" placeholder="00h00"
-									name="hora-fim" required>
+									class="single-input hora required" id="hora-fim" placeholder="00h00"
+									name="hora-fim">
 							</div>
 						</div>
 						<div class="row">
@@ -299,8 +294,8 @@
 								<label><span> Descreva quais planos destes
 										convênios atende?:</span></label>
 								<div class="form-group">
-									<textarea class="single-input" id="convenio" name="convenio"
-										rows="5" required> </textarea>
+									<textarea class="single-input required" id="convenio" name="convenio"
+										rows="5"> </textarea>
 								</div>
 							</div>
 						</div>

@@ -1,9 +1,11 @@
-/**
+/* ClickMed personal JavaScript
  * 
  */
 
-
 $(document).ready(function() {
+	
+	
+	/*Chamada e configurações do Steps e Validate*/
 	var form = $("#cadastro-medico");
 
 	form.children("div").steps({
@@ -12,7 +14,6 @@ $(document).ready(function() {
 		transitionEffect : "slideLeft",
 		onStepChanging: function (event, currentIndex, newIndex)
 		{
-			console.log(form);
 			form.validate().settings.ignore = ":disabled,:hidden";
 			return form.valid();
 		},
@@ -27,6 +28,7 @@ $(document).ready(function() {
 		}
 	});
 	
+	/*Chamada do validate e regras de cada campo e mensagens personalizadas.*/
 	$("#cadastro-medico").validate({
 		rules: {
 			email: {
@@ -34,14 +36,14 @@ $(document).ready(function() {
 				email: true,
 			},
 			nome: {
-
+				
 			}
 		},
 		messages: {		
-		
 		}
 	});
 	
+	/*Selectize: criação dos arrays dos campos*/
 	$('#dia-atendimento').selectize({
 		maxItems : null,
 		valueField : 'id',

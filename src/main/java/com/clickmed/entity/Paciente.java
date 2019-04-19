@@ -1,6 +1,5 @@
 package com.clickmed.entity;
 
-import java.sql.Blob;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -39,7 +38,7 @@ public class Paciente {
 	private String nomeRua;
 	private String numero;
 	private String cep;
-	private Blob foto;
+	private String foto;
 
 	@OneToOne
 	private Usuario usuario;
@@ -57,7 +56,7 @@ public class Paciente {
 	
 	public Paciente(Long id, @NotNull String cpf, @NotNull String nome, @NotNull String sobrenome, String sexo,
 			Date dataNascimento, String telefone1, String telefone2, String cidade, String estado, String nomeRua,
-			String numero, String cep, Blob foto, Usuario usuario) {
+			String numero, String cep, String foto, Usuario usuario) {
 		super();
 		this.id = id;
 		this.cpf = cpf;
@@ -128,7 +127,7 @@ public class Paciente {
 		return cep;
 	}
 
-	public Blob getFoto() {
+	public String getFoto() {
 		return foto;
 	}
 
@@ -188,7 +187,7 @@ public class Paciente {
 		this.cep = cep;
 	}
 
-	public void setFoto(Blob foto) {
+	public void setFoto(String foto) {
 		this.foto = foto;
 	}
 

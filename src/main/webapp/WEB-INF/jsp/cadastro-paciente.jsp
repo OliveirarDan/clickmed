@@ -23,11 +23,8 @@
 <script src="js/jquery.mask.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/jquery.validate.js"></script>
-<script src="js/javascript.js"></script>
 
 <!-- Main JS -->
-<script src="js/javascript.js"></script>
-
 
 <!-- JS Opcional  -->
 <script type="text/javascript">
@@ -118,7 +115,7 @@
 										<input type="cpf" class="single-input cpf" id="cpf" name="cpf"
 											placeholder="CPF" required />
 									</div>
-									<input class="profile-pic" id="permissao" name="foto" id="foto" value="">
+									<input type="hidden" class="foto" id="foto" name="foto" value=""/>
 								</div>
 								<!-- Foto de perfil -->
 								<div class="col-md-4 col-6">
@@ -165,7 +162,7 @@
 								</div>
 								<div class="form-group col-md-4">
 									<input type="tel" class="single-input tel2" id="telcelular"
-										name="telefone2" placeholder="Telefone celular" required />
+										name="telefone2" placeholder="Telefone celular"/>
 								</div>
 								<div class="form-group col-md-2">
 									<input type="text" class="single-input cep" id="cep" name="cep"

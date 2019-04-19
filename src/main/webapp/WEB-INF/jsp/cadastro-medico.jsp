@@ -23,11 +23,11 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.mask.js"></script>
-<script src="js/theme.js"></script>
 <script src="js/steps/jquery.steps.js"></script>
 <script src="js/selectize/selectize.js"></script>
 <script src="js/jquery.validate.js"></script>
 <script src="js/javascript.js"></script>
+<script src="js/theme.js"></script>
 
 <!-- JS Opcional  -->
 <script type="text/javascript">
@@ -77,7 +77,7 @@
 						</a>
 					</div>
 					<div class="col-md-8 col-lg-8 col-8 header-right">
-						<span class="header-title">Cadastro</span>
+						<span class="header-title"><h2>Cadastro</h2></span>
 					</div>
 				</div>
 			</div>
@@ -121,7 +121,7 @@
 										<div class="col-md-4">
 											<div class="form-group">
 												<input type="number" class="single-input required" id="crm"
-													name="crm" placeholder="CRM" minlenght="7" maxlength="13">
+													name="crm" placeholder="CRM" minlength="7" maxlength="13">
 											</div>
 										</div>
 									</div>
@@ -140,6 +140,7 @@
 												<input type="email" class="single-input required" id="email"
 													name="email" placeholder="E-mail (login)">
 											</div>
+											<input type="hidden" class="foto" id="foto" name="foto" value=""/>
 										</div>
 										<!-- Foto de perfil -->
 										<div class="col-md-4 col-6">
@@ -163,7 +164,7 @@
 										<label class="col-md-12 required" for="radios">Gênero</label>
 										<div class="col-md-8">
 											<label class="radio-inline" for="radios-0"> <input
-												type="radio" name="radios" id="radios-0" value="1">
+												type="radio" name="radios" id="radios-0" value="1" required>
 												Masculino
 											</label> <label class="radio-inline" for="radios-1"> <input
 												type="radio" name="radios" id="radios-1" value="2">
@@ -243,7 +244,7 @@
 							<div class="form-group col-md-12">
 								<div class="control-group">
 									<span>Não encontrou sua clínica ou consultório? <a
-										href=""> Clique aqui e cadastre.</a>
+										href="/cadastro-clinica"> Clique aqui e cadastre.</a>
 									</span>
 								</div>
 							</div>
@@ -251,12 +252,12 @@
 
 						<div class="row">
 							<div class="form-group col-md-4">
-								<input type="tel" class="single-input tel1 required" id="telprimario"
-									name="telprimario" placeholder="Telefone principal">
+								<input type="tel" class="single-input tel1 required" id="telefone1"
+									name="telefone1" placeholder="Telefone principal">
 							</div>
 							<div class="form-group col-md-4">
-								<input type="tel" class="single-input tel1" id="telsecundario"
-									name="telsecundario" placeholder="Outro telefone (caso possua)">
+								<input type="tel" class="single-input tel1" id="telefone2"
+									name="telefone2" placeholder="Outro telefone (caso possua)">
 							</div>
 						</div>
 						<div class="row">

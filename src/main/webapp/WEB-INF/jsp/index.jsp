@@ -37,7 +37,8 @@
 <script src="js/mail-script.js"></script>
 
 <!--gmaps Js-->
-<script	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+<script
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="js/gmaps.min.js"></script>
 <script src="js/theme.js"></script>
 </head>
@@ -440,11 +441,6 @@
 							</p>
 						</div>
 					</div>
-					<div class="col-lg-5  col-md-6 col-sm-6">
-						<div class="single-footer-widget">
-							<a href="#" class="primary-btn text-uppercase">Entrar</a>
-						</div>
-					</div>
 				</div>
 
 			</div>
@@ -482,10 +478,10 @@
 							<div class="form loginBox">
 								<form method="" action="" accept-charset="UTF-8">
 									<input id="email" class="form-control" type="text"
-										placeholder="E-mail" name="email">
-									 <input	id="password" class="form-control" type="password"
-										placeholder="Senha" name="password"> 
-									<input class="btn btn-default btn-login" type="button" value="Login"
+										placeholder="E-mail" name="email"> <input
+										id="password" class="form-control" type="password"
+										placeholder="Senha" name="password"> <input
+										class="btn btn-default btn-login" type="button" value="Login"
 										onclick="">
 								</form>
 								<span><p>
@@ -513,11 +509,9 @@
 							<span>Ainda não possui um cadastro?</span>
 						</div>
 
-						<span><p>
-								Cadastre-se como <a href="cadastro-paciente.jsp">paciente.</a>
-							</p> </span> <span><p>
-								Ou como <a href="cadastro-profissional.jsp">profissional.</a>
-							</p> </span>
+						<span> Cadastre-se como <a href="/novoPaciente">paciente.</a>
+						</span><br> <span> Ou como <a href="/novoMedico">profissional.</a>
+						</span>
 					</div>
 				</div>
 			</div>

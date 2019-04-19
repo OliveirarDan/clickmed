@@ -9,8 +9,8 @@
 
 				reader.onload = function (e) {
 					$('.profile-pic').attr('src', e.target.result);
+					$('.foto').attr('value', e.target.result);
 				}
-
 				reader.readAsDataURL(input.files[0]);
 			}
 		}
@@ -69,10 +69,10 @@
 	/*----------------------------------------------------*/
 	/*  Simple LightBox js
     /*----------------------------------------------------*/
-	$(".counter_number").counterUp({
+	/*$(".counter_number").counterUp({
 		delay: 10,
 		time: 1000
-	});
+	});*/
 
 	/*----------------------------------------------------*/
 	/*  Google map js

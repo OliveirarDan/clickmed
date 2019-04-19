@@ -132,7 +132,7 @@
 									<div class="center">
 										<div class="foto-circle">
 											<!-- User Profile Image -->
-											<img class="profile-pic" src="img/person.jpg">
+											<img class="profile-pic" src="${paciente.foto}">
 
 											<!-- Default Image -->
 											<i class="fa fa-user fa-5x"></i>

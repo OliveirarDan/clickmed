@@ -19,10 +19,7 @@ public class MedicoController {
 	
 
 	/**
-	 * ----TESTANDO---- Falta Testar na tela cadastro-medico
-	 * 
-	 * @param model
-	 * @return
+	 * ok
 	 */
 	@RequestMapping(value = "/novoMedico", method = RequestMethod.GET)
 	public String novoMedico(ModelMap model) {
@@ -30,14 +27,12 @@ public class MedicoController {
 	}
 
 	/**
-	 * ----TESTANDO---- Falta criar tela cadastro-medico
-	 * 
-	 * @param medico
-	 * @param model
-	 * @return
+	 * ok
 	 */
 	@RequestMapping(value = "/cadastraMedico", method = { RequestMethod.POST })
 	public String cadastraMedico(Medico medico, ModelMap model) {
+		System.out.println(medico.toString());
+		
 		try {
 			System.out.println(medico);
 			medicoService.insereMedico(medico);
@@ -49,14 +44,12 @@ public class MedicoController {
 
 	
 	/**
-	 * ----TESTANDO----	Falta criar tela medicos
-	 * @param model
-	 * @return
+	 * ok
 	 */
 	@RequestMapping(value = "/listaMedicos", method = RequestMethod.GET)
 	private String listaMedicos(ModelMap model) {
 		model.put("medicos", this.medicoService.listaMedicos());
-		return "medicos";
+		return "/teste/medico/medicos";
 	}
 	
 	/**

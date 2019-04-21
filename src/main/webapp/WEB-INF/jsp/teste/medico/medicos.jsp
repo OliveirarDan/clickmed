@@ -7,23 +7,21 @@
 </head>
 <body>
 
-	<h1>Selecione uma Clí­nica:</h1>
+	<h1>Selecione um Médico:</h1>
 
-	<form class="row contact_form" action="selecionaClinica" method="post"
+	<form class="row contact_form" action="selecionaMedico" method="post"
 		id="cadastro-paciente">
 
 
-		<c:forEach items="${clinicas}" var="c">
+		<c:forEach items="${medicos}" var="m">
 			<label class="radio-inline" for="radios-0"> <input
-				type="radio" name="id" id="radios-0" value="${c.id}"> ID:
-				${c.id} || ${c.nomeFantasia} || ${c.cnpj} <br>
+				type="radio" name="id" id="radios-0" value="${m.id}">
+				ID: ${m.id} || Nome: ${m.nome} <br>
 		</c:forEach>
 
-
-		<br>
 		<div class="col-md-12 text-center">
 			<button type="submit" name="selecionaPaciente"
-				value="selecionaClinica" class="primary-btn text-uppercase">Selecionar</button>
+				value="selecionaPaciente" class="primary-btn text-uppercase">Selecionar</button>
 		</div>
 
 	</form>

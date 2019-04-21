@@ -54,7 +54,7 @@ $(document).ready(function(){
 						</a>
 					</div>
 					<div class="col-md-8 col-lg-8 col-8 header-right">
-						<span class="header-title"><h2>Cadastro - Clínica</h2></span>
+						<span class="header-title"><h2>Edição - Clínica</h2></span>
 					</div>
 				</div>
 			</div>

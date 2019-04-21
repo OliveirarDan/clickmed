@@ -5,7 +5,7 @@
 $(document).ready(function() {
 	
 	
-	/*Chamada e configurações do Steps e Validate*/
+	/* Chamada e configurações do Steps e Validate */
 	var form = $("#cadastro-medico");
 
 	form.children("div").steps({
@@ -28,7 +28,7 @@ $(document).ready(function() {
 //		}
 	});
 	
-	/*Chamada do validate e regras de cada campo e mensagens personalizadas.*/
+	/* Chamada do validate e regras de cada campo e mensagens personalizadas. */
 	$("#cadastro-medico").validate({
 		rules: {
 			email: {
@@ -44,64 +44,14 @@ $(document).ready(function() {
 			cpf: { 
 				cpf: 'CPF inválido'
 			}
-	      },
-//	      submitHandler:function(form) {
-//	         alert('ok');
-//	      }
-	});
-	
-	$("#cadastro-paciente").validate({
-		rules: {
-			email: {
-				required: true,
-				email: true,
-			},
-			cpf: {
-				cpf: true, 
-				required: true
-			}
-		},
-		messages: {		
-			cpf: { 
-				cpf: 'CPF inválido'
-			}
-	      },submitHandler:function(form) {
-	         alert('ok');
 	      }
+
 	});
 	
-	/*validate.addMethod("cpf", function(value, element) {
-		   value = jQuery.trim(value);
-
-		    value = value.replace('.','');
-		    value = value.replace('.','');
-		    cpf = value.replace('-','');
-		    while(cpf.length < 11) cpf = "0"+ cpf;
-		    var expReg = /^0+$|^1+$|^2+$|^3+$|^4+$|^5+$|^6+$|^7+$|^8+$|^9+$/;
-		    var a = [];
-		    var b = new Number;
-		    var c = 11;
-		    for (i=0; i<11; i++){
-		        a[i] = cpf.charAt(i);
-		        if (i < 9) b += (a[i] * --c);
-		    }
-		    if ((x = b % 11) < 2) { a[9] = 0 } else { a[9] = 11-x }
-		    b = 0;
-		    c = 11;
-		    for (y=0; y<10; y++) b += (a[y] * c--);
-		    if ((x = b % 11) < 2) { a[10] = 0; } else { a[10] = 11-x; }
-
-		    var retorno = true;
-		    if ((cpf.charAt(9) != a[9]) || (cpf.charAt(10) != a[10]) || cpf.match(expReg)) retorno = false;
-
-		    return this.optional(element) || retorno;
-
-		}, "Informe um CPF válido");*/
-	
-	/*Selectize: criação dos arrays dos campos*/
-	$('#dia-atendimento').selectize({
+	/* Selectize: criação dos arrays dos campos */
+	$('#diasAtendimento').selectize({
 		maxItems : null,
-		valueField : 'id',
+		valueField : 'title',
 		labelField : 'title',
 		searchField : 'title',
 		options : [ {
@@ -129,10 +79,10 @@ $(document).ready(function() {
 		create : false
 	});
 
-	$('#local-atendimento').selectize(
+	$('#localAtendimento').selectize(
 			{
 				maxItems : 1,
-				valueField : 'id',
+				valueField : 'title',
 				labelField : 'title',
 				searchField : 'title',
 				options : [
@@ -172,9 +122,9 @@ $(document).ready(function() {
 		create : false
 	});
 
-	$('#especialidades').selectize({
-		maxItems : null,
-		valueField : 'id',
+	$('#especialidade').selectize({
+		maxItems : 3,
+		valueField : 'title',
 		labelField : 'title',
 		searchField : 'title',
 		options : [ {
@@ -187,7 +137,10 @@ $(document).ready(function() {
 			id : 3,
 			title : 'Psicólogo'
 		} ],
+
+		onChange: function(value) {
+			$('#especialidade').attr('value', value);
+	    },
 		create : false
 	});
-	
 });

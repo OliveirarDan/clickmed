@@ -29,9 +29,9 @@
 <!-- JS Opcional  -->
 <script type="text/javascript">
 	$(document).ready(function() {
-		$('.data').mask('11/11/1111', {
+		$('.data').mask('11/11/1111'), {
 			reverse : true
-		});
+		};
 		$('.time').mask('00:00:00', {
 			reverse : true
 		});

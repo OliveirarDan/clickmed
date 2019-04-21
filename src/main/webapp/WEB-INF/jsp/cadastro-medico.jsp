@@ -200,9 +200,8 @@
 						<div class="row">
 							<div class="col-md-12">
 								<div class="control-group">
-									<label for="especialidades">Especilidades:</label> <select
-										id="especialidades"
-										placeholder="Começe a digitar para pesquisar" required></select>
+									<label for="especialidade">Especilidades:</label> 
+									<input type="text" id="especialidade" name="especialidade" placeholder="Começe a digitar para pesquisar" value="" required/>
 								</div>
 							</div>
 
@@ -211,8 +210,8 @@
 							<div class="col-md-12">
 								<label><span> Formação acadêmica:</span></label>
 								<div class="form-group">
-									<textarea class="single-input" id="formacao-academica"
-										name="formacao-academica" rows="5"> </textarea>
+									<textarea class="single-input" id="formacaoAcademica"
+										name="formacaoAcademica" rows="5"> </textarea>
 								</div>
 							</div>
 						</div>
@@ -220,8 +219,8 @@
 							<div class="col-md-12">
 								<label><span> Experiência profissional:</span></label>
 								<div class="form-group">
-									<textarea class="single-input" id="experiencia-profissional"
-										name="experiencia-profissional" rows="5"> </textarea>
+									<textarea class="single-input" id="experienciaProfissional"
+										name="experienciaProfissional" rows="5"> </textarea>
 								</div>
 							</div>
 						</div>
@@ -233,9 +232,10 @@
 						<div class="row">
 							<div class="form-group col-md-12">
 								<div class="control-group">
-									<label for="local-atendimento">Selecione qual o seu
-										local de atendimento</label> <select id="local-atendimento"
-										placeholder="Começe a digitar para pesquisar" required></select>
+									<label for="localAtendimento">Selecione qual o seu
+										local de atendimento</label> 
+									<input type="text" id="localAtendimento" name="localAtendimento"
+										placeholder="Começe a digitar para pesquisar" value ="" required/>
 								</div>
 							</div>
 
@@ -263,29 +263,29 @@
 						<div class="row">
 							<div class="form-group col-md-8">
 								<div class="control-group">
-									<label for="dia-atendimento">Quais dias da semana há
-										atendimento?</label> <select id="dia-atendimento"
-										placeholder="Começe a digitar para pesquisar" required></select>
+									<label for="diasAtendimento">Quais dias da semana há
+										atendimento?</label> 
+									<input type="text" id="diasAtendimento" name="diasAtendimento"
+										placeholder="Começe a digitar para pesquisar" value="" required/>
 								</div>
 							</div>
 
 							<div class="form-group col-md-2">
-								<label for="hora-inicio">Início</label> <input
-									type="text" class="single-input hora required" id="hora-inicio"
-									name="hora-inicio" placeholder="00h00">
+								<label for="horaInicioAtendimento">Início</label> 
+								<input type="text" class="single-input hora required" id="horaInicioAtendimento"
+									name="horaInicioAtendimento" placeholder="00h00">
 							</div>
 							<div class="form-group col-md-2">
-								<label for="hora-fim">Até:</label> <input type="text"
-									class="single-input hora required" id="hora-fim" placeholder="00h00"
-									name="hora-fim">
+								<label for="horaFimAtendimento">Até:</label> 
+								<input type="text" class="single-input hora required" id="horaFimAtendimento" placeholder="00h00"
+									name="horaFimAtendimento"/>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<div class="control-group">
-									<label for="convenios">Convênios atendidos:</label> <select
-										id="convenios" placeholder="Começe a digitar para pesquisar"
-										required></select>
+									<label for="convenios">Convênios atendidos:</label> 
+									<input type="text" name="convenios" id="convenios" placeholder="Começe a digitar para pesquisar" required/>
 								</div>
 							</div>
 
@@ -295,7 +295,7 @@
 								<label><span> Descreva quais planos destes
 										convênios atende?:</span></label>
 								<div class="form-group">
-									<textarea class="single-input required" id="convenio" name="convenio"
+									<textarea class="single-input required" id="planosConvenio" name="planosConvenio"
 										rows="5"> </textarea>
 								</div>
 							</div>

@@ -22,10 +22,10 @@ $(document).ready(function() {
 			form.validate().settings.ignore = ":disabled";
 			return form.valid();
 		},
-		onFinished: function (event, currentIndex)
-		{
-			alert("Submitted!");
-		}
+//		onFinished: function (event, currentIndex)
+//		{
+//			alert("Submitted!");
+//		}
 	});
 	
 	/* Chamada do validate e regras de cada campo e mensagens personalizadas. */
@@ -45,6 +45,7 @@ $(document).ready(function() {
 				cpf: 'CPF inválido'
 			}
 	      }
+
 	});
 	
 	/* Selectize: criação dos arrays dos campos */

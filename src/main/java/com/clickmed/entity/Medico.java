@@ -67,6 +67,7 @@ public class Medico {
 	public Medico(Long id, @NotNull String crm, String nome, String sobrenome, String experienciaProfissional, String formacaoAcademica,
 			String telefone1, String telefone2, String cidade, String estado, String rua, String numero,
 			String horarioAtendimento, String horaFimAtendimento, String especialidade, String foto, Usuario usuario, List<Convenio> convenios) {
+
 		super();
 		this.id = id;
 		this.crm = crm;

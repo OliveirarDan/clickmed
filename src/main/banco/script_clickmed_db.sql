@@ -47,6 +47,7 @@ CREATE TABLE IF NOT EXISTS `clickmed_db`.`medicos` (
   `diasAtendimento` VARCHAR(255) NULL DEFAULT NULL,  
   `telefone1` VARCHAR(255) NOT NULL,
   `telefone2` VARCHAR(255) NOT NULL,
+
   `usuario_id` BIGINT(20) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `FKa0dd5a1r4o7vgnqr0aigr69td` (`usuario_id` ASC),

@@ -302,7 +302,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<button type="submit" name="cadastraPaciente"
+								<button type="submit" name="cadastraMedico1"
 									value="cadastraMedico" class="primary-btn text-uppercase">Cadastrar</button>
 							</div>
 						</div>

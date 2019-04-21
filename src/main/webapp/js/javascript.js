@@ -69,7 +69,7 @@ $(document).ready(function() {
 	      }
 	});
 	
-	$validator.addMethod("cpf", function(value, element) {
+	/*validate.addMethod("cpf", function(value, element) {
 		   value = jQuery.trim(value);
 
 		    value = value.replace('.','');
@@ -95,7 +95,7 @@ $(document).ready(function() {
 
 		    return this.optional(element) || retorno;
 
-		}, "Informe um CPF válido");
+		}, "Informe um CPF válido");*/
 	
 	/*Selectize: criação dos arrays dos campos*/
 	$('#dia-atendimento').selectize({

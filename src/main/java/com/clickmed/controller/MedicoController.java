@@ -32,9 +32,7 @@ public class MedicoController {
 	@RequestMapping(value = "/cadastraMedico", method = { RequestMethod.POST })
 	public String cadastraMedico(Medico medico, ModelMap model) {
 		System.out.println(medico.toString());
-		
 		try {
-			System.out.println(medico);
 			medicoService.insereMedico(medico);
 		} catch (IOException e) {
 			e.printStackTrace();

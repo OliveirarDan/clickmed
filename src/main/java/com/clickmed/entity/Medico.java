@@ -29,9 +29,13 @@ public class Medico {
 	private String nome;
 	private String sobrenome;
 	private String experienciaProfissional;
-	private int telefone1;
-	private int telefone2;
-	private String horarioAtendimento;
+	private String formacaoAcademica;
+	private String planosConvenio;
+	private String telefone1;
+	private String telefone2;
+	private String horaInicioAtendimento;
+	private String horaFimAtendimento;
+	private String diasAtendimento;
 	private String especialidade;
 	
 	/**
@@ -60,9 +64,9 @@ public class Medico {
 		this.usuario = usuario;
 	}
 	
-	public Medico(Long id, @NotNull String crm, String nome, String sobrenome, String experienciaProfissional,
-			int telefone1, int telefone2, String cidade, String estado, String rua, String numero,
-			String horarioAtendimento, String especialidade, String foto, Usuario usuario, List<Convenio> convenios) {
+	public Medico(Long id, @NotNull String crm, String nome, String sobrenome, String experienciaProfissional, String formacaoAcademica,
+			String telefone1, String telefone2, String cidade, String estado, String rua, String numero,
+			String horarioAtendimento, String horaFimAtendimento, String especialidade, String foto, Usuario usuario, List<Convenio> convenios) {
 		super();
 		this.id = id;
 		this.crm = crm;
@@ -71,11 +75,13 @@ public class Medico {
 		this.experienciaProfissional = experienciaProfissional;
 		this.telefone1 = telefone1;
 		this.telefone2 = telefone2;
-		this.horarioAtendimento = horarioAtendimento;
+		this.horaInicioAtendimento = horarioAtendimento;
 		this.especialidade = especialidade;
 		this.foto = foto;
 		this.usuario = usuario;
 		this.convenios = convenios;
+		this.formacaoAcademica = formacaoAcademica;
+		this.horaFimAtendimento = horaFimAtendimento; 
 	}
 
 	public Long getId() {
@@ -98,16 +104,16 @@ public class Medico {
 		return experienciaProfissional;
 	}
 
-	public int getTelefone1() {
+	public String getTelefone1() {
 		return telefone1;
 	}
 
-	public int getTelefone2() {
+	public String getTelefone2() {
 		return telefone2;
 	}
 
-	public String getHorarioAtendimento() {
-		return horarioAtendimento;
+	public String getHoraInicioAtendimento() {
+		return horaInicioAtendimento;
 	}
 
 	public String getEspecialidade() {
@@ -146,16 +152,16 @@ public class Medico {
 		this.experienciaProfissional = experienciaProfissional;
 	}
 
-	public void setTelefone1(int telefone1) {
+	public void setTelefone1(String telefone1) {
 		this.telefone1 = telefone1;
 	}
 
-	public void setTelefone2(int telefone2) {
+	public void setTelefone2(String telefone2) {
 		this.telefone2 = telefone2;
 	}
 
-	public void setHorarioAtendimento(String horarioAtendimento) {
-		this.horarioAtendimento = horarioAtendimento;
+	public void setHoraInicioAtendimento(String horarioAtendimento) {
+		this.horaInicioAtendimento = horarioAtendimento;
 	}
 
 	public void setEspecialidade(String especialidade) {
@@ -172,14 +178,46 @@ public class Medico {
 
 	public void setConvenios(List<Convenio> convenios) {
 		this.convenios = convenios;
+	}	
+
+	public String getFormacaoAcademica() {
+		return formacaoAcademica;
 	}
 
+	public void setFormacaoAcademica(String formacaoAcademica) {
+		this.formacaoAcademica = formacaoAcademica;
+	}
+	
 	@Override
 	public String toString() {
 		return "Medico [id=" + id + ", crm=" + crm + ", nome=" + nome + ", sobrenome=" + sobrenome
 				+ ", experienciaProfissional=" + experienciaProfissional + ", telefone1=" + telefone1 + ", telefone2="
-				+ telefone2  + ", horarioAtendimento=" + horarioAtendimento + ", especialidade=" + especialidade + ", foto=" + foto
+				+ telefone2  + ", horarioAtendimento=" + horaInicioAtendimento + ", especialidade=" + especialidade + ", foto=" + foto
 				+ ", usuario=" + usuario + ", convenios=" + convenios + "]";
+	}
+
+	public String getDiasAtendimento() {
+		return diasAtendimento;
+	}
+
+	public void setDiasAtendimento(String diasAtendimento) {
+		this.diasAtendimento = diasAtendimento;
+	}
+
+	public String getPlanosConvenio() {
+		return planosConvenio;
+	}
+
+	public void setPlanosConvenio(String planosConvenio) {
+		this.planosConvenio = planosConvenio;
+	}
+
+	public String getHoraFimAtendimento() {
+		return horaFimAtendimento;
+	}
+
+	public void setHoraFimAtendimento(String horaFimAtendimento) {
+		this.horaFimAtendimento = horaFimAtendimento;
 	}
 
 }

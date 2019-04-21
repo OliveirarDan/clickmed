@@ -29,8 +29,8 @@ public class Medico {
 	private String nome;
 	private String sobrenome;
 	private String experienciaProfissional;
-	private int telefone1;
-	private int telefone2;
+	private String telefone1;
+	private String telefone2;
 	private String horarioAtendimento;
 	private String especialidade;
 	
@@ -61,7 +61,7 @@ public class Medico {
 	}
 	
 	public Medico(Long id, @NotNull String crm, String nome, String sobrenome, String experienciaProfissional,
-			int telefone1, int telefone2, String cidade, String estado, String rua, String numero,
+			String telefone1, String telefone2, String cidade, String estado, String rua, String numero,
 			String horarioAtendimento, String especialidade, String foto, Usuario usuario, List<Convenio> convenios) {
 		super();
 		this.id = id;
@@ -98,11 +98,11 @@ public class Medico {
 		return experienciaProfissional;
 	}
 
-	public int getTelefone1() {
+	public String getTelefone1() {
 		return telefone1;
 	}
 
-	public int getTelefone2() {
+	public String getTelefone2() {
 		return telefone2;
 	}
 
@@ -146,11 +146,11 @@ public class Medico {
 		this.experienciaProfissional = experienciaProfissional;
 	}
 
-	public void setTelefone1(int telefone1) {
+	public void setTelefone1(String telefone1) {
 		this.telefone1 = telefone1;
 	}
 
-	public void setTelefone2(int telefone2) {
+	public void setTelefone2(String telefone2) {
 		this.telefone2 = telefone2;
 	}
 

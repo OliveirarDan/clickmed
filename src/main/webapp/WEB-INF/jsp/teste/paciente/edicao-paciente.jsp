@@ -19,11 +19,10 @@
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/popper.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mask.min.js"></script>
-<script src="js/stellar.js"></script>
+<script src="js/jquery.mask.js"></script>
 <script src="js/theme.js"></script>
+<script src="js/jquery.validate.js"></script>
 
 <!-- JS Opcional  -->
 <script type="text/javascript">
@@ -71,7 +70,7 @@
 						</a>
 					</div>
 					<div class="col-md-8 col-lg-8 col-8 header-right">
-						<span class="header-title"><h2>Cadastro</h2></span>
+						<span class="header-title"><h2>Edição</h2></span>
 					</div>
 				</div>
 			</div>
@@ -88,7 +87,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<span>
-						<h3>Crie sua conta</h3>
+						<h3>Edite sua conta</h3>
 					</span>
 				</div>
 			</div>

@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `clickmed_db`.`medicos` (
   `crm` VARCHAR(255) NOT NULL,
   `nome` VARCHAR(255) NULL DEFAULT NULL,
   `sobrenome` VARCHAR(255) NULL DEFAULT NULL,
+  `sexo` VARCHAR(255) NULL DEFAULT NULL,
   `especialidade` LONGTEXT NULL DEFAULT NULL,
   `experienciaProfissional` LONGTEXT NULL DEFAULT NULL,
   `formacaoAcademica` LONGTEXT NULL DEFAULT NULL,

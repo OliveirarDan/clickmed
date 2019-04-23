@@ -36,7 +36,7 @@ public class MedicoService {
 	 */
 	public Medico insereMedico(Medico medico) throws IOException {
 		// Cadastra o usuario e retorna o ID
-		//medico.setUsuario(usuarioService.insereUsuario(medico.getUsuario()));
+		medico.setUsuario(usuarioService.insereUsuario(medico.getUsuario()));
 		/*
 		 * Pesquisar como fazer a relação de convenios - ManyToMany
 		 */
@@ -78,7 +78,7 @@ public class MedicoService {
 	 * @return Um objetotipo Medico
 	 */
 	public Medico buscaMedico(Long idMedico) {
-		return this.buscaMedico(idMedico);
+		return this.medicoDAO.getOne(idMedico);
 	}
 
 	/**

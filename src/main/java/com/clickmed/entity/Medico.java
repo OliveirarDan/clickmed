@@ -37,6 +37,7 @@ public class Medico {
 	private String horaFimAtendimento;
 	private String diasAtendimento;
 	private String especialidade;
+	private String sexo;
 	
 	/**
 	 * Para futura vinculação de especialidades --@ManyToOne private Especialidade
@@ -64,25 +65,30 @@ public class Medico {
 		this.usuario = usuario;
 	}
 	
-	public Medico(Long id, @NotNull String crm, String nome, String sobrenome, String experienciaProfissional, String formacaoAcademica,
-			String telefone1, String telefone2, String cidade, String estado, String rua, String numero,
-			String horarioAtendimento, String horaFimAtendimento, String especialidade, String foto, Usuario usuario, List<Convenio> convenios) {
+	
 
+	public Medico(Long id, @NotNull String crm, String nome, String sobrenome, String experienciaProfissional,
+			String formacaoAcademica, String planosConvenio, String telefone1, String telefone2,
+			String horaInicioAtendimento, String horaFimAtendimento, String diasAtendimento, String especialidade,
+			String sexo, String foto, Usuario usuario, List<Convenio> convenios) {
 		super();
 		this.id = id;
 		this.crm = crm;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.experienciaProfissional = experienciaProfissional;
+		this.formacaoAcademica = formacaoAcademica;
+		this.planosConvenio = planosConvenio;
 		this.telefone1 = telefone1;
 		this.telefone2 = telefone2;
-		this.horaInicioAtendimento = horarioAtendimento;
+		this.horaInicioAtendimento = horaInicioAtendimento;
+		this.horaFimAtendimento = horaFimAtendimento;
+		this.diasAtendimento = diasAtendimento;
 		this.especialidade = especialidade;
+		this.sexo = sexo;
 		this.foto = foto;
 		this.usuario = usuario;
 		this.convenios = convenios;
-		this.formacaoAcademica = formacaoAcademica;
-		this.horaFimAtendimento = horaFimAtendimento; 
 	}
 
 	public Long getId() {
@@ -189,13 +195,6 @@ public class Medico {
 		this.formacaoAcademica = formacaoAcademica;
 	}
 	
-	@Override
-	public String toString() {
-		return "Medico [id=" + id + ", crm=" + crm + ", nome=" + nome + ", sobrenome=" + sobrenome
-				+ ", experienciaProfissional=" + experienciaProfissional + ", telefone1=" + telefone1 + ", telefone2="
-				+ telefone2  + ", horarioAtendimento=" + horaInicioAtendimento + ", especialidade=" + especialidade + ", foto=" + foto
-				+ ", usuario=" + usuario + ", convenios=" + convenios + "]";
-	}
 
 	public String getDiasAtendimento() {
 		return diasAtendimento;
@@ -220,5 +219,25 @@ public class Medico {
 	public void setHoraFimAtendimento(String horaFimAtendimento) {
 		this.horaFimAtendimento = horaFimAtendimento;
 	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	@Override
+	public String toString() {
+		return "Medico [id=" + id + ", crm=" + crm + ", nome=" + nome + ", sobrenome=" + sobrenome
+				+ ", experienciaProfissional=" + experienciaProfissional + ", formacaoAcademica=" + formacaoAcademica
+				+ ", planosConvenio=" + planosConvenio + ", telefone1=" + telefone1 + ", telefone2=" + telefone2
+				+ ", horaInicioAtendimento=" + horaInicioAtendimento + ", horaFimAtendimento=" + horaFimAtendimento
+				+ ", diasAtendimento=" + diasAtendimento + ", especialidade=" + especialidade + ", sexo=" + sexo
+				+ ", foto=" + foto + ", usuario=" + usuario + ", convenios=" + convenios + "]";
+	}
+	
+	
 
 }

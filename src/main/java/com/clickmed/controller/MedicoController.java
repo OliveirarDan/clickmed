@@ -57,10 +57,11 @@ public class MedicoController {
 	 */
 	@RequestMapping(value = "/selecionaMedico", method = RequestMethod.POST)
 	public String selecionaMedico(Medico medico, ModelMap model) {
+	
 		medico = medicoService.buscaMedico(medico.getId());
 		System.out.println(medico.toString());
 		model.addAttribute(medico);
-		return "edicao-medico";
+		return "/teste/medico/edicao-medico";
 	}
 	
 	
@@ -75,16 +76,7 @@ public class MedicoController {
 	 */
 	@RequestMapping(value = "/salvaMedico", method = { RequestMethod.POST })
 	public String salvaMedico(ModelMap model, Medico medico) throws IOException {
-		//nMedico criada para armazenar o medico atualizado da View temporariamente		
-		Medico nMedico = medico;
-		//Carregando o objeto medico completo do banco
-		medico = medicoService.buscaMedico(medico.getId());
-		//Exibindo como está no banco
-		System.out.println("Atual: " + medico.toString());
-		//Exibindo como ficou depois da alteração na view
-		System.out.println("Novo: " +nMedico.toString());
-		//Atualizando nome do objeto
-		medico.setNome(nMedico.getNome());
+		
 		//Salvando no banco
 		medicoService.atualizaMedico(medico);
 		return listaMedicos(model);

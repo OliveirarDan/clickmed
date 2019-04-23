@@ -76,7 +76,7 @@
 						</a>
 					</div>
 					<div class="col-md-8 col-lg-8 col-8 header-right">
-						<span class="header-title"><h2>Cadastro</h2></span>
+						<span class="header-title"><h2>Edição</h2></span>
 					</div>
 				</div>
 			</div>
@@ -99,7 +99,7 @@
 			<!--================Fim da Paginação de Cadastro =================-->
 
 			<!--================Início do Formulário de Cadastro =================-->
-			<form class="row contact_form" action="cadastraMedico" method="post"
+			<form class="row contact_form" action="salvaMedico" method="post"
 				id="cadastro-medico" autocomplete="off">
 
 				<div id="wizard">
@@ -119,8 +119,10 @@
 									<div class="row">
 										<div class="col-md-4">
 											<div class="form-group">
-												<input type="number" class="single-input required" id="crm"
-													name="crm" placeholder="CRM" minlength="7" maxlength="13">
+												<input type="hidden" class="single-input" id="id" name="id"
+													placeholder="id" value="${medico.id}" required /> <input
+													type="number" class="single-input required" id="crm"
+													name="crm" value="${medico.crm}" placeholder="CRM" minlength="7" maxlength="13">
 											</div>
 
 										</div>
@@ -129,18 +131,18 @@
 										<div class="col-md-8 col-6">
 											<div class="form-group">
 												<input type="text" class="single-input required" id="nome"
-													name="nome" placeholder="Nome">
+													name="nome" placeholder="Nome" value="${medico.nome}">
 											</div>
 											<div class="form-group">
 												<input type="text" class="single-input required"
-													id="sobrenome" name="sobrenome" placeholder="Sobrenome">
+													id="sobrenome" name="sobrenome" placeholder="Sobrenome" value="${medico.sobrenome}">
 											</div>
 
-											<div class="form-group">
-												<input type="email" class="single-input required" id="email"
-													name="usuario.email" placeholder="E-mail (login)">
-											</div>
-											<input type="hidden" class="foto" id="foto" name="foto"
+<!-- 											<div class="form-group"> -->
+<!-- 												<input type="email" class="single-input required" id="email" -->
+<%-- 													name="usuario.email" placeholder="E-mail (login)" value="${medico.usuario.email}"> --%>
+<!-- 											</div> -->
+											<input type="hidden" class="foto" id="foto" name="foto" value="${medico.foto}"
 												value="" />
 										</div>
 										<!-- Foto de perfil -->
@@ -176,23 +178,16 @@
 											</label>
 										</div>
 									</div>
-									<div class="row">
-										<div class="form-group col-md-4 required">
-											<label for="pass">Crie uma senha</label> <input
-												class="single-input required" type="password" id="senha"
-												name="usuario.senha" maxlength="8" minlength="8">
-										</div>
+<!-- 									<div class="row"> -->
+<!-- 										<div class="form-group col-md-4 required"> -->
+<!-- 											<label for="pass">Crie uma senha</label> <input -->
+<!-- 												class="single-input required" type="password" id="senha" -->
+<%-- 												name="usuario.senha" maxlength="8" minlength="8" value="${medico.usuario.senha}"> --%>
+<!-- 										</div> -->
+
+
 										
-									
-										<div class="form-group">
-											<input type="hidden"
-												class="single-input required"  id="senha"
-												name="usuario.permissao" value="medico">
-										
-											<input type="hidden" class="single-input" id="permissao"
-												name="permissao" value="1" required />
-										</div>
-									</div>
+<!-- 									</div> -->
 								</div>
 							</div>
 						</div>
@@ -321,7 +316,7 @@
 						<div class="row">
 							<div class="col-md-12 text-center">
 								<button type="submit" name="cadastraMedico1"
-									value="cadastraMedico" class="primary-btn text-uppercase">Cadastrar</button>
+									value="cadastraMedico" class="primary-btn text-uppercase">Salvar</button>
 							</div>
 						</div>
 

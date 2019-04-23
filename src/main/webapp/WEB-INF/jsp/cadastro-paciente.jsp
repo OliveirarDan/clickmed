@@ -195,10 +195,7 @@
 								class="single-input" type="password" id="senha"
 								name="usuario.senha" maxlength="8" minlength="8" required />
 						</div>
-						<div class="form-group">
-							<input type="hidden" class="single-input" id="permissao"
-								name="usuario.permissao" value="paciente">
-						</div>
+						
 						<div class="col-md-12 text-center">
 							<button type="submit" name="cadastraPaciente"
 								value="cadastraPaciente" class="primary-btn text-uppercase">Cadastrar</button>

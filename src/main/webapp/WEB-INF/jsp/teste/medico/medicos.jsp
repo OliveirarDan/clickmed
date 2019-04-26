@@ -18,7 +18,7 @@
 				type="radio" name="id" id="radios-0" value="${m.id}">
 				ID: ${m.id} || Nome: ${m.nome} <br>
 		</c:forEach>
-
+		<br>
 		<div class="col-md-12 text-center">
 			<button type="submit" name="selecionaPaciente"
 				value="selecionaPaciente" class="primary-btn text-uppercase">Selecionar</button>

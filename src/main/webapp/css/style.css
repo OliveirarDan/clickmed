@@ -744,9 +744,10 @@ button:focus {
 ============================================================================================ */
 .home_banner_area {
   z-index: 1;
-  min-height: 900px;
+  min-height: 570px;
   display: flex;
-  background: url(../img/banner/home-banner.jpg) no-repeat scroll center center;
+  /*background: url(../img/banner/home-banner.jpg) no-repeat scroll center center;*/
+  background-color: #D1E4F3;
   background-size: cover; }
   .home_banner_area .banner_inner {
     width: 100%;
@@ -3223,6 +3224,7 @@ h6 {
 
   .home_banner_area .banner_inner .banner_content {
     margin-top: 0px; }
+    
 
   .main_title h2 {
     font-size: 30px; }
@@ -3321,7 +3323,8 @@ h6 {
 	============================================================================================ */
   .home_banner_area .banner_inner .banner_content h2 {
     font-size: 28px;
-    line-height: 38px; }
+    line-height: 38px;
+    }
 
   .home_banner_area {
     min-height: 500px; }

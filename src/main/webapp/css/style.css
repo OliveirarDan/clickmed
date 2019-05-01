@@ -50,6 +50,14 @@ theme.
   color:#f9f9ff;
 }
 
+.fas{
+	display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
 .header-top-right>a{
   box-shadow: none;
   border-radius: 0;
@@ -3472,9 +3480,10 @@ h6 {
   background: #222222;
   padding: 13px 0; 
   margin-bottom: 0px;
-  bottom: 0px;
   left: 0px;
   right: 0px;
+  position: absolute;
+  z-index: -1;
 }
   .footer-bottom a {
     color: #0ba9ff; }

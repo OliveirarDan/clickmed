@@ -5,7 +5,6 @@
   z-index: 1;
   min-height: 900px;
   display: flex;
-  background: url(../img/banner/home-banner.jpg) no-repeat scroll center center;
   background-size: cover;
   .banner_inner {
     width: 100%;
@@ -94,7 +93,7 @@
     z-index: 1;
     .banner_content {
       h2 {
-        color: #fff;
+        color: #4b677b;
         font-size: 48px;
         margin-bottom: 0px;
         font-weight: 700;

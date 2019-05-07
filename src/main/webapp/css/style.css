@@ -489,7 +489,7 @@ button:focus {
 ============================================================================================ */
 .primary-btn {
   display: inline-block;
-  background: #f8b600;
+  background: #46d66b;
   background-size: 200% auto;
   padding: 0px 38px;
   color: #fff;
@@ -556,7 +556,7 @@ button:focus {
           .header_area .navbar .nav .nav-item .nav-link {
             color: #ffffff; } }
       .header_area .navbar .nav .nav-item:hover .nav-link, .header_area .navbar .nav .nav-item.active .nav-link {
-        color: #0ba9ff; }
+        color: #c1c1c1; }
       .header_area .navbar .nav .nav-item.submenu {
         position: relative; }
         .header_area .navbar .nav .nav-item.submenu ul {
@@ -744,9 +744,10 @@ button:focus {
 ============================================================================================ */
 .home_banner_area {
   z-index: 1;
-  min-height: 900px;
+  min-height: 570px;
   display: flex;
-  background: url(../img/banner/home-banner.jpg) no-repeat scroll center center;
+  /*background: url(../img/banner/home-banner.jpg) no-repeat scroll center center;*/
+  background-color: #D1E4F3;
   background-size: cover; }
   .home_banner_area .banner_inner {
     width: 100%;
@@ -762,7 +763,7 @@ button:focus {
         font-weight: 700;
         font-family: "Playfair Display", serif;
         line-height: 54px;
-        color: #fff; }
+        color: #4b677b; }
       .home_banner_area .banner_inner .banner_content p {
         max-width: 680px;
         font-size: 16px;
@@ -3026,7 +3027,7 @@ h6 {
     position: absolute; }
 
   .header_area .navbar {
-    background: #9b5cf6; }
+    background: #fff; }
 
   .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
     opacity: 1; }
@@ -3048,7 +3049,7 @@ h6 {
     display: block;
     width: 25px;
     height: 3px;
-    background: #fff;
+    background: #7DA6C3;
     margin: auto;
     margin-bottom: 4px;
     transition: all 400ms linear;
@@ -3223,6 +3224,7 @@ h6 {
 
   .home_banner_area .banner_inner .banner_content {
     margin-top: 0px; }
+    
 
   .main_title h2 {
     font-size: 30px; }
@@ -3321,7 +3323,9 @@ h6 {
 	============================================================================================ */
   .home_banner_area .banner_inner .banner_content h2 {
     font-size: 28px;
-    line-height: 38px; }
+    line-height: 38px;
+    color: #4b677b;
+    }
 
   .home_banner_area {
     min-height: 500px; }

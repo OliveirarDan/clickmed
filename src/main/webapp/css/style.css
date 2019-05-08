@@ -3479,7 +3479,7 @@ h6 {
 .footer-bottom {
   background: #222222;
   padding: 13px 0; 
-  margin-bottom: 0px;
+  bottom: 0px;
   left: 0px;
   right: 0px;
   position: absolute;

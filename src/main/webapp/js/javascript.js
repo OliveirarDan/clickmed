@@ -129,6 +129,50 @@ $(document).ready(function() {
 		},
 		create : false
 	});
+	
+	$('#classificacao').selectize({
+		maxItems : 1,
+		valueField : 'title',
+		labelField : 'title',
+		searchField : 'title',
+		options : [ {
+			id : 1,
+			title : '1'
+		}, {
+			id : 2,
+			title : '2'
+		}, {
+			id : 3,
+			title : '3'
+		} ],
+
+		onChange : function(value) {
+			$('#especialidade').attr('value', value);
+		},
+		create : false
+	});
+	
+	$('#custo').selectize({
+		maxItems : 1,
+		valueField : 'title',
+		labelField : 'title',
+		searchField : 'title',
+		options : [ {
+			id : 1,
+			title : '1'
+		}, {
+			id : 2,
+			title : '2'
+		}, {
+			id : 3,
+			title : '3'
+		} ],
+
+		onChange : function(value) {
+			$('#especialidade').attr('value', value);
+		},
+		create : false
+	});
 
 	/*// Executa a requisição quando o campo cpf perder o foco
 	$('#cpf').blur(function() {

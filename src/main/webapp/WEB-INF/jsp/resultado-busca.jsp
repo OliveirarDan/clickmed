@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/steps/jquery.steps.css">
 <link rel="stylesheet" href="css/selectize/selectize.bootstrap3.css">
+<link rel="stylesheet" href="css/card.css">
+
 
 <!-- main css -->
 <link rel="stylesheet" href="css/style.css">
@@ -72,18 +74,21 @@
 			<div class="container">
 
 				<div class="row">
-					<div class="form-group col-2 col-md-2">
-						<div class="control-group">
-							<i class="fas fa-search"></i>
-							<h4>Inserir termo pesquisado</h4>
+					<div class="form-group col-4 col-md-4">
+						<div class="row">
+							<div class="col-md-3 col-3">
+								<i class="fa fa-search"></i>
+							</div>
+							<div class="col-md-9 col-9">
+								<a>Inserir termo pesquisado</a>
+							</div>
 						</div>
 					</div>
 
-					<div class="form-group offset-8 col-2 col-md-2">
+					<div class="form-group offset-6 col-2 col-md-2">
 						<div class="control-group">
-							<button type="" name="refazerPesquisa" value="/"
-								class="genric-btn success-border text-uppercase">Refazer
-								pesquisa</button>
+							<button name="refazerPesquisa" value="/"
+								class="secondary-btn text-uppercase">Refazer pesquisa</button>
 						</div>
 					</div>
 				</div>
@@ -102,11 +107,10 @@
 								value="" />
 						</div>
 					</div>
-					<div class="form-group offset-6 col-2 col-md-2 ">
+					<div class="form-group offset-6 col-2 col-md-2">
 						<div class="control-group">
 							<button name="limparFiltros" value=""
-								class="genric-btn success-border text-uppercase">Limpar
-								filtros</button>
+								class="secondary-btn text-uppercase">Limpar filtros</button>
 						</div>
 					</div>
 				</div>
@@ -114,132 +118,77 @@
 		</section>
 	</header>
 	<!--================ Final Header Area =================-->
-	<!--================Início do Cadastro =================-->
+	<!--================Início do Container principal =================-->
 	<section class="contact_area section_gap">
 		<div class="container">
-			<!--================Início da Paginação de Cadastro =================-->
-			<div class="row">
-				<div class="col-md-12">
-					<span>
-						<h3>Crie sua conta</h3>
-					</span>
+
+			<!--Início da card  -->
+			<div class="wrapper">
+
+				<div class="card radius shadowDepth1 card__padding">
+					<div class="row card-head">
+						<div class="border-tlr-radius col-md-6">
+							<img src="http://lorempixel.com/400/200/sports/" alt="image"
+								class="border-tlr-radius foto-card-circle">
+						</div>
+						<div class="card-head-title col-md-6">
+							<a>Nome do médico</a></br> <a>CRM</a>
+						</div>
+					</div>
+
+					<div class="card__content ">
+						<div class="card__share">
+							<div class="card__social">
+								<a class="share-icon facebook" href="#"><span
+									class="fa fa-facebook"></span></a> <a class="share-icon twitter"
+									href="#"><span class="fa fa-twitter"></span></a> <a
+									class="share-icon googleplus" href="#"><span
+									class="fa fa-google-plus"></span></a>
+							</div>
+
+							<a id="share" class="share-toggle share-icon" href="#"></a>
+						</div>
+
+						<div class="card__meta">
+							<a>Especialidades</a>
+						</div>
+
+						<c:forEach items="${medico.especialidade}" var="especialidade">
+    						${especialidade}<br>
+						</c:forEach>
+
+						<div class="row">
+							<div class="col-md-2 col-2">
+								<i class="fa fa-chevron-circle-left"></i>
+							</div>
+							<div class="col-md-10 col-10">
+								<a>Endereço do médico</a>
+							</div>
+						</div>
+
+						<article class="card__article">
+							<h4>
+								<a href="#">Material Design Card - For Blog Post Article</a>
+							</h4>
+
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+								Ducimus harum...</p>
+						</article>
+					</div>
+
+					<div class="card__action">
+
+						<div class="card__author">
+							<img src="http://lorempixel.com/40/40/sports/" alt="user">
+							<div class="card__author-content">
+								By <a href="#">John Doe</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<!--================Fim da Paginação Cadastro =================-->
-			<!--================Início dos campos de Cadastro =================-->
-			<div class="row">
-				<div class="col-lg-12">
-					<form class="row contact_form" action="cadastraPaciente"
-						method="post" id="cadastro-paciente">
-						<div class="col-md-12">
-							<div class="row">
-								<div class="col-md-8 col-6">
-									<div class="form-group">
-										<input type="text" class="single-input" id="name" name="nome"
-											placeholder="Nome" required />
-									</div>
-									<div class="form-group">
-										<input type="text" class="single-input" id="sobrenome"
-											name="sobrenome" placeholder="Sobrenome" required />
-									</div>
 
-									<div class="form-group">
-										<input type="email" class="single-input" id="email"
-											name="usuario.email" placeholder="E-mail (login)" required />
-									</div>
-									<div class="form-group">
-										<input type="cpf" class="single-input cpf" id="cpf" name="cpf"
-											placeholder="CPF" required />
-									</div>
-									<input type="hidden" class="foto" id="foto" name="foto"
-										value="" />
-								</div>
-								<!-- Foto de perfil -->
-								<div class="col-md-4 col-6">
-									<div class="center">
-										<div class="foto-circle">
-											<!-- User Profile Image -->
-											<img class="profile-pic" src="img/person.jpg">
 
-											<!-- Default Image -->
-											<i class="fa fa-user fa-5x"></i>
-										</div>
-									</div>
-									<div class="p-image">
-										<i class="fa fa-camera upload-button"></i> <input
-											class="file-upload" type="file" accept="image/*" />
-									</div>
-								</div>
-								<!-- Final da Foto de perfil -->
-							</div>
-							<div class="row">
-								<label class="col-md-12" for="radios">Gênero</label>
-								<div class="col-md-8">
-									<label class="radio-inline" for="radios-0"> <input
-										type="radio" name="sexo" id="radios-0" value="1">
-										Masculino
-									</label> <label class="radio-inline" for="radios-1"> <input
-										type="radio" name="sexo" id="radios-1" value="2">
-										Feminino
-									</label> <label class="radio-inline" for="radios-2"> <input
-										type="radio" name="sexo" id="radios-2" value="2">
-										Outro
-									</label>
-								</div>
-							</div>
-							<div class="row">
-								<div class="form-group col-md-2">
-									<input type="date" class="single-input" id="datanasc"
-										name="dataNascimento" placeholder="Data de nascimento"
-										required />
-								</div>
-								<div class="form-group col-md-4">
-									<input type="tel" class="single-input tel1" id="telresidencial"
-										name="telefone1" placeholder="Telefone residencial" required />
-								</div>
-								<div class="form-group col-md-4">
-									<input type="tel" class="single-input tel2" id="telcelular"
-										name="telefone2" placeholder="Telefone celular" />
-								</div>
-								<div class="form-group col-md-2">
-									<input type="text" class="single-input cep" id="cep" name="cep"
-										placeholder="CEP" required />
-								</div>
-							</div>
-							<div class="row">
-								<div class="form-group col-md-8">
-									<input type="text" class="single-input" id="rua" name="nomeRua"
-										placeholder="Rua, Av, Logradouro" required />
-								</div>
-								<div class="form-group col-md-4">
-									<input type="text" class="single-input" id="numero"
-										name="numero" placeholder="Nº" maxlength="5" required />
-								</div>
-							</div>
-							<div class="row">
-								<div class="form-group col-md-8">
-									<input type="text" class="single-input" id="cidade"
-										name="cidade" placeholder="Cidade" required />
-								</div>
-								<div class="form-group col-md-4">
-									<input type="text" class="single-input" id="uf" name="estado"
-										placeholder="UF" maxlength="2" required />
-								</div>
-							</div>
-						</div>
-						<div class="form-group col-md-4">
-							<label for="pass">Crie uma senha</label> <input
-								class="single-input" type="password" id="senha"
-								name="usuario.senha" maxlength="8" minlength="8" required />
-						</div>
-
-						<div class="col-md-12 text-center">
-							<button type="submit" name="cadastraPaciente"
-								value="cadastraPaciente" class="primary-btn text-uppercase">Cadastrar</button>
-						</div>
-					</form>
-				</div>
-			</div>
 		</div>
 	</section>
 	<!--================Fim do Cadastro =================-->

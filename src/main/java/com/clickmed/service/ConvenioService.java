@@ -74,7 +74,7 @@ public class ConvenioService {
 	/**
 	 * Lista todos os convenios cadastrados.
 	 * 
-	 * @return
+	 * @return lista de convênios.
 	 */
 	public List<Convenio> listaConvenios() {
 		return this.convenioDAO.findAll();

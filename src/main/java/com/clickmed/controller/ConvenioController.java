@@ -54,7 +54,6 @@ public class ConvenioController {
 	@RequestMapping(value = "/selecionaConvenio", method = RequestMethod.POST)
 	public String selecionaConvenio(Convenio convenio, ModelMap model) {
 		convenio = convenioService.buscaConvenio(convenio.getId());
-		System.out.println(convenio.toString());
 		model.addAttribute(convenio);
 		return "teste/convenio/edicao-convenio";
 	}

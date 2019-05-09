@@ -20,6 +20,17 @@ public class Especialidade {
 	@Column(unique = true)
 	private String nome;
 
+	
+	public Especialidade() {
+		super();
+	}
+
+	public Especialidade(Long id, @NotNull String nome) {
+		super();
+		this.id = id;
+		this.nome = nome;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -36,4 +47,10 @@ public class Especialidade {
 		this.nome = nome;
 	}
 
+	@Override
+	public String toString() {
+		return "Especialidade [id=" + id + ", nome=" + nome + "]";
+	}
+
+	
 }

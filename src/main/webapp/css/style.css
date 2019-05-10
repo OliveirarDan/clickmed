@@ -28,46 +28,112 @@ theme.
 * Header dos cadastros
 *----------------------------------------------------*/
 
-.simple-header{
-  padding: 10px 0 10px 0;
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.22);
-  background: #724aea;
-}
-.header-title>h2{
-  color:#f9f9ff;
-  margin-right: 50%;  
+.simple-header {
+	padding: 30px 0 10px 0;
+	box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.22);
+	background: #d1e4f3;
 }
 
-.header-left{
-  padding:10px;
-  font-size:50px;
-}
-.header-right{
-  padding:10px;
-  text-align:center;
-}
-.fa{
-  color:#f9f9ff;
+.header-title>h2 {
+	color: #f9f9ff;
+	margin-right: 50%;
 }
 
-.fas{
+.header-left {
+	padding: 10px;
+	font-size: 50px;
+}
+
+.header-right {
+	padding: 10px;
+	text-align: center;
+}
+
+.fa {
+	color: #f9f9ff;
+	font-size: 40px;
+}
+
+.fa-card {
 	display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+	font-size: 30px;
+	color: #47525d;
+	font: normal normal normal 14px/1 FontAwesome;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
 }
 
-.header-top-right>a{
-  box-shadow: none;
-  border-radius: 0;
-}
-textarea{
-  resize: none;
+.header-top-right>a {
+	box-shadow: none;
+	border-radius: 0;
 }
 
-label{
-  font-weight: bold;
+textarea {
+	resize: none;
+}
+
+label {
+	font-weight: bold;
+}
+
+.secondary-btn {
+	width: 100%;
+	display: inline-block;
+	background: #46d66b;
+	background-size: 200% auto;
+	padding: 0px 10px;
+	color: #fff;
+	font-family: "Roboto", sans-serif;
+	font-size: 13px;
+	font-weight: 1000;
+	line-height: 50px;
+	border-radius: 50px;
+	outline: none !important;
+	box-shadow: 0px 0px 15px #cccccc;
+	text-align: center;
+	cursor: pointer;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+	border: 0;
+}
+
+.primary-btn:hover {
+	background-position: right center;
+	color: #fff;
+}
+
+.card-line {
+	border-bottom: 1px solid #c9d3dc;
+    margin: 0px 10px 0px 10px;
+}
+
+.card-head-title {
+	font-weight: bold;
+    font-size: 15px;
+    padding: 0 0 0 15px;
+}
+
+.card-title {
+	font-weight: bold;
+}
+
+.card-action {
+	color: #fff;
+    font-weight: bold;
+    vertical-align: -webkit-baseline-middle;
+}
+
+.card-bottom {
+	text-align: center;
+    background-color: #46d66b;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    height: 45px;
+    margin-bottom: 0;
+    border-radius: 3px;
 }
 
 /*---------------------------------------------------- 
@@ -321,6 +387,15 @@ label{
   border: 2px solid #cccccc;
   top: 72px;
 }
+.foto-card-circle {
+	border-radius: 1000px !important;
+	overflow: hidden;
+	width: 80px;
+	height: 80px;
+	border: 2px solid #cccccc;
+	top: 72px;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -2378,7 +2453,7 @@ h6 {
   display: block;
   width: 100%;
   outline: none;
-  background: #e9ecef9e;
+  background: #F1F3F5;
   padding: 10px 20px;
   border: 1px solid #cccccc;
   border-radius: 5px;

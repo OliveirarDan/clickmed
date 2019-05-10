@@ -254,7 +254,7 @@
 							<div class="form-group col-md-12">
 								<div class="control-group">
 									<span>Não encontrou sua clínica ou consultório? <a
-										href="/cadastro-clinica"> Clique aqui e cadastre.</a>
+										href="/novaClinica"> Clique aqui e cadastre.</a>
 									</span>
 								</div>
 							</div>

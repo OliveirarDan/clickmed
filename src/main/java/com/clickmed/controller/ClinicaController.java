@@ -1,12 +1,14 @@
 package com.clickmed.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.clickmed.entity.Clinica;
 import com.clickmed.service.ClinicaService;
@@ -82,6 +84,14 @@ public class ClinicaController {
 	public String removeClinica(ModelMap model, Clinica clinica) throws IOException {
 		clinicaService.removeClinica(clinica.getId());
 		return listaClinicas(model);
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "rest/clinica")
+	public @ResponseBody List<Clinica> listarPessoas(ModelMap model) throws IOException
+	{
+		List<Clinica> clinica = clinicaService.listaClinicas();
+		model.addAttribute("clinica", clinica);
+		return clinica;
 	}
 	
 }

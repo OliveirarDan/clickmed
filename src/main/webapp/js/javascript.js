@@ -1,72 +1,71 @@
-
-function initRemoteSelectize(input, src_url,  selectize_options){
+function initRemoteSelectize(input, src_url, selectize_options) {
 	$.ajax({
-	      url: src_url,
-	      type: 'GET',
-	      dataType: 'json',
-	      error: function() {
-	    	  $(input).selectize({
-	    			options: ['Erro ao buscar especialidades'],
-	    		});
-	      },
-	      success: function(result) {
-	    	  selectize_options.options = result;
-	    	  $(input).selectize(selectize_options);
-	      }
-	    });	
+		url : src_url,
+		type : 'GET',
+		dataType : 'json',
+		error : function() {
+			$(input).selectize({
+				options : [ 'Erro ao buscar especialidades' ],
+			});
+		},
+		success : function(result) {
+			selectize_options.options = result;
+			$(input).selectize(selectize_options);
+		}
+	});
 }
 
-function initEspecialidadesSelectize(){
+function initEspecialidadesSelectize() {
 	var input = '#especialidade';
 	var src_url = "/rest/especialidade";
 	var selectize_options = {
-			maxItems : 3,
-			valueField : 'id',
-			labelField : 'nome',
-			searchField : 'nome',
+		maxItems : 3,
+		valueField : 'id',
+		labelField : 'nome',
+		searchField : 'nome',
 	}
 	initRemoteSelectize(input, src_url, selectize_options);
 }
 
-function initLocalAtendimentoSelectize(){
+function initLocalAtendimentoSelectize() {
 	var input = '#localAtendimento';
 	var src_url = "/rest/clinica";
 	var selectize_options = {
-			maxItems : 1,
-			valueField : 'id',
-			labelField : 'nomeFantasia',
-			searchField : 'nomeFantasia',
+		maxItems : 1,
+		valueField : 'id',
+		labelField : 'nomeFantasia',
+		searchField : 'nomeFantasia',
 	}
 	initRemoteSelectize(input, src_url, selectize_options);
 }
 
-function initConvenioSelectize(){
+function initConvenioSelectize() {
 	var input = '#convenios';
 	var src_url = "/rest/convenio";
 	var selectize_options = {
-			
-			valueField : 'id',
-			labelField : 'nome',
-			searchField : 'nome',
+
+		valueField : 'id',
+		labelField : 'nome',
+		searchField : 'nome',
 	}
 	initRemoteSelectize(input, src_url, selectize_options);
 }
 
-function initSteps(){
+function initSteps() {
 	var form = $("#cadastro-medico");
 
 	form.children("div").steps({
 		headerTag : "h2",
 		bodyTag : "section",
 		transitionEffect : "slideLeft",
-		/*onStepChanging : function(event, currentIndex, newIndex) {
+		onStepChanging : function(event, currentIndex, newIndex) {
 			form.validate().settings.ignore = ":disabled,:hidden";
 			return form.valid();
 		},
 		onFinishing : function(event, currentIndex) {
 			form.validate().settings.ignore = ":disabled";
 			return form.valid();
-		}*/
+		}
 	});
 }
 
@@ -96,8 +95,6 @@ $(document).ready(function() {
 		}
 
 	});
-	
-	
 
 	/* Selectize: criação dos arrays dos campos */
 	$('#diasAtendimento').selectize({
@@ -177,7 +174,7 @@ $(document).ready(function() {
 	/* Card JS */
 	$('.card__share > a').on('click', function(e) {
 		e.preventDefault() // prevent default action - hash doesn't appear in
-							// url
+		// url
 		$(this).parent().find('div').toggleClass('card__social--active');
 		$(this).toggleClass('share-expanded');
 	});

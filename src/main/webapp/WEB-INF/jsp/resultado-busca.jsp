@@ -70,31 +70,46 @@
 <body>
 	<!--================ Header Area =================-->
 	<header>
-		<section class="simple-header">
+
+
+		<!--================ Header Menu Area =================-->
+		<div class="header-top header_area">
 			<div class="container">
-
-				<div class="row">
-					<div class="form-group col-4 col-md-4">
-						<div class="row">
-							<div class="col-md-3 col-3">
-								<i class="fa fa-search"></i>
-							</div>
-							<div class="col-md-9 col-9">
-								<a>Inserir termo pesquisado</a>
-							</div>
-						</div>
-					</div>
-
-					<div class="form-group offset-6 col-2 col-md-2">
-						<div class="control-group">
-							<button name="refazerPesquisa" value="/"
-								class="secondary-btn text-uppercase">Refazer pesquisa</button>
-						</div>
+				<div class="row align-items-center"></div>
+			</div>
+		</div>
+		<div class="main_menu">
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container">
+					<!-- Logo e menu readequados para mobile -->
+					<a class="navbar-brand logo_h" href="index.html"><img
+						src="img/logo.png" alt=""></a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<!-- Menu principal -->
+					<div class="collapse navbar-collapse offset"
+						id="navbarSupportedContent">
+						<ul class="nav navbar-nav menu_nav ml-auto">
+							<li class="nav-item active"><a class="nav-link"
+								href="index.html">Home</a></li>
+							<li class="nav-item"><a class="nav-link"
+								href="about-us.html">Quem somos</a></li>
+							<li class="nav-item"><a class="nav-link" href="contact.html">Contato</a></li>
+						</ul>
 					</div>
 				</div>
+			</nav>
+		</div>
 
 
-				<div class="row ">
+		<section class="simple-header">
+			<div class="container">
+				<div class="row">
 					<div class="form-group col-2 col-md-2">
 						<div class="control-group">
 							<input type="text" id="classificacao" name="classificacao"
@@ -107,10 +122,16 @@
 								value="" />
 						</div>
 					</div>
-					<div class="form-group offset-6 col-2 col-md-2">
+					<div class="form-group offset-4 col-2 col-md-2">
 						<div class="control-group">
 							<button name="limparFiltros" value=""
 								class="secondary-btn text-uppercase">Limpar filtros</button>
+						</div>
+					</div>
+					<div class="form-group col-2 col-md-2">
+						<div class="control-group">
+							<button name="refazerPesquisa" value="/"
+								class="secondary-btn text-uppercase">Refazer pesquisa</button>
 						</div>
 					</div>
 				</div>
@@ -126,7 +147,7 @@
 			<div class="wrapper">
 
 				<div class="card radius shadowDepth1 card__padding">
-					<div class="row card-head">
+					<div class="row card-line">
 						<div class="border-tlr-radius col-md-6">
 							<img src="http://lorempixel.com/400/200/sports/" alt="image"
 								class="border-tlr-radius foto-card-circle">
@@ -136,7 +157,7 @@
 						</div>
 					</div>
 
-					<div class="card__content ">
+					<div class="card__content card-line">
 						<div class="card__share">
 							<div class="card__social">
 								<a class="share-icon facebook" href="#"><span
@@ -149,42 +170,34 @@
 							<a id="share" class="share-toggle share-icon" href="#"></a>
 						</div>
 
-						<div class="card__meta">
-							<a>Especialidades</a>
+						<div class="row card__meta">
+							<div class="col-md-12 col-12">
+								<a>Especialidades:</a>
+								<c:forEach items="${medico.especialidade}" var="especialidade">
+									<ul>
+										<a>Otorrino</a>
+										<a>${especialidade}</a>
+									</ul>
+								</c:forEach>
+							</div>
 						</div>
-
-						<c:forEach items="${medico.especialidade}" var="especialidade">
-    						${especialidade}<br>
-						</c:forEach>
-
 						<div class="row">
 							<div class="col-md-2 col-2">
-								<i class="fa fa-chevron-circle-left"></i>
+								<i class="fa-card fa-chevron-circle-left"></i>
 							</div>
 							<div class="col-md-10 col-10">
-								<a>Endereço do médico</a>
-							</div>
-						</div>
-
-						<article class="card__article">
-							<h4>
-								<a href="#">Material Design Card - For Blog Post Article</a>
-							</h4>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-								Ducimus harum...</p>
-						</article>
-					</div>
-
-					<div class="card__action">
-
-						<div class="card__author">
-							<img src="http://lorempixel.com/40/40/sports/" alt="user">
-							<div class="card__author-content">
-								By <a href="#">John Doe</a>
+								<p>Endereço do médico</p>
 							</div>
 						</div>
 					</div>
+
+					<div class="card__content">
+						Nota:<br> Custo:
+					</div>
+					<div class="card-footer">
+						<a class="card-selecionar" href="/selecionaMedico">Visualizar</a>
+					</div>
+
 				</div>
 			</div>
 
@@ -203,10 +216,6 @@
 						document.write(new Date().getFullYear());
 					</script>
 					Todos os direitos reservados.
-				<div class="footer-social d-flex align-items-center">
-					<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-						class="fa fa-twitter"></i></a>
-				</div>
 			</div>
 		</div>
 	</footer>

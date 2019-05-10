@@ -26,8 +26,8 @@ theme.
 * Header dos cadastros
 *----------------------------------------------------*/
 .simple-header {
-	padding: 10px 0 10px 0;
-	box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.22);
+	padding: 30px 0 10px 0;
+	box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.22);
 	background: #d1e4f3;
 }
 
@@ -51,10 +51,11 @@ theme.
 	font-size: 40px;
 }
 
-.fas {
+.fa-card {
 	display: inline-block;
+	font-size: 30px;
+	color: #47525d;
 	font: normal normal normal 14px/1 FontAwesome;
-	font-size: inherit;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 }
@@ -100,7 +101,7 @@ label {
 	color: #fff;
 }
 
-.card-head {
+.card-line {
 	border-bottom: 1px solid #c9d3dc;
 	padding-bottom: 10px;
 	margin-bottom: 10px;

@@ -58,13 +58,11 @@ function initSteps() {
 		headerTag : "h2",
 		bodyTag : "section",
 		transitionEffect : "slideLeft",
-		onStepChanging: function (event, currentIndex, newIndex)
-		{
+		onStepChanging : function(event, currentIndex, newIndex) {
 			form.validate().settings.ignore = ":disabled,:hidden";
 			return form.valid();
 		},
-		onFinishing: function (event, currentIndex)
-		{
+		onFinishing : function(event, currentIndex) {
 			form.validate().settings.ignore = ":disabled";
 			return form.valid();
 		},
@@ -80,24 +78,24 @@ $(document).ready(function() {
 
 	/* Chamada do validate e regras de cada campo e mensagens personalizadas. */
 	$("#cadastro-medico").validate({
-		rules: {
-			email: {
-				required: true,
-				email: true,
+		rules : {
+			email : {
+				required : true,
+				email : true,
 			},
-			cpf: {
-				cpf: true, 
-				required: true
+			cpf : {
+				cpf : true,
+				required : true
 			}
 		},
-		messages: {		
-			cpf: { 
-				cpf: 'CPF inválido'
+		messages : {
+			cpf : {
+				cpf : 'CPF inválido'
 			}
-	      }
+		}
 
 	});
-	
+
 	/* Selectize: criação dos arrays dos campos */
 	$('#diasAtendimento').selectize({
 		maxItems : null,

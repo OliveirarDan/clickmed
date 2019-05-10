@@ -42,9 +42,7 @@ public class TesteController {
 		return abrirTelaDeTestes(model, teste);
 	}
 	
-	@RequestMapping(value = "/busca", method = RequestMethod.GET)
-	public String index(ModelMap model, Teste teste) {
-		return "resultado-busca";
-	}	
+	
+	
 
 }

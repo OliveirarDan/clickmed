@@ -18,6 +18,8 @@
 <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
 <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
 <link rel="stylesheet" href="vendors/animate-css/animate.css">
+<link rel="stylesheet" href="css/espec/autocomplete.css">
+
 <!-- main css -->
 <link rel="stylesheet" href="css/style.css">
 
@@ -35,6 +37,8 @@
 <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
 <script src="vendors/counter-up/jquery.counterup.js"></script>
 <script src="js/mail-script.js"></script>
+<script src="js/autocomplete/complete.js"></script>
+<script src="js/autocomplete/arrayauto.js"></script>
 
 <!--gmaps Js-->
 <script
@@ -95,10 +99,30 @@
 						Ganhe tempo e <br> encontre profissionais capacitados <br>
 						sem dificuldades :) <br>
 					</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</p>
-					<a class="primary-btn text-uppercase" href="#">Quem somos</a>
+					<form autocomplete="off" action="index.jsp">
+  						<div class="autocomplete" style="width:700px;">
+    						<input id="myInput" type="text" name="espec" placeholder="Especialidades">
+ 						</div>
+ 						<div class="autocomplete" style="width:250px;">
+    						<input id="myLoc" type="text" name="loc" placeholder="Locais">
+ 						</div>
+ 						<button type="submit" name="pesquisa"
+								value="pesquisa" class="primary-btn text-uppercase"><i class="fa fa-search"></i></button>
+					</form>
+					
+					<form autocomplete="off" action="index.jsp">
+  						
+					</form>
+					
+					
+
+					<script>
+						autocomplete(document.getElementById("myInput"), espec);
+						autocomplete(document.getElementById("myLoc"), local);
+					</script>
+					<script>
+						
+					</script>
 				</div>
 			</div>
 		</div>
@@ -154,45 +178,6 @@
 	</section>
 	<!--================ Final Propostas Area =================-->
 
-	<!--================ Começo Area Sobre Nós =================-->
-	<section class="about_area lite_bg">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-lg-5 col-md-5">
-					<div class="about_details lite_bg">
-						<h2>Bem vindo ao ClickMed</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-							sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua.</p>
-						<ul class="list_wrap">
-							<li class="about_lists">Lorem ipsum dolor sit amet,
-								consectetur adipisicing elit.</li>
-							<li class="about_lists">Lorem ipsum dolor sit amet,
-								consectetur adipisicing elit.</li>
-							<li class="about_lists">Lorem ipsum dolor sit amet,
-								consectetur adipisicing elit.</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4 offset-lg-3 col-md-6 offset-md-1">
-					<div class="about_right overlay">
-						<div class="about_inner">
-							<h4>Doctors Time table</h4>
-							<p>Mon to Friday -- 07.00 AM to 10.00 PM</p>
-							<p>Mon to Friday -- 07.00 AM to 10.00 PM</p>
-							<p>Mon to Friday -- 07.00 AM to 10.00 PM</p>
-							<p>Mon to Friday -- 07.00 AM to 10.00 PM</p>
-							<p>Mon to Friday -- 07.00 AM to 10.00 PM</p>
-							<p>Mon to Friday -- 07.00 AM to 10.00 PM</p>
-						</div>
-
-					</div>
-				</div>
-			</div>
-			<div class="about_bg overlay"></div>
-		</div>
-	</section>
-	<!--================ Final Area Sobre Nós =================-->
 
 	<!--================ Começo Area Especialidades =================-->
 	<section class="department_area section_gap">
@@ -271,82 +256,21 @@
 	<!--================ Começo Area Contador =================-->
 	<section class="section_gap counter_area overlay">
 		<div class="container">
-			<div class="row">
-				<!--contador-->
-				<div class="col-lg-3 col-sm-6">
-					<div class="single_counter">
-						<h1>
-							<span class="counter_number">5</span>K
-						</h1>
-						<p>
-							Profissionais <br> Cadastrados.
-						</p>
-					</div>
-				</div>
-				<!--contador-->
-				<div class="col-lg-3 col-sm-6">
-					<div class="single_counter">
-						<h1>
-							<span class="counter_number">30</span>K+
-						</h1>
-						<p>
-							Buscas <br> Feitas.
-						</p>
-					</div>
-				</div>
-				<!--contador-->
-				<div class="col-lg-3 col-sm-6">
-					<div class="single_counter">
-						<h1>
-							<span class="counter_number">18</span>K+
-						</h1>
-						<p>
-							Contatos <br> Realizados.
-						</p>
-					</div>
-				</div>
-				<!--contador-->
-				<div class="col-lg-3 col-sm-6">
-					<div class="single_counter">
-						<h1>
-							<span class="counter_number">20</span>K+
-						</h1>
-						<p>
-							Internal <br> Stuff Groups
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================ Fim Area Contador =================-->
-
-	<!--================ Start Team Area =================-->
-	<section class="section_gap team_area lite_bg">
-		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-lg-7">
 					<div class="main_title">
-						<h2>Medicare Popular Departments</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-							sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua.</p>
+						<h2>Opiniões recentes</h2>
 					</div>
 				</div>
-			</div>
+			</div>		
 			<div class="row">
-				<!-- single-team-member -->
+				<!--contador-->
 				<div class="col-lg-3 col-sm-6">
 					<div class="single_member">
 						<div class="author">
 							<img src="img/team/member1.png" alt="">
 						</div>
 						<div class="author_decs">
-							<div class="social_icons">
-								<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-									class="fa fa-twitter"></i></a> <a href="#"><i
-									class="fa fa-linkedin"></i></a>
-							</div>
 							<h4>Ethel Davis</h4>
 							<p class="profession">Sr. Faculty Data Science</p>
 							<p>If you are looking at blank cassettes on the web, you may
@@ -354,67 +278,50 @@
 						</div>
 					</div>
 				</div>
-				<!-- single-team-member -->
 				<div class="col-lg-3 col-sm-6">
 					<div class="single_member">
 						<div class="author">
-							<img src="img/team/member2.png" alt="">
+							<img src="img/team/member1.png" alt="">
 						</div>
 						<div class="author_decs">
-							<div class="social_icons">
-								<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-									class="fa fa-twitter"></i></a> <a href="#"><i
-									class="fa fa-linkedin"></i></a>
-							</div>
-							<h4>Rodney Cooper</h4>
+							<h4>Ethel Davis</h4>
 							<p class="profession">Sr. Faculty Data Science</p>
 							<p>If you are looking at blank cassettes on the web, you may
 								be very confused at the difference in price.</p>
 						</div>
 					</div>
 				</div>
-				<!-- single-team-member -->
 				<div class="col-lg-3 col-sm-6">
 					<div class="single_member">
 						<div class="author">
-							<img src="img/team/member3.png" alt="">
+							<img src="img/team/member1.png" alt="">
 						</div>
 						<div class="author_decs">
-							<div class="social_icons">
-								<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-									class="fa fa-twitter"></i></a> <a href="#"><i
-									class="fa fa-linkedin"></i></a>
-							</div>
-							<h4>Dane Walker</h4>
+							<h4>Ethel Davis</h4>
 							<p class="profession">Sr. Faculty Data Science</p>
 							<p>If you are looking at blank cassettes on the web, you may
 								be very confused at the difference in price.</p>
 						</div>
 					</div>
 				</div>
-				<!-- single-team-member -->
 				<div class="col-lg-3 col-sm-6">
 					<div class="single_member">
 						<div class="author">
-							<img src="img/team/member4.png" alt="">
+							<img src="img/team/member1.png" alt="">
 						</div>
 						<div class="author_decs">
-							<div class="social_icons">
-								<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-									class="fa fa-twitter"></i></a> <a href="#"><i
-									class="fa fa-linkedin"></i></a>
-							</div>
-							<h4>Lena Keller</h4>
+							<h4>Ethel Davis</h4>
 							<p class="profession">Sr. Faculty Data Science</p>
 							<p>If you are looking at blank cassettes on the web, you may
 								be very confused at the difference in price.</p>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+				
+
+				
 	</section>
-	<!--================ End Team Area =================-->
+	<!--================ Fim Area Contador =================-->
 
 
 	<!--================ Começo Area Rodapé  =================-->

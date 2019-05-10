@@ -47,5 +47,9 @@ Deploy do projeto:
 
 
 
+#####Especialidade
+- [Cadastro de Especialidade](http://localhost:8080/novaEspecialidade)
+
+- [Lista e Edita Especialidade](http://localhost:8080/listaEspecialidades)
 
 

@@ -1,13 +1,16 @@
 package com.clickmed.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.clickmed.entity.Clinica;
 import com.clickmed.entity.Convenio;
 import com.clickmed.service.ConvenioService;
 
@@ -54,7 +57,6 @@ public class ConvenioController {
 	@RequestMapping(value = "/selecionaConvenio", method = RequestMethod.POST)
 	public String selecionaConvenio(Convenio convenio, ModelMap model) {
 		convenio = convenioService.buscaConvenio(convenio.getId());
-		System.out.println(convenio.toString());
 		model.addAttribute(convenio);
 		return "teste/convenio/edicao-convenio";
 	}
@@ -78,6 +80,14 @@ public class ConvenioController {
 	public String removeConvenio(ModelMap model, Convenio convenio) throws IOException {
 		convenioService.removeConvenio(convenio.getId());
 		return listaConvenios(model);
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "rest/convenio")
+	public @ResponseBody List<Convenio> listarPessoas(ModelMap model) throws IOException
+	{
+		List<Convenio> convenio = convenioService.listaConvenios();
+		model.addAttribute("convenio", convenio);
+		return convenio;
 	}
 	
 	

@@ -17,7 +17,6 @@
 <link rel="stylesheet" href="css/selectize/selectize.bootstrap3.css">
 <link rel="stylesheet" href="css/card.css">
 
-
 <!-- main css -->
 <link rel="stylesheet" href="css/style.css">
 
@@ -30,40 +29,6 @@
 <script src="js/jquery.validate.js"></script>
 <script src="js/javascript.js"></script>
 <script src="js/theme.js"></script>
-
-<!-- Main JS -->
-
-<!-- JS Opcional  -->
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('.data').mask('11/11/1111'), {
-			reverse : true
-		};
-		$('.time').mask('00:00:00', {
-			reverse : true
-		});
-		$('.date_time').mask('00/00/0000 00:00:00', {
-			reverse : true
-		});
-		$('.cep').mask('00000-000', {
-			reverse : true
-		});
-		$('.tel1').mask('(00) 0000-0000');
-		$('.tel2').mask('(00) 00000-0000');
-		$('.phone_us').mask('(000) 000-0000', {
-			reverse : true
-		});
-		$('.mixed').mask('AAA 000-S0S', {
-			reverse : true
-		});
-		$('.cpf').mask('000.000.000-00', {
-			reverse : true
-		});
-		$('.money').mask('000.000.000.000.000,00', {
-			reverse : true
-		});
-	});
-</script>
 
 </head>
 
@@ -94,19 +59,10 @@
 					<!-- Menu principal -->
 					<div class="collapse navbar-collapse offset"
 						id="navbarSupportedContent">
-						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item active"><a class="nav-link"
-								href="index.html">Home</a></li>
-							<li class="nav-item"><a class="nav-link"
-								href="about-us.html">Quem somos</a></li>
-							<li class="nav-item"><a class="nav-link" href="contact.html">Contato</a></li>
-						</ul>
 					</div>
 				</div>
 			</nav>
 		</div>
-
-
 		<section class="simple-header">
 			<div class="container">
 				<div class="row">
@@ -130,8 +86,8 @@
 					</div>
 					<div class="form-group col-2 col-md-2">
 						<div class="control-group">
-							<button name="refazerPesquisa" value="/"
-								class="secondary-btn text-uppercase">Refazer pesquisa</button>
+							<a href="/"> <button name="refazerPesquisa" value="/"
+								class="secondary-btn text-uppercase">Refazer pesquisa</button></a>
 						</div>
 					</div>
 				</div>
@@ -144,67 +100,58 @@
 		<div class="container">
 
 			<!--Início da card  -->
+			<c:forEach items="${medico}" var="medico">
 			<div class="wrapper">
-
-				<div class="card radius shadowDepth1 card__padding">
-					<div class="row card-line">
-						<div class="border-tlr-radius col-md-6">
+				<div class="card radius shadowDepth1">
+					<div class="row card-line card__padding">
+						<div class="border-tlr-radius">
 							<img src="http://lorempixel.com/400/200/sports/" alt="image"
 								class="border-tlr-radius foto-card-circle">
 						</div>
-						<div class="card-head-title col-md-6">
-							<a>Nome do médico</a></br> <a>CRM</a>
+						<div class="card-head-title">
+							<a>Nome do médico</a></br> 
+							<a>CRM</a>
+							<a>${medico.nome}</a></br> 
+							<a>${medico.crm}</a>								
 						</div>
 					</div>
 
-					<div class="card__content card-line">
-						<div class="card__share">
-							<div class="card__social">
-								<a class="share-icon facebook" href="#"><span
-									class="fa fa-facebook"></span></a> <a class="share-icon twitter"
-									href="#"><span class="fa fa-twitter"></span></a> <a
-									class="share-icon googleplus" href="#"><span
-									class="fa fa-google-plus"></span></a>
-							</div>
-
-							<a id="share" class="share-toggle share-icon" href="#"></a>
-						</div>
-
+					<div class="card__content card-line card__padding">
 						<div class="row card__meta">
 							<div class="col-md-12 col-12">
 								<a>Especialidades:</a>
 								<c:forEach items="${medico.especialidade}" var="especialidade">
 									<ul>
-										<a>Otorrino</a>
-										<a>${especialidade}</a>
+										<a class="card-title">Otorrino</a>
+										<a class="card-title">${especialidade}</a>
 									</ul>
 								</c:forEach>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-2 col-2">
-								<i class="fa-card fa-chevron-circle-left"></i>
+								<i class="fa-card fa-map-marker"></i>
 							</div>
 							<div class="col-md-10 col-10">
-								<p>Endereço do médico</p>
+								<a class="card-title">Endereço do médico</a>
+								<a class="card-title">${medico.rua}</a>
 							</div>
 						</div>
 					</div>
 
-					<div class="card__content">
-						Nota:<br> Custo:
+					<div class="card__content card-line card__padding">
+						<a class="card-title">Nota: ${medico.avaliacao}</a><br>
+						<a class="card-title">Custo: ${medico.preco}</a><br>
 					</div>
-					<div class="card-footer">
-						<a class="card-selecionar" href="/selecionaMedico">Visualizar</a>
+					<div class="card-bottom">
+						<a class="card-action" href="/selecionaMedico">Visualizar</a>
 					</div>
 
 				</div>
 			</div>
-
-
+			</c:forEach>
 		</div>
 	</section>
-	<!--================Fim do Cadastro =================-->
 	<!--================ Começo Area Rodapé  =================-->
 	<footer class="footer-bottom">
 		<div class="container">

@@ -53,6 +53,7 @@ h2 {
 .border-tlr-radius { 
 	border-top-left-radius: 2px;
 	border-top-right-radius: 2px; 
+	padding:0;
 }
 
 .text-center { text-align: center; }
@@ -80,7 +81,7 @@ h2 {
 }
 
 .card__padding {
-	padding: 1.6rem;
+	padding:10px;
 }
  
 .card__image {

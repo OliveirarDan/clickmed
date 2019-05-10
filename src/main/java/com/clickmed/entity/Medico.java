@@ -45,6 +45,12 @@ public class Medico {
 	 */
 
 	private String foto;
+	
+		
+	@ManyToMany
+	@JoinTable(name = "medicos_has_especialidades", joinColumns = { @JoinColumn(name = "medico_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "especialidades_id") })
+	private List<Especialidade> especialidades;
 
 	@OneToOne
 	private Usuario usuario;

@@ -69,6 +69,7 @@ function initSteps() {
 			return form.valid();
 		},
 	});
+}
 
 $(document).ready(function() {
 
@@ -165,19 +166,8 @@ $(document).ready(function() {
 			id : 3,
 			title : '3'
 		} ],
-
-		onChange : function(value) {
-			title : 'Cardiologista'
-		}, {
-			id : 2,
-			title : 'Otorrino'
-		}, {
-			id : 3,
-			title : 'Psicólogo'
-		} ],
-
 		onChange: function(value) {
-			$('#especialidade').attr('value', value);
+			$('#custo').attr('value', value);
 	    },
 		create : false
 	});

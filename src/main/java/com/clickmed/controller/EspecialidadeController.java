@@ -1,12 +1,14 @@
 package com.clickmed.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.clickmed.entity.Especialidade;
 import com.clickmed.service.EspecialidadeService;
@@ -38,6 +40,15 @@ public class EspecialidadeController {
 		return "teste/especialidade/especialidades";
 	}
 	
+	
+
+	
+	@RequestMapping(value = "/listaEspecialidadesJson", method = RequestMethod.GET)
+	private String listaEspecialidadesJson(ModelMap model) {
+		model.put("especialidades", especialidadeService.listaEspecialidades());
+		return especialidadeService.listaEspecialidades().toString();
+	}
+	
 	@RequestMapping(value = "/salvaEspecialidade", method = RequestMethod.POST)
 	public String salvaEspecialidade(Especialidade especialidade, ModelMap model)throws IOException{
 		especialidadeService.atualizaEspecialidade(especialidade);
@@ -60,5 +71,13 @@ public class EspecialidadeController {
 	}
 	
 	
+	
+	@RequestMapping(method = RequestMethod.GET, value = "rest/especialidade")
+	public @ResponseBody List<Especialidade> listarPessoas(ModelMap model) throws IOException
+	{
+		List<Especialidade> especialidade = especialidadeService.listaEspecialidades();
+		model.addAttribute("especialidade", especialidade);
+		return especialidade;
+	}
 	
 }

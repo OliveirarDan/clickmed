@@ -312,6 +312,7 @@ label{
   height: 150px;
   border: 2px solid #cccccc;
   top: 72px;
+  margin-bottom: 8%;
 }
 img {
   max-width: 100%;
@@ -3514,5 +3515,56 @@ h6 {
       text-align: left; } }
 
 /*---------------------------------------------------- */
+
+  /*============================================================================================ */
+  /* Infos Médico css
+  ============================================================================================ */
+  
+.card_infos {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+   
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.circle {
+  border-radius: 1000px !important;
+  overflow: hidden;
+  width: 175px;
+  height: 175px;
+  border: 2px solid #cccccc;
+  top: 72px;
+  margin-bottom: 10%;
+  margin-top: 5%;
+}
+ 
+.nota {
+  max-height: 200px;
+  display: block;
+  margin: auto;
+  width: 50%;
+  margin-top: 35%;
+  text-align:center;
+}
+  
+.title {
+	margin-top: 5%;
+	margin-bottom:5%;
+	margin-left:7%;	
+}
+
+.line {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.li{
+	margin-left: 50%;
+}
+
+}  
+  
 
 /*# sourceMappingURL=style.css.map */

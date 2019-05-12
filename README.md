@@ -27,12 +27,12 @@ Deploy do projeto:
 - [Lista e Edita Pacientes](http://localhost:8080/listaPacientes)
 
 
-
 #####Médico
 - [Cadastro de médico](http://localhost:8080/novoMedico)
 	
 - [Lista e Edita médico](http://localhost:8080/listaMedicos)
 
+- [Informações do médico](http://localhost:8080/infosMedico)
 
 #####Convênio
 - [Cadastro de convênio](http://localhost:8080/novoConvenio)

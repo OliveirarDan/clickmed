@@ -52,10 +52,10 @@
 	<!--================Início do Container principal =================-->
 	<section class="contact_area section_gap">
 		<div class="container">
-
 			<!--Início da card  -->
-			<c:forEach items="${medico}" var="medico">
-				<div class="wrapper">
+			<div class="row">
+			<c:forEach items="${medico}" var="medico">			
+				<div class="wrapper col-md-4 col-4">
 					<div class="card radius shadowDepth1">
 						<div class="row card-line card__padding">
 							<div class="border-tlr-radius">
@@ -75,7 +75,7 @@
 										<ul>
 											<a class="card-title">Otorrino</a>
 											<a class="card-title">${especialidade}</a>
-										</ul>
+										</ul>	
 									</c:forEach>
 								</div>
 							</div>
@@ -99,8 +99,9 @@
 						</div>
 
 					</div>
-				</div>
-			</c:forEach>
+				</div>				
+			</c:forEach>			
+			</div>			
 		</div>
 	</section>
 	<!--================ Começo Area Rodapé  =================-->

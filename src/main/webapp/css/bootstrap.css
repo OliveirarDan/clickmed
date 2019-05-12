@@ -184,8 +184,8 @@ a {
 }
 
 a:hover {
-    color: #0056b3;
-    text-decoration: underline
+    color: #516bf0;
+    text-decoration: underline;
 }
 
 a:not([href]):not([tabindex]) {
@@ -224,7 +224,7 @@ figure {
 
 img {
     vertical-align: middle;
-    border-style: none
+    border-style: none;
 }
 
 svg {

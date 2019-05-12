@@ -21,11 +21,11 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-lg-4 col-4 header-left">
-						<a class="" href="/"> <i class="fa fa-chevron-circle-left"></i>
+						<a href="/"> <i class="fa fa-menu fa-chevron-left"></i>
 						</a>
 					</div>
 					<div class="col-md-8 col-lg-8 col-8 header-right">
-						<span class="header-title"><h2>Cadastro - Clínica</h2></span>
+						<span class="header-title"><h2>Cadastro</h2></span>
 					</div>
 				</div>
 			</div>

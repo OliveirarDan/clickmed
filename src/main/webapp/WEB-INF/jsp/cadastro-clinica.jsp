@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="vendors/animate-css/animate.css">
+
 <!-- main css -->
 <link rel="stylesheet" href="css/style.css">
 
@@ -27,16 +28,30 @@
 
 <!-- JS Opcional  -->
 <script type="text/javascript">
-$(document).ready(function(){
-	  $('.data').mask('11/11/1111', {reverse: true});
-	  $('.time').mask('00:00:00' , {reverse: true});
-	  $('.date_time').mask('00/00/0000 00:00:00' , {reverse: true});
-	  $('.cep').mask('00000-000', {reverse: true});
-	  $('.tel1').mask('(00) 0000-0000');
-	  $('.tel2').mask('(00) 00000-0000');
-	  $('.cpf').mask('000.000.000-00', {reverse: true});
-	  $('.cnpj').mask('00.000.000/0000-00', {reverse: true});
-	  $('.money').mask('000.000.000.000.000,00', {reverse: true});
+	$(document).ready(function() {
+		$('.data').mask('11/11/1111', {
+			reverse : true
+		});
+		$('.time').mask('00:00:00', {
+			reverse : true
+		});
+		$('.date_time').mask('00/00/0000 00:00:00', {
+			reverse : true
+		});
+		$('.cep').mask('00000-000', {
+			reverse : true
+		});
+		$('.tel1').mask('(00) 0000-0000');
+		$('.tel2').mask('(00) 00000-0000');
+		$('.cpf').mask('000.000.000-00', {
+			reverse : true
+		});
+		$('.cnpj').mask('00.000.000/0000-00', {
+			reverse : true
+		});
+		$('.money').mask('000.000.000.000.000,00', {
+			reverse : true
+		});
 	});
 </script>
 
@@ -49,8 +64,7 @@ $(document).ready(function(){
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-lg-4 col-4 header-left">
-						<a class="" href="index.jsp"> <i
-							class="fa fa-chevron-circle-left"></i>
+						<a class="" href="/"> <i class="fa fa-chevron-circle-left"></i>
 						</a>
 					</div>
 					<div class="col-md-8 col-lg-8 col-8 header-right">
@@ -60,7 +74,6 @@ $(document).ready(function(){
 			</div>
 		</section>
 	</header>
-
 	<!--================ Final Header Area =================-->
 
 
@@ -81,68 +94,85 @@ $(document).ready(function(){
 			<!--================Início dos campos de Cadastro =================-->
 			<div class="row">
 				<div class="col-lg-12">
-					<form class="row contact_form" action="cadastraClinica" method="post" id="cadastro-clinica">
-						<div class="col-md-12">
+					<form class="row contact_form" action="cadastraClinica"
+						method="post" id="cadastro-clinica">
+						<div class="col-md-8">
 							<div class="row">
-								<div class="form-group col-md-8 col-12">
+								<div class="form-group col-md-12 col-12">
 									<input type="text" class="single-input" id="fantasia"
 										name="nomeFantasia" placeholder="Nome Fantasia" required />
 								</div>
 							</div>
 							<div class="row">
-								<div class="form-group col-md-8 col-12">
-									<input type="text" class="single-input" id="razao" name="razaoSocial"
-										placeholder="Razão Social" required />
+								<div class="form-group col-md-12 col-12">
+									<input type="text" class="single-input" id="razao"
+										name="razaoSocial" placeholder="Razão Social" required />
 								</div>
 							</div>
 							<div class="row">
-								<div class="form-group col-md-4 col-12">
+								<div class="form-group col-md-6 col-12">
 									<input type="text" class="single-input cnpj" id="cnpj"
 										name="cnpj" placeholder="CNPJ" required />
 								</div>
-								<div class="form-group col-md-4 col-12">
+								<div class="form-group col-md-6 col-12">
 									<input type="email" class="single-input" id="email"
 										name="email" placeholder="E-mail de atendimento" required />
 								</div>
 							</div>
 							<div class="row">
-								<div class="form-group col-md-4 col-12">
+								<div class="form-group col-md-6 col-12">
 									<input type="tel" class="single-input tel1" id="telresidencial"
-										name="telefone1" placeholder="Telefone principal"
-										required />
+										name="telefone1" placeholder="Telefone principal" required />
 								</div>
-								<div class="form-group col-md-4 col-12">
+								<div class="form-group col-md-6 col-12">
 									<input type="tel" class="single-input tel1" id="telcelular"
-										name="telefone2" placeholder="Outro telefone"
-										/>
+										name="telefone2" placeholder="Outro telefone" />
 								</div>
 							</div>
 							<div class="row">
-								<div class="form-group col-md-2 col-12">
+								<div class="form-group col-md-4 col-12">
 									<input type="text" class="single-input cep" id="cep" name="cep"
 										placeholder="CEP" required />
 								</div>
 							</div>
 							<div class="row">
-								<div class="form-group col-md-6">
+								<div class="form-group col-md-8">
 									<input type="text" class="single-input" id="rua" name="rua"
 										placeholder="Rua, Av, Logradouro" required />
 								</div>
-								<div class="form-group col-md-2">
+								<div class="form-group col-md-4">
 									<input type="text" class="single-input" id="numero"
 										name="numero" placeholder="Nº" maxlength="5" required />
 								</div>
 							</div>
 							<div class="row">
-								<div class="form-group col-md-6">
+								<div class="form-group col-md-8">
 									<input type="text" class="single-input" id="cidade"
 										name="cidade" placeholder="Cidade" required />
 								</div>
-								<div class="form-group col-md-2">
+								<div class="form-group col-md-4">
 									<input type="text" class="single-input" id="uf" name="estado"
 										placeholder="UF" maxlength="2" required />
 								</div>
 							</div>
+						</div>
+						<div class="col-md-4">
+							<h2>Impulsione seus resultados!</h2>
+							<h4>Cadastre sua clínica ou hospital e parceba o aumento na
+								procura.</h4>
+
+							<i class="fas fa-chart-line"></i>
+							<p>Acompanhe o crescimento da procura de seus profissionais.</p>
+							<i class="fas fa-users"></i>
+							<p>Milhares de pacientes todos os dias.</p>
+							<i class="fas fa-user-md"></i>
+							<p>Maior base de profissionais da saúde do Brasil.</p>
+
+							<div class="feature_head">
+								<i class="fas fa-users"></i>
+								<p>Acompanhe o crescimento da procura de seus profissionais.</p>
+							</div>
+
 						</div>
 						<div class="col-md-12 text-center">
 							<button type="submit" name="cadastraClinica"

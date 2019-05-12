@@ -182,13 +182,9 @@
 												class="single-input required" type="password" id="senha"
 												name="usuario.senha" maxlength="8" minlength="8">
 										</div>
-										
-									
+
+
 										<div class="form-group">
-											<input type="hidden"
-												class="single-input required"  id="senha"
-												name="usuario.permissao" value="medico">
-										
 											<input type="hidden" class="single-input" id="permissao"
 												name="permissao" value="1" required />
 										</div>
@@ -258,7 +254,7 @@
 							<div class="form-group col-md-12">
 								<div class="control-group">
 									<span>Não encontrou sua clínica ou consultório? <a
-										href="/cadastro-clinica"> Clique aqui e cadastre.</a>
+										href="/novaClinica"> Clique aqui e cadastre.</a>
 									</span>
 								</div>
 							</div>

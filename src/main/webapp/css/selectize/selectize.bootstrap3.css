@@ -181,13 +181,13 @@
   cursor: pointer;
   margin: 0 3px 3px 0;
   padding: 1px 3px;
-  background: #724aeabd;
+  background: #00c3a5;
   color: #fff;
   font-weight: bold;
   border: 0 solid rgba(0, 0, 0, 0);
 }
 .selectize-control.multi .selectize-input > div.active {
-  background: #724aeabd;
+  background: #00c3a5;
   color: #fff;
   border: 0 solid rgba(0, 0, 0, 0);
 }
@@ -383,7 +383,7 @@
   display: none;
 }
 .selectize-input.focus {
-  border-color: #9276ec;
+  border-color: #00c3a5;
   outline: none;
 }
 .has-error .selectize-input {

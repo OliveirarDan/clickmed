@@ -41,12 +41,4 @@ public class TesteController {
 		model.put("teste",testeService.editateste(teste));
 		return abrirTelaDeTestes(model, teste);
 	}
-	
-	
-	@RequestMapping(value = "/busca", method = RequestMethod.GET)
-
- 	public String index(ModelMap model, Teste teste) {
-		return "resultado-busca";
-	}
-
 }

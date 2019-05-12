@@ -1,4 +1,4 @@
-﻿/*
+/*
 Common 
 */
 
@@ -108,9 +108,9 @@ Wizard
 .wizard > .steps .disabled a:active
 {
     background: #f8f9fa;
-    color: #f8b600;
+    color: #00c3a5;
     font-weight:bold;
-    border:1px solid #f8b600;
+    border: 1px solid #00c3a5;
     cursor: default;
 }
 
@@ -118,7 +118,7 @@ Wizard
 .wizard > .steps .current a:hover,
 .wizard > .steps .current a:active
 {
-    background: #f8b600;
+    background: #00c3a5;
     color: #fff;
     cursor: default;
     font-weight: bold;
@@ -128,15 +128,18 @@ Wizard
 .wizard > .steps .done a:hover,
 .wizard > .steps .done a:active
 {
-    background: #f8b60099;
+    background: #00c3a5;
     color: #fff;
+    font-weight: bold;
 }
+
+a#wizard-t-0 {}
 
 .wizard > .steps .error a,
 .wizard > .steps .error a:hover,
 .wizard > .steps .error a:active
 {
-    background: #ff3111;
+    background: #fb492d;
     color: #fff;
 }
 
@@ -194,7 +197,6 @@ Wizard
 
 .wizard > .content > .body input.error
 {
-    background: rgb(251, 227, 228);
     border: 1px solid #fbc2c4;
     color: #8a1f11;
 }
@@ -249,7 +251,7 @@ Wizard
 .wizard > .actions a:hover,
 .wizard > .actions a:active
 {
-    background: #f8b600;
+    background: #00c3a5;
     color: #fff;
     font-weight: bold;
     display: block;

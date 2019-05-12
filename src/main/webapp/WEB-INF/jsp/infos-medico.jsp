@@ -76,17 +76,19 @@
 							<div class="col-md-4">
 								<div class="center">
 									<h4><label id="espec">Especialidades</label></h4>	
-									<label id="especialidades">Teste</label></br> <!-- Aqui precisa fazer um for each em uma lista-->						
-									<label id="especialidades">Teste</label></br>
-									<label id="especialidades">Teste</label></br>
+									<ul>
+										<li id="experiencia">Teste</li>
+										<li id="experiencia">Teste</li>
+									</ul>
 								</div>
 							</div>
 							<div class="col-md-8">
 								<div class="center">
 									<h4><label id="conv">Convênios atendidos</label></h4>	
-									<label id="convenio">Teste</label></br> <!-- Aqui precisa fazer um for each em uma lista-->						
-									<label id="convenio">Teste</label></br>
-									<label id="convenio">Teste</label></br>
+									<ul>
+										<li id="experiencia">Teste</li>
+										<li id="experiencia">Teste</li>
+									</ul>
 								</div>
 							</div>
 						</div>
@@ -122,7 +124,7 @@
 			<!--================Inicio da segunda linha=================-->
 			<div class="row">
 				<div class="col-md-6"> <!-- Primeiro card da primeira linha -->
-					<div class="card_infos">
+					<div class="cards">
 						<div class="row">
 							<div class="col-md-12">
 								<h3 class="title">Experiência Profissional</h3>
@@ -133,12 +135,24 @@
 							<ul>
 								<li class="li" id="experiencia">Teste</li>
 								<li class="li" id="experiencia">Teste</li>
+								<li class="li" id="experiencia">Teste</li>
+								<li class="li" id="experiencia">Teste</li>
+								<li class="li" id="experiencia">Teste</li>
+								<li class="li" id="experiencia">Teste</li>
+								<li class="li" id="experiencia">Teste</li>
+								<li class="li" id="experiencia">Teste</li>
+								<li class="li" id="experiencia">Teste</li>
+								<li class="li" id="experiencia">Teste</li>
+								<li class="li" id="experiencia">Teste</li>
+								<li class="li" id="experiencia">Teste</li>
+								<li class="li" id="experiencia">Teste</li>
+								<li class="li" id="experiencia">Teste</li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6"> <!-- Segundo card da primeira linha -->
-					<div class="card_infos">
+					<div class="cards">
 						<div class="row">
 							<div class="col-md-12">
 								<h3 class="title">Formação Acadêmica</h3>

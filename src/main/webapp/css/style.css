@@ -3618,6 +3618,7 @@ h6 {
   transition: 0.3s;
   height: 300px;
   overflow: auto;
+  overflow-x: hidden;
 
 }
 .card:hover {
@@ -3645,9 +3646,9 @@ h6 {
 }
   
 .title {
-	margin-top: 5%;
-	margin-bottom:5%;
-	margin-left:7%;	
+	margin-top: 25px;
+	margin-bottom:25px;
+	margin-left:50px;	
 }
 
 .line {
@@ -3657,6 +3658,21 @@ h6 {
 
 .li{
 	margin-left: 50%;
+}
+
+.aval{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.foto-info {
+  border-radius: 1000px !important;
+  overflow: hidden;
+  width: 125px;
+  height: 125px;
+  border: 2px solid #cccccc;
+  top: 72px;
+  margin-bottom: 5%;
 }
 
 }  

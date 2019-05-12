@@ -57,7 +57,7 @@
 							<div class="col-md-4">
 								<div class="center">
 									</br>
-										<div class="foto-circle">
+										<div class="foto-info">
 											<!-- User Profile Image -->
 											<img class="profile-pic" src="img/person.jpg">
 											
@@ -68,9 +68,12 @@
 							</div>
 							<div class="col-md-8">
 								</br>
-								<h2><label id="nome">Nome</label></h2>
-								<h4><label id="crm">CRM</label></h4>
+								<h3><label class="aval" id="nome" name="nome" value="${medico.nome}">Nome</label></h3>
+								<h3><label class="aval" id="crm" name="crm" value="${medico.crm}">CRM</label></h3>
+								</br>
+								<hr class="line">
 							</div>
+
 						</div>
 						<div class="row">
 							<div class="col-md-4">
@@ -145,8 +148,6 @@
 								<li class="li" id="experiencia">Teste</li>
 								<li class="li" id="experiencia">Teste</li>
 								<li class="li" id="experiencia">Teste</li>
-								<li class="li" id="experiencia">Teste</li>
-								<li class="li" id="experiencia">Teste</li>
 							</ul>
 						</div>
 					</div>
@@ -169,11 +170,24 @@
 				</div>				
 			</div>
 			<!--================Fim da segunda linha=================-->
+			</br>
+			<!--================Inicio da terceira linha=================-->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="cards">
+						<h3 class="title">Opinião dos pacientes</h3>
+						<hr class="line">
+						<h5 class="aval">Nome</h5> 
+						<p class="aval">TESTE TESTE TESTE TESTE</p>  
+					</div>	
+				</div>
+			</div>
+			
+			<!--================Fim da terceira linha=================-->
 
 
 		</div>
 	</section>
-	<!--================Fim do Cadastro =================-->
 	<!--================ Começo Area Rodapé  =================-->
 	<footer class="footer-bottom">
 		<div class="container">

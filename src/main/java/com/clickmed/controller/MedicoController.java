@@ -31,7 +31,6 @@ public class MedicoController {
 	 */
 	@RequestMapping(value = "/cadastraMedico", method = { RequestMethod.POST })
 	public String cadastraMedico(Medico medico, ModelMap model) {
-		System.out.println(medico.toString());
 		try {
 			medicoService.insereMedico(medico);
 		} catch (IOException e) {
@@ -61,7 +60,7 @@ public class MedicoController {
 		medico = medicoService.buscaMedico(medico.getId());
 		System.out.println(medico.toString());
 		model.addAttribute(medico);
-		return "/teste/medico/edicao-medico";
+		return "edicao-medico";
 	}
 	
 	

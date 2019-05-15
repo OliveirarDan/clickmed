@@ -55,6 +55,8 @@ public class MedicoService {
 	 */
 	public Medico atualizaMedico(Medico medico) throws IOException {
 		if (this.medicoDAO.existsById(medico.getId()) == true) {
+			//Atualiza os dados de usuário
+			usuarioService.atualizaUsuario(medico.getUsuario());
 			return this.medicoDAO.save(medico);
 		}
 		return null;

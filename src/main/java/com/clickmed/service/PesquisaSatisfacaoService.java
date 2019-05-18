@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.clickmed.dao.PesquisaSatisfacaoDAO;
+import com.clickmed.entity.Medico;
 import com.clickmed.entity.PesquisaSatisfacao;
 
 @Service
@@ -29,13 +30,24 @@ public class PesquisaSatisfacaoService {
 	}
 
 	/**
-	 * ----TESTANDO----- Insere Pesquisa de Satisfação
+	 * ok Insere Pesquisa de Satisfação
 	 * 
 	 * @param pSatisfacao
 	 * @return Pesquisa de Satisfação salva no banco.
 	 * @throws IOException
 	 */
 	public PesquisaSatisfacao inserePS(PesquisaSatisfacao pSatisfacao) throws IOException {
+		return this.psDAO.save(pSatisfacao);
+	}
+	
+	/**
+	 * Insere Pequisa de Satisfacao com média dos indices 1,2,3 no indice 4
+	 * @param pSatisfacao
+	 * @return PesquisaSatisfacao com a média
+	 * @throws IOException
+	 */
+	public PesquisaSatisfacao inserePSComMedia(PesquisaSatisfacao pSatisfacao) throws IOException {
+		pSatisfacao.setPergunta4((pSatisfacao.getPergunta1()+pSatisfacao.getPergunta2()+pSatisfacao.getPergunta3())/3);
 		return this.psDAO.save(pSatisfacao);
 	}
 
@@ -83,4 +95,8 @@ public class PesquisaSatisfacaoService {
 		return this.psDAO.findAll();
 	}
 
+	public List<PesquisaSatisfacao> listaPSPorMedicos(Medico medico){
+		return psDAO.findByMedico_Id(medico.getId());
+	}
+	
 }

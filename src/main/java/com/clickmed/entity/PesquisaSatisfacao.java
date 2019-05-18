@@ -139,6 +139,11 @@ public class PesquisaSatisfacao {
 	public void setPaciente(Paciente paciente) {
 		this.paciente = paciente;
 	}
+	
+	public void setIdPaciente(Long idPaciente) {
+		this.paciente.setId(idPaciente);
+	}
+
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;

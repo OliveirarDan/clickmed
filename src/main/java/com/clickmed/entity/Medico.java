@@ -39,10 +39,10 @@ public class Medico {
 	private String especialidade;
 	private String sexo;
 	
-	/**
-	 * Para futura vinculação de especialidades --@ManyToOne private Especialidade
-	 * especialidade
-	 */
+	@ManyToMany
+	@JoinTable(name = "medicos_has_especialidades", joinColumns = { @JoinColumn(name = "medico_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "especialidades_id") })
+	private List<Especialidade> especialidades;
 
 	private String foto;
 

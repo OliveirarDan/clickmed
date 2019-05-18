@@ -53,8 +53,3 @@ Deploy do projeto:
 - [Lista e Edita Especialidade](http://localhost:8080/listaEspecialidades)
 
 
-
-#####------- Testando Sprint3 -------
-
-#####Avaliação (Pesquisa de Satisfação)
-- [Lista Médicos para Avaliação](http://localhost:8080/pesquisaSatisfacao)

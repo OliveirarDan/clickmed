@@ -19,6 +19,9 @@ public class MedicoService {
 	UsuarioService usuarioService;
 
 	private MedicoDAO medicoDAO;
+	
+	private String variavelAuxNome;
+
 
 	@Autowired
 	public MedicoService(MedicoDAO medicoDAO) {
@@ -88,6 +91,44 @@ public class MedicoService {
 	 */
 	public List<Medico> listaMedicos() {
 		return this.medicoDAO.findAll();
+	}
+	
+
+	public List<Medico> listarMedicoEspecialidade(String especialidade) {
+		return medicoDAO.filtroEspecialidade(especialidade);
+	}
+	
+	public List<Medico> listarNomeMedico2(String nome) throws IOException {
+		String[] partesDoNome = nome.split(" ");
+		String parte1 = partesDoNome[0];
+		String parte2 = partesDoNome[1];
+		
+		System.out.println("AGORA VAI - nome: " + parte1 + " sobrenome: " + parte2);
+
+		if (parte2 == "") {
+		//	parte1 = variavelAuxNome;
+			System.out.println(parte1);
+			return listarNomeMedicos();
+		} else {
+		return medicoDAO.queryMaisNome(parte1, parte2);
+		}
+	}
+	
+	public List<Medico> listarNomeMedicos()throws IOException{
+		return medicoDAO.findByNome(variavelAuxNome);
+	}
+
+	public List<Medico> listarNomeMedico(String nome) throws IOException{
+		return medicoDAO.findByNome(nome);
+	}
+
+	public String listarNomeMedicoString(String nomeSemEspaco) throws IOException {
+		if (nomeSemEspaco.contains(" ")) {
+			listarNomeMedico2(nomeSemEspaco);
+		} else {
+			listarNomeMedico(nomeSemEspaco);
+		}
+		return null;
 	}
 
 }

@@ -8,11 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.clickmed.entity.Medico;
-import com.clickmed.entity.Paciente;
 import com.clickmed.entity.PesquisaSatisfacao;
-import com.clickmed.service.MedicoService;
-import com.clickmed.service.PacienteService;
 import com.clickmed.service.PesquisaSatisfacaoService;
 
 @Controller
@@ -20,77 +16,99 @@ public class PesquisaSatisfacaoController {
 
 	@Autowired
 	PesquisaSatisfacaoService pesquisaSatisfacaoService;
-
-	@Autowired
-	MedicoService medicoService;
-	
-	@Autowired
-	PacienteService pacienteService;
 	
 	/**
-	 * ok
+	 * ----TESTANDO---- Falta criar tela cadastro-pesquisaSatisfacao
+	 * 
+	 * @param model
+	 * @return
 	 */
-	@RequestMapping(value = "/pesquisaSatisfacao", method = RequestMethod.GET)
-	public String pesquisaSatisfacao(ModelMap model) {
-		model.put("medicos", medicoService.listaMedicos());
-		return "/teste/avaliacao/seleciona-medicos";
+	@RequestMapping(value = "/novoPesquisaSatisfacao", method = RequestMethod.GET)
+	public String novoPesquisaSatisfacao(ModelMap model) {
+		return "cadastro-pesquisaSatisfacao";
 	}
 
 	/**
-	 * ok
-	 */
-	@RequestMapping(value = "/iniciaPesquisaSatisfacao", method = { RequestMethod.POST })
-	public String iniciaPesquisaSatisfacao(ModelMap model, Medico medico) {
-		return "/teste/avaliacao/cadastro-pesquisaSatisfacao";
-	}
-
-	
-	
-	@RequestMapping(value = "/inicia", method = { RequestMethod.POST })
-	public String inicia(ModelMap model, Medico medico) {
-		return "/teste/avaliacao/cadastro-pesquisaSatisfacao";
-	}
-	/**
-	 * -ok
+	 * ----TESTANDO---- Falta criar tela cadastro-pesquisaSatisfacao
 	 * 
 	 * @param pesquisaSatisfacao
 	 * @param model
 	 * @return
 	 */
 	@RequestMapping(value = "/cadastraPesquisaSatisfacao", method = { RequestMethod.POST })
-	public String cadastraPesquisaSatisfacao(PesquisaSatisfacao pesquisaSatisfacao, Paciente paciente,
-			ModelMap model) {
-		
-		//Setando Id do paciente que está avaliando
-		pesquisaSatisfacao.setIdPaciente(Long.parseLong("17"));
+	public String cadastraPesquisaSatisfacao(PesquisaSatisfacao pesquisaSatisfacao, ModelMap model) {
 		try {
-			pesquisaSatisfacaoService.inserePSComMedia(pesquisaSatisfacao);
+			pesquisaSatisfacaoService.inserePS(pesquisaSatisfacao);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return pesquisaSatisfacao(model);
+		return listaPesquisaSatisfacaos(model);
 	}
-
-
 
 	
 	/**
-	 * ok
+	 * ----TESTANDO----	Falta criar tela lista-pesquisaSatisfacao
 	 * @param model
-	 * @param medico
 	 * @return
 	 */
-	@RequestMapping(value = "/listaPesquisaSatisfacaoPorMedico", method = RequestMethod.POST)
-	private String listaPesquisaSatisfacaoPorMedico(ModelMap model, Medico medico) {
-		medico = medicoService.buscaMedico(medico.getId());
-		model.put("PSs", this.pesquisaSatisfacaoService.listaPSPorMedicos(medico));
-		model.addAttribute(medico);
-		return "/teste/avaliacao/pesquisas";
+	@RequestMapping(value = "/listaPesquisaSatisfacaos", method = RequestMethod.GET)
+	private String listaPesquisaSatisfacaos(ModelMap model) {
+		model.put("pesquisaSatisfacaos", this.pesquisaSatisfacaoService.listaPSs());
+		return "lista-pesquisaSatisfacaos";
 	}
 	
-
-
-
-
-
+	/**
+	 * ----TESTANDO----	Falta criar tela edicao-pesquisaSatisfacao
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/selecionaPesquisaSatisfacao", method = RequestMethod.POST)
+	public String selecionaPesquisaSatisfacao(PesquisaSatisfacao pesquisaSatisfacao, ModelMap model) {
+		pesquisaSatisfacao = pesquisaSatisfacaoService.buscaPS(pesquisaSatisfacao.getId());
+		System.out.println(pesquisaSatisfacao.toString());
+		model.addAttribute(pesquisaSatisfacao);
+		return "edicao-pesquisaSatisfacao";
+	}
+	
+	
+	
+	/**
+	 * ----TESTANDO----
+	 * -----ATENçÃO------
+	 * Neste método é necessário ter todos os dados do pesquisaSatisfacao antes de modificalo no BD,
+	 * Você pode usar uma variável nPesquisaSatisfacao para carregar os itens pelo id e depois altera-lo.
+	 * Ou pode pegar a entidade completa da VIEW.
+	 * 
+	 */
+	@RequestMapping(value = "/salvaPesquisaSatisfacao", method = { RequestMethod.POST })
+	public String salvaPesquisaSatisfacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao) throws IOException {
+		//nPesquisaSatisfacao criada para armazenar o pesquisaSatisfacao atualizado da View temporariamente		
+		PesquisaSatisfacao nPesquisaSatisfacao = pesquisaSatisfacao;
+		//Carregando o objeto pesquisaSatisfacao completo do banco
+		pesquisaSatisfacao = pesquisaSatisfacaoService.buscaPS(pesquisaSatisfacao.getId());
+		//Exibindo como está no banco
+		System.out.println("Atual: " + pesquisaSatisfacao.toString());
+		//Exibindo como ficou depois da alteração na view
+		System.out.println("Novo: " +nPesquisaSatisfacao.toString());
+		//Atualizando nome do objeto
+		pesquisaSatisfacao.setAvaliacao(nPesquisaSatisfacao.getAvaliacao());
+		//Salvando no banco
+		pesquisaSatisfacaoService.atualizaPS(pesquisaSatisfacao);
+		return listaPesquisaSatisfacaos(model);
+	}
+	
+	
+	/**
+	 * ----TESTANDO----	Falta criar tela edicao-pesquisaSatisfacao
+	 * @param model
+	 * @return
+	 */	
+	@RequestMapping(value = "/removePesquisaSatisfacao", method = { RequestMethod.POST })
+	public String removePesquisaSatisfacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao) throws IOException {
+		pesquisaSatisfacaoService.removePS(pesquisaSatisfacao.getId());
+		return listaPesquisaSatisfacaos(model);
+	}
+	
+	
+	
 }

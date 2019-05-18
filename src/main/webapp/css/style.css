@@ -4797,6 +4797,7 @@ h6 {
 .card_infos {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
+  background-color:white;
 }
 
 .cards {
@@ -4805,6 +4806,7 @@ h6 {
   height: 300px;
   overflow: auto;
   overflow-x: hidden;
+  background-color:white;
 
 }
 .card:hover {
@@ -4820,6 +4822,7 @@ h6 {
   top: 72px;
   margin-bottom: 10%;
   margin-top: 5%;
+  background-color: white;
 }
  
 .nota {
@@ -4843,7 +4846,7 @@ h6 {
 }
 
 .li{
-	margin-left: 50%;
+	margin-left: 75px;
 }
 
 .aval{
@@ -4851,7 +4854,16 @@ h6 {
 	margin-right: 5%;
 }
 
-}  
-  
+.foto-info{
+  border-radius: 1000px !important;
+  overflow: hidden;
+  width: 125px;
+  height: 125px;
+  border: 2px solid #cccccc;
+  top: 72px;
+  margin-bottom: 5%;
+}
+
+
 
 /*# sourceMappingURL=style.css.map */

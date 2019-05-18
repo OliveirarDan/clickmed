@@ -48,7 +48,8 @@ html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -ms-overflow-style: scrollbar;
-    -webkit-tap-highlight-color: transparent
+    -webkit-tap-highlight-color: transparent;
+    height: 100%;
 }
 
 @-ms-viewport {
@@ -183,8 +184,8 @@ a {
 }
 
 a:hover {
-    color: #0056b3;
-    text-decoration: underline
+    color: #516bf0;
+    text-decoration: underline;
 }
 
 a:not([href]):not([tabindex]) {
@@ -223,7 +224,7 @@ figure {
 
 img {
     vertical-align: middle;
-    border-style: none
+    border-style: none;
 }
 
 svg {
@@ -584,7 +585,7 @@ pre code {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
 }
 
 @media (min-width:576px) {
@@ -887,7 +888,7 @@ pre code {
 }
 
 .offset-3 {
-    margin-left: 25%
+    margin-left: 25%;
 }
 
 .offset-4 {
@@ -5560,7 +5561,7 @@ input[type=submit].btn-block {
 }
 
 .close:not(:disabled):not(.disabled) {
-    cursor: pointer
+    cursor: pointer;
 }
 
 .close:not(:disabled):not(.disabled):focus,
@@ -5686,12 +5687,12 @@ button.close {
 
 .modal-header .close {
     padding: 1rem;
-    margin: -1rem -1rem -1rem auto
+    margin: -1rem -1rem -1rem auto;
 }
 
 .modal-title {
     margin-bottom: 0;
-    line-height: 1.5
+    line-height: 1.5;
 }
 
 .modal-body {

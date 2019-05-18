@@ -4,38 +4,25 @@
 <html lang="pt">
 
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="icon" href="img/favicon.png" type="image/png">
+
+<!-- Include de todos os imports e meta tags -->
+<jsp:include page="includes/imports.jsp" />
+
+
 <title>ClickMed</title>
-<!-- Bootstrap CSS -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet" href="vendors/animate-css/animate.css">
-<!-- main css -->
-<link rel="stylesheet" href="css/style.css">
-
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mask.js"></script>
-<script src="js/theme.js"></script>
-<script src="js/jquery.validate.js"></script>
-
 
 </head>
 
 <body>
 	<!--================ Header Area =================-->
 	<header>
+	<!--================ Include do Menu =================-->
+	<jsp:include page="includes/menu.jsp" />
 		<section class="simple-header">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-lg-4 col-4 header-left">
-						<a class="" href="/"> <i class="fa fa-chevron-circle-left"></i>
+						<a href="/"> <i class="fa fa-menu fa-chevron-left"></i>
 						</a>
 					</div>
 					<div class="col-md-8 col-lg-8 col-8 header-right">
@@ -104,22 +91,26 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-									<label id="teste"><span class="material-icons">&#xe55f;</span>Rua nicolina fernandes Rua nicolina fernandes</label>	
+									<label class="aval" id="endereco"><span class="glyphicon glyphicon-map-marker"></span>Rua nicolina fernandes Rua nicolina fernandes</label>									
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4"> <!-- Segundo card da primeira linha -->
-					<div class="center">
-						<div class="circle">
-							<div class="nota">
-								<h1 id="nota">4,57</h1>
+				<div class="row">
+						<div class="center">
+							<div class="circle">
+								<div class="nota">
+									<h1	 id="nota">4,57</h1>
+								</div>
 							</div>
 						</div>
-						
-						<h4>Média das avaliações</h4>
 					</div>
-					
+					<div class="row">
+						<div class="center">
+							<h4>Média das avaliações</h4>
+						</div>
+					</div>
 				</div>				
 			</div>
 			<!--================Fim da primeira linha =================-->
@@ -178,7 +169,7 @@
 						<h3 class="title">Opinião dos pacientes</h3>
 						<hr class="line">
 						<h5 class="aval">Nome</h5> 
-						<p class="aval">TESTE TESTE TESTE TESTE</p>  
+						<p class="aval" id="comentario">TESTE TESTE TESTE TESTE</p>  
 					</div>	
 				</div>
 			</div>

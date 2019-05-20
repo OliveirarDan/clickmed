@@ -38,7 +38,7 @@ public class Medico {
 	private String diasAtendimento;
 	private String especialidade;
 	private String sexo;
-	
+
 	/**
 	 * Para futura vinculação de especialidades --@ManyToOne private Especialidade
 	 * especialidade
@@ -64,8 +64,6 @@ public class Medico {
 		this.crm = crm;
 		this.usuario = usuario;
 	}
-	
-	
 
 	public Medico(Long id, @NotNull String crm, String nome, String sobrenome, String experienciaProfissional,
 			String formacaoAcademica, String planosConvenio, String telefone1, String telefone2,
@@ -185,7 +183,7 @@ public class Medico {
 
 	public void setConvenios(List<Convenio> convenios) {
 		this.convenios = convenios;
-	}	
+	}
 
 	public String getFormacaoAcademica() {
 		return formacaoAcademica;
@@ -194,7 +192,6 @@ public class Medico {
 	public void setFormacaoAcademica(String formacaoAcademica) {
 		this.formacaoAcademica = formacaoAcademica;
 	}
-	
 
 	public String getDiasAtendimento() {
 		return diasAtendimento;
@@ -237,7 +234,5 @@ public class Medico {
 				+ ", diasAtendimento=" + diasAtendimento + ", especialidade=" + especialidade + ", sexo=" + sexo
 				+ ", foto=" + foto + ", usuario=" + usuario + ", convenios=" + convenios + "]";
 	}
-	
-	
 
 }

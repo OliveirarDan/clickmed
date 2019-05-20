@@ -20,17 +20,11 @@ public class ConvenioController {
 	@Autowired
 	ConvenioService convenioService;
 
-	/**
-	 * ok
-	 */
 	@RequestMapping(value = "/novoConvenio", method = RequestMethod.GET)
 	public String novoConvenio(ModelMap model) {
 		return "teste/convenio/cadastro-convenio";
 	}
 
-	/**
-	 * ok
-	 */
 	@RequestMapping(value = "/cadastraConvenio", method = { RequestMethod.POST })
 	public String cadastraConvenio(Convenio convenio, ModelMap model) {
 		try {
@@ -41,19 +35,12 @@ public class ConvenioController {
 		return listaConvenios(model);
 	}
 
-	
-	/**
-	 * ok
-	 */
 	@RequestMapping(value = "/listaConvenios", method = RequestMethod.GET)
 	private String listaConvenios(ModelMap model) {
 		model.put("convenios", convenioService.listaConvenios());
 		return "teste/convenio/convenios";
 	}
 	
-	/**
-	 * ok
-	 */
 	@RequestMapping(value = "/selecionaConvenio", method = RequestMethod.POST)
 	public String selecionaConvenio(Convenio convenio, ModelMap model) {
 		convenio = convenioService.buscaConvenio(convenio.getId());
@@ -61,21 +48,12 @@ public class ConvenioController {
 		return "teste/convenio/edicao-convenio";
 	}
 	
-	
-	
-	/**
-	 * ok
-	 */
 	@RequestMapping(value = "/salvaConvenio", method = { RequestMethod.POST })
 	public String salvaConvenio(ModelMap model, Convenio convenio) throws IOException {
 		convenioService.atualizaConvenio(convenio);
 		return listaConvenios(model);
 	}
-	
-	
-	/**
-	 * ok
-	 */	
+
 	@RequestMapping(value = "/removeConvenio", method = { RequestMethod.POST })
 	public String removeConvenio(ModelMap model, Convenio convenio) throws IOException {
 		convenioService.removeConvenio(convenio.getId());
@@ -83,13 +61,10 @@ public class ConvenioController {
 	}
 	
 	@RequestMapping(method = RequestMethod.GET, value = "rest/convenio")
-	public @ResponseBody List<Convenio> listarPessoas(ModelMap model) throws IOException
+	public @ResponseBody List<Convenio> listarConvenios(ModelMap model) throws IOException
 	{
 		List<Convenio> convenio = convenioService.listaConvenios();
 		model.addAttribute("convenio", convenio);
 		return convenio;
 	}
-	
-	
-
 }

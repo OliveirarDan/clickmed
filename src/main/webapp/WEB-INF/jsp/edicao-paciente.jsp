@@ -71,7 +71,7 @@
 												name="usuario.email" placeholder="E-mail (login)" value="${paciente.email}" required />
 										</div> --%>
 										<div class="form-group">
-											<input type="cpf" class="single-input cpf" id="cpf"
+											<input type="text" class="single-input cpf" id="cpf"
 												name="cpf" placeholder="CPF" value="${paciente.cpf}"required />
 										</div>
 										<input type="hidden" class="foto" id="foto" name="foto"

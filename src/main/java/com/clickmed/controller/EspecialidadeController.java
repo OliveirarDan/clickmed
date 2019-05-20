@@ -40,21 +40,11 @@ public class EspecialidadeController {
 		return "teste/especialidade/especialidades";
 	}
 	
-	
-
-	
-	@RequestMapping(value = "/listaEspecialidadesJson", method = RequestMethod.GET)
-	private String listaEspecialidadesJson(ModelMap model) {
-		model.put("especialidades", especialidadeService.listaEspecialidades());
-		return especialidadeService.listaEspecialidades().toString();
-	}
-	
 	@RequestMapping(value = "/salvaEspecialidade", method = RequestMethod.POST)
 	public String salvaEspecialidade(Especialidade especialidade, ModelMap model)throws IOException{
 		especialidadeService.atualizaEspecialidade(especialidade);
 		return listaEspecialidades(model);
 	}
-	
 	
 	@RequestMapping(value = "/selecionaEspecialidade", method = RequestMethod.POST)
 	public String selecionaEspecialidade(Especialidade especialidade, ModelMap model) throws IOException {
@@ -63,17 +53,14 @@ public class EspecialidadeController {
 		return "teste/especialidade/edicao-especialidade";
 	}
 	
-	
 	@RequestMapping(value = "/removeEspecialidade", method = RequestMethod.POST)
 	public String removeEspecilidade(Especialidade especialidade, ModelMap model) throws IOException{
 		especialidadeService.removeEspecialidade(especialidade.getId());
 		return listaEspecialidades(model);
 	}
 	
-	
-	
 	@RequestMapping(method = RequestMethod.GET, value = "rest/especialidade")
-	public @ResponseBody List<Especialidade> listarPessoas(ModelMap model) throws IOException
+	public @ResponseBody List<Especialidade> listarEspecialidades(ModelMap model) throws IOException
 	{
 		List<Especialidade> especialidade = especialidadeService.listaEspecialidades();
 		model.addAttribute("especialidade", especialidade);

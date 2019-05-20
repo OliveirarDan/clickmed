@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!doctype html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="pt">
 
 <head>
@@ -54,7 +56,7 @@
 		<div class="container">
 			<!--Início da card  -->
 			<div class="row">
-			<c:forEach items="${medico}" var="medico">			
+			<c:forEach items="${medicos}" var="p">			
 				<div class="wrapper col-md-4 col-4">
 					<div class="card radius shadowDepth1">
 						<div class="row card-line card__padding">
@@ -63,8 +65,10 @@
 									class="border-tlr-radius foto-card-circle">
 							</div>
 							<div class="card-head-title">
-								<a>Nome do médico</a></br> <a>CRM</a> <a>${medico.nome}</a></br> <a>${medico.crm}</a>
-							</div>
+							<a>${p.nome} ${p.sobrenome}</a></br> 
+							<a>CRM: </a>
+							${p.crm}							
+						</div>
 						</div>
 
 						<div class="card__content card-line card__padding">

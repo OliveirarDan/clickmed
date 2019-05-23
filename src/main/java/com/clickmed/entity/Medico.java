@@ -36,7 +36,6 @@ public class Medico {
 	private String horaInicioAtendimento;
 	private String horaFimAtendimento;
 	private String diasAtendimento;
-	private String especialidade;
 	private String sexo;
 	
 	@ManyToMany
@@ -67,7 +66,7 @@ public class Medico {
 
 	public Medico(Long id, @NotNull String crm, String nome, String sobrenome, String experienciaProfissional,
 			String formacaoAcademica, String planosConvenio, String telefone1, String telefone2,
-			String horaInicioAtendimento, String horaFimAtendimento, String diasAtendimento, String especialidade,
+			String horaInicioAtendimento, String horaFimAtendimento, String diasAtendimento, List<Especialidade> especialidades,
 			String sexo, String foto, Usuario usuario, List<Convenio> convenios) {
 		super();
 		this.id = id;
@@ -82,7 +81,7 @@ public class Medico {
 		this.horaInicioAtendimento = horaInicioAtendimento;
 		this.horaFimAtendimento = horaFimAtendimento;
 		this.diasAtendimento = diasAtendimento;
-		this.especialidade = especialidade;
+		this.especialidades = especialidades;
 		this.sexo = sexo;
 		this.foto = foto;
 		this.usuario = usuario;
@@ -121,10 +120,6 @@ public class Medico {
 		return horaInicioAtendimento;
 	}
 
-	public String getEspecialidade() {
-		return especialidade;
-	}
-
 	public String getFoto() {
 		return foto;
 	}
@@ -135,6 +130,10 @@ public class Medico {
 
 	public List<Convenio> getConvenios() {
 		return convenios;
+	}
+	
+	public List<Especialidade> getEspecialidades() {
+		return especialidades;
 	}
 
 	public void setId(Long id) {
@@ -169,10 +168,6 @@ public class Medico {
 		this.horaInicioAtendimento = horarioAtendimento;
 	}
 
-	public void setEspecialidade(String especialidade) {
-		this.especialidade = especialidade;
-	}
-
 	public void setFoto(String foto) {
 		this.foto = foto;
 	}
@@ -183,6 +178,10 @@ public class Medico {
 
 	public void setConvenios(List<Convenio> convenios) {
 		this.convenios = convenios;
+	}
+	
+	public void setEspecialidades(List<Especialidade> especialidades) {
+		this.especialidades = especialidades;
 	}
 
 	public String getFormacaoAcademica() {
@@ -231,7 +230,7 @@ public class Medico {
 				+ ", experienciaProfissional=" + experienciaProfissional + ", formacaoAcademica=" + formacaoAcademica
 				+ ", planosConvenio=" + planosConvenio + ", telefone1=" + telefone1 + ", telefone2=" + telefone2
 				+ ", horaInicioAtendimento=" + horaInicioAtendimento + ", horaFimAtendimento=" + horaFimAtendimento
-				+ ", diasAtendimento=" + diasAtendimento + ", especialidade=" + especialidade + ", sexo=" + sexo
+				+ ", diasAtendimento=" + diasAtendimento + ", especialidades=" + especialidades + ", sexo=" + sexo
 				+ ", foto=" + foto + ", usuario=" + usuario + ", convenios=" + convenios + "]";
 	}
 

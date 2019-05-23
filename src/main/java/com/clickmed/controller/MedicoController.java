@@ -30,7 +30,6 @@ public class MedicoController {
 	@RequestMapping(value = "/cadastraMedico", method = { RequestMethod.POST })
 	public String cadastraMedico(Medico medico, ModelMap model) {
 		try {
-			System.out.println("Controller " + medico.toString());
 			medicoService.insereMedico(medico);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -44,13 +43,12 @@ public class MedicoController {
 		return "/teste/medico/medicos";
 	}
 
-	@RequestMapping(value = "/selecionaMedico", method = RequestMethod.POST)
+	@RequestMapping(value = "/selecionaMedico", method = RequestMethod.GET)
 	public String selecionaMedico(Medico medico, ModelMap model) {
-
 		medico = medicoService.buscaMedico(medico.getId());
-		System.out.println("Medico selecionado: " + medico.toString());
+		System.out.println("Especialidade: " + medico.getEspecialidades().toString());
 		model.addAttribute(medico);
-		return "edicao-medico";
+		return "infos-medico";
 	}
 
 	/**

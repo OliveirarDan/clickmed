@@ -51,10 +51,9 @@
 
 										<div class="col-md-4">
 											<label>Medico ID</label> <input type="text"
-												class="single-input" id="id" name="id" value="${medico.id}" />
-											<label>Medico Usuario ID</label> <input type="text"
-												class="single-input" id="id" name="usuario.id"
-												value="${medico.usuario.id}" />
+												class="single-input" name="id" value="${medico.id}" /> <label>Medico
+												Usuario ID</label> <input type="text" class="single-input"
+												name="usuario.id" value="${medico.usuario.id}" />
 											<div class="form-group">
 												<label>Permissao</label> <input type="text"
 													class="single-input" id="permissao"
@@ -106,21 +105,6 @@
 										</div>
 										<!-- Final da Foto de perfil -->
 									</div>
-									<!-- <div class="row">
-										<label class="col-md-12 required" for="radios">Gênero</label>
-										<div class="col-md-8">
-											<label class="radio-inline" for="radios-0"> <input
-												type="radio" name="sexo" id="radios-0" value="1" required>
-												Masculino
-											</label> <label class="radio-inline" for="radios-1"> <input
-												type="radio" name="sexo" id="radios-1" value="2">
-												Feminino
-											</label> <label class="radio-inline" for="radios-2"> <input
-												type="radio" name="sexo" id="radios-2" value="2">
-												Outro
-											</label>
-										</div>
-									</div> -->
 									<div class="row">
 										<div class="form-group col-md-4 required">
 											<label for="pass">Altere sua senha</label> <input
@@ -136,10 +120,12 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="control-group">
-										<label for="especialidade">Especilidades:</label> <input
-											type="text" id="especialidade" name="especialidade"
-											placeholder="Começe a digitar para pesquisar"
-											value="${medico.especialidade}" required />
+										<label for="especialidades">Especilidades:</label>
+										<c:forEach items="${medico.especialidades}" var="m">
+											<input type="text" name="especialidades" id="especialidades"
+												value="${m.id}"
+												placeholder="Começe a digitar para pesquisar" required />
+										</c:forEach>
 									</div>
 								</div>
 							</div>
@@ -215,15 +201,13 @@
 								<div class="col-md-12">
 									<div class="control-group">
 										<label for="convenios">Convênios atendidos:</label>
-										<c:forEach items="${medico.convenios}" var="convenio">
+										<c:forEach items="${medico.convenios}" var="c">
 											<input type="text" name="convenios" id="convenios"
-												value="${convenio.id}"
+												value="${c.id}"
 												placeholder="Começe a digitar para pesquisar" required />
 										</c:forEach>
-
 									</div>
 								</div>
-
 							</div>
 							<div class="row">
 								<div class="col-md-12">

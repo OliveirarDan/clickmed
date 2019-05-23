@@ -4796,15 +4796,17 @@ h6 {
   ============================================================================================ */
   
 .card_infos {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
+  /* transition: 0.3s; */
   background-color:white;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, .125);
+  margin-bottom: 1.6rem;
 }
 
 .cards {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  height: 300px;
+  height: auto;
   overflow: auto;
   overflow-x: hidden;
   background-color:white;
@@ -4836,14 +4838,14 @@ h6 {
 }
   
 .title {
-	margin-top: 25px;
-	margin-bottom:25px;
-	margin-left:50px;	
+	/* margin: 24px 0 0 0; */
+	/* margin-bottom:25px; */
+	/* margin-left:50px; */
 }
 
 .line {
-	margin-left: 5%;
-	margin-right: 5%;
+	/* margin-left: 5%; */
+	/* margin-right: 5%; */
 }
 
 .li{

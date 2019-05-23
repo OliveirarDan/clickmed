@@ -156,8 +156,8 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="control-group">
-										<label for="especialidade">Especilidades:</label> <input
-											type="text" id="especialidade" name="especialidade"
+										<label for="especialidades">Especilidades:</label> <input
+											type="text" id="especialidades" name="especialidades"
 											placeholder="Começe a digitar para pesquisar" value=""
 											required />
 									</div>

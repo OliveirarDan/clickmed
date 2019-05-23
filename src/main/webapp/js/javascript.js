@@ -16,7 +16,7 @@ function initRemoteSelectize(input, src_url, selectize_options) {
 }
 
 function initEspecialidadesSelectize() {
-	var input = '#especialidade';
+	var input = '#especialidades';
 	var src_url = "/rest/especialidade";
 	var selectize_options = {
 		maxItems : 3,
@@ -144,7 +144,7 @@ $(document).ready(function() {
 		} ],
 
 		onChange : function(value) {
-			$('#especialidade').attr('value', value);
+			$('#especialidades').attr('value', value);
 		},
 		create : false
 	});

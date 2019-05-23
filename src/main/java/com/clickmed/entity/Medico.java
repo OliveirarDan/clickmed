@@ -37,21 +37,25 @@ public class Medico {
 	private String horaFimAtendimento;
 	private String diasAtendimento;
 	private String sexo;
+	private String foto;
+	
+	@OneToOne
+	private Usuario usuario;
 	
 	@ManyToMany
 	@JoinTable(name = "medicos_has_especialidades", joinColumns = { @JoinColumn(name = "medico_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "especialidades_id") })
-	private List<Especialidade> especialidades;
-
-	private String foto;
-
-	@OneToOne
-	private Usuario usuario;
+	private List<Especialidade> especialidades;	
 
 	@ManyToMany
 	@JoinTable(name = "medicos_has_convenios", joinColumns = { @JoinColumn(name = "medico_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "convenio_id") })
 	private List<Convenio> convenios;
+	
+	@ManyToMany
+	@JoinTable(name = "medicos_has_clinicas", joinColumns = { @JoinColumn(name = "medico_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "clinica_id") })
+	private List<Clinica> clinicas;
 
 	public Medico() {
 		super();
@@ -67,7 +71,7 @@ public class Medico {
 	public Medico(Long id, @NotNull String crm, String nome, String sobrenome, String experienciaProfissional,
 			String formacaoAcademica, String planosConvenio, String telefone1, String telefone2,
 			String horaInicioAtendimento, String horaFimAtendimento, String diasAtendimento, List<Especialidade> especialidades,
-			String sexo, String foto, Usuario usuario, List<Convenio> convenios) {
+			String sexo, String foto, Usuario usuario, List<Convenio> convenios, List<Clinica> clinicas) {
 		super();
 		this.id = id;
 		this.crm = crm;
@@ -86,6 +90,7 @@ public class Medico {
 		this.foto = foto;
 		this.usuario = usuario;
 		this.convenios = convenios;
+		this.clinicas = clinicas;
 	}
 
 	public Long getId() {
@@ -135,6 +140,10 @@ public class Medico {
 	public List<Especialidade> getEspecialidades() {
 		return especialidades;
 	}
+	
+	public List<Clinica> getClinicas() {
+		return clinicas;
+	}
 
 	public void setId(Long id) {
 		this.id = id;
@@ -182,6 +191,10 @@ public class Medico {
 	
 	public void setEspecialidades(List<Especialidade> especialidades) {
 		this.especialidades = especialidades;
+	}
+	
+	public void setClinicas(List<Clinica> clinicas) {
+		this.clinicas = clinicas;
 	}
 
 	public String getFormacaoAcademica() {
@@ -231,7 +244,7 @@ public class Medico {
 				+ ", planosConvenio=" + planosConvenio + ", telefone1=" + telefone1 + ", telefone2=" + telefone2
 				+ ", horaInicioAtendimento=" + horaInicioAtendimento + ", horaFimAtendimento=" + horaFimAtendimento
 				+ ", diasAtendimento=" + diasAtendimento + ", especialidades=" + especialidades + ", sexo=" + sexo
-				+ ", foto=" + foto + ", usuario=" + usuario + ", convenios=" + convenios + "]";
+				+ ", foto=" + foto + ", usuario=" + usuario + ", convenios=" + convenios + ", clinicas=" + clinicas + "]";
 	}
 
 }

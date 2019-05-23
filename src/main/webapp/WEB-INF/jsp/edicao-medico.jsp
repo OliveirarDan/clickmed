@@ -50,16 +50,11 @@
 									<div class="row">
 
 										<div class="col-md-4">
-											<label>Medico ID</label> <input type="text"
-												class="single-input" name="id" value="${medico.id}" /> <label>Medico
-												Usuario ID</label> <input type="text" class="single-input"
-												name="usuario.id" value="${medico.usuario.id}" />
+											<input type="hidden" class="single-input" name="id" value="${medico.id}" /> 
+											<input type="hidden" class="single-input" name="usuario.id" value="${medico.usuario.id}" />
+											<input type="hidden" class="single-input" id="permissao" name="usuario.permissao" value="1" required />
 											<div class="form-group">
-												<label>Permissao</label> <input type="text"
-													class="single-input" id="permissao"
-													name="usuario.permissao" value="1" required />
-											</div>
-											<div class="form-group">
+												<label>CRM</label>
 												<input type="number" class="single-input required" id="crm"
 													name="crm" placeholder="CRM" maxlength="13"
 													value="${medico.crm}">
@@ -70,16 +65,19 @@
 									<div class="row">
 										<div class="col-md-8 col-6">
 											<div class="form-group">
+											<label>Nome</label>
 												<input type="text" class="single-input required" id="nome"
 													name="nome" placeholder="Nome" value="${medico.nome}">
 											</div>
 											<div class="form-group">
+												<label>Sobrenome</label>
 												<input type="text" class="single-input required"
 													value="${medico.sobrenome}" id="sobrenome" name="sobrenome"
 													placeholder="Sobrenome">
 											</div>
 
 											<div class="form-group">
+												<label>E-mail (login)</label>
 												<input type="email" class="single-input required" id="email"
 													value="${medico.usuario.email}" name="usuario.email"
 													placeholder="E-mail (login)">
@@ -152,22 +150,25 @@
 							<div class="row">
 								<div class="form-group col-md-12">
 									<div class="control-group">
-										<label for="localAtendimento">Selecione qual o seu
-											local de atendimento</label> <input type="text" id="localAtendimento"
-											name="localAtendimento"
-											placeholder="Começe a digitar para pesquisar" value=""
-											required />
+										<label for="clinicas">Selecione qual o seu local de atendimento</label> 
+										<c:forEach items="${medico.clinicas}" var="c">
+											<input type="text" id="clinicas" name="clinicas"
+												placeholder="Começe a digitar para pesquisar" value="${c.id}"
+												required />
+										</c:forEach>
 									</div>
 								</div>
 
 							</div>
 							<div class="row">
 								<div class="form-group col-md-4">
+									<label>Telefone principal</label>
 									<input type="tel" class="single-input tel1 required"
 										value="${medico.telefone1}" id="telefone1" name="telefone1"
 										placeholder="Telefone principal">
 								</div>
 								<div class="form-group col-md-4">
+									<label>Outro telefone</label>
 									<input type="tel" class="single-input tel1" id="telefone2"
 										value="${medico.telefone2}" name="telefone2"
 										placeholder="Outro telefone (caso possua)">
@@ -203,7 +204,7 @@
 										<label for="convenios">Convênios atendidos:</label>
 										<c:forEach items="${medico.convenios}" var="c">
 											<input type="text" name="convenios" id="convenios"
-												value="${c.id}"
+												value="<c:out value="${c.id}"/>"
 												placeholder="Começe a digitar para pesquisar" required />
 										</c:forEach>
 									</div>
@@ -212,7 +213,7 @@
 							<div class="row">
 								<div class="col-md-12">
 									<label><span> Descreva quais planos destes
-											convênios atende?:</span></label>
+											convênios atende</span></label>
 									<div class="form-group">
 										<textarea class="single-input required" id="planosConvenio"
 											name="planosConvenio" rows="5">${medico.planosConvenio}</textarea>

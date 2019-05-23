@@ -190,25 +190,15 @@
 							<div class="row">
 								<div class="form-group col-md-12">
 									<div class="control-group">
-										<label for="localAtendimento">Selecione qual o seu
-											local de atendimento</label> <input type="text" id="localAtendimento"
-											name="localAtendimento"
+										<label for="clinicas">Selecione qual o seu
+											local de atendimento</label> <input type="text" id="clinicas"
+											name="clinicas"
 											placeholder="Começe a digitar para pesquisar" value=""
 											required />
 									</div>
 								</div>
 
 							</div>
-							<div class="row">
-								<div class="form-group col-md-12">
-									<div class="control-group">
-										<span>Não encontrou sua clínica ou consultório? <a
-											href="/novaClinica"> Clique aqui e cadastre.</a>
-										</span>
-									</div>
-								</div>
-							</div>
-
 							<div class="row">
 								<div class="form-group col-md-4">
 									<input type="tel" class="single-input tel1 required"

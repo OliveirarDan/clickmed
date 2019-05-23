@@ -98,10 +98,7 @@
 									<a class="card-title">Nota: ${medico.avaliacao}</a><br> <a
 										class="card-title">Custo: ${medico.preco}</a><br>
 								</div>
-								<div class="card-bottom">
-									<a class="card-action" href="/selecionaMedico">Visualizar</a>
-								</div>
-								<button type="submit" name="selecionaMedico"
+								<button class="card-button" type="submit" name="selecionaMedico"
 									value="selecionaMedico">Visualizar</button>
 							</div>
 						</div>

@@ -22,7 +22,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 col-lg-4 col-4 header-left">
-						<a href="/"> <i class="fa fa-menu fa-chevron-left"></i>
+						<a href="javascript:void(0)" onClick="history.go(-1); return false;"> <i class="fa fa-menu fa-chevron-left"></i>
 						</a>
 					</div>
 					<div class="col-md-8 col-lg-8 col-8 header-right">
@@ -85,8 +85,10 @@
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<i class="fa glyphicon glyphicon-map-marker"></i> <span>Endereço
-									do médico</span>
+								<i class="fa glyphicon glyphicon-map-marker"></i> 
+								<c:forEach items="${medico.clinicas}" var="c">
+									<span>${c.nomeFantasia} - ${c.rua}, ${c.numero} ${c.cidade} ${c.estado}</span>
+								</c:forEach>
 							</div>
 						</div>
 					</div>

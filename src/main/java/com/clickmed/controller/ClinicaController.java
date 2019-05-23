@@ -60,7 +60,7 @@ public class ClinicaController {
 		clinica = clinicaService.buscaClinica(clinica.getId());
 		System.out.println(clinica.toString());
 		model.addAttribute(clinica);
-		return "/teste/clinica/edicao-clinica";
+		return "edicao-clinica";
 	}
 	
 	

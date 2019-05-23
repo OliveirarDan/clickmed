@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<!doctype html>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!doctype html>
 <html lang="pt">
 
 <head>
@@ -56,56 +56,55 @@
 		<div class="container">
 			<!--Início da card  -->
 			<div class="row">
-			<c:forEach items="${medicos}" var="p">			
-				<div class="wrapper col-md-4 col-4">
-					<div class="card radius shadowDepth1">
-						<div class="row card-line card__padding">
-							<div class="border-tlr-radius">
-								<img src="img/person.jpg" alt="image"
-									class="border-tlr-radius foto-card-circle">
-							</div>
-							<div class="card-head-title">
-							<a>${p.nome} ${p.sobrenome}</a></br> 
-							<a>CRM: </a>
-							${p.crm}							
-						</div>
-						</div>
-
-						<div class="card__content card-line card__padding">
-							<div class="row card__meta">
-								<div class="col-md-12 col-12">
-									<a>Especialidades:</a>
-									<c:forEach items="${medico.especialidade}" var="especialidade">
-										<ul>
-											<a class="card-title">Otorrino</a>
-											<a class="card-title">${especialidade}</a>
-										</ul>	
-									</c:forEach>
+				<c:forEach items="${medicos}" var="m">
+					<form class="contact_form" action="selecionaMedico" method="get" id="selecionaMedico">
+						<div class="wrapper col-md-4 col-4">
+							<div class="card radius shadowDepth1">
+								<div class="row card-line card__padding">
+									<div class="border-tlr-radius">
+										<img src="${m.foto}" alt="image"
+											class="border-tlr-radius foto-card-circle">
+									</div>
+									<div class="card-head-title">
+										<a>${m.nome} ${m.sobrenome}</a></br> <a>CRM: ${m.crm}</a>
+									</div>
+									<input type="text" id="id" name="id" value="${m.id}">
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-2 col-2">
-									<i class="fa-card fa-map-marker"></i>
+								<div class="card__content card-line card__padding">
+									<div class="row card__meta">
+										<div class="col-md-12 col-12">
+											<a>Especialidades:</a>
+											<c:forEach items="${medico.especialidade}"
+												var="especialidade">
+												<ul>
+													<a class="card-title">Otorrino</a>
+													<a class="card-title">${especialidade}</a>
+												</ul>
+											</c:forEach>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-2 col-2">
+											<i class="fa-card fa-map-marker"></i>
+										</div>
+										<div class="col-md-10 col-10">
+											<a class="card-title">Endereço do médico</a> <a
+												class="card-title">${medico.rua}</a>
+										</div>
+									</div>
 								</div>
-								<div class="col-md-10 col-10">
-									<a class="card-title">Endereço do médico</a> <a
-										class="card-title">${medico.rua}</a>
+
+								<div class="card__content card-line card__padding">
+									<a class="card-title">Nota: ${medico.avaliacao}</a><br> <a
+										class="card-title">Custo: ${medico.preco}</a><br>
 								</div>
+								<button class="card-button" type="submit" name="selecionaMedico"
+									value="selecionaMedico">Visualizar</button>
 							</div>
 						</div>
-
-						<div class="card__content card-line card__padding">
-							<a class="card-title">Nota: ${medico.avaliacao}</a><br> <a
-								class="card-title">Custo: ${medico.preco}</a><br>
-						</div>
-						<div class="card-bottom">
-							<a class="card-action" href="/selecionaMedico">Visualizar</a>
-						</div>
-
-					</div>
-				</div>				
-			</c:forEach>			
-			</div>			
+					</form>
+				</c:forEach>
+			</div>
 		</div>
 	</section>
 	<!--================ Começo Area Rodapé  =================-->

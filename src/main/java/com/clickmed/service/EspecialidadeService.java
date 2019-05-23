@@ -21,10 +21,10 @@ public class EspecialidadeService {
 	public EspecialidadeService(EspecialidadeDAO especialidadeDAO) {
 		this.especialidadeDAO = especialidadeDAO;
 	}
-	
-	
+
 	/**
 	 * Insere Especialidade
+	 * 
 	 * @param especialidade
 	 * @return o objeto especialidade cadastrado
 	 * @throws IOException
@@ -33,57 +33,50 @@ public class EspecialidadeService {
 	public Especialidade insereEspecialidade(Especialidade especialidade) {
 		return this.especialidadeDAO.save(especialidade);
 	}
-	
-	
+
 	/**
-	 * Verifica o id recebido, casa ja exista uma especialidade com este id, atualiza.
+	 * Verifica o id recebido, casa ja exista uma especialidade com este id,
+	 * atualiza.
 	 * 
 	 * @param especialidade
 	 * @return especialidade atualizada ou null caso não exista.
 	 * @throws IOException
 	 */
 	@Transactional
-	public Especialidade atualizaEspecialidade(Especialidade especialidade) throws IOException{
-		if(this.especialidadeDAO.existsById(especialidade.getId()) == true) {
+	public Especialidade atualizaEspecialidade(Especialidade especialidade) throws IOException {
+		if (this.especialidadeDAO.existsById(especialidade.getId()) == true) {
 			return this.especialidadeDAO.save(especialidade);
 		}
 		return null;
 	}
-	
-	
+
 	/**
 	 * Remove uma especialidade com o id recebido.
+	 * 
 	 * @param idEspecialidade
 	 * @throws IOException
 	 */
 	@Transactional
-	public void removeEspecialidade(Long idEspecialidade) throws IOException{
+	public void removeEspecialidade(Long idEspecialidade) throws IOException {
 		this.especialidadeDAO.deleteById(idEspecialidade);
 	}
-	
-	
+
 	/**
 	 * Busca uma especialidade pelo id.
+	 * 
 	 * @param idEspecialidade
 	 * @return especialidade
 	 */
 	public Especialidade buscaEspecialidade(Long idEspecialidade) throws IOException {
 		return this.especialidadeDAO.getOne(idEspecialidade);
 	}
-	
+
 	/**
 	 * Lista todas as especialidade cadastradas.
 	 * 
 	 * @return Lista de especialidades.
 	 */
-	public List<Especialidade> listaEspecialidades(){
+	public List<Especialidade> listaEspecialidades() {
 		return this.especialidadeDAO.findAll();
 	}
-	
-	
-	
-	
-	
-	
-	
 }

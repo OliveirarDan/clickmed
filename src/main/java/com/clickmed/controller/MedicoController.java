@@ -18,26 +18,17 @@ public class MedicoController {
 
 	@Autowired
 	MedicoService medicoService;
-	
+
 	String maisDeUmNomeParaBusca;
 	String stringBuscaPorEspecialidade;
 
-	
-
-	/**
-	 * ok
-	 */
 	@RequestMapping(value = "/novoMedico", method = RequestMethod.GET)
 	public String novoMedico(ModelMap model) {
 		return "cadastro-medico";
 	}
 
-	/**
-	 * ok
-	 */
 	@RequestMapping(value = "/cadastraMedico", method = { RequestMethod.POST })
 	public String cadastraMedico(Medico medico, ModelMap model) {
-		System.out.println(medico.toString());
 		try {
 			medicoService.insereMedico(medico);
 		} catch (IOException e) {
@@ -46,56 +37,44 @@ public class MedicoController {
 		return listaMedicos(model);
 	}
 
-	
-	/**
-	 * ok
-	 */
 	@RequestMapping(value = "/listaMedicos", method = RequestMethod.GET)
 	private String listaMedicos(ModelMap model) {
 		model.put("medicos", this.medicoService.listaMedicos());
 		return "/teste/medico/medicos";
 	}
-	
-	/**
-	 * ----TESTANDO----	Falta criar tela edicao-medico
-	 * @param model
-	 * @return
-	 */
-	@RequestMapping(value = "/selecionaMedico", method = RequestMethod.POST)
+
+	@RequestMapping(value = "/selecionaMedico", method = RequestMethod.GET)
 	public String selecionaMedico(Medico medico, ModelMap model) {
-	
 		medico = medicoService.buscaMedico(medico.getId());
-		System.out.println(medico.toString());
+		System.out.println("Especialidade: " + medico.getEspecialidades().toString());
 		model.addAttribute(medico);
-		return "/teste/medico/edicao-medico";
+		return "edicao-medico";
 	}
-	
-	
-	
+
 	/**
-	 * ----TESTANDO----
-	 * -----ATENçÃO------
-	 * Neste método é necessário ter todos os dados do medico antes de modificalo no BD,
-	 * Você pode usar uma variável nMedico para carregar os itens pelo id e depois altera-lo.
-	 * Ou pode pegar a entidade completa da VIEW.
+	 * ----TESTANDO---- -----ATENçÃO------ Neste método é necessário ter todos os
+	 * dados do medico antes de modificalo no BD, Você pode usar uma variável
+	 * nMedico para carregar os itens pelo id e depois altera-lo. Ou pode pegar a
+	 * entidade completa da VIEW.
 	 * 
 	 */
 	@RequestMapping(value = "/salvaMedico", method = { RequestMethod.POST })
 	public String salvaMedico(ModelMap model, Medico medico) throws IOException {
-		
-		//Salvando no banco
+
+		// Salvando no banco
+		System.out.println("Controller " + medico.toString());
 		medicoService.atualizaMedico(medico);
 		return listaMedicos(model);
 	}
-	
-	
+
 	@RequestMapping(value = "/infosMedico", method = RequestMethod.GET)
 	public String infoMedico(ModelMap model) {
 		return "infos-medico";
 	}
-	
+
 	/**
 	 * Este método lista tudo
+	 * 
 	 * @param model
 	 * @return
 	 */
@@ -104,9 +83,10 @@ public class MedicoController {
 		model.put("medicos", medicoService.listaMedicos());
 		return "resultado-busca";
 	}
-	
+
 	/**
 	 * Este método lista por especialidade, quando temos apenas um nome
+	 * 
 	 * @param model
 	 * @param especialidade
 	 * @return
@@ -117,13 +97,14 @@ public class MedicoController {
 			return "resultado-busca";
 		} else {
 			stringBuscaPorEspecialidade = especialidade;
-			model.put("medicos",(medicoService.listarMedicoEspecialidade(stringBuscaPorEspecialidade)));
+			model.put("medicos", (medicoService.listarMedicoEspecialidade(stringBuscaPorEspecialidade)));
 			return "resultado-busca";
 		}
 	}
-	
+
 	/**
 	 * Este método lista por nome e sobrenome
+	 * 
 	 * @param model
 	 * @param especialidade
 	 * @return
@@ -137,13 +118,14 @@ public class MedicoController {
 		} else {
 			model.put("medicos", medicoService.listarNomeMedico2(maisDeUmNomeParaBusca));
 			stringBuscaPorEspecialidade = especialidade;
-			model.put("medicos",(medicoService.listarMedicoEspecialidade(stringBuscaPorEspecialidade)));
+			model.put("medicos", (medicoService.listarMedicoEspecialidade(stringBuscaPorEspecialidade)));
 			return "resultado-busca";
-		}	
+		}
 	}
-	
+
 	/**
 	 * Este método lista só por especialidade
+	 * 
 	 * @param model
 	 * @return
 	 * @throws IOException
@@ -151,59 +133,61 @@ public class MedicoController {
 	@RequestMapping(value = "/listaMedicosPorEspecialidade", method = RequestMethod.GET)
 	public String listaMedicosPorEspecialidade(ModelMap model) throws IOException {
 		model.put("medicos", medicoService.listarMedicoEspecialidade(stringBuscaPorEspecialidade));
-		return "resultado-busca";	
+		return "resultado-busca";
 	}
-	
+
 	/**
 	 * Metodo de busca principal, onde é chamado os demais métodos
+	 * 
 	 * @param session
 	 * @param model
 	 * @param medico
 	 * @param especialidade
 	 * @return
 	 */
-	@RequestMapping(value = "/listar_nome_medicos", method = {RequestMethod.POST})
+	@RequestMapping(value = "/listar_nome_medicos", method = { RequestMethod.POST })
 	public String listarNomeMedicos(HttpSession session, ModelMap model, Medico medico, String especialidade) {
 		model.clear();
-		
+
 		try {
 			if (medico.getNome() == null || medico.getNome().length() == 0 || medico.getNome().equals("")) {
 				// *********** METODO ABAIXO LISTA POR ESPECIALIDADE
-				 return listaEspecialidade(model, especialidade);
+				return listaEspecialidade(model, especialidade);
 				// return null;
 			} else {
-				if(medico.getNome().endsWith(" ") || medico.getNome().startsWith(" ")) {
-				//	String nomeSemEspaco = medico.getNome().trim();
-				//	System.out.println(nomeSemEspaco);
-				//	return medicoService.listarNomeMedicoString(nomeSemEspaco);
+				if (medico.getNome().endsWith(" ") || medico.getNome().startsWith(" ")) {
+					// String nomeSemEspaco = medico.getNome().trim();
+					// System.out.println(nomeSemEspaco);
+					// return medicoService.listarNomeMedicoString(nomeSemEspaco);
 					return listaMedics(model);
-				}else if (medico.getNome().contains(" ")) {
+				} else if (medico.getNome().contains(" ")) {
 					maisDeUmNomeParaBusca = medico.getNome();
 					medicoService.listarNomeMedico2(maisDeUmNomeParaBusca);
 					return listaMedicosPesq2(model, especialidade);
-					
+
 				} else {
 					model.clear();
-					model.put("medicos",(medicoService.listarNomeMedico(medico.getNome())));
+					model.put("medicos", (medicoService.listarNomeMedico(medico.getNome())));
 					return listaMedicosPesq(model, especialidade);
 				}
-			}	
-			
+			}
+
 		} catch (IOException e) {
 			e.printStackTrace();
 			model.addAttribute("erro", e);
 			return "Erro";
 		}
 	}
-	
+
 	/**
-	 *  METODO ABAIXO LISTA POR ESPECIALIDADE
+	 * METODO ABAIXO LISTA POR ESPECIALIDADE
+	 * 
 	 * @param model
 	 * @param especialidade
 	 * @return
 	 * @throws IOException
 	 */
-	
+
 	private String listaEspecialidade(ModelMap model, String especialidade) throws IOException {
 		stringBuscaPorEspecialidade = especialidade;
 		if (stringBuscaPorEspecialidade == "") {
@@ -212,9 +196,7 @@ public class MedicoController {
 			medicoService.listarMedicoEspecialidade(stringBuscaPorEspecialidade);
 			return listaMedicosPorEspecialidade(model);
 		}
-		
+
 	}
 
-	
-	
 }

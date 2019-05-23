@@ -38,18 +38,13 @@ public class Clinica {
 	private String localAtendimento;
 	private String foto;
 
-	@ManyToMany
-	@JoinTable(name = "clinica_has_medicos", joinColumns = { @JoinColumn(name = "clinica_id") }, inverseJoinColumns = {
-			@JoinColumn(name = "medico_id") })
-	private List<Medico> medicos;
-
 	public Clinica() {
 		super();
 	}
 
 	public Clinica(Long id, String nomeFantasia, @NotNull String razaoSocial, String cnpj, String telefone1, String telefone2,
 			String cidade, String estado, String rua, String numero, String site, String email, String localAtendimento,
-			String foto, List<Medico> medicos) {
+			String foto) {
 		super();
 		this.id = id;
 		this.nomeFantasia = nomeFantasia;
@@ -65,7 +60,6 @@ public class Clinica {
 		this.email = email;
 		this.localAtendimento = localAtendimento;
 		this.foto = foto;
-		this.medicos = medicos;
 	}
 
 	public Long getId() {
@@ -128,9 +122,6 @@ public class Clinica {
 		return foto;
 	}
 
-	public List<Medico> getMedicos() {
-		return medicos;
-	}
 
 	public void setId(Long id) {
 		this.id = id;
@@ -192,16 +183,12 @@ public class Clinica {
 		this.foto = foto;
 	}
 
-	public void setMedicos(List<Medico> medicos) {
-		this.medicos = medicos;
-	}
-
 	@Override
 	public String toString() {
 		return "Clinica [id=" + id + ", nomeFantasia=" + nomeFantasia + ", razaoSocial=" + razaoSocial + ", cnpj="
 				+ cnpj + ", telefone1=" + telefone1 + ", telefone2=" + telefone2 + ", cidade=" + cidade + ", estado="
 				+ estado + ", rua=" + rua + ", numero=" + numero + ", site=" + site + ", email=" + email
-				+ ", localAtendimento=" + localAtendimento + ", foto=" + foto + ", medicos=" + medicos + "]";
+				+ ", localAtendimento=" + localAtendimento + ", foto=" + foto + "]";
 	}
 
 }

@@ -16,7 +16,7 @@ function initRemoteSelectize(input, src_url, selectize_options) {
 }
 
 function initEspecialidadesSelectize() {
-	var input = '#especialidade';
+	var input = '#especialidades';
 	var src_url = "/rest/especialidade";
 	var selectize_options = {
 		maxItems : 3,
@@ -27,8 +27,8 @@ function initEspecialidadesSelectize() {
 	initRemoteSelectize(input, src_url, selectize_options);
 }
 
-function initLocalAtendimentoSelectize() {
-	var input = '#localAtendimento';
+function initClinicaSelectize() {
+	var input = '#clinicas';
 	var src_url = "/rest/clinica";
 	var selectize_options = {
 		maxItems : 1,
@@ -73,7 +73,7 @@ $(document).ready(function() {
 
 	initSteps();
 	initEspecialidadesSelectize();
-	initLocalAtendimentoSelectize();
+	initClinicaSelectize();
 	initConvenioSelectize();
 
 	/* Chamada do validate e regras de cada campo e mensagens personalizadas. */
@@ -144,7 +144,7 @@ $(document).ready(function() {
 		} ],
 
 		onChange : function(value) {
-			$('#especialidade').attr('value', value);
+			$('#especialidades').attr('value', value);
 		},
 		create : false
 	});

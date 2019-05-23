@@ -9,7 +9,7 @@
 
 	<h1>Selecione um Médico:</h1>
 
-	<form class="row contact_form" action="selecionaMedico" method="post"
+	<form class="row contact_form" action="selecionaMedico" method="get"
 		id="cadastro-paciente">
 
 

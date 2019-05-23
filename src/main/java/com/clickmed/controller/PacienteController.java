@@ -47,7 +47,7 @@ public class PacienteController {
 		paciente = pacienteService.buscaPaciente(paciente.getId());
 		System.out.println(paciente.toString());
 		model.addAttribute(paciente);
-		return "/teste/paciente/edicao-paciente";
+		return "edicao-paciente";
 	}
 	
 	/**

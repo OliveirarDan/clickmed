@@ -67,7 +67,7 @@ public class MedicoController {
 		return listaMedicos(model);
 	}
 
-	@RequestMapping(value = "/infosMedico", method = RequestMethod.GET)
+ 	@RequestMapping(value = "/infosMedico", method = RequestMethod.GET)
 	public String infoMedico(ModelMap model) {
 		return "infos-medico";
 	}

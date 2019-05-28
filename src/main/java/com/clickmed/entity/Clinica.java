@@ -1,15 +1,10 @@
 package com.clickmed.entity;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -36,15 +31,16 @@ public class Clinica {
 	private String site;
 	private String email;
 	private String localAtendimento;
+	private String bairro;
 	private String foto;
 
 	public Clinica() {
 		super();
 	}
 
-	public Clinica(Long id, String nomeFantasia, @NotNull String razaoSocial, String cnpj, String telefone1, String telefone2,
-			String cidade, String estado, String rua, String numero, String site, String email, String localAtendimento,
-			String foto) {
+	public Clinica(Long id, String nomeFantasia, @NotNull String razaoSocial, String cnpj, String telefone1,
+			String telefone2, String cep, String cidade, String estado, String rua, String numero, String site,
+			String email, String localAtendimento, String bairro, String foto) {
 		super();
 		this.id = id;
 		this.nomeFantasia = nomeFantasia;
@@ -52,6 +48,7 @@ public class Clinica {
 		this.cnpj = cnpj;
 		this.telefone1 = telefone1;
 		this.telefone2 = telefone2;
+		this.cep = cep;
 		this.cidade = cidade;
 		this.estado = estado;
 		this.rua = rua;
@@ -59,6 +56,7 @@ public class Clinica {
 		this.site = site;
 		this.email = email;
 		this.localAtendimento = localAtendimento;
+		this.bairro = bairro;
 		this.foto = foto;
 	}
 
@@ -122,7 +120,6 @@ public class Clinica {
 		return foto;
 	}
 
-
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -183,12 +180,20 @@ public class Clinica {
 		this.foto = foto;
 	}
 
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
 	@Override
 	public String toString() {
 		return "Clinica [id=" + id + ", nomeFantasia=" + nomeFantasia + ", razaoSocial=" + razaoSocial + ", cnpj="
-				+ cnpj + ", telefone1=" + telefone1 + ", telefone2=" + telefone2 + ", cidade=" + cidade + ", estado="
-				+ estado + ", rua=" + rua + ", numero=" + numero + ", site=" + site + ", email=" + email
-				+ ", localAtendimento=" + localAtendimento + ", foto=" + foto + "]";
+				+ cnpj + ", telefone1=" + telefone1 + ", telefone2=" + telefone2 + ", cep=" + cep + ", cidade=" + cidade
+				+ ", estado=" + estado + ", rua=" + rua + ", numero=" + numero + ", site=" + site + ", email=" + email
+				+ ", localAtendimento=" + localAtendimento + ", bairro=" + bairro + ", foto=" + foto + "]";
 	}
 
 }

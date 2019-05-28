@@ -71,7 +71,7 @@ public class PacienteService {
 	 * @param idPaciente
 	 * @return Um objeto Paciente.
 	 */
-	public Paciente buscaPaciente(Long idPaciente)  {
+	public Paciente buscaPaciente(Long idPaciente) {
 		return this.pacienteDAO.getOne(idPaciente);
 	}
 

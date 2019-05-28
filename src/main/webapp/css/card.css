@@ -51,7 +51,8 @@
 .card {
 	background-color: #fff;
 	margin-bottom: 1.6rem;
-	/* border-radius: 10px; */
+	width: 290px;
+	height: 400px; 
 }
 
 .card__padding {

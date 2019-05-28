@@ -158,7 +158,7 @@
 									<div class="control-group">
 										<label for="especialidades">Especilidades:</label> <input
 											type="text" id="especialidades" name="especialidades"
-											placeholder="Começe a digitar para pesquisar" value=""
+											placeholder="Começe a digitar para pesquisar" value="" autocomplete="off"
 											required />
 									</div>
 								</div>
@@ -192,7 +192,7 @@
 									<div class="control-group">
 										<label for="clinicas">Selecione qual o seu
 											local de atendimento</label> <input type="text" id="clinicas"
-											name="clinicas"
+											name="clinicas" autocomplete="off"
 											placeholder="Começe a digitar para pesquisar" value=""
 											required />
 									</div>
@@ -215,7 +215,7 @@
 									<div class="control-group">
 										<label for="diasAtendimento">Quais dias da semana há
 											atendimento?</label> <input type="text" id="diasAtendimento"
-											name="diasAtendimento"
+											name="diasAtendimento" autocomplete="off"
 											placeholder="Começe a digitar para pesquisar" value=""
 											required />
 									</div>
@@ -237,7 +237,7 @@
 								<div class="col-md-12">
 									<div class="control-group">
 										<label for="convenios">Convênios atendidos:</label> <input
-											type="text" name="convenios" id="convenios"
+											type="text" name="convenios" id="convenios" autocomplete="off"
 											placeholder="Começe a digitar para pesquisar" required />
 									</div>
 								</div>

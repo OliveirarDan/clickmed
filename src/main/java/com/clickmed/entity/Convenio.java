@@ -20,15 +20,13 @@ public class Convenio {
 	private String codConvenio;
 	@NotNull
 	private String nome;
-	
-	
 
-	public Convenio( @NotNull String codConvenio, @NotNull String nome) {
+	public Convenio(@NotNull String codConvenio, @NotNull String nome) {
 		super();
 		this.codConvenio = codConvenio;
 		this.nome = nome;
 	}
-	
+
 	public Convenio(Long id, @NotNull String codConvenio, @NotNull String nome) {
 		super();
 		this.id = id;
@@ -36,49 +34,37 @@ public class Convenio {
 		this.nome = nome;
 	}
 
-
 	public Convenio() {
 		super();
 	}
-
 
 	public Long getId() {
 		return id;
 	}
 
-
 	public String getCodConvenio() {
 		return codConvenio;
 	}
-
 
 	public String getNome() {
 		return nome;
 	}
 
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 
 	public void setCodConvenio(String codConvenio) {
 		this.codConvenio = codConvenio;
 	}
 
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 
 	@Override
 	public String toString() {
 		return "Convenio [id=" + id + ", codConvenio=" + codConvenio + ", nome=" + nome + "]";
 	}
-	
-	
-	
-	
-	
+
 }

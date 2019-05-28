@@ -26,12 +26,6 @@
 								placeholder="Classificação" value="" />
 						</div>
 					</div>
-					<div class="form-group col-2 col-md-2">
-						<div class="control-group">
-							<input type="text" id="custo" name="custo" placeholder="Custo"
-								value="" />
-						</div>
-					</div>
 					<div class="form-group offset-4 col-2 col-md-2">
 						<div class="control-group">
 							<button name="limparFiltros" value=""
@@ -57,7 +51,8 @@
 			<!--Início da card  -->
 			<div class="row">
 				<c:forEach items="${medicos}" var="m">
-					<form class="contact_form" action="selecionaMedico" method="get" id="selecionaMedico">
+					<form class="contact_form" action="selecionaMedico" method="get"
+						id="selecionaMedico">
 						<div class="wrapper col-md-4 col-4">
 							<div class="card radius shadowDepth1">
 								<div class="row card-line card__padding">
@@ -68,18 +63,15 @@
 									<div class="card-head-title">
 										<a>${m.nome} ${m.sobrenome}</a></br> <a>CRM: ${m.crm}</a>
 									</div>
-									<input type="text" id="id" name="id" value="${m.id}">
+									<input type="hidden" id="id" name="id" value="${m.id}">
 								</div>
 								<div class="card__content card-line card__padding">
 									<div class="row card__meta">
 										<div class="col-md-12 col-12">
-											<a>Especialidades:</a>
-											<c:forEach items="${medico.especialidade}"
-												var="especialidade">
-												<ul>
-													<a class="card-title">Otorrino</a>
-													<a class="card-title">${especialidade}</a>
-												</ul>
+											<a class="card-title">Especialidade:</a>
+											<c:forEach items="${m.especialidades}" var="e">
+												<a>${e.nome}</a>
+												<br>
 											</c:forEach>
 										</div>
 									</div>
@@ -88,15 +80,25 @@
 											<i class="fa-card fa-map-marker"></i>
 										</div>
 										<div class="col-md-10 col-10">
-											<a class="card-title">Endereço do médico</a> <a
-												class="card-title">${medico.rua}</a>
+											<c:forEach items="${m.clinicas}" var="c">
+												<a>${c.rua}, ${c.numero} - ${c.cidade}/${c.estado}</a>
+												<br>
+											</c:forEach>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12 col-12">
+											<a class="card-title">Telefone:</a><br>
+												<a>${m.telefone1}</a>
+												<br>
+												<a>${m.telefone2}</a>
+												<br>
 										</div>
 									</div>
 								</div>
 
 								<div class="card__content card-line card__padding">
-									<a class="card-title">Nota: ${medico.avaliacao}</a><br> <a
-										class="card-title">Custo: ${medico.preco}</a><br>
+									<a class="card-title">Nota: ${avaliacao}</a><br>
 								</div>
 								<button class="card-button" type="submit" name="selecionaMedico"
 									value="selecionaMedico">Visualizar</button>

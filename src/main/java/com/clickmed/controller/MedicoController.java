@@ -30,6 +30,7 @@ public class MedicoController {
 	@RequestMapping(value = "/cadastraMedico", method = { RequestMethod.POST })
 	public String cadastraMedico(Medico medico, ModelMap model) {
 		try {
+			System.out.println("Medico recebido " + medico.toString());
 			medicoService.insereMedico(medico);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -51,13 +52,6 @@ public class MedicoController {
 		return "edicao-medico";
 	}
 
-	/**
-	 * ----TESTANDO---- -----ATENçÃO------ Neste método é necessário ter todos os
-	 * dados do medico antes de modificalo no BD, Você pode usar uma variável
-	 * nMedico para carregar os itens pelo id e depois altera-lo. Ou pode pegar a
-	 * entidade completa da VIEW.
-	 * 
-	 */
 	@RequestMapping(value = "/salvaMedico", method = { RequestMethod.POST })
 	public String salvaMedico(ModelMap model, Medico medico) throws IOException {
 

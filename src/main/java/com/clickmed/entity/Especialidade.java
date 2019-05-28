@@ -20,15 +20,17 @@ public class Especialidade {
 	@Column(unique = true)
 	private String nome;
 
-	
+	private String outros;
+
 	public Especialidade() {
 		super();
 	}
 
-	public Especialidade(Long id, @NotNull String nome) {
+	public Especialidade(Long id, @NotNull String nome, String outros) {
 		super();
 		this.id = id;
 		this.nome = nome;
+		this.outros = outros;
 	}
 
 	public Long getId() {
@@ -47,10 +49,17 @@ public class Especialidade {
 		this.nome = nome;
 	}
 
-	@Override
-	public String toString() {
-		return "Especialidade [id=" + id + ", nome=" + nome + "]";
+	public String getOutros() {
+		return outros;
 	}
 
-	
+	public void setOutros(String outros) {
+		this.outros = outros;
+	}
+
+	@Override
+	public String toString() {
+		return "Especialidade [id=" + id + ", nome=" + nome + ", outros=" + outros + "]";
+	}
+
 }

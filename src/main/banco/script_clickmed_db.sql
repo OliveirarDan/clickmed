@@ -38,7 +38,6 @@ CREATE TABLE IF NOT EXISTS `clickmed_db`.`medicos` (
   `nome` VARCHAR(255) NULL DEFAULT NULL,
   `sobrenome` VARCHAR(255) NULL DEFAULT NULL,
   `sexo` VARCHAR(255) NULL DEFAULT NULL,
-  `especialidade` LONGTEXT NULL DEFAULT NULL,
   `experienciaProfissional` LONGTEXT NULL DEFAULT NULL,
   `formacaoAcademica` LONGTEXT NULL DEFAULT NULL,
   `planosConvenio` LONGTEXT NULL DEFAULT NULL,
@@ -70,7 +69,6 @@ CREATE TABLE IF NOT EXISTS `clickmed_db`.`clinicas` (
   `email` VARCHAR(255) NULL DEFAULT NULL,
   `estado` VARCHAR(255) NULL DEFAULT NULL,
   `foto` LONGTEXT NULL DEFAULT NULL,
-  `localAtendimento` VARCHAR(255) NULL DEFAULT NULL,
   `nomeFantasia` VARCHAR(255) NULL DEFAULT NULL,
   `numero` VARCHAR(255) NULL DEFAULT NULL,
   `razaoSocial` VARCHAR(255) NOT NULL,
@@ -200,17 +198,6 @@ CREATE TABLE IF NOT EXISTS `clickmed_db`.`pesquisas_pacientes` (
   CONSTRAINT `FKb0a8gmmyp6ncb0c2xs147p8r2`
     FOREIGN KEY (`medico_id`)
     REFERENCES `clickmed_db`.`medicos` (`id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
-
--- -----------------------------------------------------
--- Table `clickmed_db`.`teste`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `clickmed_db`.`teste` (
-  `idteste` INT(11) NOT NULL AUTO_INCREMENT,
-  `texto` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`idteste`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 

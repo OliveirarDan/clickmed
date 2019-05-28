@@ -121,8 +121,8 @@ theme.
     display: inline-block;
     color: #47525d;
     font: normal normal normal 14px/1 FontAwesome;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+    font-size: 20px;
+    margin: 3px 0 0 0; 
 }
 
 .header-top-right>a {
@@ -203,6 +203,7 @@ label {
     border-radius: 3px;
     transition: all 0.3s ease 0s;
     cursor: pointer;
+    margin-top: auto;
 }
 
 .card-button:hover {

@@ -31,7 +31,7 @@
 										<a href="#">Esqueci minha senha</a>
 									</p> </span>
 							</div>
-							<div class="division">
+							<!-- <div class="division">
 								<div class="line l"></div>
 								<span>Ou</span>
 								<div class="line r"></div>
@@ -42,7 +42,7 @@
 								</a> <a id="facebook_login" class="circle facebook" href="#"> <i
 									class="fa fa-facebook fa-fw"></i>
 								</a>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>

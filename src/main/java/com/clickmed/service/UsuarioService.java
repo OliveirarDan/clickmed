@@ -73,5 +73,14 @@ public class UsuarioService {
 	public List<Usuario> listaUsuarios() {
 		return usuarioDAO.findAll();
 	}
+	
+	
+	public Usuario autenticar(Usuario usuario) {
+		Usuario usuarioAutenticado = usuarioDAO.findByEmail(usuario.getEmail());
+		if (usuarioAutenticado.getSenha() == usuario.getSenha()) {
+			return usuarioAutenticado;
+		}
+		return null;
+	}
 
 }

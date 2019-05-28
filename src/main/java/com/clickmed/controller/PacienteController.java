@@ -13,6 +13,7 @@ import com.clickmed.service.PacienteService;
 import com.clickmed.service.UsuarioService;
 
 @Controller
+@RequestMapping("/app/pacientes")
 public class PacienteController {
 
 	@Autowired

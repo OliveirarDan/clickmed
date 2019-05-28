@@ -73,12 +73,10 @@
 								<div class="card__content card-line card__padding">
 									<div class="row card__meta">
 										<div class="col-md-12 col-12">
-											<a>Especialidades:</a>
-											<c:forEach items="${medico.especialidade}"
-												var="especialidade">
+											<a>Especialidade:</a>
+											<c:forEach items="${m.especialidades}" var="especialidade">
 												<ul>
-													<a class="card-title">Otorrino</a>
-													<a class="card-title">${especialidade}</a>
+													<a class="card-title">${especialidade.nome}</a>
 												</ul>
 											</c:forEach>
 										</div>
@@ -87,9 +85,14 @@
 										<div class="col-md-2 col-2">
 											<i class="fa-card fa-map-marker"></i>
 										</div>
-										<div class="col-md-10 col-10">
-											<a class="card-title">Endereço do médico</a> <a
-												class="card-title">${medico.rua}</a>
+										<div class="col-md-10 col-10" >
+											<a class="card-title">Endereço do médico</a> 
+											<%-- <a class="card-title">${clinicas.rua}</a> --%>
+											<c:forEach items="${m.clinicas}" var="c">
+												<ul>
+													<a class="card-title">${c.bairro}</a>
+												</ul>
+											</c:forEach>	
 										</div>
 									</div>
 								</div>

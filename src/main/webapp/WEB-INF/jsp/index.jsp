@@ -20,29 +20,25 @@
 		<div class="banner_inner">
 			<div class="container">
 				<div class="banner_content">
+					<center>
 					<h2>
-						Ganhe tempo e <br> encontre profissionais capacitados <br>
-						sem dificuldades :) <br>
+						Procurando uma consulta?  <br> 
+						Esta no lugar certo. <br>
+						Digite abaixo o que você deseja. <br>
 					</h2>
 					
 					<br>
-					<h4>Digite o nome do medico e/ou busque ao lado por especialidade</h4>
-					<br>
-					
-					<form autocomplete="off" action="listar_nome_medicos" method="post">
+
+					<form autocomplete="off" action="buscaPrincipal" method="post">
 						<div class="autocomplete" style="width:700px;">
-    						<input id="myInput" type="text" name="nome" placeholder="Digite o nome do medico">
-    						<!-- <input id="myInput" type="text" name="espec" placeholder="Especialidades"> -->
- 						</div>
- 						<div class="autocomplete" style="width:250px;">
-    						<input id="myLoc" type="text" name="especialidade" placeholder="Especialidades">
+    						<input id="myInput" type="text" name="nome" placeholder="Pesquise por Especialidade, Local, Etc...">
  						</div>
 						<button type="submit" name="pesquisa" value="pesquisa"
 							class="primary-btn text-uppercase">
 							<i class="fa fa-search"></i>
 						</button>
 					</form>
-
+					</center>
 					<form autocomplete="off" action="index.jsp"></form>
 
 

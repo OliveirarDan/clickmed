@@ -12,8 +12,6 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-
-
 @Entity
 @Table(name = "pacientes")
 public class Paciente {
@@ -29,7 +27,7 @@ public class Paciente {
 	@NotNull
 	private String sobrenome;
 	private String sexo;
-	 @DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dataNascimento;
 	private String telefone1;
 	private String telefone2;
@@ -43,17 +41,10 @@ public class Paciente {
 	@OneToOne
 	private Usuario usuario;
 
-	// Construtores
-	/**
-	 * 
-	 */
 	public Paciente() {
 		super();
 	}
 
-	
-	
-	
 	public Paciente(Long id, @NotNull String cpf, @NotNull String nome, @NotNull String sobrenome, String sexo,
 			Date dataNascimento, String telefone1, String telefone2, String cidade, String estado, String nomeRua,
 			String numero, String cep, String foto, Usuario usuario) {
@@ -202,8 +193,5 @@ public class Paciente {
 				+ ", cidade=" + cidade + ", estado=" + estado + ", nomeRua=" + nomeRua + ", numero=" + numero + ", cep="
 				+ cep + ", foto=" + foto + ", usuario=" + usuario + "]";
 	}
-	
-	
-	
 
 }

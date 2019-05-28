@@ -1,7 +1,5 @@
 package com.clickmed.entity;
 
-
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,7 +30,7 @@ public class PesquisaSatisfacao {
 	@ManyToOne
 	private Paciente paciente;
 
-	@Column(columnDefinition="TEXT")
+	@Column(columnDefinition = "TEXT")
 	private String descricao;
 
 	public PesquisaSatisfacao(Long id, String avaliacao, double pergunta1, double pergunta2, double pergunta3,
@@ -95,7 +93,7 @@ public class PesquisaSatisfacao {
 	public Paciente getPaciente() {
 		return paciente;
 	}
-	
+
 	public String getDescricao() {
 		return descricao;
 	}
@@ -151,13 +149,5 @@ public class PesquisaSatisfacao {
 				+ ", comentario=" + comentario + ", medico=" + medico + ", paciente=" + paciente + ", descricao="
 				+ descricao + "]";
 	}
-	
-	
-	
-	
-	
 
-	
-	
-	
 }

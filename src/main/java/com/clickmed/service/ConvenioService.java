@@ -49,7 +49,6 @@ public class ConvenioService {
 		return null;
 	}
 
-	
 	/**
 	 * Remove um Convenio de acordo com o id recebido.
 	 * 

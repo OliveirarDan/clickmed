@@ -24,52 +24,54 @@ public class UsuarioService {
 
 	/**
 	 * Insere Usuario, precisa ser feito antes do cadastro do Paciente/Médico
+	 * 
 	 * @param usuario
 	 * @return Usuario cadastrado
 	 */
 	public Usuario insereUsuario(Usuario usuario) throws IOException {
 		return this.usuarioDAO.save(usuario);
 	}
-	
+
 	/**
 	 * Verifica o id recebido, caso ele exista atualiza, se não retorna null
+	 * 
 	 * @param usuario
 	 * @return usuario atualizado ou null caso não exista.
 	 */
 	public Usuario atualizaUsuario(Usuario usuario) throws IOException {
-		if (this.usuarioDAO.existsById(usuario.getId())==true) {
+		if (this.usuarioDAO.existsById(usuario.getId()) == true) {
 			return this.usuarioDAO.save(usuario);
 		}
 		return null;
 	}
-	
+
 	/**
 	 * Remove um usuario de acordo com o id recebido.
+	 * 
 	 * @param idUsuario id do usuario a ser excluído.
 	 * @throws IOException
 	 */
 	public void removeUsuario(Long idUsuario) throws IOException {
 		this.usuarioDAO.deleteById(idUsuario);
 	}
-	
-	
+
 	/**
 	 * Busca um usuario pelo ID
+	 * 
 	 * @param idUsuario
 	 * @return Um objeto Usuario.
 	 */
 	public Usuario buscaUsuario(Long idUsuario) {
 		return this.usuarioDAO.getOne(idUsuario);
 	}
-	
-	
+
 	/**
 	 * Lista todos os usuários cadastrados.
+	 * 
 	 * @return List<Usuario>
 	 */
-	public List<Usuario> listaUsuarios(){
+	public List<Usuario> listaUsuarios() {
 		return usuarioDAO.findAll();
-	}	
-	
-	
+	}
+
 }

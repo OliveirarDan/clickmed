@@ -181,7 +181,7 @@
 					<div class="card_infos">
 					<h5>Localização</h5>
 						<div id="map" style="width:100%;height:250px;"></div>
-						<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHIUcekgvqG13i5UbxF5M8YQExsnzqYow&callback=myMap"></script>
+						<script src="https://maps.googleapis.com/maps/api/js?key=CHAVEAQUI&callback=myMap"></script>
 					</div>
 				</div>
 			</div>

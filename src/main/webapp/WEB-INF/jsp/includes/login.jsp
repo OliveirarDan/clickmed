@@ -19,13 +19,13 @@
 					<div class="box">
 						<div class="content">
 							<div class="form loginBox">
-								<form method="" action="" accept-charset="UTF-8">
+								<form method="post" action="autenticar" accept-charset="UTF-8">
 									<input id="email" class="form-control" type="text"
-										placeholder="E-mail" name="email"> <input
+										placeholder="E-mail" name="usuario.email"> <input
 										id="password" class="form-control" type="password"
-										placeholder="Senha" name="password"> <input
+										placeholder="Senha" name="usuario.senha"> <input
 										class="btn btn-default btn-login" type="button" value="Login"
-										onclick="">
+										onclick="submit()">
 								</form>
 								<span><p>
 										<a href="#">Esqueci minha senha</a>

@@ -5,11 +5,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.clickmed.entity.Usuario;
+
 @Controller
 public class InicialController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index(ModelMap model) {
+	public String index(ModelMap model, Usuario usuario) {
 		return "index";
 	}
 

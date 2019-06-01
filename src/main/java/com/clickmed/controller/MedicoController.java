@@ -49,7 +49,7 @@ public class MedicoController {
 		medico = medicoService.buscaMedico(medico.getId());
 		System.out.println("Especialidade: " + medico.getEspecialidades().toString());
 		model.addAttribute(medico);
-		return "edicao-medico";
+		return "infos-medico";
 	}
 
 	@RequestMapping(value = "/salvaMedico", method = { RequestMethod.POST })

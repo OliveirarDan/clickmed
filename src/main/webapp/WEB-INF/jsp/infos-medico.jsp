@@ -56,6 +56,15 @@
 							<div class="col-md-8">
 								<h3>Nome: ${medico.nome} ${medico.sobrenome}</h3>
 								<h5>CRM: ${medico.crm}</h5>
+								
+								<c:forEach items="${medico.clinicas}" var="c">- 
+									<input type=hidden class="single-input" id="rua" name="name" value="${c.rua}" />
+									<input type=hidden class="single-input" id="numero" name="name" value="${c.numero}" />
+									<input type=hidden class="single-input" id="cidade" name="name" value="${c.cidade}" />
+									<input type=hidden class="single-input" id="estado" name="name" value="${c.estado}" />
+								</c:forEach>	
+									<input type=text class="single-input" id="end" name="name" />
+								
 							</div>
 						</div>
 						<hr class="line">
@@ -180,8 +189,9 @@
 				<div class="col-md-12">
 					<div class="card_infos">
 					<h5>Localização</h5>
-						<div id="map" style="width:100%;height:250px;"></div>
-						<script src="https://maps.googleapis.com/maps/api/js?key=CHAVEAQUI&callback=myMap"></script>
+						<div id="mapa" style="width:100%;height:250px;"></div>
+						
+						<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHIUcekgvqG13i5UbxF5M8YQExsnzqYow&callback=initialize"></script>
 					</div>
 				</div>
 			</div>

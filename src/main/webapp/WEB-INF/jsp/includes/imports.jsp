@@ -50,6 +50,7 @@
 <script src="js/jquery.mask.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHIUcekgvqG13i5UbxF5M8YQExsnzqYow&callback=myMap"></script>
 <script src="js/maps/map.js"></script>
+<script src="js/local.js"></script>
 
 <!-- JS Opcional  -->
 <script type="text/javascript">

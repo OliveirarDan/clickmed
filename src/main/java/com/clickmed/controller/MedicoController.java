@@ -51,7 +51,7 @@ public class MedicoController {
 		medico = (Medico) session.getAttribute("medico");
 		System.out.println("Especialidade: " + medico.getEspecialidades().toString());
 		model.addAttribute(medico);
-		return "edicao-medico";
+		return "infos-medico";
 	}
 
 	@RequestMapping(value = "/salvaMedico", method = { RequestMethod.POST })
@@ -65,6 +65,7 @@ public class MedicoController {
 
 	@RequestMapping(value = "/infosMedico", method = RequestMethod.GET)
 	public String infoMedico(ModelMap model, HttpSession session) {
+
 		return "infos-medico";
 	}
 

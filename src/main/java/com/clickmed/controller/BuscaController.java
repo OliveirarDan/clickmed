@@ -20,7 +20,6 @@ public class BuscaController {
 
 	@RequestMapping(value = "/buscaPrincipal", method = { RequestMethod.POST })
 	public String buscaPrincipal(ModelMap model, Medico medico, String busca) {
-
 		busca = medico.getNome();
 		try {
 			model.clear();
@@ -47,57 +46,219 @@ public class BuscaController {
 				switch (palavras) {
 				case 1:
 					System.out.println("Uma palavra");
-					model.put("medicos", buscaService.umaPalavra(buscaPalavra));
-					if (model.get("medicos").toString().length() == 2) {
-						System.out.println("Não tem dados");
-					} else {
-						System.out.println("Tem dados");
+					model.put("medicos", medicoService.listarNomeMedico(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
 					}
+					model.put("medicos", medicoService.listarMedicoEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.buscaBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.umaPalavra(buscaPalavra));
 					return resultadoBusca(model);
 				case 2:
 					System.out.println("Duas palavra");
-					model.put("medicos", buscaService.duasPalavras(buscaPalavra));
+					model.put("medicos", buscaService.duasPalavrasNomeEspecialidade(buscaPalavra));
 					if (model.get("medicos").toString().length() != 2) {
-						System.out.println("Não tem dados");
-					} else {
-						System.out.println("Tem dados");
+						return resultadoBusca(model);
 					}
+					model.put("medicos", buscaService.duasPalavrasNomeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.duasPalavrasEspecialidadeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.duasPalavras(buscaPalavra));
 					return resultadoBusca(model);
+
 				case 3:
 					System.out.println("Três palavra");
-					model.put("medicos", (buscaService.tresPalavras(buscaPalavra)));
+					model.put("medicos", buscaService.tresPalavrasNomeEspecialidadeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.tresPalavrasNomeEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.tresPalavrasNomeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.tresPalavrasBairroEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.tresPalavras(buscaPalavra));
 					return resultadoBusca(model);
 				case 4:
 					System.out.println("Quatro palavra");
-					model.put("medicos", (buscaService.quatroPalavras(buscaPalavra)));
+					model.put("medicos", buscaService.quatroPalavrasNomeEspecialidadeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						System.out.println("to aqui");
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.quatroPalavrasNomeEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.quatroPalavrasNomeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.quatroPalavrasBairroEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.quatroPalavras(buscaPalavra));
 					return resultadoBusca(model);
 				case 5:
 					System.out.println("Cinco palavra");
-					model.put("medicos", (buscaService.cincoPalavras(buscaPalavra)));
+					model.put("medicos", buscaService.cincoPalavrasNomeEspecialidadeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						System.out.println("to aqui");
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.cincoPalavrasNomeEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.cincoPalavrasNomeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.cincoPalavrasBairroEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.cincoPalavras(buscaPalavra));
 					return resultadoBusca(model);
 				case 6:
 					System.out.println("Seis palavra");
-					model.put("medicos", (buscaService.seisPalavras(buscaPalavra)));
+					model.put("medicos", buscaService.seisPalavrasNomeEspecialidadeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						System.out.println("to aqui");
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.seisPalavrasNomeEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.seisPalavrasNomeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.seisPalavrasBairroEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.seisPalavras(buscaPalavra));
 					return resultadoBusca(model);
 				case 7:
 					System.out.println("Sete palavra");
-					model.put("medicos", (buscaService.setePalavras(buscaPalavra)));
+					model.put("medicos", buscaService.setePalavrasNomeEspecialidadeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.setePalavrasNomeEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.setePalavrasNomeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.setePalavrasBairroEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.setePalavras(buscaPalavra));
 					return resultadoBusca(model);
 				case 8:
 					System.out.println("Oito palavra");
-					model.put("medicos", (buscaService.oitoPalavras(buscaPalavra)));
+					model.put("medicos", buscaService.oitoPalavrasNomeEspecialidadeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.oitoPalavrasNomeEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.oitoPalavrasNomeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.oitoPalavrasBairroEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.oitoPalavras(buscaPalavra));
 					return resultadoBusca(model);
 				case 9:
 					System.out.println("Nove palavra");
-					model.put("medicos", (buscaService.novePalavras(buscaPalavra)));
+					model.put("medicos", buscaService.novePalavrasNomeEspecialidadeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.novePalavrasNomeEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.novePalavrasNomeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.novePalavrasBairroEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.novePalavras(buscaPalavra));
 					return resultadoBusca(model);
 				case 10:
 					System.out.println("Dez palavra");
-					model.put("medicos", (buscaService.dezPalavras(buscaPalavra)));
+					model.put("medicos", buscaService.dezPalavrasNomeEspecialidadeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.dezPalavrasNomeEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.dezPalavrasNomeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.dezPalavrasBairroEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.dezPalavras(buscaPalavra));
 					return resultadoBusca(model);
 
 				default:
-					model.put("medicos", (buscaService.dezPalavras(buscaPalavra)));
+					model.put("medicos", buscaService.dezPalavrasNomeEspecialidadeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.dezPalavrasNomeEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.dezPalavrasNomeBairro(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.dezPalavrasBairroEspecialidade(buscaPalavra));
+					if (model.get("medicos").toString().length() != 2) {
+						return resultadoBusca(model);
+					}
+					model.put("medicos", buscaService.dezPalavras(buscaPalavra));
 					return resultadoBusca(model);
 				}
 			}
@@ -108,7 +269,11 @@ public class BuscaController {
 	}
 
 	private String resultadoBusca(ModelMap model) {
-		return "resultado-busca";
+		if (model.get("medicos").toString().length() == 2) {
+			return "resultado-busca-vazia";
+		} else {
+			return "resultado-busca";
+		}
 	}
 
 }

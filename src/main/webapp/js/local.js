@@ -44,13 +44,13 @@ $(document).ready(function () {
         });
     }
 
-    $("#btnMaps").click(function() {
+    $(document).ready(function() {
 
     	var logradouro = $("#rua").val();
         var numero = $("#numero").val();
         var cidade = $("#cidade").val();
         var uf = $("#estado").val();
-
+        
         var endereco = logradouro + ", "+numero+", "+cidade+" - "+uf;
 
         carregarNoMapa(endereco); // Esse parte. De passar como parametro.

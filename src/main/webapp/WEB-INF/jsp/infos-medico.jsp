@@ -57,14 +57,12 @@
 								<h3>Nome: ${medico.nome} ${medico.sobrenome}</h3>
 								<h5>CRM: ${medico.crm}</h5>
 								
-								<c:forEach items="${medico.clinicas}" var="c">- 
+								<c:forEach items="${medico.clinicas}" var="c"> 
 									<input type=hidden class="single-input" id="rua" name="name" value="${c.rua}" />
 									<input type=hidden class="single-input" id="numero" name="name" value="${c.numero}" />
 									<input type=hidden class="single-input" id="cidade" name="name" value="${c.cidade}" />
 									<input type=hidden class="single-input" id="estado" name="name" value="${c.estado}" />
-								</c:forEach>	
-									<input type=text class="single-input" id="end" name="name" />
-								
+								</c:forEach>									
 							</div>
 						</div>
 						<hr class="line">

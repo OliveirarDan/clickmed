@@ -52,7 +52,7 @@
 										<div class="col-md-4">
 											<input type="hidden" class="single-input" name="id" value="${medico.id}" /> 
 											<input type="hidden" class="single-input" name="usuario.id" value="${medico.usuario.id}" />
-											<input type="hidden" class="single-input" id="permissao" name="usuario.permissao" value="1" required />
+											<input type="hidden" class="single-input" id="permissao" name="usuario.permissao" value="medico" required />
 											<div class="form-group">
 												<label>CRM</label>
 												<input type="number" class="single-input required" id="crm"

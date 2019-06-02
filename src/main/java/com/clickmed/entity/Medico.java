@@ -6,6 +6,7 @@ package com.clickmed.entity;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,6 +16,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity
 @Table(name = "medicos")
@@ -42,17 +46,19 @@ public class Medico {
 	@OneToOne
 	private Usuario usuario;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "medicos_has_especialidades", joinColumns = { @JoinColumn(name = "medico_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "especialidades_id") })
 	private List<Especialidade> especialidades;	
 
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
+	@Fetch(FetchMode.SUBSELECT)
 	@JoinTable(name = "medicos_has_convenios", joinColumns = { @JoinColumn(name = "medico_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "convenio_id") })
 	private List<Convenio> convenios;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
+	@Fetch(FetchMode.SUBSELECT)
 	@JoinTable(name = "medicos_has_clinicas", joinColumns = { @JoinColumn(name = "medico_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "clinica_id") })
 	private List<Clinica> clinicas;

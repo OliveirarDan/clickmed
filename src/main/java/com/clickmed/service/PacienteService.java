@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.clickmed.dao.PacienteDAO;
 import com.clickmed.entity.Paciente;
+import com.clickmed.entity.Usuario;
 
 @Service
 @Transactional
@@ -34,6 +35,12 @@ public class PacienteService {
 	 * @throws IOException
 	 */
 	public Paciente inserePaciente(Paciente paciente) throws IOException {
+		// Atualizando usuario
+		Usuario nUsuario = paciente.getUsuario();
+		nUsuario.setPermissao("paciente");
+		System.out.println(nUsuario.toString());
+		paciente.setUsuario(nUsuario);
+
 		// Cadastra o usuario e retorna o ID
 		paciente.setUsuario(usuarioService.insereUsuario(paciente.getUsuario()));
 		// Cadastra o paciente
@@ -84,4 +91,8 @@ public class PacienteService {
 		return this.pacienteDAO.findAll();
 	}
 
+	public Paciente buscaPacientePorUsuario(Usuario usuario) {
+		return pacienteDAO.findPacienteByUsuario(usuario);
+	}
+	
 }

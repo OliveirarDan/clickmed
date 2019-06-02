@@ -1,5 +1,7 @@
 package com.clickmed.entity;
 
+import java.io.UnsupportedEncodingException;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import org.springframework.util.DigestUtils;
 
 @Entity
 @Table(name = "usuarios")
@@ -23,8 +27,13 @@ public class Usuario {
 	@NotNull
 	private String senha;
 
+	/**
+	 * Permissões 
+	 * medico -  para usuarios medicos
+	 * paciente - para usuarios pacientes
+	 */
 	private String permissao;
-
+	
 	public Usuario(Long id, @NotNull String email, @NotNull String senha, String permissao) {
 		super();
 		this.id = id;
@@ -33,6 +42,14 @@ public class Usuario {
 		this.permissao = permissao;
 	}
 
+	public void hashearSenha() {
+		try {
+			this.senha = DigestUtils.md5DigestAsHex(this.senha.getBytes("UTF-8"));
+		} catch (UnsupportedEncodingException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
 	public Usuario() {
 		super();
 	}
@@ -59,6 +76,15 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+		
+	public String getPermissao() {
+		return permissao;
+	}
+
+	public void setPermissao(String permissao) {
+		this.permissao = permissao;
 	}
 
 	@Override

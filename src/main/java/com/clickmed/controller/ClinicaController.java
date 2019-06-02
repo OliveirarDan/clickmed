@@ -33,7 +33,7 @@ public class ClinicaController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return listaClinicas(model);
+		return "index";
 	}
 
 	@RequestMapping(value = "/listaClinicas", method = RequestMethod.GET)

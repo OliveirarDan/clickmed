@@ -9,15 +9,21 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.clickmed.entity.Medico;
+import com.clickmed.entity.Usuario;
 
 @Repository
 @Transactional
 public interface MedicoDAO extends JpaRepository<Medico, Long>  {
 	
+
+	public Medico findMedicoByUsuario(Usuario usuario);
+	
+
 	@Query ("SELECT u from Medico u inner join u.especialidades e "
 			+ "where e.nome like %:especialidade% or "
 			+ "e.outros like %:especialidade%")
 	public List<Medico> buscaEspecialidade(String especialidade);
+
 	
 	@Query("select u from Medico u where u.nome like :nome% or u.sobrenome like :nome%")
 	public List<Medico> buscaPorNome(String nome);

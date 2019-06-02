@@ -81,7 +81,7 @@ public class MedicoService {
 	}
 
 	public List<Medico> listarMedicoEspecialidade(String especialidade) {
-		return medicoDAO.filtroEspecialidade(especialidade);
+		return medicoDAO.buscaEspecialidade(especialidade);
 	}
 
 	public List<Medico> listarNomeMedico2(String nome) throws IOException {
@@ -101,11 +101,11 @@ public class MedicoService {
 	}
 
 	public List<Medico> listarNomeMedicos() throws IOException {
-		return medicoDAO.findByNome(variavelAuxNome);
+		return medicoDAO.buscaPorNome(variavelAuxNome);
 	}
 
 	public List<Medico> listarNomeMedico(String nome) throws IOException {
-		return medicoDAO.findByNome(nome);
+		return medicoDAO.buscaPorNome(nome);
 	}
 
 	public String listarNomeMedicoString(String nomeSemEspaco) throws IOException {

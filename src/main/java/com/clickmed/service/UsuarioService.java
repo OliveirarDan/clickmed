@@ -77,7 +77,7 @@ public class UsuarioService {
 	
 	public Usuario autenticar(Usuario usuario) {
 		Usuario usuarioAutenticado = usuarioDAO.findByEmail(usuario.getEmail());
-		if (usuarioAutenticado.getSenha() == usuario.getSenha()) {
+		if (usuarioAutenticado.getSenha().equals(usuario.getSenha())) {
 			return usuarioAutenticado;
 		}
 		return null;

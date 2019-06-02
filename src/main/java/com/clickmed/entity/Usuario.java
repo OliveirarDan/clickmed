@@ -27,8 +27,13 @@ public class Usuario {
 	@NotNull
 	private String senha;
 
+	/**
+	 * Permissões 
+	 * medico -  para usuarios medicos
+	 * paciente - para usuarios pacientes
+	 */
 	private String permissao;
-
+	
 	public Usuario(Long id, @NotNull String email, @NotNull String senha, String permissao) {
 		super();
 		this.id = id;
@@ -71,6 +76,15 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+		
+	public String getPermissao() {
+		return permissao;
+	}
+
+	public void setPermissao(String permissao) {
+		this.permissao = permissao;
 	}
 
 	@Override

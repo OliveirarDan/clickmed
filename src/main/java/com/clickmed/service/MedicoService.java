@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.clickmed.dao.MedicoDAO;
 import com.clickmed.entity.Medico;
+import com.clickmed.entity.Usuario;
 
 @Service
 @Transactional
@@ -33,6 +34,11 @@ public class MedicoService {
 	 * @throws IOException
 	 */
 	public Medico insereMedico(Medico medico) throws IOException {
+		//Atualizando usuario
+		Usuario nUsuario = medico.getUsuario();
+		nUsuario.setPermissao("medico");
+		System.out.println(nUsuario.toString());
+		medico.setUsuario(nUsuario);
 		// Cadastra o usuario e retorna o ID
 		medico.setUsuario(usuarioService.insereUsuario(medico.getUsuario()));
 		return this.medicoDAO.save(medico);
@@ -117,4 +123,9 @@ public class MedicoService {
 		return null;
 	}
 
+	public Medico buscaMedicoPorUsuario(Usuario usuario) {
+		return medicoDAO.findMedicoByUsuario(usuario);
+	}
+	
+	
 }

@@ -71,12 +71,10 @@ public class UsuarioController {
 		}
 		if (usuarioAutenticado.getPermissao().equals("paciente")) {
 			System.out.println("É paciente");
-			System.out.println("usuario autenticado" + usuarioAutenticado.toString());
 			pacienteAutenticado = pacienteService.buscaPacientePorUsuario(usuarioAutenticado);
-			
 			model.addAttribute("paciente", pacienteAutenticado);
 			session.setAttribute("paciente", pacienteAutenticado);
-			return "redirect:/selecionaPacienteLink";
+			return "redirect:/";
 		}
 
 		//Redireciona para a página inicial
@@ -93,7 +91,6 @@ public class UsuarioController {
 	
 	@PostMapping("/editar")
 	public String editar(ModelMap model, HttpSession session, Usuario usuario, Paciente paciente) {
-		model.addAttribute("usuarioAutenticado", usuario);
 		usuario = (Usuario) session.getAttribute("usuarioAutenticado");
 		System.out.println(usuario.toString());
 		if (usuario.getPermissao().equals("medico")) {
@@ -102,7 +99,7 @@ public class UsuarioController {
 		if (usuario.getPermissao().equals("paciente")) {
 			paciente = pacienteService.buscaPacientePorUsuario(usuario);
 			System.out.println(pacienteService.buscaPacientePorUsuario(usuario));
-			return "redirect:/selecionaPacienteLink";
+			return "redirect:/selecionaPaciente";
 		}
 		model.addAttribute("mensagemDoSistema", "Algo de errado aconteceu, tente novamente!");
 		

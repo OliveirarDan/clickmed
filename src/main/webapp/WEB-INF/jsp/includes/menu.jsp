@@ -42,7 +42,7 @@
 						<c:if test="${not empty usuarioAutenticado}">
 							<ul class="nav navbar-nav ml-auto header-top-right">
 								<a class="primary-btn text-uppercase" data-toggle="modal"
-									href="javascript:void(0)" onclick="openLoginModal();">${usuarioAutenticado.email}</a>
+									href="javascript:void(0)" onclick="openOpcoesModal();">Minha Conta</a>
 							</ul>
 						</c:if>
 					</div>

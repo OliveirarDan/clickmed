@@ -16,13 +16,11 @@ import com.clickmed.service.PacienteService;
 import com.clickmed.service.UsuarioService;
 
 @Controller
-//@RequestMapping("/app/pacientes")
 public class PacienteController {
 
 	@Autowired
 	PacienteService pacienteService;
-	@Autowired
-	UsuarioService usuarioService;
+	
 
 	@RequestMapping(value = "/novoPaciente", method = RequestMethod.GET)
 	public String novoPaciente(ModelMap model) {
@@ -46,11 +44,10 @@ public class PacienteController {
 	}
 
 	@RequestMapping(value = "/selecionaPaciente", method = RequestMethod.GET)
-	public String selecionaPaciente(Paciente paciente, ModelMap model, HttpSession session, Usuario usuario) {
-		usuario = (Usuario) session.getAttribute("usuarioAutenticado");
-		System.out.println(usuario.toString());
+	public String selecionaPaciente(Paciente paciente, ModelMap model, HttpSession session) {
+		paciente = (Paciente) session.getAttribute("paciente");
 		System.out.println(paciente.toString());
-		model.addAttribute("paciente",paciente);
+		model.addAttribute(paciente);
 		return "edicao-paciente";
 	}
 	

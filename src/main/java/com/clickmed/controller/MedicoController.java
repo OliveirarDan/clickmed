@@ -51,7 +51,7 @@ public class MedicoController {
 		medico = (Medico) session.getAttribute("medico");
 		System.out.println("Especialidade: " + medico.getEspecialidades().toString());
 		model.addAttribute(medico);
-		return "infos-medico";
+		return "edicao-medico";
 	}
 
 	@RequestMapping(value = "/salvaMedico", method = { RequestMethod.POST })

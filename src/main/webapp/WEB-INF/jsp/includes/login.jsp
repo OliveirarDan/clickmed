@@ -28,26 +28,26 @@
 											class="btn btn-default btn-login" type="button" value="Login"
 											onclick="submit()">
 									</form>
-									<span><p>
-											<a href="#">Esqueci minha senha</a>
-										</p> </span>
+<!-- 									<span><p> -->
+<!-- 											<a href="#">Esqueci minha senha</a> -->
+<!-- 										</p> </span> -->
 								</c:if>
 
-								<c:if test="${not empty usuarioAutenticado}">
+<%-- 								<c:if test="${not empty usuarioAutenticado}"> --%>
 
-									<h4 class="modal-title">${usuarioAutenticado.email}-
-										Logado</h4>
-									<br>
-									<form method="post" action="editar" accept-charset="UTF-8">
-										<input class="btn btn-default btn-login" type="button"
-											value="Editar" onclick="submit()">
-									</form>
-									<br>
-									<form method="post" action="sair" accept-charset="UTF-8">
-										<input class="btn btn-default btn-login" type="button"
-											value="Logout" onclick="submit()">
-									</form>
-								</c:if>
+<%-- 									<h4 class="modal-title">${usuarioAutenticado.email}- --%>
+<!-- 										Logado</h4> -->
+<!-- 									<br> -->
+<!-- 									<form method="post" action="editar" accept-charset="UTF-8"> -->
+<!-- 										<input class="btn btn-default btn-login" type="button" -->
+<!-- 											value="Editar" onclick="submit()"> -->
+<!-- 									</form> -->
+<!-- 									<br> -->
+<!-- 									<form method="post" action="sair" accept-charset="UTF-8"> -->
+<!-- 										<input class="btn btn-default btn-login" type="button" -->
+<!-- 											value="Logout" onclick="submit()"> -->
+<!-- 									</form> -->
+<!-- 								</c:if> -->
 							</div>
 							<!-- <div class="division">
 								<div class="line l"></div>

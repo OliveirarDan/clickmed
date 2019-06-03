@@ -25,6 +25,18 @@ function showLoginForm(){
      $('.error').removeClass('alert alert-danger').html(''); 
 }
 
+function showOpcoesForm(){
+    $('#opcpesModal .registerBox').fadeOut('fast',function(){
+        $('.loginBox').fadeIn('fast');
+        $('.register-footer').fadeOut('fast',function(){
+            $('.login-footer').fadeIn('fast');    
+        });
+        
+        $('.modal-title').html('Login with');
+    });       
+     $('.error').removeClass('alert alert-danger').html(''); 
+}
+
 function openLoginModal(){
     showLoginForm();
     setTimeout(function(){
@@ -39,6 +51,16 @@ function openRegisterModal(){
     }, 230);
     
 }
+
+function openOpcoesModal(){
+    showLoginForm();
+    setTimeout(function(){
+        $('#opcoesModal').modal('show');    
+    }, 230);
+    
+}
+
+
 
 function loginAjax(){
     /*   Remove this comments when moving to server

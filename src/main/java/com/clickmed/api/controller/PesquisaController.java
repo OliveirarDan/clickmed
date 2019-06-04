@@ -20,23 +20,6 @@ public class PesquisaController {
 	MedicoService medicoService;
 	BuscaService buscaService;
 
-	@RequestMapping(method = RequestMethod.GET, value = "/api/medico")
-	public @ResponseBody List<Medico> listarMedicos() throws IOException {
-		List<Medico> medico = medicoService.listaMedicos();
-		return medico;
-	}
-
-	@RequestMapping(method = RequestMethod.GET, value = "/api/medico/{id}")
-	public @ResponseBody Medico buscaMedicoPorId(@PathVariable("id") Long id) throws IOException {
-		Medico medico = medicoService.buscaMedico(id);
-		return medico;
-	}
-	
-	@RequestMapping(method = RequestMethod.GET, value = "/api/busca")
-	public @ResponseBody List<Medico> busca() throws IOException {
-		List<Medico> medico = medicoService.listaMedicos();
-		return medico;
-	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/api/busca/{busca}")
 	public @ResponseBody List<Medico> busca(@PathVariable("busca") String busca) throws IOException {

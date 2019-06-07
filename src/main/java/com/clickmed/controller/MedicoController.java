@@ -48,11 +48,23 @@ public class MedicoController {
 
 	@RequestMapping(value = "/selecionaMedico", method = RequestMethod.GET)
 	public String selecionaMedico(Medico medico, ModelMap model, HttpSession session) {
+		//medico = (Medico) session.getAttribute("medico");
+		//System.out.println("Especialidade: " + medico.getEspecialidades().toString());
+		medico = medicoService.buscaMedico(medico.getId());
+		System.out.println(medico.toString());
+		model.addAttribute(medico);
+		return "infos-medico";
+	}
+	
+	@RequestMapping(value = "/selecionaEditaMedico", method = RequestMethod.GET)
+	public String selecionaEditaMedico(Medico medico, ModelMap model, HttpSession session) {
 		medico = (Medico) session.getAttribute("medico");
-		System.out.println("Especialidade: " + medico.getEspecialidades().toString());
+		medico = medicoService.buscaMedico(medico.getId());
+		System.out.println(medico.toString());
 		model.addAttribute(medico);
 		return "edicao-medico";
 	}
+	
 
 	@RequestMapping(value = "/salvaMedico", method = { RequestMethod.POST })
 	public String salvaMedico(ModelMap model, Medico medico, HttpSession session) throws IOException {

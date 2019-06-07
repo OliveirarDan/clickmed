@@ -94,7 +94,7 @@ public class UsuarioController {
 		usuario = (Usuario) session.getAttribute("usuarioAutenticado");
 		System.out.println(usuario.toString());
 		if (usuario.getPermissao().equals("medico")) {
-			return "redirect:/selecionaMedico";
+			return "redirect:/selecionaEditaMedico";
 		}
 		if (usuario.getPermissao().equals("paciente")) {
 			paciente = pacienteService.buscaPacientePorUsuario(usuario);

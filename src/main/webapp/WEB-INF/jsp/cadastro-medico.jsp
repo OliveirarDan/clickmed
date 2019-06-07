@@ -275,5 +275,6 @@
 	<!--================ Includes de Footer e Modal de Login =================-->
 	<jsp:include page="includes/footer.jsp" />
 	<jsp:include page="includes/login.jsp" />
+	<jsp:include page="includes/opcoes.jsp" />
 </body>
 </html>

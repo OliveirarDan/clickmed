@@ -10,7 +10,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.clickmed.entity.Convenio;
 import com.clickmed.entity.Medico;
+import com.clickmed.entity.Usuario;
 import com.clickmed.service.MedicoService;
 
 @Controller
@@ -35,7 +37,7 @@ public class MedicoController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return listaMedicos(model);
+		return "index";
 	}
 
 	@RequestMapping(value = "/listaMedicos", method = RequestMethod.GET)
@@ -45,24 +47,37 @@ public class MedicoController {
 	}
 
 	@RequestMapping(value = "/selecionaMedico", method = RequestMethod.GET)
-	public String selecionaMedico(Medico medico, ModelMap model) {
+	public String selecionaMedico(Medico medico, ModelMap model, HttpSession session) {
+		//medico = (Medico) session.getAttribute("medico");
+		//System.out.println("Especialidade: " + medico.getEspecialidades().toString());
 		medico = medicoService.buscaMedico(medico.getId());
-		System.out.println("Especialidade: " + medico.getEspecialidades().toString());
+		System.out.println(medico.toString());
 		model.addAttribute(medico);
 		return "infos-medico";
 	}
+	
+	@RequestMapping(value = "/selecionaEditaMedico", method = RequestMethod.GET)
+	public String selecionaEditaMedico(Medico medico, ModelMap model, HttpSession session) {
+		medico = (Medico) session.getAttribute("medico");
+		medico = medicoService.buscaMedico(medico.getId());
+		System.out.println(medico.toString());
+		model.addAttribute(medico);
+		return "edicao-medico";
+	}
+	
 
 	@RequestMapping(value = "/salvaMedico", method = { RequestMethod.POST })
-	public String salvaMedico(ModelMap model, Medico medico) throws IOException {
+	public String salvaMedico(ModelMap model, Medico medico, HttpSession session) throws IOException {
 
 		// Salvando no banco
 		System.out.println("Controller " + medico.toString());
 		medicoService.atualizaMedico(medico);
-		return listaMedicos(model);
+		return "infos-medico";
 	}
 
- 	@RequestMapping(value = "/infosMedico", method = RequestMethod.GET)
-	public String infoMedico(ModelMap model) {
+	@RequestMapping(value = "/infosMedico", method = RequestMethod.GET)
+	public String infoMedico(ModelMap model, HttpSession session) {
+
 		return "infos-medico";
 	}
 

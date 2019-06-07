@@ -11,4 +11,6 @@ import com.clickmed.entity.Usuario;
 @Transactional
 public interface UsuarioDAO extends JpaRepository<Usuario, Long> {
 
+	
+	Usuario findByEmail(String email);
 }

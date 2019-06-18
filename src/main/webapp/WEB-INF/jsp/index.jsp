@@ -31,7 +31,7 @@
 
 					<form autocomplete="off" action="buscaPrincipal" method="post">
 						<div class="autocomplete" style="width:700px;">
-    						<input id="myInput" type="text" name="nome" placeholder="Pesquise por Especialidade, Local, Etc...">
+    						<input id="myInput" type="text" name="nome" placeholder="Pesquise por nome, especialidade ou bairro...">
  						</div>
 						<button type="submit" name="pesquisa" value="pesquisa"
 							class="primary-btn text-uppercase">

@@ -46,7 +46,7 @@
 								<div class="center">
 									<div class="foto-info">
 										<!-- User Profile Image -->
-										<img class="profile-pic" src="${medico.foto}">
+										<img class="profile-pic" src="img/person.jpg">
 
 										<!-- Default Image -->
 										<i class="fa fa-user fa-5x"></i>
@@ -189,7 +189,7 @@
 					<h5>Localização</h5>
 						<div id="mapa" style="width:100%;height:250px;"></div>
 						
-						<script src="https://maps.googleapis.com/maps/api/js?key=CHAVE_AQUI&callback=initialize"></script>
+						<script src="https://maps.googleapis.com/maps/api/js?key=CHAVEAQUI&callback=initialize"></script>
 					</div>
 				</div>
 			</div>

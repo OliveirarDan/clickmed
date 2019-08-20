@@ -1,25 +1,29 @@
 # ClickMed
-Projeto ClickMed
+Aplicação para busca inteligente por profissionais da saúde.<br/><br/>
 
-Deploy do projeto:
-  
-  -Importar o projeto como maven
-  
-  -Criar o banco de dados - 'clickmed_db'
-  
-  -Alterar a senha no PersistenceConfig.java
-  
-  -Clicar com o botão direito na classe MedApplication.java e rodar como Java Application.
-  
-  -Acessar: localhost:8080....
+####Instação do projeto:
 
-  
-
-
+- Instalar IDE de sua preferência (sugestão: Eclipse ou IntelliJ Ultimate Edition).
+    - [IntelliJ Linux](https://www.edivaldobrito.com.br/ide-intellij-idea-no-ubuntu-debian/)
+    - [IntelliJ Windows](https://www.jetbrains.com/help/idea/installation-guide.html)
+    - [Eclipse Linux](https://www.edivaldobrito.com.br/ide-eclipse-no-linux-via-snap/)
+    - [Eclipse Windows](https://www.eclipse.org/downloads/packages/installer) 
+- Fazer o clone do projeto para sua máquina local.  
+`https://github.com/OliveirarDan/clickmed.git`
+- Acessar pasta do projeto
+`cd cliclmed/`
+- Importar o projeto como Maven  
+- Criar o banco de dados `clickmed_db`  
 
 
+####Rodar projeto local:  
+- Clicar com o botão direito na classe MedApplication.java e rodar como Java Application.  
+- Acessar endereço do servidor local `localhost:8080`<br/><br/><br/>
+
+---
+
   
-#####------- Testando Sprint2 -------
+####Atalhos para testes
 
 #####Paciente
 - [Cadastro de paciente](http://localhost:8080/novoPaciente)

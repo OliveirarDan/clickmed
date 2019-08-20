@@ -1,7 +1,7 @@
 # ClickMed
 Aplicação para busca inteligente por profissionais da saúde.<br/><br/>
 
-####Instação do projeto:
+##Instação do projeto:
 
 - Instalar IDE de sua preferência (sugestão: Eclipse ou IntelliJ Ultimate Edition).
     - [IntelliJ Linux](https://www.edivaldobrito.com.br/ide-intellij-idea-no-ubuntu-debian/)
@@ -16,42 +16,42 @@ Aplicação para busca inteligente por profissionais da saúde.<br/><br/>
 - Criar o banco de dados `clickmed_db`  
 
 
-####Rodar projeto local:  
+##Rodar projeto local:  
 - Clicar com o botão direito na classe MedApplication.java e rodar como Java Application.  
 - Acessar endereço do servidor local `localhost:8080`<br/><br/><br/>
 
 ---
 
   
-####Atalhos para testes
+##Atalhos para testes
 
-#####Paciente
+###Paciente
 - [Cadastro de paciente](http://localhost:8080/novoPaciente)
 	
 - [Lista e Edita Pacientes](http://localhost:8080/listaPacientes)
 
 
-#####Médico
+###Médico
 - [Cadastro de médico](http://localhost:8080/novoMedico)
 	
 - [Lista e Edita médico](http://localhost:8080/listaMedicos)
 
 - [Informações do médico](http://localhost:8080/infosMedico)
 
-#####Convênio
+###Convênio
 - [Cadastro de convênio](http://localhost:8080/novoConvenio)
 
 - [Lista e Edita convênio](http://localhost:8080/listaConvenios)
 
 
-#####Estabelecimento
+###Estabelecimento
 - [Cadastro de clínica](http://localhost:8080/novaClinica)
 
 - [Lista e Edita clínicas](http://localhost:8080/listaClinicas)
 
 
 
-#####Especialidade
+###Especialidade
 - [Cadastro de Especialidade](http://localhost:8080/novaEspecialidade)
 
 - [Lista e Edita Especialidade](http://localhost:8080/listaEspecialidades)

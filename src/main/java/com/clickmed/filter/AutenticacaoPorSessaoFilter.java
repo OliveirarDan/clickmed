@@ -27,8 +27,6 @@ public class AutenticacaoPorSessaoFilter extends HttpFilter{
 	protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
 		
-		System.out.println("Filtrou");
-		
 		boolean necessitaAutenticacao = req.getRequestURI().contains("/app");
 		
 		if(necessitaAutenticacao && req.getSession().getAttribute("usuarioAutenticado") == null) {

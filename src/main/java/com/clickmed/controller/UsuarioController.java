@@ -4,6 +4,9 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
@@ -20,7 +23,7 @@ import com.clickmed.service.UsuarioService;
 
 @Controller
 @Transactional
-public class UsuarioController {
+public class UsuarioController implements UserDetailsService {
 
 	@Autowired
 	private UsuarioService usuarioService;
@@ -31,31 +34,19 @@ public class UsuarioController {
 	@Autowired
 	private PacienteService pacienteService;
 
+
 	@PostMapping("/autenticar")
 	public String autenticar(@Valid Usuario usuario, BindingResult bindingResult, ModelMap model, HttpSession session, Paciente paciente) {
 
-//		// Se houverem erros nos campos email e senha
-//		if (bindingResult.hasFieldErrors("email") || bindingResult.hasFieldErrors("senha")) {
-//			System.out.println("Autenticando!");
-//			return "redirect:errou";
-//		}
-
-		//Criando médico
 		Medico medicoAutenticado = null;
-		
-		//Criando paciente
 		Paciente pacienteAutenticado = null;
 		
-		// Verifica a autenticação
-		//usuario.hashearSenha();
 		Usuario usuarioAutenticado = usuarioService.autenticar(usuario);
-		//usuarioAutenticado.toString();
 		if (usuarioAutenticado == null) {
 			bindingResult.addError(new FieldError("usuario", "email", "Email ou senha incorretos"));
 			model.addAttribute("mensagemDoSistema", "Login falhou, tente de novo");
 			return "/error";
 		}
-		
 		
 		//Aplica o usuário na sessão
 		session.setAttribute("usuarioAutenticado", usuarioAutenticado);
@@ -77,7 +68,6 @@ public class UsuarioController {
 			return "redirect:/";
 		}
 
-		//Redireciona para a página inicial
 		return "/error";
 
 	}

@@ -1,5 +1,7 @@
 package com.clickmed.security;
 
+import com.clickmed.controller.UsuarioController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,11 +15,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    private UsuarioController userDetailsService;
+
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable().authorizeRequests()
                 .antMatchers("/", "/cadastro", "/novoPaciente", "/novoMedico", "/novaClinica", "/buscaPrincipal").permitAll()
-                .antMatchers("/resources/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
                 .antMatchers("/css/**", "/js/**", "/images/**").permitAll()
                 .anyRequest().authenticated()
@@ -35,14 +39,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // cria uma conta default
-        auth.inMemoryAuthentication()
-                .withUser("admin")
-                .password("{noop}password")
-                .roles("ADMIN");
+        auth.userDetailsService(userDetailsService);
     }
-
-//    @Override
-//    public void configure(WebSecurity web) throws Exception {
-//        web.ignoring().antMatchers("/resources/**").anyRequest();
-//    }
 }

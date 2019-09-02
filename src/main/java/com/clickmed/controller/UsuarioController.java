@@ -23,7 +23,7 @@ import com.clickmed.service.UsuarioService;
 
 @Controller
 @Transactional
-public class UsuarioController implements UserDetailsService {
+public class UsuarioController {
 
 	@Autowired
 	private UsuarioService usuarioService;

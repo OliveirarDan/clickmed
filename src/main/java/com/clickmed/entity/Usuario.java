@@ -2,15 +2,15 @@ package com.clickmed.entity;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.DigestUtils;
@@ -30,19 +30,18 @@ public class Usuario implements UserDetails {
 	@NotNull
 	private String senha;
 
-	/**
-	 * Permissões 
-	 * medico -  para usuarios medicos
-	 * paciente - para usuarios pacientes
-	 */
-	private String permissao;
-	
-	public Usuario(Long id, @NotNull String email, @NotNull String senha, String permissao) {
+	@ManyToMany(fetch = FetchType.EAGER)
+	@Fetch(FetchMode.SUBSELECT)
+	@JoinTable(name = "usuarios_has_permissoes", joinColumns = { @JoinColumn(name = "usuario_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "permissoes_id") })
+	private List<Permissao> permissoes;
+
+	public Usuario(Long id, @NotNull String email, @NotNull String senha, List permissoes) {
 		super();
 		this.id = id;
 		this.email = email;
 		this.senha = senha;
-		this.permissao = permissao;
+		this.permissoes = permissoes;
 	}
 
 	public void hashearSenha() {
@@ -88,25 +87,23 @@ public class Usuario implements UserDetails {
 		this.senha = senha;
 	}
 
-		
-	public String getPermissao() {
-
-		return permissao;
+	public List<Permissao> getPermissao() {
+		return permissoes;
 	}
 
-	public void setPermissao(String permissao) {
-
-		this.permissao = permissao;
+	public void setPermissao(List<Permissao> permissoes) {
+		this.permissoes = permissoes;
 	}
+
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", email=" + email + ", senha=" + senha + ", permissao=" + permissao + "]";
+		return "Usuario [id=" + id + ", email=" + email + ", senha=" + senha + ", permissoes=" + permissoes + "]";
 	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
+		return this.permissoes;
 	}
 
 	@Override

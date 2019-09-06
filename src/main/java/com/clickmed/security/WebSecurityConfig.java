@@ -16,6 +16,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import java.util.List;
@@ -29,11 +30,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   @Autowired
   private UserService userService;
 
+  /**
+   * @param httpSecurity
+   * Este método realiza a configuração de quais rotas podem ser acessadas com ou sem autenticação.
+   * Também define quais rotas estão completamente liberadas, como por exmeplo resources.
+   *
+   * */
   @Override
   protected void configure(HttpSecurity httpSecurity) throws Exception {
     httpSecurity.csrf().disable().authorizeRequests()
       .antMatchers("/", "/cadastro", "/novoPaciente", "/novoMedico", "/novaClinica", "/buscaPrincipal").permitAll()
       .antMatchers(HttpMethod.POST, "/login").permitAll()
+      .antMatchers(HttpMethod.POST, "/api/usuario").permitAll()
       .antMatchers("/css/**", "/js/**", "/images/**").permitAll()
       .anyRequest().authenticated()
       .and()
@@ -47,9 +55,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         UsernamePasswordAuthenticationFilter.class);
   }
 
+  /**
+   * @param auth
+   * Chama a classe implementada UserService e realiza a busca do usuário
+   * no bando de dados.
+   * Este método decripta o password encriptado quando gravado no banco.
+   * */
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-    // Recupera os dados de usuário do banco de dados
     auth.userDetailsService(userService)
       .passwordEncoder(new BCryptPasswordEncoder());
   }

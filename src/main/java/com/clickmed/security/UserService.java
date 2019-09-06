@@ -21,35 +21,19 @@ public class UserService implements UserDetailsService {
     @Autowired
     private UsuarioDAO usuarioDAO;
 
+    /**
+     * @param email
+     * @return User
+     * Utiliza o método finByEmail da classe UsuarioDAO para localizar o usuário no banco de dados.
+     */
     @Transactional
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Usuario usuario = this.usuarioDAO.findByEmail(email);
-        System.out.println("Usuário recuperado " + usuario);
 
         if (usuario == null){
             throw new UsernameNotFoundException("Usuário não encontrado");
         }
         return new User(usuario.getUsername(), usuario.getPassword(), true, true, true, true, usuario.getAuthorities());
-
-
-/*
-        User.UserBuilder builder =  null;
-        if (usuario != null){
-            builder = org.springframework.security.core.userdetails.User.withUsername(email);
-            builder.disabled(!usuario.isEnabled());
-            builder.password(usuario.getPassword());
-            System.out.println("Permissoes " + usuario.getPermissao());
-            String[] permissoes = usuario.getAuthorities()
-                    .stream().map(a -> a.getAuthority()).toArray(String[]::new);
-
-
-            builder.authorities(permissoes);
-        }else{
-            throw new UsernameNotFoundException("Usuário não encontrado.");
-        }
-        return builder.build();
-*/
-
     }
 }

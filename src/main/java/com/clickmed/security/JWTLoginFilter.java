@@ -21,6 +21,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+
 public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
 
     protected JWTLoginFilter(String url, AuthenticationManager authManager) {
@@ -28,17 +29,19 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
         setAuthenticationManager(authManager);
     }
 
+    /**
+     * @return authentication
+     * Monta um objeto Usuario e em seguida gera um token de autenticação.
+     */
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
-            throws AuthenticationException, IOException, ServletException {
+      throws AuthenticationException, IOException, ServletException {
 
         try {
             Usuario usuario = new ObjectMapper()
-                    .readValue(request.getInputStream(), Usuario.class);
+              .readValue(request.getInputStream(), Usuario.class);
 
-            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-              usuario.getUsername(), usuario.getPassword()
-            );
+            UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(usuario.getUsername(), usuario.getPassword());
             Authentication authentication = getAuthenticationManager().authenticate(authenticationToken);
 
             return authentication;
@@ -49,6 +52,9 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
         return null;
     }
 
+    /**
+     * Chama o método addAuthentication da classe TokenService e envia o token validado
+     */
     @Override
     protected void successfulAuthentication(
             HttpServletRequest request,

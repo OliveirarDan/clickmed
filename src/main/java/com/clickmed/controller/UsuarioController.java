@@ -4,9 +4,12 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
@@ -54,14 +57,12 @@ public class UsuarioController {
 
 		//Verifica se o usário é medico ou paciente
 		if (usuarioAutenticado.getPermissao().equals("medico")) {
-			System.out.println("É médico");
 			medicoAutenticado = medicoService.buscaMedicoPorUsuario(usuarioAutenticado);
 			model.addAttribute("medico", medicoAutenticado);
 			session.setAttribute("medico", medicoAutenticado);
 			return "redirect:/infosMedico";
 		}
 		if (usuarioAutenticado.getPermissao().equals("paciente")) {
-			System.out.println("É paciente");
 			pacienteAutenticado = pacienteService.buscaPacientePorUsuario(usuarioAutenticado);
 			model.addAttribute("paciente", pacienteAutenticado);
 			session.setAttribute("paciente", pacienteAutenticado);
@@ -94,6 +95,11 @@ public class UsuarioController {
 		model.addAttribute("mensagemDoSistema", "Algo de errado aconteceu, tente novamente!");
 		
 		return "error";
+	}
+
+	@Bean
+	public PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
 
 }

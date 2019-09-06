@@ -26,41 +26,31 @@ import java.util.Optional;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private UserService userService;
+  @Autowired
+  private UserService userService;
 
-    @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.csrf().disable().authorizeRequests()
-                .antMatchers("/", "/cadastro", "/novoPaciente", "/novoMedico", "/novaClinica", "/buscaPrincipal").permitAll()
-                .antMatchers(HttpMethod.POST, "/login").permitAll()
-                .antMatchers("/css/**", "/js/**", "/images/**").permitAll()
-                .anyRequest().authenticated()
-                .and()
+  @Override
+  protected void configure(HttpSecurity httpSecurity) throws Exception {
+    httpSecurity.csrf().disable().authorizeRequests()
+      .antMatchers("/", "/cadastro", "/novoPaciente", "/novoMedico", "/novaClinica", "/buscaPrincipal").permitAll()
+      .antMatchers(HttpMethod.POST, "/login").permitAll()
+      .antMatchers("/css/**", "/js/**", "/images/**").permitAll()
+      .anyRequest().authenticated()
+      .and()
 
-                // filtra requisições de login
-                .addFilterBefore(new JWTLoginFilter("/login", authenticationManager()),
-                        UsernamePasswordAuthenticationFilter.class)
+      // filtra requisições de login
+      .addFilterBefore(new JWTLoginFilter("/login", authenticationManager()),
+        UsernamePasswordAuthenticationFilter.class)
 
-                // filtra outras requisições para verificar a presença do JWT no header
-                .addFilterBefore(new JWTAuthenticationFilter(),
-                        UsernamePasswordAuthenticationFilter.class);
-    }
+      // filtra outras requisições para verificar a presença do JWT no header
+      .addFilterBefore(new JWTAuthenticationFilter(),
+        UsernamePasswordAuthenticationFilter.class);
+  }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        // Recupera os dados de usuário do banco de dados
-        auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
-    }
-
-    @Bean
-    public UserService userService() {
-        return new UserService();
-    }
-
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
+  @Override
+  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    // Recupera os dados de usuário do banco de dados
+    auth.userDetailsService(userService)
+      .passwordEncoder(new BCryptPasswordEncoder());
+  }
 }

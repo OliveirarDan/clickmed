@@ -21,7 +21,7 @@ public class UserService implements UserDetailsService {
     @Autowired
     private UsuarioDAO usuarioDAO;
 
-    @Transactional(readOnly = true)
+    @Transactional
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Usuario usuario = this.usuarioDAO.findByEmail(email);

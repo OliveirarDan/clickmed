@@ -1,26 +1,26 @@
 package com.clickmed.security;
 
+
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.clickmed.service.UsuarioService;
+import com.clickmed.dao.UsuarioDAO;
+import com.clickmed.entity.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.util.StringUtils;
 
 public class TokenService {
-
-    @Autowired
-    private UserService userService;
-
 
     // EXPIRATION_TIME = 10 dias
     static final long EXPIRATION_TIME = 860_000_000;
@@ -28,7 +28,7 @@ public class TokenService {
     static final String TOKEN_PREFIX = "Bearer";
     static final String HEADER_STRING = "Authorization";
 
-    static void addAuthentication(HttpServletResponse response, String username) {
+    static void addAuthentication(HttpServletResponse response, String username) throws IOException {
         String JWT = Jwts.builder()
                 .setSubject(username)
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
@@ -36,6 +36,7 @@ public class TokenService {
                 .compact();
 
         response.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
+
     }
 
     static Authentication getAuthentication(HttpServletRequest request) {
@@ -55,9 +56,6 @@ public class TokenService {
         }
         return null;
     }
-
-
-
 
 /*    // EXPIRATION_TIME = 10 dias
     static final long EXPIRATION_TIME = 860_000_000;

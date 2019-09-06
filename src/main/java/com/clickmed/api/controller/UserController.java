@@ -1,6 +1,5 @@
 package com.clickmed.api.controller;
 
-import com.clickmed.entity.Clinica;
 import com.clickmed.entity.Usuario;
 import com.clickmed.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +27,18 @@ public class UserController {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/api/usuario/{id}")
+    public @ResponseBody Usuario buscaUsuarioPorId(@PathVariable("id") Long id) throws IOException {
+        Usuario usuario = usuarioService.buscaUsuario(id);
+        return usuario;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/api/usuario/")
+    public @ResponseBody Usuario buscaPorEmail(Usuario user) throws IOException {
+        Usuario usuario = usuarioService.autenticar(user);
+        return usuario;
     }
 
     @Bean

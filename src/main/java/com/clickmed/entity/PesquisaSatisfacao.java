@@ -17,6 +17,7 @@ public class PesquisaSatisfacao {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String avaliacao;
+	private String respostamed;
 	private double pergunta1;
 	private double pergunta2;
 	private double pergunta3;
@@ -33,12 +34,13 @@ public class PesquisaSatisfacao {
 	@Column(columnDefinition = "TEXT")
 	private String descricao;
 
-	public PesquisaSatisfacao(Long id, String avaliacao, double pergunta1, double pergunta2, double pergunta3,
-			double pergunta4, double pergunta5, String comentario, Medico medico, Paciente paciente,
+	public PesquisaSatisfacao(Long id, String avaliacao, String respostamed, double pergunta1, double pergunta2,
+			double pergunta3, double pergunta4, double pergunta5, String comentario, Medico medico, Paciente paciente,
 			@NotNull String descricao) {
 		super();
 		this.id = id;
 		this.avaliacao = avaliacao;
+		this.respostamed = respostamed;
 		this.pergunta1 = pergunta1;
 		this.pergunta2 = pergunta2;
 		this.pergunta3 = pergunta3;
@@ -60,6 +62,10 @@ public class PesquisaSatisfacao {
 
 	public String getAvaliacao() {
 		return avaliacao;
+	}
+	
+	public String getRespostamed() {
+		return respostamed;
 	}
 
 	public double getPergunta1() {
@@ -108,6 +114,11 @@ public class PesquisaSatisfacao {
 
 	public void setPergunta1(double pergunta1) {
 		this.pergunta1 = pergunta1;
+	}
+	
+
+	public void setRespostamed(String respostamed) {
+		this.respostamed = respostamed;
 	}
 
 	public void setPergunta2(double pergunta2) {

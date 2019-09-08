@@ -4871,6 +4871,17 @@ h6 {
   margin-bottom: 5%;
 }
 
+.foto-aval{
+  border-radius: 1000px !important;
+  overflow: hidden;
+  width: 170px;
+  height: 170px;
+  border: 2px solid #cccccc;
+  top: 100px;
+  margin-bottom: 5%;
+  margin-right: 15%;
+}
+
 
 
 /*# sourceMappingURL=style.css.map */

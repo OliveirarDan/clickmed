@@ -26,7 +26,8 @@ public class MedicoController {
 
 	@RequestMapping(value = "/novoMedico", method = RequestMethod.GET)
 	public String novoMedico(ModelMap model) {
-		return "cadastro-medico";
+		//return "cadastro-medico";
+		return "cadastro-pesquisaSatisfacao";
 	}
 
 	@RequestMapping(value = "/cadastraMedico", method = { RequestMethod.POST })

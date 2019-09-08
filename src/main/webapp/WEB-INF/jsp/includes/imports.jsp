@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="vendors/animate-css/animate.css">
 <link rel="stylesheet" href="css/espec/autocomplete.css">
 <link rel="stylesheet" href="css/card.css">
+<link rel="stylesheet" href="css/rating.css">
 
 
 <!-- main css -->
@@ -51,6 +52,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHIUcekgvqG13i5UbxF5M8YQExsnzqYow&callback=myMap"></script>
 <script src="js/maps/map.js"></script>
 <script src="js/local.js"></script>
+<script src="js/ratingStar.js"></script>
 
 <!-- JS Opcional  -->
 <script type="text/javascript">

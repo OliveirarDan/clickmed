@@ -25,7 +25,7 @@
 						</a>
 					</div>
 					<div class="col-md-8 col-lg-8 col-8 header-right">
-						<span class="header-title"><h2>Cadastro</h2></span>
+						<span class="header-title"><h2>Avaliação</h2></span>
 					</div>
 				</div>
 			</div>
@@ -44,6 +44,7 @@
 					</span>
 				</div>
 			</div>
+			</br>
 
 
 			<!--================Fim da Paginação Cadastro =================-->
@@ -52,7 +53,7 @@
 				<form class="row contact_form" action="cadastraMedico" method="post"
 							id="cadastro-medico" autocomplete="off">
 							</form>
-					<div class="col-md-12">
+					<div class="col-md-8">
 						<!-- Primeiro card da primeira linha -->
 							<div class="row">
 								<div class="col-md-4">
@@ -68,21 +69,78 @@
 								</div>
 								<div class="col-md-8">
 									<h3>Nome: ${medico.nome} ${medico.sobrenome}</h3>
-									<h5>CRM: ${medico.crm}</h5>									
+									<h4>CRM: ${medico.crm}</h5>	
+									<h4>Especialidades</h4>	
+										<c:forEach items="${medico.especialidades}" var="e">
+											<span>${e.nome}</span>
+											<br>
+										</c:forEach>						
 								</div>
 							</div>
 							<hr class="line">
 							<div class="row">
-								<div class="col-md-6">
-									<h4>Especialidades</h4>
-									<c:forEach items="${medico.especialidades}" var="e">
-										<span>${e.nome}</span>
-										<br>
-									</c:forEach>
+								<div class="col-md-12">
+									<span>
+										<h4 class="title">Como você avalia sua consulta no geral? *</h4>
+									</span>
 								</div>
+								
+							</div>	
+							<div class="row">
+								<div class="col-md-12">
+									<div class="stars" data-rating="0">
+	        							<span class="star"></span>
+	       								<span class="star"></span>
+	       								<span class="star"></span>
+	       								<span class="star"></span>
+	       								<span class="star"></span>
+       								</div>
+								</div>
+							</div>
+							<br>
+							<br>
+							<div class="row">
+								<div class="col-md-12">
+									<h4 class="title">Quais foram os pontos fortes da consulta?</h4>	
+								</div>
+							</div>
+							<br>
+							<br>
+							<div class="row">
+								<div class="col-md-12">
+									<h4 class="title">Gostaria de fazer mais alguma observação?</h4>
+									<div class="form-group">
+										<textarea class="avaliacao-obs" id="experienciaProfissional"
+											name="experienciaProfissional" rows="5" maxlength="250"> </textarea>
+									</div>	
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 text-center">
+									<button type="submit" name="cadastraMedico1"
+										value="cadastraMedico" class="primary-btn text-uppercase">Salvar avaliação</button>
+								</div>
+							</div>
+					</div>
+					<div class="col-md-4">
+					<!-- Segundo card da primeira linha -->
+						<div class="row">
+							<div class="card_avaliacao">
+								<h5> Como sua avaliação pode nos ajudar?</h5>
+									<ul>
+										<li class="li">Pontos que podem ajudar</li>
+										<li class="li">Pontos que podem ajudar</li>
+									</ul>
+									<br>
+								<h5> Como sua avaliação pode ajudar demais pacientes? </h5>	
+									<ul>
+										<li class="li">Pontos que podem ajudar</li>
+										<li class="li">Pontos que podem ajudar</li>
+									</ul>
+							</div>
 						</div>
 					</div>
-				</div>
+				</div>				
 			</div>
 		</div>
 	</section>

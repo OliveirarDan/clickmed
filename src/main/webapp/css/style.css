@@ -4844,16 +4844,16 @@ h6 {
 .title {
 	/* margin: 24px 0 0 0; */
 	/* margin-bottom:25px; */
-	/* margin-left:50px; */
+	margin-left:50px;
 }
 
 .line {
-	/* margin-left: 5%; */
+	margin-left: 5%;
 	/* margin-right: 5%; */
 }
 
 .li{
-	margin-left: 75px;
+	margin-left: 15%;
 }
 
 .aval{
@@ -4869,6 +4869,40 @@ h6 {
   border: 2px solid #cccccc;
   top: 72px;
   margin-bottom: 5%;
+}
+
+.foto-aval{
+  border-radius: 1000px !important;
+  overflow: hidden;
+  width: 170px;
+  height: 170px;
+  border: 2px solid #cccccc;
+  top: 100px;
+  margin-bottom: 5%;
+  margin-right: 15%;
+}
+
+.avaliacao-obs {
+    display: block;
+    width: 80%;
+    outline: none;
+    background: #F1F3F5;
+    padding: 10px 20px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    box-shadow: 0px 1px 0px 0px #dee2e6;
+    margin-left:8%;
+}
+
+.card_avaliacao {
+  /* transition: 0.3s; */
+  background-color:white;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, .125);
+  overflow: fixed;
+  width: 90%;
+  height: 100%;
+  margin-left:5%;
 }
 
 

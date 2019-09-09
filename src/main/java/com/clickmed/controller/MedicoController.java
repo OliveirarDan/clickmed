@@ -26,9 +26,11 @@ public class MedicoController {
 
 	@RequestMapping(value = "/novoMedico", method = RequestMethod.GET)
 	public String novoMedico(ModelMap model) {
-		//return "cadastro-medico";
-		return "cadastro-pesquisaSatisfacao";
+//		return "cadastro-pesquisaSatisfacao";
+
+		return "cadastro-medico";
 	}
+
 
 	@RequestMapping(value = "/cadastraMedico", method = { RequestMethod.POST })
 	public String cadastraMedico(Medico medico, ModelMap model) {
@@ -207,6 +209,17 @@ public class MedicoController {
 			return listaMedicosPorEspecialidade(model);
 		}
 
+	}
+	
+	
+	/**
+	 * Método criado para testar avaliação @Marcelinha
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/testeAvaliacao", method = RequestMethod.GET)
+	public String testeAvaliacao(ModelMap model) {
+		return "cadastro-pesquisaSatisfacao";
 	}
 
 }

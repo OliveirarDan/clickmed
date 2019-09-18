@@ -4,6 +4,9 @@ import com.clickmed.entity.Usuario;
 import com.clickmed.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -35,9 +38,11 @@ public class UserController {
         return usuario;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/api/usuario/")
-    public @ResponseBody Usuario buscaPorEmail(Usuario user) throws IOException {
-        Usuario usuario = usuarioService.autenticar(user);
+    @RequestMapping(method = RequestMethod.GET, value = "/api/auth/usuario/{email:.+}/")
+    public @ResponseBody Usuario buscaPorEmail(@PathVariable("email") String email) throws IOException {
+        System.out.println("E-mail enviado " + email);
+        Usuario usuario = usuarioService.buscaPorEmail(email);
+        System.out.println("Usuário retornado " + usuario + "\n");
         return usuario;
     }
 

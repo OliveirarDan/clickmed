@@ -15,8 +15,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.clickmed.dao.MedicoDAO;
 import com.clickmed.dao.UsuarioDAO;
-import com.clickmed.entity.Medico;
-import com.clickmed.entity.Usuario;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -30,24 +28,4 @@ public class ClickmedApplicationTests {
 	
 	@Autowired
 	UsuarioDAO usarioDAO;
-	
-//	@Test
-//	public void contextLoads() {
-//	}
-
-	
-//	@Test
-//	public void should_find_medicos_and_has_at_least_one_element() {
-//		Iterable<Medico> medicos = medicoDAO.findAll();
-//
-//		assertThat(medicos).hasAtLeastOneElementOfType(Medico.class);
-//	}
-
-//	@Test
-//	public void should_save_a_medico() {
-//		Optional<Usuario> usr = usarioDAO.findById(1L);
-//		Medico medico = medicoDAO.save(new Medico("Medico D", "987", usr.get()));
-//
-//		assertThat(medico).hasFieldOrPropertyWithValue("nome", "Medico D");
-//	}
 }

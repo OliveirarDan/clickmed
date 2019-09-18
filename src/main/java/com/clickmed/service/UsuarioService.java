@@ -85,4 +85,9 @@ public class UsuarioService {
 		return null;
 	}
 
+	public Usuario buscaPorEmail(String email) {
+		Usuario usuario = usuarioDAO.findByEmail(email);
+
+		return usuario;
+	}
 }

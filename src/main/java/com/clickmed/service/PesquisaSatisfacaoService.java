@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.clickmed.dao.PesquisaSatisfacaoDAO;
+import com.clickmed.entity.Medico;
+import com.clickmed.entity.Paciente;
 import com.clickmed.entity.PesquisaSatisfacao;
 
 @Service
@@ -29,7 +31,7 @@ public class PesquisaSatisfacaoService {
 	}
 
 	/**
-	 * ----TESTANDO----- Insere Pesquisa de Satisfação
+	 * Insere Pesquisa de Satisfação
 	 * 
 	 * @param pSatisfacao
 	 * @return Pesquisa de Satisfação salva no banco.
@@ -73,6 +75,7 @@ public class PesquisaSatisfacaoService {
 	public PesquisaSatisfacao buscaPS(Long idPS) {
 		return this.psDAO.getOne(idPS);
 	}
+	
 
 	/**
 	 * Lista todas as pesquisas de satisfacao
@@ -82,5 +85,27 @@ public class PesquisaSatisfacaoService {
 	public List<PesquisaSatisfacao> listaPSs() {
 		return this.psDAO.findAll();
 	}
+	
+	
+	/**
+	 *  ----- Testando -----  Lista todas as avaliações de um determinado médico
+	 * @param medico
+	 * @return List de Avalições do	 Medico
+	 */
+	public List<PesquisaSatisfacao> listaPSByMedico(Medico medico) {
+		return this.psDAO.findPesquisaSatisfacaoByMedico(medico);
+		
+	}
 
+	/**
+	 * ----- Testando -------- Lista todas as avaliações realizadas por um determinado paciente
+	 * @param paciente
+	 * @return List de Avaliações do paciente
+	 */
+	public List<PesquisaSatisfacao> listaPSByPaciente(Paciente paciente) {
+		return this.psDAO.findPesquisaSatisfacaoByPaciente(paciente);
+	}
+	
+	
+	
 }

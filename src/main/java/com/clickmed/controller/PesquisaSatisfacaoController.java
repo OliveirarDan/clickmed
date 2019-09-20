@@ -23,9 +23,9 @@ public class PesquisaSatisfacaoController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "/novoPesquisaSatisfacao", method = RequestMethod.GET)
-	public String novoPesquisaSatisfacao(ModelMap model) {
-		return "cadastro-pesquisaSatisfacao";
+	@RequestMapping(value = "/novaAvaliacao", method = RequestMethod.GET)
+	public String novaAvaliacao(ModelMap model) {
+		return "cadastro-Avaliacao";
 	}
 
 	/**
@@ -35,14 +35,14 @@ public class PesquisaSatisfacaoController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "/cadastraPesquisaSatisfacao", method = { RequestMethod.POST })
+	@RequestMapping(value = "/cadastraAvaliacao", method = { RequestMethod.POST })
 	public String cadastraPesquisaSatisfacao(PesquisaSatisfacao pesquisaSatisfacao, ModelMap model) {
 		try {
 			pesquisaSatisfacaoService.inserePS(pesquisaSatisfacao);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return listaPesquisaSatisfacaos(model);
+		return listaAvaliacoes(model);
 	}
 
 	
@@ -51,10 +51,10 @@ public class PesquisaSatisfacaoController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "/listaPesquisaSatisfacaos", method = RequestMethod.GET)
-	private String listaPesquisaSatisfacaos(ModelMap model) {
+	@RequestMapping(value = "/listaAvaliacoes", method = RequestMethod.GET)
+	private String listaAvaliacoes(ModelMap model) {
 		model.put("pesquisaSatisfacaos", this.pesquisaSatisfacaoService.listaPSs());
-		return "lista-pesquisaSatisfacaos";
+		return "lista-Avaliacoes";
 	}
 	
 	/**
@@ -62,12 +62,12 @@ public class PesquisaSatisfacaoController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping(value = "/selecionaPesquisaSatisfacao", method = RequestMethod.POST)
-	public String selecionaPesquisaSatisfacao(PesquisaSatisfacao pesquisaSatisfacao, ModelMap model) {
+	@RequestMapping(value = "/selecionaAvaliacao", method = RequestMethod.POST)
+	public String selecionaAvaliacao(PesquisaSatisfacao pesquisaSatisfacao, ModelMap model) {
 		pesquisaSatisfacao = pesquisaSatisfacaoService.buscaPS(pesquisaSatisfacao.getId());
 		System.out.println(pesquisaSatisfacao.toString());
 		model.addAttribute(pesquisaSatisfacao);
-		return "edicao-pesquisaSatisfacao";
+		return "edicao-Avaliacao";
 	}
 	
 	
@@ -80,8 +80,8 @@ public class PesquisaSatisfacaoController {
 	 * Ou pode pegar a entidade completa da VIEW.
 	 * 
 	 */
-	@RequestMapping(value = "/salvaPesquisaSatisfacao", method = { RequestMethod.POST })
-	public String salvaPesquisaSatisfacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao) throws IOException {
+	@RequestMapping(value = "/salvaSalvaAvaliacao", method = { RequestMethod.POST })
+	public String salvaAvaliacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao) throws IOException {
 		//nPesquisaSatisfacao criada para armazenar o pesquisaSatisfacao atualizado da View temporariamente		
 		PesquisaSatisfacao nPesquisaSatisfacao = pesquisaSatisfacao;
 		//Carregando o objeto pesquisaSatisfacao completo do banco
@@ -94,7 +94,7 @@ public class PesquisaSatisfacaoController {
 		pesquisaSatisfacao.setAvaliacao(nPesquisaSatisfacao.getAvaliacao());
 		//Salvando no banco
 		pesquisaSatisfacaoService.atualizaPS(pesquisaSatisfacao);
-		return listaPesquisaSatisfacaos(model);
+		return listaAvaliacoes(model);
 	}
 	
 	
@@ -106,7 +106,7 @@ public class PesquisaSatisfacaoController {
 	@RequestMapping(value = "/removePesquisaSatisfacao", method = { RequestMethod.POST })
 	public String removePesquisaSatisfacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao) throws IOException {
 		pesquisaSatisfacaoService.removePS(pesquisaSatisfacao.getId());
-		return listaPesquisaSatisfacaos(model);
+		return listaAvaliacoes(model);
 	}
 	
 	

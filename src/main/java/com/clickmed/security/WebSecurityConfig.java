@@ -40,14 +40,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity httpSecurity) throws Exception {
     httpSecurity.csrf().disable().authorizeRequests()
       .antMatchers("/", "/cadastro", "/novoPaciente", "/novoMedico", "/novaClinica", "/buscaPrincipal").permitAll()
-      .antMatchers(HttpMethod.POST, "/login").permitAll()
+      .antMatchers(HttpMethod.POST, "/api/login").permitAll()
       .antMatchers(HttpMethod.POST, "/api/usuario").permitAll()
+      .antMatchers(HttpMethod.GET, "/api/busca/**").permitAll()
+      .antMatchers(HttpMethod.GET, "/api/medico").permitAll()
       .antMatchers("/css/**", "/js/**", "/img/**").permitAll()
       .anyRequest().authenticated()
       .and()
 
       // filtra requisições de login
-      .addFilterBefore(new JWTLoginFilter("/login", authenticationManager()),
+      .addFilterBefore(new JWTLoginFilter("/api/login", authenticationManager()),
         UsernamePasswordAuthenticationFilter.class)
 
       // filtra outras requisições para verificar a presença do JWT no header

@@ -19,15 +19,21 @@ public class BuscaController {
 	MedicoService medicoService;
 
 	@RequestMapping(value = "/buscaPrincipal", method = { RequestMethod.POST })
-	public String buscaPrincipal(ModelMap model, Medico medico, String busca) {
+	public String buscaPrincipal(ModelMap model, Medico medico, String busca, String especialidade) {
 		busca = medico.getNome();
 		try {
 			model.clear();
-
 			System.out.println(busca);
+			String buscaPalavra;
 			// Retirando espaço do inicio e do final da palavra
-			String buscaPalavra = busca.trim();
-			System.out.println(buscaPalavra);
+			buscaPalavra = busca.trim();
+			
+			if (especialidade == null) {
+				System.out.println(buscaPalavra);
+			} else {
+				buscaPalavra = busca + " " + especialidade;
+				System.out.println(buscaPalavra);
+			}
 
 			if (buscaPalavra.equals("")) {
 				model.put("medicos", medicoService.listaMedicos());

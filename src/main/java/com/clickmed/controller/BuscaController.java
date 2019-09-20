@@ -28,7 +28,7 @@ public class BuscaController {
 			// Retirando espaço do inicio e do final da palavra
 			buscaPalavra = busca.trim();
 			
-			if (especialidade == null) {
+			if (especialidade == "") {
 				System.out.println(buscaPalavra);
 			} else {
 				buscaPalavra = busca + " " + especialidade;

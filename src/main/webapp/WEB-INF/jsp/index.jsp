@@ -23,7 +23,7 @@
 					<center>
 					<h2>
 						Procurando uma consulta?  <br> 
-						Esta no lugar certo. <br>
+						Está no lugar certo. <br>
 						Digite abaixo o que você deseja. <br>
 					</h2>
 					
@@ -113,9 +113,6 @@
 				<div class="col-lg-7">
 					<div class="main_title">
 						<h2>Principais especialidades</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-							sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua.</p>
 					</div>
 				</div>
 			</div>
@@ -136,7 +133,7 @@
 						<div class="dpmt-thumb">
 							<img src="img/department/d-icon2.png" alt="">
 						</div>
-						<h4>Psicólogia</h4>
+						<h4>Psicologia</h4>
 					</div>
 				</div>
 				<!-- especialidade -->
@@ -161,7 +158,7 @@
 				<div class="col-lg-2 text-center col-sm-6">
 					<div class="single_department">
 						<div class="dpmt-thumb">
-							<img src="img/department/d-icon5.png" alt="">
+							<img src="img/department/d-icon5.png" alt="" >
 						</div>
 						<h4>Neurologia</h4>
 					</div>
@@ -195,52 +192,55 @@
 				<div class="col-lg-3 col-sm-6">
 					<div class="single_member">
 						<div class="author">
-							<img src="img/team/member1.png" alt="">
+							<img src="img/team/member1.png" height="100" width="100">
 						</div>
 						<div class="author_decs">
-							<h4>Ethel Davis</h4>
-							<p class="profession">Sr. Faculty Data Science</p>
-							<p>If you are looking at blank cassettes on the web, you may
-								be very confused at the difference in price.</p>
+							<h4>Maria Clara </h4>
+							<p class="profession">Gerente de RH</p>
+							<p>Gostei bastante do atendimento do médico. É um profissional muito competente, pontual e
+							 simpático. Recomendo! Só tenho a agradecer. Parabéns!</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="single_member">
 						<div class="author">
-							<img src="img/team/member1.png" alt="">
+							<img src="img/team/member2.png" height="120" width="120">
 						</div>
 						<div class="author_decs">
-							<h4>Ethel Davis</h4>
-							<p class="profession">Sr. Faculty Data Science</p>
-							<p>If you are looking at blank cassettes on the web, you may
-								be very confused at the difference in price.</p>
+							<h4>Eduardo Monteiro</h4>
+							<p class="profession">Sr. Análise de dados</p>
+							<p>O Dr. passa confiança e domínio do assunto. 
+							Muito profissional e preocupado em tirar todas as dúvidas e deixar tudo
+							 claro para o paciente. Estou satisfeito.
+							</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="single_member">
 						<div class="author">
-							<img src="img/team/member1.png" alt="">
+							<img src="img/team/member3.png" height="140" width="140">
 						</div>
 						<div class="author_decs">
-							<h4>Ethel Davis</h4>
-							<p class="profession">Sr. Faculty Data Science</p>
-							<p>If you are looking at blank cassettes on the web, you may
-								be very confused at the difference in price.</p>
+							<h4>Stephanie Souza</h4>
+							<p class="profession">Analista de Marketing</p>
+							<p>Ótima profissional.
+								A Dra me atendeu com pontualidade, muita atenção 
+								e com domínio na área especializada. Para uma primeira consulta, fiquei muito satisfeita.</p>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="single_member">
 						<div class="author">
-							<img src="img/team/member1.png" alt="">
+							<img src="img/team/member4.png" height="145" width="145">
 						</div>
 						<div class="author_decs">
-							<h4>Ethel Davis</h4>
-							<p class="profession">Sr. Faculty Data Science</p>
-							<p>If you are looking at blank cassettes on the web, you may
-								be very confused at the difference in price.</p>
+							<h4>Marcelo Ribeiro</h4>
+							<p class="profession">Professor de Direito</p>
+							<p> Explica tudo com detalhes e paciência. As recomendações dela foram fundamentais para 
+							 a mudança de estilo de vida que tinha prometido a mim mesma! </p>
 						</div>
 					</div>
 				</div>

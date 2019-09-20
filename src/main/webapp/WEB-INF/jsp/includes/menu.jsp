@@ -19,8 +19,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container">
 					<!-- Logo e menu readequados para mobile -->
-					<a class="navbar-brand logo_h" href="/"><img src="img/logo.png"
-						alt=""></a>
+					<a class="navbar-brand logo_h" href="/"><img src="img/logo.png" alt="" align="left"></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse"
 						data-target="#navbarSupportedContent"
 						aria-controls="navbarSupportedContent" aria-expanded="false"

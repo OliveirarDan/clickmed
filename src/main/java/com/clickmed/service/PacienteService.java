@@ -2,14 +2,15 @@ package com.clickmed.service;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Set;
 
 import javax.transaction.Transactional;
 
 import com.clickmed.entity.Permissao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
-
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import com.clickmed.dao.PacienteDAO;
 import com.clickmed.entity.Paciente;
 import com.clickmed.entity.Usuario;
@@ -28,6 +29,11 @@ public class PacienteService {
 		this.pacienteDAO = pacienteDAO;
 	}
 
+	@Bean
+	public PasswordEncoder pPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
 	/**
 	 * inserePaciente(Paciente) - Insere paciente 1º Faz o cadastrado na tabela de
 	 * usuario e retorna o id de usuário para o paciente.
@@ -39,7 +45,7 @@ public class PacienteService {
 	public Paciente inserePaciente(Paciente paciente) throws IOException {
 		// Atualizando usuario
 		Usuario nUsuario = paciente.getUsuario();
-
+		nUsuario.setSenha(pPasswordEncoder().encode(nUsuario.getSenha()));
 		System.out.println(nUsuario.toString());
 		paciente.setUsuario(nUsuario);
 

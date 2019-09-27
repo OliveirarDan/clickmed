@@ -8,6 +8,9 @@ import javax.transaction.Transactional;
 
 import com.clickmed.entity.Permissao;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.clickmed.dao.MedicoDAO;
@@ -30,6 +33,11 @@ public class MedicoService {
 		this.medicoDAO = medicoDAO;
 	}
 
+	@Bean
+	public PasswordEncoder mPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+
 	/**
 	 * @param medico
 	 * @return medico
@@ -37,11 +45,8 @@ public class MedicoService {
 	 */
 	public Medico insereMedico(Medico medico) throws IOException {
 		Usuario nUsuario = medico.getUsuario();
-
-		// Instancia a permissao de medico
-		System.out.println(nUsuario.toString());
+		nUsuario.setSenha(mPasswordEncoder().encode(nUsuario.getSenha()));
 		medico.setUsuario(nUsuario);
-		// Cadastra o usuario e retorna o ID
 		medico.setUsuario(usuarioService.insereUsuario(medico.getUsuario()));
 		return this.medicoDAO.save(medico);
 	}
@@ -52,7 +57,7 @@ public class MedicoService {
 	 * @throws IOException
 	 */
 	public Medico atualizaMedico(Medico medico) throws IOException {
-		if (this.medicoDAO.existsById(medico.getId()) == true) {
+		if (this.medicoDAO.existsById(medico.getId())) {
 			// Atualiza os dados de usuário
 			System.out.println("Service: " + medico.toString());
 			usuarioService.atualizaUsuario(medico.getUsuario());

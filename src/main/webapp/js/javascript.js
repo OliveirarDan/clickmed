@@ -126,6 +126,32 @@ $(document).ready(function() {
 		} ],
 		create : false
 	});
+	
+	
+	$('#tagsAvaliacao').selectize({
+		maxItems : 3,
+		valueField : 'title',
+		labelField : 'title',
+		searchField : 'title',
+		options : [ {
+			id : 1,
+			title : 'Pontualidade'
+		}, {
+			id : 2,
+			title : 'Higiene'
+		}, {
+			id : 3,
+			title : 'Clareza nas informações'
+		}, {
+			id : 4,
+			title : 'Profissionalismo'
+		}, {
+			id : 5,
+			title : 'Educação'
+		} ],
+		create : false
+	});
+	
 
 	$('#classificacao').selectize({
 		maxItems : 1,

@@ -75,15 +75,95 @@
 						</div>
 
 						<div class="form-group col-2 col-md-2">
-							<select class="form-control form-control" id="sel2">
-								<option>Bairros:</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
+							<select class="form-control form-control" id="bairros" name="bairros">
+								<option value="">Bairros:</option>
+								<option value="Água Rasa">Água Rasa‎</option>
+								<option value="Alto Pinheiros">Alto de Pinheiros‎</option>
+								<option value="Anhanguera">Anhanguera‎</option>
+								<option value="Aricanduva">Aricanduva‎</option>
+								<option value="Artur Alvim">Artur Alvim‎</option>
+								<option value="Barra Funda">Barra Funda‎</option>
+								<option value="Bela Vista">Bela Vista‎</option>
+								<option value="Belém">Belém‎</option>
+								<option value="Bom Retiro">Bom Retiro‎</option>
+								<option value="Brasilândia">Brasilândia‎</option>
+								<option value="Butantã">Butantã‎</option>
+								<option value="Cachoeirinha">Cachoeirinha‎</option>
+								<option value="Cambuci">Cambuci‎</option>
+								<option value="Campo Belo">Campo Belo‎</option>
+								<option value="Campo Grande">Campo Grande</option>
+								<option value="Campo Limpo">Campo Limpo‎</option>
+								<option value="Cangaíba">Cangaíba‎</option>
+								<option value="Capão Redondo">Capão Redondo‎</option>
+								<option value="Carrão">Carrão‎</option>
+								<option value="Casa Verde">Casa Verde‎</option>
+								<option value="Ademar">Cidade Ademar‎</option>
+								<option value="Dutra">Cidade Dutra‎</option>
+								<option value="Líder">Cidade Líder‎</option>
+								<option value="Tiradentes">Cidade Tiradentes‎</option>
+								<option value="Consolação">Consolação‎</option>
+								<option value="Cursino">Cursino‎</option>
+								<option value="Ermelino Matarazzo">Ermelino Matarazzo‎</option>
+								<option value="Freguesia">Freguesia do Ó‎</option>
+								<option value="Grajaú">Grajaú‎</option>
+								<option value="Guaianases">Guaianases‎</option>
+								<option value="Iguatemi">Iguatemi‎</option>
+								<option value="Ipiranga">Ipiranga‎</option>
+								<option value="Itaim Bibi">Itaim Bibi‎</option>
+								<option value="Itaim Paulista">Itaim Paulista‎</option>
+								<option value="Itaquera">Itaquera‎</option>
+								<option value="Jabaquara">Jabaquara‎</option>
+								<option value="Jaçanã">Jaçanã‎</option>
+								<option value="Jaguara">Jaguara‎</option>
+								<option value="Jaguaré">Jaguaré</option>
+								<option value="Jaraguá">Jaraguá‎</option>
+								<option value="Ângela">Jardim Ângela‎</option>
+								<option value="Helena">Jardim Helena‎</option>
+								<option value="Paulista">Jardim Paulista‎</option>
+								<option value="São Luís">Jardim São Luís‎</option>
+								<option value="Lapa">Lapa‎</option>
+								<option value="Liberdade">Liberdade‎</option>
+								<option value="Limão">Limão‎</option>
+								<option value="Mandaqui">Mandaqui‎</option>
+								<option value="Marsilac">Marsilac‎</option>
+								<option value="Moema">Moema‎</option>
+								<option value="Mooca">Mooca‎</option>
+								<option value="Morumbi">Morumbi‎</option>
+								<option value="Parelheiros">Parelheiros‎</option>
+								<option value="Pari">Pari‎</option>
+								<option value="Parque do Carmo">Parque do Carmo‎</option>
+								<option value="Penha">Penha‎</option>
+								<option value="Perdizes">Perdizes‎</option>
+								<option value="Pinheiros">Pinheiros‎</option>
+								<option value="Ponte Rasa">Ponte Rasa‎</option>
+								<option value="Raposo Tavares">Raposo Tavares‎</option>
+								<option value="República">República‎</option>
+								<option value="Rio Pequeno">Rio Pequeno‎</option>
+								<option value="Sacomã">Sacomã‎</option>
+								<option value="Santa Cecília">Santa Cecília</option>
+								<option value="Santana">Santana‎</option>
+								<option value="Santo Amaro">Santo Amaro‎</option>
+								<option value="Domingos">São Domingos‎</option>
+								<option value="Miguel Paulista">São Miguel
+									Paulista‎</option>
+								<option value="Sapopemba">Sapopemba‎</option>
+								<option value="Saúde">Saúde‎</option>
+								<option value="Sé">Sé‎</option>
+								<option value="Tatuapé">Tatuapé‎</option>
+								<option value="Tremembé">Tremembé‎</option>
+								<option value="Tucuruvi">Tucuruvi</option>
+								<option value="Formosa">Vila Formosa‎</option>
+								<option value="Guilherme">Vila Guilherme‎</option>
+								<option value="Leopoldina">Vila Leopoldina‎</option>
+								<option value="Maria">Vila Maria‎</option>
+								<option value="Mariana">Vila Mariana‎</option>
+								<option value="Matilde">Vila Matilde‎</option>
+								<option value="Prudente">Vila Prudente‎</option>
+								<option value="Sônia">Vila Sônia‎</option>
 							</select>
 						</div>
 
-						<div class="form-group col-2 col-md-2">
+						<!-- <div class="form-group col-2 col-md-2">
 							<select class="form-control form-control" id="sel2">
 								<option>Notas:</option>
 								<option>2</option>
@@ -99,7 +179,7 @@
 								<option>3</option>
 								<option>4</option>
 							</select>
-						</div>
+						</div> -->
 					</div>
 
 				</form>
@@ -151,11 +231,8 @@
 									<br>
 									<div class="row">
 										<div class="col-md-12 col-12">
-											<a class="card-title">Telefone:</a><br>
-												<a>${m.telefone1}</a>
-												<br>
-												<a>${m.telefone2}</a>
-												<br>
+											<a class="card-title">Telefone:</a><br> <a>${m.telefone1}</a>
+											<br> <a>${m.telefone2}</a> <br>
 										</div>
 									</div>
 								</div>

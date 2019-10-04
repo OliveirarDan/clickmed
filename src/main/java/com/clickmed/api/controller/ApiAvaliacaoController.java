@@ -1,4 +1,4 @@
-package com.clickmed.api.controller;
+/*package com.clickmed.api.controller;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,23 +20,23 @@ public class ApiAvaliacaoController {
 	@Autowired
 	PesquisaSatisfacaoService psService;
 	
-	/**
+	*//**
 	 * Lista todas as avaliações cadastradas no banco
 	 * @return Lista de avaliações
 	 * @throws IOException
-	 */
+	 *//*
 	@RequestMapping(method = RequestMethod.GET, value="/api/avaliacao")
 	public @ResponseBody List<PesquisaSatisfacao> listarAvaliacoes() throws IOException{
 		List<PesquisaSatisfacao> avaliacoes = psService.listaPSs();
 		return avaliacoes;
 	}
 	
-	/**
+	*//**
 	 * Busca uma avaliação através do seu ID
 	 * @param id
 	 * @return Avaliação
 	 * @throws IOException
-	 */
+	 *//*
 	@RequestMapping(method = RequestMethod.GET, value = "/api/avaliacao/{id}")
 	public @ResponseBody PesquisaSatisfacao buscaAvaliacaoPorId(@PathVariable("id") Long id) throws IOException{
 		PesquisaSatisfacao psSatisfacao = psService.buscaPS(id);
@@ -44,11 +44,11 @@ public class ApiAvaliacaoController {
 	}
 	
 	
-	/**
+	*//**
 	 * Insere uma avaliação
 	 * @param psSatisfacao
 	 * @return a avaliação inserida
-	 */
+	 *//*
 	@RequestMapping(method = RequestMethod.POST, value = "/api/avaliacao", headers = "Accept=application/json")
 	public @ResponseBody PesquisaSatisfacao inserirAvaliacao(@RequestBody PesquisaSatisfacao pSatisfacao) {
 		try {
@@ -62,11 +62,11 @@ public class ApiAvaliacaoController {
 	
 	
 	
-	/**
+	*//**
 	 * Atualiza a avaliação de acordo com o objeto PesquisaSatisfacao recebido
 	 * @param pSatisfacao
 	 * @returnm objeto PesquisaSatisfacao atualizado
-	 */
+	 *//*
 	@RequestMapping(method = RequestMethod.PUT, value = "/api/medico", headers = "Accept=application/json")
 	public @ResponseBody PesquisaSatisfacao atualizaAvaliacao(@RequestBody PesquisaSatisfacao pSatisfacao) {
 		try {
@@ -79,11 +79,11 @@ public class ApiAvaliacaoController {
 	}
 	
 	
-	/**
+	*//**
 	 * Remove uma avaliação de acordo com o id recebido
 	 * @param id
 	 * @return Mensagem "Avaliacao removida com sucesso".
-	 */
+	 *//*
 	@RequestMapping(method = RequestMethod.DELETE, value = "/api/medico/{id}")
 	public @ResponseBody String removeAvaliacao(@PathVariable("id") Long id) {
 		try {
@@ -98,3 +98,4 @@ public class ApiAvaliacaoController {
 	
 	
 }
+*/

@@ -4884,7 +4884,7 @@ h6 {
 
 .avaliacao-obs {
     display: block;
-    width: 80%;
+    width: 85%;
     outline: none;
     background: #F1F3F5;
     padding: 10px 20px;
@@ -4905,6 +4905,11 @@ h6 {
   margin-left:5%;
 }
 
+.tags_aval{
+	margin-left:8%;
+	width:85%;
+	
+}
 
 
 /*# sourceMappingURL=style.css.map */

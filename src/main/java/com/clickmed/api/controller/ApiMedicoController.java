@@ -47,7 +47,7 @@ public class ApiMedicoController {
 	}
 	
 	@RequestMapping(method = RequestMethod.PUT, value = "/api/medico", headers = "Accept=application/json")
-	public @ResponseBody Medico atualizaMedico(@RequestBody Medico medico) {
+	public @ResponseBody Medico atualizaMedico2(@RequestBody Medico medico) {
 		try {
 			System.out.println("Medico recebido " + medico.toString());
 			medicoService.atualizaMedico(medico);

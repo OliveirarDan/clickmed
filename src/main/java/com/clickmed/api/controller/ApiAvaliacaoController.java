@@ -66,8 +66,10 @@ public class ApiAvaliacaoController {
 	 * Atualiza a avaliação de acordo com o objeto PesquisaSatisfacao recebido
 	 * @param pSatisfacao
 	 * @returnm objeto PesquisaSatisfacao atualizado
-	 *//*
-	@RequestMapping(method = RequestMethod.PUT, value = "/api/medico", headers = "Accept=application/json")
+
+	 */
+	@RequestMapping(method = RequestMethod.PUT, value = "/api/avaliacao", headers = "Accept=application/json")
+
 	public @ResponseBody PesquisaSatisfacao atualizaAvaliacao(@RequestBody PesquisaSatisfacao pSatisfacao) {
 		try {
 			System.out.println("Pesquisa Recebida " + pSatisfacao.toString());
@@ -83,8 +85,10 @@ public class ApiAvaliacaoController {
 	 * Remove uma avaliação de acordo com o id recebido
 	 * @param id
 	 * @return Mensagem "Avaliacao removida com sucesso".
-	 *//*
-	@RequestMapping(method = RequestMethod.DELETE, value = "/api/medico/{id}")
+
+	 */
+	@RequestMapping(method = RequestMethod.DELETE, value = "/api/avaliacao/{id}")
+
 	public @ResponseBody String removeAvaliacao(@PathVariable("id") Long id) {
 		try {
 			psService.removePS(id);

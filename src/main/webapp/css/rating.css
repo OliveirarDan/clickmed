@@ -5,12 +5,14 @@
   border: none;
   float: left;
   margin-left: 8%;
+    margin-top:1%;
 }
 
 .rating > input { display: none; } 
 .rating > label:before { 
   margin: 5px;
-  font-size: 1.9em;
+  font-size: 3em;
+
   font-family: FontAwesome;
   display: inline-block;
   content: "\f005";

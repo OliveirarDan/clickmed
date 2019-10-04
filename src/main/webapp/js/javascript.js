@@ -138,7 +138,7 @@ $(document).ready(function() {
 			title : 'Pontualidade'
 		}, {
 			id : 2,
-			title : 'Higiene'
+			title : 'Educação'
 		}, {
 			id : 3,
 			title : 'Clareza nas informações'
@@ -147,9 +147,13 @@ $(document).ready(function() {
 			title : 'Profissionalismo'
 		}, {
 			id : 5,
-			title : 'Educação'
-		} ],
-		create : false
+			title : 'Paciência'
+		}, {
+			id : 6,
+			title : 'Higiene'
+		}
+		],
+		create : true
 	});
 	
 

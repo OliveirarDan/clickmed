@@ -2,30 +2,58 @@ package com.clickmed.controller;
 
 import java.io.IOException;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.clickmed.entity.Medico;
+import com.clickmed.entity.Paciente;
 import com.clickmed.entity.PesquisaSatisfacao;
+import com.clickmed.service.MedicoService;
+import com.clickmed.service.PacienteService;
 import com.clickmed.service.PesquisaSatisfacaoService;
+import com.clickmed.utils.Utilidades;
 
 @Controller
 public class PesquisaSatisfacaoController {
 
+	
 	@Autowired
 	PesquisaSatisfacaoService pesquisaSatisfacaoService;
 	
+	@Autowired
+	PacienteService pacienteService;
+	
+	@Autowired
+	MedicoService medicoService;
+	
+	Utilidades utils = new Utilidades();
+	
+
+
+
 	/**
-	 * ----TESTANDO---- Falta criar tela cadastro-pesquisaSatisfacao
+	 * ----TESTANDO---- 
 	 * 
 	 * @param model
 	 * @return
 	 */
 	@RequestMapping(value = "/novaAvaliacao", method = RequestMethod.GET)
-	public String novaAvaliacao(ModelMap model) {
-		return "cadastro-Avaliacao";
+	public String novaAvaliacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao, Medico medico, Paciente paciente) {
+		medico = medicoService.buscaMedico((long) 1);
+		paciente = pacienteService.buscaPaciente((long)1);
+		
+		pesquisaSatisfacao.setMedico(medico);
+		pesquisaSatisfacao.setPaciente(paciente);
+		model.addAttribute(pesquisaSatisfacao);
+		
+		System.out.println(model.toString());
+
+		return "cadastro-pesquisaSatisfacao";
 	}
 
 	/**
@@ -36,8 +64,22 @@ public class PesquisaSatisfacaoController {
 	 * @return
 	 */
 	@RequestMapping(value = "/cadastraAvaliacao", method = { RequestMethod.POST })
-	public String cadastraPesquisaSatisfacao(PesquisaSatisfacao pesquisaSatisfacao, ModelMap model) {
+	public String cadastraPesquisaSatisfacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao, Medico medico, Paciente paciente, HttpSession session) {
 		try {
+			pesquisaSatisfacao = (PesquisaSatisfacao) model.get("pesquisaSatisfacao");
+			medico = medicoService.buscaMedico(pesquisaSatisfacao.getMedico().getId());
+			paciente = pacienteService.buscaPaciente(pesquisaSatisfacao.getPaciente().getId());
+			pesquisaSatisfacao.setMedico(medico);
+			pesquisaSatisfacao.setPaciente(paciente);
+			pesquisaSatisfacao.setDescricao(utils.dataAtual());
+			System.out.println("TESTE objetos");
+			System.out.println(pesquisaSatisfacao.toString());
+			
+			System.out.println("fim teste");
+		
+			
+			//System.out.println(paciente);
+			//System.out.println(pesquisaSatisfacao);
 			pesquisaSatisfacaoService.inserePS(pesquisaSatisfacao);
 		} catch (IOException e) {
 			e.printStackTrace();

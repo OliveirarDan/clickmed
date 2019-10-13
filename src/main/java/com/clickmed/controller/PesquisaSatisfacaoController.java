@@ -37,7 +37,7 @@ public class PesquisaSatisfacaoController {
 
 
 	/**
-	 * ----TESTANDO---- 
+	 * Chama a página de avaliação
 	 * 
 	 * @param model
 	 * @return
@@ -57,7 +57,7 @@ public class PesquisaSatisfacaoController {
 	}
 
 	/**
-	 * ----TESTANDO---- Falta criar tela cadastro-pesquisaSatisfacao
+	 * Cadastra avaliação
 	 * 
 	 * @param pesquisaSatisfacao
 	 * @param model

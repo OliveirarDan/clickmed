@@ -59,7 +59,7 @@ public class EspecialidadeController {
 		return listaEspecialidades(model);
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "rest/especialidade")
+	@RequestMapping(method = RequestMethod.GET, value = "/api/especialidade")
 	public @ResponseBody List<Especialidade> listarEspecialidades(ModelMap model) throws IOException {
 		List<Especialidade> especialidade = especialidadeService.listaEspecialidades();
 		model.addAttribute("especialidade", especialidade);

@@ -59,13 +59,13 @@
 											<input type="text" class="single-input" id="sobrenome"
 												name="sobrenome" placeholder="Sobrenome" required />
 										</div>
-
-										<div class="form-group">
-											<input type="email" class="single-input" id="email"
-												name="usuario.email" placeholder="E-mail (login)" required />
+											
+										<div class="form-group">	
+												<input type="text" class="single-input" id="email"
+												name="email" placeholder="E-mail (login)" required />										
 										</div>
 										<div class="form-group">
-											<input type="cpf" class="single-input cpf" id="cpf"
+											<input type="text" class="single-input cpf" id="cpf"
 												name="cpf" placeholder="CPF" required />
 										</div>
 										<input type="hidden" class="foto" id="foto" name="foto"
@@ -105,21 +105,22 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="form-group col-md-2">
+									<div class="form-group col-md-3">
 										<input type="date" class="single-input" id="datanasc"
 											name="dataNascimento" placeholder="Data de nascimento"
 											required />
 									</div>
-									<div class="form-group col-md-4">
+									
+									<div class="form-group col-md-3">
+										<input type="tel" class="single-input tel2" id="telcelular"
+											name="telefone2" placeholder="Telefone celular" />
+									</div>
+									<div class="form-group col-md-3">
 										<input type="tel" class="single-input tel1"
 											id="telresidencial" name="telefone1"
 											placeholder="Telefone residencial" required />
 									</div>
-									<div class="form-group col-md-4">
-										<input type="tel" class="single-input tel2" id="telcelular"
-											name="telefone2" placeholder="Telefone celular" />
-									</div>
-									<div class="form-group col-md-2">
+									<div class="form-group col-md-3">
 										<input type="text" class="single-input cep" id="cep"
 											name="cep" placeholder="CEP" required />
 									</div>

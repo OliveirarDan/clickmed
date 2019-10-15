@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.clickmed.entity.Paciente;
 import com.clickmed.entity.PesquisaSatisfacao;
 import com.clickmed.service.PesquisaSatisfacaoService;
 
@@ -17,51 +18,41 @@ public class PesquisaSatisfacaoController {
 	@Autowired
 	PesquisaSatisfacaoService pesquisaSatisfacaoService;
 	
-	/**
-	 * ----TESTANDO---- Falta criar tela cadastro-pesquisaSatisfacao
-	 * 
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value = "/novaAvaliacao", method = RequestMethod.GET)
 	public String novaAvaliacao(ModelMap model) {
-		return "cadastro-Avaliacao";
+		return "cadastro-pesquisaSatisfacao";
 	}
 
-	/**
-	 * ----TESTANDO---- Falta criar tela cadastro-pesquisaSatisfacao
-	 * 
-	 * @param pesquisaSatisfacao
-	 * @param model
-	 * @return
-	 */
-	@RequestMapping(value = "/cadastraAvaliacao", method = { RequestMethod.POST })
+
+	/*@RequestMapping(value = "/cadastraAvaliacao", method = { RequestMethod.POST })
 	public String cadastraPesquisaSatisfacao(PesquisaSatisfacao pesquisaSatisfacao, ModelMap model) {
 		try {
 			pesquisaSatisfacaoService.inserePS(pesquisaSatisfacao);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return listaAvaliacoes(model);
+		//return listaAvaliacoes(model);
+		return "index";
+	}*/
+	
+	@RequestMapping(value = "/cadastraAvaliacao", method = { RequestMethod.POST })
+	public String cadastraAvaliacao(PesquisaSatisfacao pesquisaSatisfacao, ModelMap model) {
+		try {
+			pesquisaSatisfacaoService.inserePS(pesquisaSatisfacao);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return "index";
 	}
 
-	
-	/**
-	 * ----TESTANDO----	Falta criar tela lista-pesquisaSatisfacao
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value = "/listaAvaliacoes", method = RequestMethod.GET)
 	private String listaAvaliacoes(ModelMap model) {
 		model.put("pesquisaSatisfacaos", this.pesquisaSatisfacaoService.listaPSs());
 		return "lista-Avaliacoes";
 	}
-	
-	/**
-	 * ----TESTANDO----	Falta criar tela edicao-pesquisaSatisfacao
-	 * @param model
-	 * @return
-	 */
+
 	@RequestMapping(value = "/selecionaAvaliacao", method = RequestMethod.POST)
 	public String selecionaAvaliacao(PesquisaSatisfacao pesquisaSatisfacao, ModelMap model) {
 		pesquisaSatisfacao = pesquisaSatisfacaoService.buscaPS(pesquisaSatisfacao.getId());
@@ -71,15 +62,7 @@ public class PesquisaSatisfacaoController {
 	}
 	
 	
-	
-	/**
-	 * ----TESTANDO----
-	 * -----ATENçÃO------
-	 * Neste método é necessário ter todos os dados do pesquisaSatisfacao antes de modificalo no BD,
-	 * Você pode usar uma variável nPesquisaSatisfacao para carregar os itens pelo id e depois altera-lo.
-	 * Ou pode pegar a entidade completa da VIEW.
-	 * 
-	 */
+
 	@RequestMapping(value = "/salvaSalvaAvaliacao", method = { RequestMethod.POST })
 	public String salvaAvaliacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao) throws IOException {
 		//nPesquisaSatisfacao criada para armazenar o pesquisaSatisfacao atualizado da View temporariamente		
@@ -97,12 +80,7 @@ public class PesquisaSatisfacaoController {
 		return listaAvaliacoes(model);
 	}
 	
-	
-	/**
-	 * ----TESTANDO----	Falta criar tela edicao-pesquisaSatisfacao
-	 * @param model
-	 * @return
-	 */	
+
 	@RequestMapping(value = "/removePesquisaSatisfacao", method = { RequestMethod.POST })
 	public String removePesquisaSatisfacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao) throws IOException {
 		pesquisaSatisfacaoService.removePS(pesquisaSatisfacao.getId());

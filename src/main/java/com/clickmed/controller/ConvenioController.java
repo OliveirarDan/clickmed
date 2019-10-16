@@ -60,7 +60,7 @@ public class ConvenioController {
 		return listaConvenios(model);
 	}
 	
-	@RequestMapping(method = RequestMethod.GET, value = "rest/convenio")
+	@RequestMapping(method = RequestMethod.GET, value = "/api/convenio")
 	public @ResponseBody List<Convenio> listarConvenios(ModelMap model) throws IOException
 	{
 		List<Convenio> convenio = convenioService.listaConvenios();

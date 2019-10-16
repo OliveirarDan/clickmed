@@ -62,11 +62,11 @@ public class ClinicaController {
 		return listaClinicas(model);
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "rest/clinica")
-	public @ResponseBody List<Clinica> listarPessoas(ModelMap model) throws IOException {
-		List<Clinica> clinica = clinicaService.listaClinicas();
-		model.addAttribute("clinica", clinica);
-		return clinica;
-	}
+//	@RequestMapping(method = RequestMethod.GET, value = "rest/clinica")
+//	public @ResponseBody List<Clinica> listarPessoas(ModelMap model) throws IOException {
+//		List<Clinica> clinica = clinicaService.listaClinicas();
+//		model.addAttribute("clinica", clinica);
+//		return clinica;
+//	}
 
 }

@@ -43,15 +43,12 @@ public class PacienteService {
 	 * @throws IOException
 	 */
 	public Paciente inserePaciente(Paciente paciente) throws IOException {
-		// Atualizando usuario
 		Usuario nUsuario = paciente.getUsuario();
 		nUsuario.setSenha(pPasswordEncoder().encode(nUsuario.getSenha()));
 		System.out.println(nUsuario.toString());
 		paciente.setUsuario(nUsuario);
 
-		// Cadastra o usuario e retorna o ID
-		paciente.setUsuario(usuarioService.insereUsuario(paciente.getUsuario()));
-		// Cadastra o paciente
+		paciente.setUsuario(usuarioService.insereUsuario(nUsuario));
 		return this.pacienteDAO.save(paciente);
 	}
 

@@ -10,7 +10,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
+
 import com.clickmed.entity.Medico;
+
 import com.clickmed.entity.Paciente;
 import com.clickmed.entity.PesquisaSatisfacao;
 import com.clickmed.service.MedicoService;
@@ -32,11 +35,10 @@ public class PesquisaSatisfacaoController {
 	MedicoService medicoService;
 	
 	Utilidades utils = new Utilidades();
-	
 
+  
 
-
-	/**
+/**
 	 * Chama a página de avaliação
 	 * 
 	 * @param model
@@ -84,9 +86,9 @@ public class PesquisaSatisfacaoController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		//return listaAvaliacoes(model);
 		return listaAvaliacoes(model);
 	}
-
 	
 	/**
 	 * ----TESTANDO----	Falta criar tela lista-pesquisaSatisfacao

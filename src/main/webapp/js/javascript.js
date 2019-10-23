@@ -17,7 +17,7 @@ function initRemoteSelectize(input, src_url, selectize_options) {
 
 function initEspecialidadesSelectize() {
 	var input = '#especialidades';
-	var src_url = "/rest/especialidade";
+	var src_url = "/api/especialidade";
 	var selectize_options = {
 		maxItems : 3,
 		valueField : 'id',
@@ -29,7 +29,7 @@ function initEspecialidadesSelectize() {
 
 function initClinicaSelectize() {
 	var input = '#clinicas';
-	var src_url = "/rest/clinica";
+	var src_url = "/api/clinica";
 	var selectize_options = {
 		maxItems : 1,
 		valueField : 'id',
@@ -41,7 +41,7 @@ function initClinicaSelectize() {
 
 function initConvenioSelectize() {
 	var input = '#convenios';
-	var src_url = "/rest/convenio";
+	var src_url = "/api/convenio";
 	var selectize_options = {
 
 		valueField : 'id',

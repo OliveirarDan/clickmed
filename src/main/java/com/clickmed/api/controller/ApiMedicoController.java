@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.clickmed.entity.Medico;
-import com.clickmed.service.BuscaService;
 import com.clickmed.service.MedicoService;
 
 @Controller
@@ -20,7 +18,6 @@ public class ApiMedicoController {
 
 	@Autowired
 	MedicoService medicoService;
-	BuscaService buscaService;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/api/medico")
 	public @ResponseBody List<Medico> listarMedicos() throws IOException {
@@ -33,8 +30,8 @@ public class ApiMedicoController {
 		Medico medico = medicoService.buscaMedico(id);
 		return medico;
 	}
-	
-	
+
+
 	@RequestMapping(method = RequestMethod.POST, value = "/api/medico", headers = "Accept=application/json")
 	public @ResponseBody Medico inserirMedico(@RequestBody Medico medico) {
 		try {
@@ -66,6 +63,4 @@ public class ApiMedicoController {
 		}
 		return "Médico removido com sucesso";
 	}
-
-
 }

@@ -1,18 +1,14 @@
 package com.clickmed.controller;
 
 import java.io.IOException;
-
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.clickmed.entity.Convenio;
 import com.clickmed.entity.Medico;
-import com.clickmed.entity.Usuario;
 import com.clickmed.service.MedicoService;
 
 @Controller
@@ -27,8 +23,6 @@ public class MedicoController {
 	@RequestMapping(value = "/novoMedico", method = RequestMethod.GET)
 	public String novoMedico(ModelMap model) {
 		return "cadastro-pesquisaSatisfacao";
-
-		//return "cadastro-medico";
 	}
 
 
@@ -51,8 +45,6 @@ public class MedicoController {
 
 	@RequestMapping(value = "/selecionaMedico", method = RequestMethod.GET)
 	public String selecionaMedico(Medico medico, ModelMap model, HttpSession session) {
-		//medico = (Medico) session.getAttribute("medico");
-		//System.out.println("Especialidade: " + medico.getEspecialidades().toString());
 		medico = medicoService.buscaMedico(medico.getId());
 		System.out.println(medico.toString());
 		model.addAttribute(medico);
@@ -71,9 +63,6 @@ public class MedicoController {
 
 	@RequestMapping(value = "/salvaMedico", method = { RequestMethod.POST })
 	public String salvaMedico(ModelMap model, Medico medico, HttpSession session) throws IOException {
-
-		// Salvando no banco
-		System.out.println("Controller " + medico.toString());
 		medicoService.atualizaMedico(medico);
 		return "infos-medico";
 	}
@@ -163,14 +152,9 @@ public class MedicoController {
 
 		try {
 			if (medico.getNome() == null || medico.getNome().length() == 0 || medico.getNome().equals("")) {
-				// *********** METODO ABAIXO LISTA POR ESPECIALIDADE
 				return listaEspecialidade(model, especialidade);
-				// return null;
 			} else {
 				if (medico.getNome().endsWith(" ") || medico.getNome().startsWith(" ")) {
-					// String nomeSemEspaco = medico.getNome().trim();
-					// System.out.println(nomeSemEspaco);
-					// return medicoService.listarNomeMedicoString(nomeSemEspaco);
 					return listaMedics(model);
 				} else if (medico.getNome().contains(" ")) {
 					maisDeUmNomeParaBusca = medico.getNome();

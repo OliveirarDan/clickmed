@@ -28,8 +28,8 @@ public class PermissaoService {
 	 * @throws IOException
 	 */
 	@Transactional
-	public Permissao inserePermissao(Permissao permissao) {
-		return this.permissaoDAO.save(permissao);
+	public List<Permissao> inserePermissao(List<Permissao> permissao) {
+		return this.permissaoDAO.saveAll(permissao);
 	}
 
 	/**

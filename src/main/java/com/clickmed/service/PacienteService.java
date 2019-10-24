@@ -2,10 +2,7 @@ package com.clickmed.service;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.transaction.Transactional;
-
-import com.clickmed.entity.Permissao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -45,9 +42,7 @@ public class PacienteService {
 	public Paciente inserePaciente(Paciente paciente) throws IOException {
 		Usuario nUsuario = paciente.getUsuario();
 		nUsuario.setSenha(pPasswordEncoder().encode(nUsuario.getSenha()));
-		System.out.println(nUsuario.toString());
 		paciente.setUsuario(nUsuario);
-
 		paciente.setUsuario(usuarioService.insereUsuario(nUsuario));
 		return this.pacienteDAO.save(paciente);
 	}
@@ -61,7 +56,7 @@ public class PacienteService {
 	 */
 	@Transactional
 	public Paciente atualizaPaciente(Paciente paciente) throws IOException {
-		if (this.pacienteDAO.existsById(paciente.getId()) == true) {
+		if (this.pacienteDAO.existsById(paciente.getId())) {
 			return this.pacienteDAO.save(paciente);
 		}
 		return null;

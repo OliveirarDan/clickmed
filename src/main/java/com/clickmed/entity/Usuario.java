@@ -34,7 +34,7 @@ public class Usuario implements UserDetails {
 	@NotNull
 	private String senha;
 
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE})
 	@Fetch(FetchMode.SUBSELECT)
 	@JoinTable(name = "usuarios_has_permissoes", joinColumns = { @JoinColumn(name = "usuario_id") }, inverseJoinColumns = {
 			@JoinColumn(name = "permissoes_id") })

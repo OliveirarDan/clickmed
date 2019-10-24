@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.clickmed.entity.Paciente;
-import com.clickmed.service.BuscaService;
 import com.clickmed.service.PacienteService;
 
 @Controller
@@ -19,7 +17,6 @@ public class ApiPacienteController {
 
 	@Autowired
 	PacienteService pacienteService;
-	BuscaService buscaService;
 
 	@RequestMapping(method = RequestMethod.GET, value = "/api/paciente")
 	public @ResponseBody List<Paciente> listarPacientes() throws IOException {
@@ -37,7 +34,6 @@ public class ApiPacienteController {
 	@RequestMapping(method = RequestMethod.POST, value = "/api/paciente", headers = "Accept=application/json")
 	public @ResponseBody Paciente inserirPaciente(@RequestBody Paciente paciente) {
 		try {
-			System.out.println("Paciente recebido " + paciente.toString());
 			pacienteService.inserePaciente(paciente);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -48,7 +44,6 @@ public class ApiPacienteController {
 	@RequestMapping(method = RequestMethod.PUT, value = "/api/paciente", headers = "Accept=application/json")
 	public @ResponseBody Paciente atualizaPaciente(@RequestBody Paciente paciente) {
 		try {
-			System.out.println("Paciente recebido " + paciente.toString());
 			pacienteService.atualizaPaciente(paciente);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -65,6 +60,4 @@ public class ApiPacienteController {
 		}
 		return "Médico removido com sucesso";
 	}
-
-
 }

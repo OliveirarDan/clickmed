@@ -36,16 +36,17 @@
 			<div class="row">
 				<div class="wrapper1">
 					<div class="card1 radius shadowDepth1">
-						<div class="row card-line card__padding">
+						<div class="card-line card__padding">
 							<div class="row">
-								<div class="col-md-5">
-									<div class="border-tlr-radius">
+								<div class="col-md-2">
+									<div class="border-tlr-radius" style="text-align:center">
 										<img src="img/person.jpg" alt="image"
 											class="border-tlr-radius foto-card-circle">
 									</div>
 								</div>
-								<div class="col-md-7">
+								<div class="col-md-10">
 									<div class="card-head-title">
+										<br>
 										<h4>Nome do paciente:${paciente.nome} ${paciente.sobrenome}</h4>
 									</div>
 								</div>
@@ -67,15 +68,13 @@
 									<h4 class="title">Resposta</h4>
 									<div class="form-group">
 										<textarea class="resposta" id="experienciaProfissional"
-											name="comentario" rows="2" maxlength="400"> </textarea>
+											name="comentario" rows="2" maxlength="250"> </textarea>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12 text-center">
-								<button type="submit" name="cadastraMedico1"
-									value="/cadastraAvaliacao" class="primary-btn text-uppercase">Ignorar</button>
 								<button type="submit" name="cadastraMedico1"
 									value="/cadastraAvaliacao" class="primary-btn text-uppercase">Responder</button>
 							</div>

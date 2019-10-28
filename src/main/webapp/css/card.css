@@ -20,6 +20,14 @@
 	padding-right: 1em;
 }
 
+.wrapper1 {
+	max-height:500px;
+	width: 100%;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+
 /**
  * Helpers
  */
@@ -53,6 +61,13 @@
 	margin-bottom: 1.6rem;
 	width: 290px;
 	height: 400px; 
+}
+
+.card1 {
+	background-color: #fff;
+	margin-bottom: 1.6rem;
+	width: 100%;
+	height: auto; 
 }
 
 .card__padding {

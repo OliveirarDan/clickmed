@@ -59,7 +59,7 @@ public class UsuarioController {
 		//Criando permissões para comparação do tipo de usuario
 		Permissao pMedico = permissaoService.buscaPermissao((long)1);
 		Permissao pPaciente = permissaoService.buscaPermissao((long)2);
-		Permissao pAdm = permissaoService.buscaPermissao((long)3);
+		//Permissao pAdm = permissaoService.buscaPermissao((long)3);
 		
 		
 		

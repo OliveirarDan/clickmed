@@ -26,6 +26,7 @@ public class PesquisaSatisfacaoService {
 	@Autowired
 	PacienteService pacienteService;
 
+
 	private PesquisaSatisfacaoDAO psDAO;
 
 	@Autowired

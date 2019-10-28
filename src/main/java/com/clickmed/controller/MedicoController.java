@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.clickmed.entity.Medico;
 import com.clickmed.service.MedicoService;
+import com.clickmed.service.PesquisaSatisfacaoService;
 
 @Controller
 public class MedicoController {
 
 	@Autowired
 	MedicoService medicoService;
+	
+	@Autowired
+	PesquisaSatisfacaoService pesquisaSatisfacaoService;
 
 	String maisDeUmNomeParaBusca;
 	String stringBuscaPorEspecialidade;
@@ -49,6 +53,8 @@ public class MedicoController {
 		medico = medicoService.buscaMedico(medico.getId());
 		System.out.println(medico.toString());
 		model.addAttribute(medico);
+		model.put("avaliacoes", pesquisaSatisfacaoService.listaPSByMedico(medico));
+		System.out.println(pesquisaSatisfacaoService.listaPSByMedico(medico));
 		return "infos-medico";
 	}
 	

@@ -4908,8 +4908,22 @@ h6 {
 .tags_aval{
 	margin-left:8%;
 	width:85%;
-	
 }
 
+.jumbo{
+	margin-left: 5%;
+	margin-right: 5%;
+	overflow-y: auto;
+	max-height: 30px;
+	width:90%;
+	height:auto;
+}
+
+.resposta{
+	width:90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	overflow-y: auto;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -43,7 +43,7 @@ public class PacienteService {
 		Usuario nUsuario = paciente.getUsuario();
 		nUsuario.setSenha(pPasswordEncoder().encode(nUsuario.getSenha()));
 		paciente.setUsuario(nUsuario);
-		paciente.setUsuario(usuarioService.insereUsuario(nUsuario));
+		paciente.setUsuario(usuarioService.insereUsuario(paciente.getUsuario()));
 		return this.pacienteDAO.save(paciente);
 	}
 

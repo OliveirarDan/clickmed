@@ -59,10 +59,10 @@
 											<input type="text" class="single-input" id="sobrenome"
 												name="sobrenome" placeholder="Sobrenome" required />
 										</div>
-											
-										<div class="form-group">	
-												<input type="text" class="single-input" id="email"
-												name="email" placeholder="E-mail (login)" required />										
+
+										<div class="form-group">
+											<input type="text" class="single-input" id="email"
+												name="email" placeholder="E-mail (login)" required />
 										</div>
 										<div class="form-group">
 											<input type="text" class="single-input cpf" id="cpf"
@@ -93,13 +93,13 @@
 									<label class="col-md-12" for="radios">Gênero</label>
 									<div class="col-md-8">
 										<label class="radio-inline" for="radios-0"> <input
-											type="radio" name="sexo" id="radios-0" value="1">
+											type="radio" name="sexo" id="radios-0" value="Masculino">
 											Masculino
 										</label> <label class="radio-inline" for="radios-1"> <input
-											type="radio" name="sexo" id="radios-1" value="2">
+											type="radio" name="sexo" id="radios-1" value="Feminino">
 											Feminino
 										</label> <label class="radio-inline" for="radios-2"> <input
-											type="radio" name="sexo" id="radios-2" value="2">
+											type="radio" name="sexo" id="radios-2" value="Outro">
 											Outro
 										</label>
 									</div>
@@ -110,7 +110,7 @@
 											name="dataNascimento" placeholder="Data de nascimento"
 											required />
 									</div>
-									
+
 									<div class="form-group col-md-3">
 										<input type="tel" class="single-input tel2" id="telcelular"
 											name="telefone2" placeholder="Telefone celular" />
@@ -144,6 +144,10 @@
 										<input type="text" class="single-input" id="uf" name="estado"
 											placeholder="UF" maxlength="2" required />
 									</div>
+									<div class="form-group">
+										<input type="hidden" class="single-input" id="permissao"
+											name="usuario.permissao" value="2" required />
+									</div>
 								</div>
 							</div>
 							<div class="form-group col-md-4">
@@ -153,7 +157,7 @@
 							</div>
 
 							<div class="col-md-12 text-center">
-								<button type="submit" name="cadastraPaciente"
+								<button type="submit" name="cadastraPaciente1"
 									value="cadastraPaciente" class="primary-btn text-uppercase">Cadastrar</button>
 							</div>
 						</form>

@@ -114,13 +114,13 @@
 											<label class="col-md-12 required" for="radios">Gênero</label>
 											<div class="col-md-8">
 												<label class="radio-inline" for="radios-0"> <input
-													type="radio" name="sexo" id="radios-0" value="1" required>
+													type="radio" name="sexo" id="radios-0" value="Masculino" required>
 													Masculino
 												</label> <label class="radio-inline" for="radios-1"> <input
-													type="radio" name="sexo" id="radios-1" value="2">
+													type="radio" name="sexo" id="radios-1" value="Feminino">
 													Feminino
 												</label> <label class="radio-inline" for="radios-2"> <input
-													type="radio" name="sexo" id="radios-2" value="2">
+													type="radio" name="sexo" id="radios-2" value="Outro">
 													Outro
 												</label>
 											</div>
@@ -135,7 +135,7 @@
 
 											<div class="form-group">
 												<input type="hidden" class="single-input" id="permissao"
-													name="permissao" value="1" required />
+													name="usuario.permissao" value="1" required />
 											</div>
 										</div>
 									</div>

@@ -62,7 +62,7 @@
 
 										<div class="form-group">
 											<input type="text" class="single-input" id="email"
-												name="email" placeholder="E-mail (login)" required />
+												name="usuario.email" placeholder="E-mail (login)" required />
 										</div>
 										<div class="form-group">
 											<input type="text" class="single-input cpf" id="cpf"

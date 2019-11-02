@@ -37,8 +37,8 @@
 		<div class="container">
 			<div class="page-content">
 				<!--================Início da Paginação de Cadastro =================-->
-				<div class="row">
-					<div class="col-md-12">
+				<div class="">
+					<div class="">
 						<span>
 							<h2>Avalie seu atendimento</h2>
 						</span>
@@ -49,7 +49,7 @@
 
 				<!--================Fim da Paginação Cadastro =================-->
 				<!--================Início dos campos de Cadastro =================-->
-				<div class="row">
+				<div class="">
 					<form class="row contact_form" action="cadastraAvaliacao"
 						method="post" id="cadastro-medico" autocomplete="off">
 

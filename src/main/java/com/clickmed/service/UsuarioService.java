@@ -6,6 +6,8 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.clickmed.dao.UsuarioDAO;
@@ -17,6 +19,11 @@ public class UsuarioService {
 
 	private UsuarioDAO usuarioDAO;
 
+
+	public PasswordEncoder mPasswordEncoder() {
+		return new BCryptPasswordEncoder();
+	}
+	
 	@Autowired
 	public UsuarioService(UsuarioDAO usuarioDAO) {
 		this.usuarioDAO = usuarioDAO;
@@ -77,11 +84,17 @@ public class UsuarioService {
 	
 	public Usuario autenticar(Usuario usuario) {
 		Usuario usuarioAutenticado = usuarioDAO.findByEmail(usuario.getEmail());
+		
 
-		if (usuarioAutenticado.getSenha().equals(usuario.getSenha())) {
-
+		if (mPasswordEncoder().matches(usuario.getSenha(), usuarioAutenticado.getSenha())) {
 			return usuarioAutenticado;
 		}
+		
+		
+//		if (usuarioAutenticado.getSenha().equals(usuario.getSenha())) {
+//
+//			return usuarioAutenticado;
+//		}
 		return null;
 	}
 

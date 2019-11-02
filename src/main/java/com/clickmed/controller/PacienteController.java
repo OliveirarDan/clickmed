@@ -42,7 +42,9 @@ public class PacienteController {
 
 	@RequestMapping(value = "/selecionaPaciente", method = RequestMethod.GET)
 	public String selecionaPaciente(Paciente paciente, ModelMap model, HttpSession session) {
+		System.out.println(session);
 		paciente = (Paciente) session.getAttribute("paciente");
+		
 		System.out.println(paciente.toString());
 		model.addAttribute(paciente);
 		return "edicao-paciente";

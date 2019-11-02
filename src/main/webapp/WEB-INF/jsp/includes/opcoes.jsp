@@ -26,9 +26,9 @@
 									<h4 class="modal-title">${usuarioAutenticado.email} -
 										Logado</h4>
 									<br>
-									<form method="post" action="editar" accept-charset="UTF-8">
+									<form method="get" action="selecionaPaciente" accept-charset="UTF-8">
 										<input class="btn btn-default btn-login" type="button"
-											value="Editar" onclick="submit()">
+											value="Editar Cadastro" onclick="submit()">
 									</form>
 									<br>
 									<form method="post" action="sair" accept-charset="UTF-8">

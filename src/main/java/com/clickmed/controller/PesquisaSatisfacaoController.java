@@ -45,9 +45,11 @@ public class PesquisaSatisfacaoController {
 	 * @return
 	 */
 	@RequestMapping(value = "/novaAvaliacao", method = RequestMethod.GET)
-	public String novaAvaliacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao, Medico medico, Paciente paciente) {
-		medico = medicoService.buscaMedico((long) 1);
-		paciente = pacienteService.buscaPaciente((long)1);
+	public String novaAvaliacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao, Medico medico, Paciente paciente, HttpSession session) {
+		medico = medicoService.buscaMedico((medico.getId()));
+		//paciente = pacienteService.buscaPaciente((long)1);
+		paciente = (Paciente) session.getAttribute("paciente");
+		System.out.println(paciente.toString());
 		
 		pesquisaSatisfacao.setMedico(medico);
 		pesquisaSatisfacao.setPaciente(paciente);
@@ -87,7 +89,7 @@ public class PesquisaSatisfacaoController {
 			e.printStackTrace();
 		}
 		//return listaAvaliacoes(model);
-		return listaAvaliacoes(model);
+		return "index";
 	}
 	
 	/**

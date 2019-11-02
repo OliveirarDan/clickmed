@@ -36,6 +36,9 @@
 		</section>
 	</header>
 	<!--================ Final Header Area =================-->
+
+
+
 	<!--================Início do Cadastro =================-->
 	<section class="contact_area section_gap">
 		<div class="container">
@@ -72,6 +75,25 @@
 								</c:forEach>
 							</div>
 						</div>
+						<!--================ Inicio Area de avaliacao  =================-->
+						<c:if test="${not empty usuarioAutenticado}">
+							<form class="row contact_form" action="/novaAvaliacao"
+								method="get" id="cadastro-paciente">
+								<br> <input type="hidden" id="id" name="id"
+									value="${medico.id}" />
+
+								<div class="col-md-12 text-center">
+									<button type="submit" name="selecionaPaciente"
+										value="/novaAvaliacao" class="primary-btn text-uppercase">Avaliar
+										Médico</button>
+								</div>
+
+							</form>
+						</c:if>
+						<!--================ Final Area de avaliacao =================-->
+
+
+
 						<hr class="line">
 						<div class="row">
 							<div class="col-md-6">

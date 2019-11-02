@@ -40,8 +40,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity httpSecurity) throws Exception {
     httpSecurity.csrf().disable().authorizeRequests()
       .antMatchers("/", "/autenticar", "/infosMedico", "/cadastro", "/novoPaciente", "/novoMedico", "/novaClinica", "/buscaPrincipal",
-    		  "/selecionaMedico", "/cadastraMedico", "/cadastraPaciente", "/cadastraClinica").permitAll()
-      .antMatchers("/novaAvaliacao","/cadastraAvaliacao").permitAll()//Somente TESTE
+    		  "/selecionaMedico", "/cadastraMedico", "/cadastraPaciente", "/cadastraClinica","/error").permitAll()
+      .antMatchers("/novaAvaliacao","/cadastraAvaliacao","/sair").permitAll()//Somente TESTE
+      .antMatchers("redirect:/","/selecionaPaciente").permitAll()
       .antMatchers(HttpMethod.POST, "/api/login").permitAll()
       .antMatchers(HttpMethod.POST, "/api/usuario").permitAll()
       .antMatchers(HttpMethod.POST, "/api/paciente").permitAll()

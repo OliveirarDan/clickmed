@@ -4,6 +4,9 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
@@ -35,11 +38,15 @@ public class UsuarioController {
 	
 	@Autowired
 	private PermissaoService permissaoService;
+	
+	
+	
 
 	@PostMapping("/autenticar")
 	public String autenticar(@Valid Usuario usuario, BindingResult bindingResult, ModelMap model, HttpSession session,
 			Paciente paciente) throws Exception {
-
+	
+		
 		Medico medicoAutenticado = null;
 		Paciente pacienteAutenticado = null;
 
@@ -79,10 +86,12 @@ public class UsuarioController {
 			pacienteAutenticado = pacienteService.buscaPacientePorUsuario(usuarioAutenticado);
 			model.addAttribute("paciente", pacienteAutenticado);
 			session.setAttribute("paciente", pacienteAutenticado);
+			System.out.println("Logou como paciente!");
+			
 			return "redirect:/";
 		}
 		
-		return "/error";
+		return "/";
 
 	}
 
@@ -107,7 +116,7 @@ public class UsuarioController {
 		}
 		model.addAttribute("mensagemDoSistema", "Algo de errado aconteceu, tente novamente!");
 
-		return "error";
+		return "/error";
 	}
 
 }

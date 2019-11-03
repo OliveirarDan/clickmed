@@ -4926,4 +4926,11 @@ h6 {
 	overflow-y: auto;
 }
 
+.card_resposta {
+	max-height:400px;
+	width: 95%;
+	height: AUTO;
+	background-color: #eeeeee47;
+}
+
 /*# sourceMappingURL=style.css.map */

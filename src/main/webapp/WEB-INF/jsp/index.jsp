@@ -17,24 +17,28 @@
 
 	<!--================ Começo Home Banner Area =================-->
 	<section class="home_banner_area">
-		<div class="banner_inner">
+		<div class="banner_inner bg-img">	
 			<div class="container">
+				
 				<div class="banner_content">
 					<center>
 					<h2>
-						Procurando uma consulta?  <br> 
+						<!-- Procurando uma consulta?  <br> 
 						Está no lugar certo. <br>
-						Digite abaixo o que você deseja. <br>
+						Digite abaixo o que você deseja. <br> -->
+						
+						
+						
 					</h2>
 					
 					<br>
 
 					<form autocomplete="off" action="buscaPrincipal" method="post">
-						<div class="autocomplete" style="width:700px;">
+						<div class="autocomplete" style="width:40%; position:absolute; right:25">
     						<input id="myInput" type="text" name="nome" placeholder="Pesquise por nome, especialidade ou bairro...">
  						</div>
 						<button type="submit" name="pesquisa" value="pesquisa"
-							class="primary-btn text-uppercase">
+							class="primary-btn text-uppercase"  style="position:absolute; right:0; margin-right:1%">
 							<i class="fa fa-search"></i>
 						</button>
 					</form>

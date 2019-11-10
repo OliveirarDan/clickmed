@@ -144,12 +144,9 @@ $(document).ready(function() {
 			title : 'Clareza nas informações'
 		}, {
 			id : 4,
-			title : 'Profissionalismo'
-		}, {
-			id : 5,
 			title : 'Paciência'
 		}, {
-			id : 6,
+			id : 5,
 			title : 'Higiene'
 		}
 		],

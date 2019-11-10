@@ -4938,4 +4938,14 @@ h6 {
 	background-image: url("https://getclare.com/wp-content/uploads/2016/05/slider-012.jpg");	
 }
 
+.h-index{
+	text-align:left;
+	opacity:0.5;
+	font-size:50%;
+	font-family:"Lucida Console";
+	text-transform: uppercase;
+	color:black;
+	
+}
+
 /*# sourceMappingURL=style.css.map */

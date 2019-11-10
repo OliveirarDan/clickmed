@@ -86,15 +86,20 @@
 							</div>
 							<hr class="line">
 							<div class="row">
-								<div class="col-md-12">
+								<div class="col-md-6">
 									<span>
 										<h4 class="title">Como você avalia sua consulta? *</h4>
+									</span>
+								</div>
+								<div class="col-md-6">
+									<span>
+										<h4 class="title">Qual a data da sua consulta?*</h4>
 									</span>
 								</div>
 
 							</div>
 							<div class="row">
-								<div class="col-md-12">
+								<div class="col-md-6">
 									<fieldset class="rating">
 										<input type="radio" id="star5" name="pergunta1" value="5" /><label
 											class="full" for="star5"></label> <input type="radio"
@@ -115,6 +120,13 @@
 											id="starhalf" name="pergunta1" value="0.5" /><label
 											class="half" for="starhalf"></label>
 									</fieldset>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group col-md-8">
+										<input type="date" class="single-input" id="descricao"
+											name="descricao" placeholder="Data da consulta"
+											required />
+											</div>
 								</div>
 							</div>
 							<br>

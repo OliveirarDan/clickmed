@@ -162,24 +162,6 @@
 								<option value="Sônia">Vila Sônia‎</option>
 							</select>
 						</div>
-
-						<!-- <div class="form-group col-2 col-md-2">
-							<select class="form-control form-control" id="sel2">
-								<option>Notas:</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-							</select>
-						</div>
-
-						<div class="form-group col-2 col-md-2">
-							<select class="form-control form-control" id="sel2">
-								<option>Convênio:</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-							</select>
-						</div> -->
 					</div>
 
 				</form>

@@ -10,35 +10,37 @@
 <title>ClickMed</title>
 
 <script src="js/autocomplete/arrayauto.js"></script>
-
 <body>
 	<!--================ Include do Menu =================-->
 	<jsp:include page="includes/menu.jsp" />
 
 	<!--================ Começo Home Banner Area =================-->
 	<section class="home_banner_area">
-		<div class="banner_inner">
+		<div class="banner_inner bg-img">
 			<div class="container">
-				<div class="banner_content">
-					<center>
-					<h2>
-						Procurando uma consulta?  <br> 
-						Está no lugar certo. <br>
-						Digite abaixo o que você deseja. <br>
-					</h2>
-					
-					<br>
 
-					<form autocomplete="off" action="buscaPrincipal" method="post">
-						<div class="autocomplete" style="width:700px;">
-    						<input id="myInput" type="text" name="nome" placeholder="Pesquise por nome, especialidade ou bairro...">
- 						</div>
-						<button type="submit" name="pesquisa" value="pesquisa"
-							class="primary-btn text-uppercase">
-							<i class="fa fa-search"></i>
-						</button>
-					</form>
-					</center>
+				<div class="banner_content">
+					<div style="float: right">
+						
+							<!-- <p class="h-index">
+								Encontre agora mesmo o médico que precisa.
+							</p>-->
+						
+						<br>
+
+						<form autocomplete="off" action="buscaPrincipal" method="post">
+							<div class="autocomplete"
+								style="width: 40%; position: absolute; right: 10%;">
+								<input id="myInput" type="text" name="nome"
+									placeholder="Pesquise por nome, especialidade ou bairro...">
+							</div>
+							<button type="submit" name="pesquisa" value="pesquisa"
+								class="primary-btn text-uppercase"
+								style="position: absolute; right: 0; margin-right: 1%">
+								<i class="fa fa-search"></i>
+							</button>
+						</form>
+					</div>
 					<form autocomplete="off" action="index.jsp"></form>
 
 
@@ -158,7 +160,7 @@
 				<div class="col-lg-2 text-center col-sm-6">
 					<div class="single_department">
 						<div class="dpmt-thumb">
-							<img src="img/department/d-icon5.png" alt="" >
+							<img src="img/department/d-icon5.png" alt="">
 						</div>
 						<h4>Neurologia</h4>
 					</div>
@@ -195,10 +197,11 @@
 							<img src="img/team/member1.png" height="100" width="100">
 						</div>
 						<div class="author_decs">
-							<h4>Maria Clara </h4>
+							<h4>Maria Clara</h4>
 							<p class="profession">Gerente de RH</p>
-							<p>Gostei bastante do atendimento do médico. É um profissional muito competente, pontual e
-							 simpático. Recomendo! Só tenho a agradecer. Parabéns!</p>
+							<p>Gostei bastante do atendimento do médico. É um
+								profissional muito competente, pontual e simpático. Recomendo!
+								Só tenho a agradecer. Parabéns!</p>
 						</div>
 					</div>
 				</div>
@@ -210,10 +213,9 @@
 						<div class="author_decs">
 							<h4>Eduardo Monteiro</h4>
 							<p class="profession">Sr. Análise de dados</p>
-							<p>O Dr. passa confiança e domínio do assunto. 
-							Muito profissional e preocupado em tirar todas as dúvidas e deixar tudo
-							 claro para o paciente. Estou satisfeito.
-							</p>
+							<p>O Dr. passa confiança e domínio do assunto. Muito
+								profissional e preocupado em tirar todas as dúvidas e deixar
+								tudo claro para o paciente. Estou satisfeito.</p>
 						</div>
 					</div>
 				</div>
@@ -225,9 +227,9 @@
 						<div class="author_decs">
 							<h4>Stephanie Souza</h4>
 							<p class="profession">Analista de Marketing</p>
-							<p>Ótima profissional.
-								A Dra me atendeu com pontualidade, muita atenção 
-								e com domínio na área especializada. Para uma primeira consulta, fiquei muito satisfeita.</p>
+							<p>Ótima profissional. A Dra me atendeu com pontualidade,
+								muita atenção e com domínio na área especializada. Para uma
+								primeira consulta, fiquei muito satisfeita.</p>
 						</div>
 					</div>
 				</div>
@@ -239,8 +241,9 @@
 						<div class="author_decs">
 							<h4>Marcelo Ribeiro</h4>
 							<p class="profession">Professor de Direito</p>
-							<p> Explica tudo com detalhes e paciência. As recomendações dela foram fundamentais para 
-							 a mudança de estilo de vida que tinha prometido a mim mesma! </p>
+							<p>Explica tudo com detalhes e paciência. As recomendações
+								dela foram fundamentais para a mudança de estilo de vida que
+								tinha prometido a mim mesma!</p>
 						</div>
 					</div>
 				</div>
@@ -250,7 +253,7 @@
 	<!--================ Fim Area Contador =================-->
 	<!--================ Includes de Footer e Modal de Login =================-->
 	<jsp:include page="includes/footer.jsp" />
-	<jsp:include page="includes/login.jsp" />	
+	<jsp:include page="includes/login.jsp" />
 	<jsp:include page="includes/opcoes.jsp" />
 </body>
 </html>

@@ -20,12 +20,14 @@ public class BuscaController {
 	@Autowired
 	MedicoService medicoService;
 
+	/**
+	 * Método principal de busca, no mesmo é verificado filtro
+	 */
 	@RequestMapping(value = "/buscaPrincipal", method = { RequestMethod.POST })
 	public String buscaPrincipal(ModelMap model, Medico medico, String busca, String especialidade, String bairros) {
 		busca = medico.getNome();
 		try {
 			model.clear();
-			System.out.println(busca);
 			String buscaPalavra;
 			// Retirando espaço do inicio e do final da palavra
 			buscaPalavra = busca.trim();
@@ -39,9 +41,7 @@ public class BuscaController {
 			} else if (bairros != "" && bairros != null) {
 				filtroBairro(model, buscaPalavra, bairros);
 			} else {
-				System.out.println("---Sem filtro---");
 				if (buscaPalavra.equals("")) {
-					// model.put("medicos", medicoService.listaMedicos());
 					return resultadoBusca(model);
 				} else {
 					// contando quantas palavras tem
@@ -112,7 +112,6 @@ public class BuscaController {
 						System.out.println("Quatro palavra");
 						model.put("medicos", buscaService.quatroPalavrasNomeEspecialidadeBairro(buscaPalavra));
 						if (model.get("medicos").toString().length() != 2) {
-							System.out.println("to aqui");
 							return resultadoBusca(model);
 						}
 						model.put("medicos", buscaService.quatroPalavrasNomeEspecialidade(buscaPalavra));
@@ -133,7 +132,6 @@ public class BuscaController {
 						System.out.println("Cinco palavra");
 						model.put("medicos", buscaService.cincoPalavrasNomeEspecialidadeBairro(buscaPalavra));
 						if (model.get("medicos").toString().length() != 2) {
-							System.out.println("to aqui");
 							return resultadoBusca(model);
 						}
 						model.put("medicos", buscaService.cincoPalavrasNomeEspecialidade(buscaPalavra));
@@ -154,7 +152,6 @@ public class BuscaController {
 						System.out.println("Seis palavra");
 						model.put("medicos", buscaService.seisPalavrasNomeEspecialidadeBairro(buscaPalavra));
 						if (model.get("medicos").toString().length() != 2) {
-							System.out.println("to aqui");
 							return resultadoBusca(model);
 						}
 						model.put("medicos", buscaService.seisPalavrasNomeEspecialidade(buscaPalavra));
@@ -309,6 +306,7 @@ public class BuscaController {
 				model.put("medicos", buscaService.umaPalavra(buscaPalavra));
 				return resultadoBusca(model);
 			case 2:
+				System.out.println("Duas palavra");
 				model.put("medicos", buscaService.duasPalavrasNomeBairro(buscaPalavra));
 				if (model.get("medicos").toString().length() != 2) {
 					return resultadoBusca(model);
@@ -339,7 +337,6 @@ public class BuscaController {
 				System.out.println("Quatro palavra");
 				model.put("medicos", buscaService.quatroPalavrasNomeEspecialidadeBairro(buscaPalavra));
 				if (model.get("medicos").toString().length() != 2) {
-					System.out.println("to aqui");
 					return resultadoBusca(model);
 				}
 				model.put("medicos", buscaService.quatroPalavrasNomeBairro(buscaPalavra));
@@ -356,7 +353,6 @@ public class BuscaController {
 				System.out.println("Cinco palavra");
 				model.put("medicos", buscaService.cincoPalavrasNomeEspecialidadeBairro(buscaPalavra));
 				if (model.get("medicos").toString().length() != 2) {
-					System.out.println("to aqui");
 					return resultadoBusca(model);
 				}
 				model.put("medicos", buscaService.cincoPalavrasNomeBairro(buscaPalavra));
@@ -373,7 +369,6 @@ public class BuscaController {
 				System.out.println("Seis palavra");
 				model.put("medicos", buscaService.seisPalavrasNomeEspecialidadeBairro(buscaPalavra));
 				if (model.get("medicos").toString().length() != 2) {
-					System.out.println("to aqui");
 					return resultadoBusca(model);
 				}
 				model.put("medicos", buscaService.seisPalavrasNomeBairro(buscaPalavra));
@@ -512,7 +507,6 @@ public class BuscaController {
 				System.out.println("Quatro palavra");
 				model.put("medicos", buscaService.quatroPalavrasNomeEspecialidadeBairro(buscaPalavra));
 				if (model.get("medicos").toString().length() != 2) {
-					System.out.println("to aqui");
 					return resultadoBusca(model);
 				}
 				model.put("medicos", buscaService.quatroPalavrasNomeEspecialidade(buscaPalavra));
@@ -529,7 +523,6 @@ public class BuscaController {
 				System.out.println("Cinco palavra");
 				model.put("medicos", buscaService.cincoPalavrasNomeEspecialidadeBairro(buscaPalavra));
 				if (model.get("medicos").toString().length() != 2) {
-					System.out.println("to aqui");
 					return resultadoBusca(model);
 				}
 				model.put("medicos", buscaService.cincoPalavrasNomeEspecialidade(buscaPalavra));
@@ -546,7 +539,6 @@ public class BuscaController {
 				System.out.println("Seis palavra");
 				model.put("medicos", buscaService.seisPalavrasNomeEspecialidadeBairro(buscaPalavra));
 				if (model.get("medicos").toString().length() != 2) {
-					System.out.println("to aqui");
 					return resultadoBusca(model);
 				}
 				model.put("medicos", buscaService.seisPalavrasNomeEspecialidade(buscaPalavra));
@@ -674,7 +666,6 @@ public class BuscaController {
 				System.out.println("Quatro palavra");
 				model.put("medicos", buscaService.quatroPalavrasNomeEspecialidadeBairro(buscaPalavra));
 				if (model.get("medicos").toString().length() != 2) {
-					System.out.println("to aqui");
 					return resultadoBusca(model);
 				}
 				model.put("medicos", buscaService.quatroPalavrasBairroEspecialidade(buscaPalavra));
@@ -687,7 +678,6 @@ public class BuscaController {
 				System.out.println("Cinco palavra");
 				model.put("medicos", buscaService.cincoPalavrasNomeEspecialidadeBairro(buscaPalavra));
 				if (model.get("medicos").toString().length() != 2) {
-					System.out.println("to aqui");
 					return resultadoBusca(model);
 				}
 				model.put("medicos", buscaService.cincoPalavrasBairroEspecialidade(buscaPalavra));
@@ -700,7 +690,6 @@ public class BuscaController {
 				System.out.println("Seis palavra");
 				model.put("medicos", buscaService.seisPalavrasNomeEspecialidadeBairro(buscaPalavra));
 				if (model.get("medicos").toString().length() != 2) {
-					System.out.println("to aqui");
 					return resultadoBusca(model);
 				}
 				model.put("medicos", buscaService.seisPalavrasBairroEspecialidade(buscaPalavra));

@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
       .antMatchers("/", "/autenticar", "/infosMedico", "/cadastro", "/novoPaciente", "/novoMedico", "/novaClinica", "/buscaPrincipal",
     		  "/selecionaMedico", "/cadastraMedico", "/cadastraPaciente", "/cadastraClinica","/error", "/index_medico").permitAll()
       .antMatchers("/novaAvaliacao","/cadastraAvaliacao","/sair").permitAll()//Somente TESTE
-      .antMatchers("redirect:/","/selecionaPaciente").permitAll()
+      .antMatchers("redirect:/","/selecionaPaciente","/listaAvaliacoesDoMedico").permitAll()
       .antMatchers(HttpMethod.POST, "/api/login").permitAll()
       .antMatchers(HttpMethod.POST, "/api/usuario").permitAll()
       .antMatchers(HttpMethod.POST, "/api/paciente").permitAll()

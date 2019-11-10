@@ -168,7 +168,7 @@ public class PesquisaSatisfacaoController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping(value = "/validaAvaliacao", method = { RequestMethod.POST })
+	@RequestMapping(value = "/validaAvaliacao", method = { RequestMethod.GET })
 	public String validaPesquisaSatisfacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao, Medico medico, HttpSession session) {
 		try {
 			pesquisaSatisfacao = (PesquisaSatisfacao) model.get("pesquisaSatisfacao");
@@ -189,7 +189,7 @@ public class PesquisaSatisfacaoController {
 			e.printStackTrace();
 		}
 		//return listaAvaliacoes(model);
-		return "redirect:/index_medico";
+		return "redirect:/listaAvaliacoesDoMedico";
 	}
 
 	
@@ -201,7 +201,7 @@ public class PesquisaSatisfacaoController {
 	 * @param session
 	 * @return
 	 */
-	@RequestMapping(value = "/rejeitaAvaliacao", method = { RequestMethod.POST })
+	@RequestMapping(value = "/rejeitaAvaliacao", method = { RequestMethod.GET })
 	public String RejeitaPesquisaSatisfacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao, HttpSession session) {
 		try {
 			pesquisaSatisfacao = (PesquisaSatisfacao) model.get("pesquisaSatisfacao");
@@ -222,7 +222,7 @@ public class PesquisaSatisfacaoController {
 			e.printStackTrace();	
 		}
 		//return listaAvaliacoes(model);
-		return "redirect:/index_medico";
+		return "redirect:/listaAvaliacoesDoMedico";
 	}
 	
 	

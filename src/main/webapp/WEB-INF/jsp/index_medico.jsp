@@ -43,21 +43,26 @@
 							<div class="card__padding">
 								<!-- O IF PARA REPETIR A PERGUNTA QUANDO TIVER PERGUNTAS PENDENTES DEVE INICIAR ANTES DESSA DIV -->
 								<c:forEach items="${pesquisaSatisfacao}" var="p">
-								<form class="col-md-12" method="post">
+								<form class="col-md-12" method="get">
 									<div class="row">
 										<div class="col-md-8">
 											<br>
 											<h4>
-												O paciente <b>${paciente.nome} ${paciente.sobrenome}</b> foi
-												atendido por você no dia ${pesquisaSatisfacao.descricao}?
+												O paciente <b>${p.paciente.nome} ${p.paciente.sobrenome}</b> foi
+												atendido por você no dia ${p.descricao}?
 											</h4>
 										</div>
+										
+										<input type="hidden"
+											class="single-input" id="id" name="id" placeholder="id" value="${p.id}"
+											required />
+										
 										<div class="col-md-2 text-center">
-											<button type="submit" name="statusAvaliacao"
+											<button type="submit" name="statusAvaliacao" formaction="/validaAvaliacao"
 												value="/validaAvaliacao" class="primary-btn text-uppercase">SIM</button>
 										</div>
 										<div class="col-md-2 text-center">
-											<button type="submit" name="statusAvaliacao"
+											<button type="submit" name="statusAvaliacao" formaction="/rejeitaAvaliacao"
 												value="/rejeitaAvaliacao" class="primary-btn text-uppercase">NÃO</button>
 										</div>
 									</div>

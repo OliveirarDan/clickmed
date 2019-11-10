@@ -17,7 +17,7 @@ public interface PesquisaSatisfacaoDAO extends JpaRepository<PesquisaSatisfacao,
 	
 	public List<PesquisaSatisfacao> findPesquisaSatisfacaoByPaciente(Paciente paciente);
 	
-	@Query ("SELECT u from pesquisas_pacientes u "
+	@Query ("SELECT u from PesquisaSatisfacao u "
 			+ "where u.respostamed like %:respostamed% ")
 	public List<PesquisaSatisfacao> findPesquisaSatisfacaoParaValidacao(String respostamed);
 	

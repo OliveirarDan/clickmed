@@ -75,15 +75,19 @@ public class PesquisaSatisfacaoController {
 			paciente = pacienteService.buscaPaciente(pesquisaSatisfacao.getPaciente().getId());
 			pesquisaSatisfacao.setMedico(medico);
 			pesquisaSatisfacao.setPaciente(paciente);
-			pesquisaSatisfacao.setDescricao(utils.dataAtual());
-			System.out.println("TESTE objetos");
+			
+			/**
+			 * Campo para atualização do status da avaliação
+			 * 0 - Avaliação realizada, porém não validada
+			 * 1 - Avaliação aceitada pelo médico
+			 * 2 - Avaliação contestada e não aceita pelo médico
+			 */
+			pesquisaSatisfacao.setRespostamed("0");
+			
+			
+			// campo comentado para data de avaliação;
+			//pesquisaSatisfacao.setDescricao(utils.dataAtual());
 			System.out.println(pesquisaSatisfacao.toString());
-			
-			System.out.println("fim teste");
-		
-			
-			//System.out.println(paciente);
-			//System.out.println(pesquisaSatisfacao);
 			pesquisaSatisfacaoService.inserePS(pesquisaSatisfacao);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -93,7 +97,7 @@ public class PesquisaSatisfacaoController {
 	}
 	
 	/**
-	 * ----TESTANDO----	Falta criar tela lista-pesquisaSatisfacao
+	 * Lista todas as avaliações
 	 * @param model
 	 * @return
 	 */
@@ -104,7 +108,7 @@ public class PesquisaSatisfacaoController {
 	}
 	
 	/**
-	 * ----TESTANDO----	Falta criar tela edicao-pesquisaSatisfacao
+	 *Edita Avaliação
 	 * @param model
 	 * @return
 	 */
@@ -119,14 +123,13 @@ public class PesquisaSatisfacaoController {
 	
 	
 	/**
-	 * ----TESTANDO----
-	 * -----ATENçÃO------
+	 
 	 * Neste método é necessário ter todos os dados do pesquisaSatisfacao antes de modificalo no BD,
 	 * Você pode usar uma variável nPesquisaSatisfacao para carregar os itens pelo id e depois altera-lo.
 	 * Ou pode pegar a entidade completa da VIEW.
 	 * 
 	 */
-	@RequestMapping(value = "/salvaSalvaAvaliacao", method = { RequestMethod.POST })
+	@RequestMapping(value = "/salvaAvaliacao", method = { RequestMethod.POST })
 	public String salvaAvaliacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao) throws IOException {
 		//nPesquisaSatisfacao criada para armazenar o pesquisaSatisfacao atualizado da View temporariamente		
 		PesquisaSatisfacao nPesquisaSatisfacao = pesquisaSatisfacao;
@@ -145,7 +148,7 @@ public class PesquisaSatisfacaoController {
 	
 	
 	/**
-	 * ----TESTANDO----	Falta criar tela edicao-pesquisaSatisfacao
+	 * remove Avaliação
 	 * @param model
 	 * @return
 	 */	
@@ -155,6 +158,79 @@ public class PesquisaSatisfacaoController {
 		return listaAvaliacoes(model);
 	}
 	
+	
+	/**
+	 * Valida a Avaliação - Criado para o medico permitir a exibição da avaliação
+	 * @param model
+	 * @param pesquisaSatisfacao
+	 * @param medico
+	 * @param paciente
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value = "/validaAvaliacao", method = { RequestMethod.POST })
+	public String validaPesquisaSatisfacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao, Medico medico, HttpSession session) {
+		try {
+			pesquisaSatisfacao = (PesquisaSatisfacao) model.get("pesquisaSatisfacao");
+			//Carregando o objeto pesquisaSatisfacao completo do banco
+			pesquisaSatisfacao = pesquisaSatisfacaoService.buscaPS(pesquisaSatisfacao.getId());
+			
+			/**
+			 * Campo para atualização do status da avaliação
+			 * 0 - Avaliação realizada, porém não validada
+			 * 1 - Avaliação aceitada pelo médico
+			 * 2 - Avaliação contestada e não aceita pelo médico
+			 */
+			pesquisaSatisfacao.setRespostamed("1");
+			
+			System.out.println(pesquisaSatisfacao.toString());
+			pesquisaSatisfacaoService.atualizaPS(pesquisaSatisfacao);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		//return listaAvaliacoes(model);
+		return "redirect:/index_medico";
+	}
+
+	
+	
+	/**
+	 * Rejeita a Avaliação - Para quando o médico nã reconhece o paciente ou a data de atendimento.
+	 * @param model
+	 * @param pesquisaSatisfacao
+	 * @param session
+	 * @return
+	 */
+	@RequestMapping(value = "/rejeitaAvaliacao", method = { RequestMethod.POST })
+	public String RejeitaPesquisaSatisfacao(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao, HttpSession session) {
+		try {
+			pesquisaSatisfacao = (PesquisaSatisfacao) model.get("pesquisaSatisfacao");
+			//Carregando o objeto pesquisaSatisfacao completo do banco
+			pesquisaSatisfacao = pesquisaSatisfacaoService.buscaPS(pesquisaSatisfacao.getId());
+			
+			/**
+			 * Campo para atualização do status da avaliação
+			 * 0 - Avaliação realizada, porém não validada
+			 * 1 - Avaliação aceitada pelo médico
+			 * 2 - Avaliação contestada e não aceita pelo médico
+			 */
+			pesquisaSatisfacao.setRespostamed("2");
+			
+			System.out.println(pesquisaSatisfacao.toString());
+			pesquisaSatisfacaoService.atualizaPS(pesquisaSatisfacao);
+		} catch (IOException e) {
+			e.printStackTrace();	
+		}
+		//return listaAvaliacoes(model);
+		return "redirect:/index_medico";
+	}
+	
+	
+	@RequestMapping(value = "/listaAvaliacoesDoMedico", method = { RequestMethod.GET })
+	public String listaAvaliacoesDoMedico(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao, Medico medico, HttpSession session) {
+		model.put("pesquisaSatisfacao", this.pesquisaSatisfacaoService.listaPSsValidacao());
+		return "index_medico";
+	}
 	
 	
 }

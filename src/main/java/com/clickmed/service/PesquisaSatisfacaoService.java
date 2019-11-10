@@ -90,19 +90,28 @@ public class PesquisaSatisfacaoService {
 		return this.psDAO.findAll();
 	}
 	
+	/**
+	 * Lista todas as pesquisas de satisfacao
+	 * 
+	 * @return
+	 */
+	public List<PesquisaSatisfacao> listaPSsValidacao() {
+		return this.psDAO.findPesquisaSatisfacaoParaValidacao("0");
+	}
+	
+	
 	
 	/**
-	 *  ----- Testando -----  Lista todas as avaliações de um determinado médico
+	 * Lista todas as avaliações de um determinado médico
 	 * @param medico
 	 * @return List de Avalições do	 Medico
 	 */
 	public List<PesquisaSatisfacao> listaPSByMedico(Medico medico) {
 		return this.psDAO.findPesquisaSatisfacaoByMedico(medico);
-		
 	}
 
 	/**
-	 * ----- Testando -------- Lista todas as avaliações realizadas por um determinado paciente
+	 * Lista todas as avaliações realizadas por um determinado paciente
 	 * @param paciente
 	 * @return List de Avaliações do paciente
 	 */

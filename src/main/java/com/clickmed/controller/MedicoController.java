@@ -80,6 +80,13 @@ public class MedicoController {
 
 		return "infos-medico";
 	}
+	
+	
+	@RequestMapping(value = "/indexMedico", method = RequestMethod.GET)
+	public String indexMedico(ModelMap model, HttpSession session) {
+
+		return "index_medico";
+	}
 
 	/**
 	 * Este método lista tudo

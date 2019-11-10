@@ -77,7 +77,7 @@ public class UsuarioController {
 			model.addAttribute("medico", medicoAutenticado);
 			session.setAttribute("medico", medicoAutenticado);
 			System.out.println("Logou como médico!");
-			return "redirect:/infosMedico";
+			return "/listaAvaliacoesDoMedico";
 		}
 		
 		// Verifica se o usuário é paciente

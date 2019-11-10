@@ -95,8 +95,17 @@ public class PesquisaSatisfacaoService {
 	 * 
 	 * @return
 	 */
-	public List<PesquisaSatisfacao> listaPSsValidacao() {
-		return this.psDAO.findPesquisaSatisfacaoParaValidacao("0");
+	public List<PesquisaSatisfacao> listaPSsValidacao(Medico medico) {
+		return this.psDAO.findPesquisaSatisfacaoByMedicoParaValidacao(medico.getId(),"0");
+	}
+	
+	/**
+	 * Lista todas as pesquisas de satisfacao que foram validadas
+	 * 
+	 * @return
+	 */
+	public List<PesquisaSatisfacao> listaPSsValidadas(Medico medico) {
+		return this.psDAO.findPesquisaSatisfacaoByMedicoParaValidacao(medico.getId(),"1");
 	}
 	
 	

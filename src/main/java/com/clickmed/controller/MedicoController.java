@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.clickmed.entity.Medico;
+import com.clickmed.entity.PesquisaSatisfacao;
 import com.clickmed.service.MedicoService;
 import com.clickmed.service.PesquisaSatisfacaoService;
 
@@ -50,11 +51,11 @@ public class MedicoController {
 	}
 
 	@RequestMapping(value = "/selecionaMedico", method = RequestMethod.GET)
-	public String selecionaMedico(Medico medico, ModelMap model, HttpSession session) {
+	public String selecionaMedico(Medico medico, ModelMap model, HttpSession session, PesquisaSatisfacao pesquisaSatisfacao) {
 		medico = medicoService.buscaMedico(medico.getId());
 		System.out.println(medico.toString());
 		model.addAttribute(medico);
-		model.put("avaliacoes", pesquisaSatisfacaoService.listaPSByMedico(medico));
+		model.put("avaliacoes", pesquisaSatisfacaoService.listaPSsValidadas(medico));
 		System.out.println(pesquisaSatisfacaoService.listaPSByMedico(medico));
 		return "infos-medico";
 	}

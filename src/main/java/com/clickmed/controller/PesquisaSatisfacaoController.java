@@ -16,6 +16,7 @@ import com.clickmed.entity.Medico;
 
 import com.clickmed.entity.Paciente;
 import com.clickmed.entity.PesquisaSatisfacao;
+import com.clickmed.entity.Usuario;
 import com.clickmed.service.MedicoService;
 import com.clickmed.service.PacienteService;
 import com.clickmed.service.PesquisaSatisfacaoService;
@@ -228,8 +229,21 @@ public class PesquisaSatisfacaoController {
 	
 	@RequestMapping(value = "/listaAvaliacoesDoMedico", method = { RequestMethod.GET })
 	public String listaAvaliacoesDoMedico(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao, Medico medico, HttpSession session) {
-		model.put("pesquisaSatisfacao", this.pesquisaSatisfacaoService.listaPSsValidacao());
+		model.put("pesquisaSatisfacao", this.pesquisaSatisfacaoService.listaPSsValidacao(medico));
+		System.out.println(pesquisaSatisfacaoService.listaPSsValidacao(medico));
+		Usuario usuario = (Usuario) session.getAttribute("usuarioAutenticado");
+		medico = medicoService.buscaMedicoPorUsuario(usuario);
+		
+		model.addAttribute(medico);
+//		
+//		if (pesquisaSatisfacaoService.listaPSsValidacao(medico).toString().equals("[]")) {
+//			return "redirect:/selecionaMedico";
+//		}else {
+//			return "index_medico";
+//		}
+		
 		return "index_medico";
+		
 	}
 	
 	

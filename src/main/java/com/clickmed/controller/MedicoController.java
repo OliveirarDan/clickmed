@@ -58,9 +58,17 @@ public class MedicoController {
 		medico = medicoService.buscaMedico(medico.getId());
 		model.addAttribute(medico);
 		model.put("avaliacoes", pesquisaSatisfacaoService.listaPSsValidadas(medico));
-		double d = Double.parseDouble(pesquisaSatisfacaoService.calculaMediaAvaliacoesValidadas(medico));
-		DecimalFormat df = new DecimalFormat ("#.##");
-		model.put("media", df.format(d));
+		//System.out.println("Testando:" + Double.parseDouble(pesquisaSatisfacaoService.calculaMediaAvaliacoesValidadas(medico)));
+		if(pesquisaSatisfacaoService.calculaMediaAvaliacoesValidadas(medico) != null) {
+			double d = Double.parseDouble(pesquisaSatisfacaoService.calculaMediaAvaliacoesValidadas(medico));
+			DecimalFormat df = new DecimalFormat ("#.##");
+			model.put("media", df.format(d));
+		}else {
+			model.put("media", "S/N");
+		}
+		
+		
+		
 		return "infos-medico";
 	}
 	

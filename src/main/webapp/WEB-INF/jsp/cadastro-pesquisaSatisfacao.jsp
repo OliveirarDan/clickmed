@@ -161,24 +161,6 @@
 								</div>
 							</div>
 						</div>
-						<!-- 	<div class="col-md-4"> -->
-						<!-- Segundo card da primeira linha -->
-						<!--  <div class="row">
-							<div class="card_avaliacao">
-								<h5> Como sua avaliação pode nos ajudar?</h5>
-									<ul>
-										<li class="li">Verificar se vale a pena aquele profissional estar no nosso i</li>
-										<li class="li">Pontos que podem ajudar</li>
-									</ul>
-									<br>
-								<h5> Como sua avaliação pode ajudar demais pacientes? </h5>	
-									<ul>
-										<li class="li"></li>
-										<li class="li">Pontos que podem ajudar</li>
-									</ul>
-							</div>
-						</div>
-					</div> -->
 					</form>
 				</div>
 

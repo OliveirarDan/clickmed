@@ -42,6 +42,7 @@ public class BuscaController {
 				filtroBairro(model, buscaPalavra, bairros);
 			} else {
 				if (buscaPalavra.equals("")) {
+					model.put("medicos", medicoService.listaMedicos());
 					return resultadoBusca(model);
 				} else {
 					// contando quantas palavras tem

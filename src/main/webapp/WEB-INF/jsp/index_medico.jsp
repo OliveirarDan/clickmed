@@ -41,7 +41,6 @@
 						<div class="card_resposta"
 							style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24)">
 							<div class="card__padding">
-								<!-- O IF PARA REPETIR A PERGUNTA QUANDO TIVER PERGUNTAS PENDENTES DEVE INICIAR ANTES DESSA DIV -->
 								<c:forEach items="${pesquisaSatisfacao}" var="p">
 									<form class="col-md-12" method="get">
 										<div class="row">
@@ -70,15 +69,15 @@
 										</div>
 									</form>
 								</c:forEach>
+								<c:if test="${empty pesquisaSatisfacao}">
+									<h2 class="obs_index">No momento não há nenhuma requisição
+										pendente.</h2>
+								</c:if>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
-
-
-
 		</div>
 	</section>
 
@@ -94,12 +93,12 @@
 						<div class="card_resposta"
 							style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24)">
 							<div class="card__padding">
-								<!-- O IF PARA REPETIR A PERGUNTA QUANDO TIVER PERGUNTAS PENDENTES DEVE INICIAR ANTES DESSA DIV -->
 								<div class="row">
 									<c:forEach items="${pesquisasValidadas}" var="a">
 										<hr class="line">
 										<div class="col-md-12">
-											<h5>Nome do usuário: ${a.paciente.nome}    -    Nota: ${a.pergunta1}</h5>
+											<h5>Nome do usuário: ${a.paciente.nome} - Nota:
+												${a.pergunta1}</h5>
 											<p>Comentário do usuário: ${a.comentario}</p>
 											<p>Características: ${a.avaliacao}</p>
 											<p>${a.descricao}</p>
@@ -111,16 +110,16 @@
 											</c:forEach>
 										</div>
 									</c:forEach>
+									<c:if test="${empty pesquisasValidadas}">
+										<h2 class="obs_index">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNenhuma
+											avaliação validada até o momento.</h2>
+									</c:if>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
-
-
-
 		</div>
 	</section>
 

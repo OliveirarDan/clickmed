@@ -26,4 +26,9 @@ public interface PesquisaSatisfacaoDAO extends JpaRepository<PesquisaSatisfacao,
 			+ "m.id like :id")
 	public List<PesquisaSatisfacao> findPesquisaSatisfacaoByMedicoParaValidacao(Long id, String respostamed);
 	
+	@Query ("SELECT AVG(u.pergunta1) from PesquisaSatisfacao u inner join u.medico m "
+			+ "where u.respostamed = 1 and "
+			+ "m.id like :id")
+	public String mediaAtendimentoValidado(Long id);
+	
 }

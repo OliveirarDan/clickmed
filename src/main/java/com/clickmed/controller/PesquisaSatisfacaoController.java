@@ -229,12 +229,12 @@ public class PesquisaSatisfacaoController {
 	
 	@RequestMapping(value = "/listaAvaliacoesDoMedico", method = { RequestMethod.GET })
 	public String listaAvaliacoesDoMedico(ModelMap model, PesquisaSatisfacao pesquisaSatisfacao, Medico medico, HttpSession session) {
-		model.put("pesquisaSatisfacao", this.pesquisaSatisfacaoService.listaPSsValidacao(medico));
 		System.out.println(pesquisaSatisfacaoService.listaPSsValidacao(medico));
 		Usuario usuario = (Usuario) session.getAttribute("usuarioAutenticado");
 		medico = medicoService.buscaMedicoPorUsuario(usuario);
-		
 		model.addAttribute(medico);
+		model.put("pesquisaSatisfacao", this.pesquisaSatisfacaoService.listaPSsValidacao(medico));
+		model.put("pesquisasValidadas", this.pesquisaSatisfacaoService.listaPSsValidadas(medico));
 //		
 //		if (pesquisaSatisfacaoService.listaPSsValidacao(medico).toString().equals("[]")) {
 //			return "redirect:/selecionaMedico";

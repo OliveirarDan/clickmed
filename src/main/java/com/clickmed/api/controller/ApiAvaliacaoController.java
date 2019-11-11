@@ -55,16 +55,16 @@ public class ApiAvaliacaoController {
 
 	/**
 	  *Insere uma avaliação
-	  *@param psSatisfacao
+	  *@param pSatisfacao
 	  *@return a avaliação inserida
 	 **/
 	@RequestMapping(method = RequestMethod.POST, value = "/api/avaliacao", headers = "Accept=application/json")
 	public @ResponseBody PesquisaSatisfacao inserirAvaliacao(@RequestBody PesquisaSatisfacao pSatisfacao) {
 		try {
-			pSatisfacao.setDescricao(utils.dataAtual());
+//			pSatisfacao.setDescricao(utils.dataAtual());
 			System.out.println("Pesquisa Satisfacao recebida: " + pSatisfacao.toString());
-			System.out.println("Paciente id: " + pSatisfacao.getPaciente().getId().toString());
-			Paciente paciente = pacienteService.buscaPaciente(pSatisfacao.getPaciente().getId());
+			int id = 989;
+			Paciente paciente = pacienteService.buscaPaciente((long) id);
 			Medico medico = medicoService.buscaMedico(pSatisfacao.getMedico().getId());
 			pSatisfacao.setMedico(medico);
 			pSatisfacao.setPaciente(paciente);

@@ -3,6 +3,11 @@ package com.clickmed.api.controller;
 import java.io.IOException;
 import java.util.List;
 
+import com.clickmed.entity.Medico;
+import com.clickmed.entity.Paciente;
+import com.clickmed.service.MedicoService;
+import com.clickmed.service.PacienteService;
+import com.clickmed.utils.Utilidades;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +24,15 @@ public class ApiAvaliacaoController {
 
 	@Autowired
 	PesquisaSatisfacaoService psService;
-	
+
+	@Autowired
+	PacienteService pacienteService;
+
+	@Autowired
+	MedicoService medicoService;
+
+	Utilidades utils = new Utilidades();
+
 	/**
 	 * Lista todas as avaliações cadastradas no banco
 	 * @return Lista de avaliações
@@ -30,7 +43,7 @@ public class ApiAvaliacaoController {
 		List<PesquisaSatisfacao> avaliacoes = psService.listaPSs();
 		return avaliacoes;
 	}
-	
+
 	/**
 	 * Busca uma avaliação através do seu ID
 	 * @param id
@@ -42,25 +55,26 @@ public class ApiAvaliacaoController {
 		PesquisaSatisfacao psSatisfacao = psService.buscaPS(id);
 		return psSatisfacao;
 	}
-	
-	
+
+
 	/**
 	  *Insere uma avaliação
-	  *@param psSatisfacao
+	  *@param pSatisfacao
 	  *@return a avaliação inserida
 	 **/
 	@RequestMapping(method = RequestMethod.POST, value = "/api/avaliacao", headers = "Accept=application/json")
 	public @ResponseBody PesquisaSatisfacao inserirAvaliacao(@RequestBody PesquisaSatisfacao pSatisfacao) {
 		try {
-			System.out.println("Pesquisa Satisfacao recebida: " + pSatisfacao.toString());
-			psService.inserePS(pSatisfacao);	
+			Medico medico = medicoService.buscaMedico(pSatisfacao.getMedico().getId());
+			Paciente paciente = pacienteService.buscaPaciente(pSatisfacao.getPaciente().getId());
+			pSatisfacao.setMedico(medico);
+			pSatisfacao.setPaciente(paciente);
+			psService.inserePS(pSatisfacao);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return pSatisfacao;
 	}
-	
-	
 	
 	/**
 	 * Atualiza a avaliação de acordo com o objeto PesquisaSatisfacao recebido
@@ -97,8 +111,4 @@ public class ApiAvaliacaoController {
 		}
 		return "Avaliacao removida com sucesso";
 	}
-	
-	 
-	
-	
 }

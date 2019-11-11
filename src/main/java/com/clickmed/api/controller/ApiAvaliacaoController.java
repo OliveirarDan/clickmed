@@ -24,7 +24,11 @@ public class ApiAvaliacaoController {
 
 	@Autowired
 	PesquisaSatisfacaoService psService;
+
+	@Autowired
 	PacienteService pacienteService;
+
+	@Autowired
 	MedicoService medicoService;
 
 	Utilidades utils = new Utilidades();
@@ -61,26 +65,16 @@ public class ApiAvaliacaoController {
 	@RequestMapping(method = RequestMethod.POST, value = "/api/avaliacao", headers = "Accept=application/json")
 	public @ResponseBody PesquisaSatisfacao inserirAvaliacao(@RequestBody PesquisaSatisfacao pSatisfacao) {
 		try {
-//			pSatisfacao.setDescricao(utils.dataAtual());
-			System.out.println("Pesquisa Satisfacao recebida: " + pSatisfacao.toString());
-			int id = 989;
-			Paciente paciente = pacienteService.buscaPaciente((long) id);
 			Medico medico = medicoService.buscaMedico(pSatisfacao.getMedico().getId());
+			Paciente paciente = pacienteService.buscaPaciente(pSatisfacao.getPaciente().getId());
 			pSatisfacao.setMedico(medico);
 			pSatisfacao.setPaciente(paciente);
-
-
-			System.out.println("Avaliacao a ser cadastrada: " + pSatisfacao);
-
 			psService.inserePS(pSatisfacao);
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return pSatisfacao;
 	}
-	
-	
 	
 	/**
 	 * Atualiza a avaliação de acordo com o objeto PesquisaSatisfacao recebido
@@ -117,8 +111,4 @@ public class ApiAvaliacaoController {
 		}
 		return "Avaliacao removida com sucesso";
 	}
-	
-	 
-	
-	
 }

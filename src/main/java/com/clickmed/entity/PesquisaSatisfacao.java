@@ -1,5 +1,7 @@
 package com.clickmed.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -28,15 +30,14 @@ public class PesquisaSatisfacao {
 	private double pergunta5;
 	private String comentario;
 
+	@Column(columnDefinition = "TEXT")
+	private String descricao;
 
 	@ManyToOne
 	private Medico medico;
 
 	@ManyToOne
 	private Paciente paciente;
-
-	@Column(columnDefinition = "TEXT")
-	private String descricao;
 
 	public PesquisaSatisfacao(Long id, String avaliacao, String respostamed, double pergunta1, double pergunta2,
 			double pergunta3, double pergunta4, double pergunta5, String comentario, Medico medico, Paciente paciente,
@@ -119,7 +120,6 @@ public class PesquisaSatisfacao {
 	public void setPergunta1(double pergunta1) {
 		this.pergunta1 = pergunta1;
 	}
-	
 
 	public void setRespostamed(String respostamed) {
 		this.respostamed = respostamed;

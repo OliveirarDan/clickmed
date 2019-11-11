@@ -1,7 +1,10 @@
 package com.clickmed.controller;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
+
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -53,10 +56,11 @@ public class MedicoController {
 	@RequestMapping(value = "/selecionaMedico", method = RequestMethod.GET)
 	public String selecionaMedico(Medico medico, ModelMap model, HttpSession session, PesquisaSatisfacao pesquisaSatisfacao) {
 		medico = medicoService.buscaMedico(medico.getId());
-		System.out.println(medico.toString());
 		model.addAttribute(medico);
 		model.put("avaliacoes", pesquisaSatisfacaoService.listaPSsValidadas(medico));
-		System.out.println(pesquisaSatisfacaoService.listaPSByMedico(medico));
+		double d = Double.parseDouble(pesquisaSatisfacaoService.calculaMediaAvaliacoesValidadas(medico));
+		DecimalFormat df = new DecimalFormat ("#.##");
+		model.put("media", df.format(d));
 		return "infos-medico";
 	}
 	

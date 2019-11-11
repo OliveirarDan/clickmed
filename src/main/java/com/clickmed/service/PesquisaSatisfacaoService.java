@@ -129,5 +129,15 @@ public class PesquisaSatisfacaoService {
 	}
 	
 	
+	/**
+	 * Calcula a média das avaliações que foram validadas -  que contenham o código 1
+	 * @param medico
+	 * @return
+	 */
+	public String calculaMediaAvaliacoesValidadas(Medico medico) {
+		return this.psDAO.mediaAtendimentoValidado(medico.getId());
+	}
+	
+	
 	
 }

@@ -136,7 +136,7 @@
 						<div class="center">
 							<div class="circle">
 								<div class="nota">
-									<h1 id="nota">4,57</h1>
+									<h1 id="nota">${media}</h1>
 								</div>
 							</div>
 						</div>

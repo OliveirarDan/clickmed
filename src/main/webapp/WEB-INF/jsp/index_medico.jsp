@@ -43,30 +43,32 @@
 							<div class="card__padding">
 								<!-- O IF PARA REPETIR A PERGUNTA QUANDO TIVER PERGUNTAS PENDENTES DEVE INICIAR ANTES DESSA DIV -->
 								<c:forEach items="${pesquisaSatisfacao}" var="p">
-								<form class="col-md-12" method="get">
-									<div class="row">
-										<div class="col-md-8">
-											<br>
-											<h4>
-												O paciente <b>${p.paciente.nome} ${p.paciente.sobrenome}</b> foi
-												atendido por você no dia ${p.descricao}?
-											</h4>
+									<form class="col-md-12" method="get">
+										<div class="row">
+											<div class="col-md-8">
+												<br>
+												<h4>
+													O paciente <b>${p.paciente.nome}
+														${p.paciente.sobrenome}</b> foi atendido por você no dia
+													${p.descricao}?
+												</h4>
+											</div>
+
+											<input type="hidden" class="single-input" id="id" name="id"
+												placeholder="id" value="${p.id}" required />
+
+											<div class="col-md-2 text-center">
+												<button type="submit" name="statusAvaliacao"
+													formaction="/validaAvaliacao" value="/validaAvaliacao"
+													class="primary-btn text-uppercase">SIM</button>
+											</div>
+											<div class="col-md-2 text-center">
+												<button type="submit" name="statusAvaliacao"
+													formaction="/rejeitaAvaliacao" value="/rejeitaAvaliacao"
+													class="primary-btn text-uppercase">NÃO</button>
+											</div>
 										</div>
-										
-										<input type="hidden"
-											class="single-input" id="id" name="id" placeholder="id" value="${p.id}"
-											required />
-										
-										<div class="col-md-2 text-center">
-											<button type="submit" name="statusAvaliacao" formaction="/validaAvaliacao"
-												value="/validaAvaliacao" class="primary-btn text-uppercase">SIM</button>
-										</div>
-										<div class="col-md-2 text-center">
-											<button type="submit" name="statusAvaliacao" formaction="/rejeitaAvaliacao"
-												value="/rejeitaAvaliacao" class="primary-btn text-uppercase">NÃO</button>
-										</div>
-									</div>
-								</form>
+									</form>
 								</c:forEach>
 							</div>
 						</div>
@@ -74,8 +76,56 @@
 				</div>
 			</div>
 
+
+
+
 		</div>
 	</section>
+
+
+	<!--================Início do Container principal =================-->
+	<section class="contact_area section_gap">
+		<div class="container">
+			<div class="row">
+				<div class="wrapper1">
+					<div class="card1 radius shadowDepth1">
+						<h3 style="padding-top: 0.5em; padding-bottom: 0.5em">Avaliações
+							Validadas</h3>
+						<div class="card_resposta"
+							style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24)">
+							<div class="card__padding">
+								<!-- O IF PARA REPETIR A PERGUNTA QUANDO TIVER PERGUNTAS PENDENTES DEVE INICIAR ANTES DESSA DIV -->
+								<div class="row">
+									<c:forEach items="${pesquisasValidadas}" var="a">
+										<hr class="line">
+										<div class="col-md-12">
+											<h5>Nome do usuário: ${a.paciente.nome}    -    Nota: ${a.pergunta1}</h5>
+											<p>Comentário do usuário: ${a.comentario}</p>
+											<p>Características: ${a.avaliacao}</p>
+											<p>${a.descricao}</p>
+											<!-- Ajustar quando a parte dos comentários estiver pronto -->
+											<c:forEach items="" var="o">
+												<h5>Nome do usuário:</h5>
+												<p>Comentário do usuário:</p>
+												<hr class="line">
+											</c:forEach>
+										</div>
+									</c:forEach>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+		</div>
+	</section>
+
+
+
 	<!--================ Começo Area Rodapé  =================-->
 	<!--================ Includes de Footer e Modal de Login =================-->
 	<jsp:include page="includes/footer.jsp" />

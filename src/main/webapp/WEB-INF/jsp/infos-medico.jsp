@@ -77,18 +77,20 @@
 						</div>
 						<!--================ Inicio Area de avaliacao  =================-->
 						<c:if test="${not empty usuarioAutenticado}">
-							<form class="row contact_form" action="/novaAvaliacao"
-								method="get" id="cadastro-paciente">
-								<br> <input type="hidden" id="id" name="id"
-									value="${medico.id}" />
+							<c:if test="${empty medicoAutenticado}">
+								<form class="row contact_form" action="/novaAvaliacao"
+									method="get" id="cadastro-paciente">
+									<br> <input type="hidden" id="id" name="id"
+										value="${medico.id}" />
 
-								<div class="col-md-12 text-center">
-									<button type="submit" name="selecionaPaciente"
-										value="/novaAvaliacao" class="primary-btn text-uppercase">Avaliar
-										Médico</button>
-								</div>
+									<div class="col-md-12 text-center">
+										<button type="submit" name="selecionaPaciente"
+											value="/novaAvaliacao" class="primary-btn text-uppercase">Avaliar
+											Médico</button>
+									</div>
 
-							</form>
+								</form>
+							</c:if>
 						</c:if>
 						<!--================ Final Area de avaliacao =================-->
 
@@ -136,14 +138,16 @@
 						<div class="center">
 							<div class="circle">
 								<div class="nota">
-									<h1 id="nota">${media}</h1>
+									<c:if test="${empty media}">
+										<h4 id="nota">
+											Nenhuma <br> avaliação
+										</h4>
+									</c:if>
+									<c:if test="${not empty media}">
+											<h1 id="nota">${media}/5</h1>
+									</c:if>
 								</div>
 							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="center">
-							<h4>Média das avaliações</h4>
 						</div>
 					</div>
 				</div>

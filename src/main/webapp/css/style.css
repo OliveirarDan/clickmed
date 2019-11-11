@@ -4936,6 +4936,8 @@ h6 {
 
 .bg-img{
 	background-image: url("https://getclare.com/wp-content/uploads/2016/05/slider-012.jpg");	
+	background-repeat:no-repeat;
+	background-size: cover;
 }
 
 .h-index{

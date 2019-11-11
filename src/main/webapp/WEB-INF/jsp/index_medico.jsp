@@ -36,6 +36,42 @@
 			<div class="row">
 				<div class="wrapper1">
 					<div class="card1 radius shadowDepth1">
+						<h3 style="padding-top: 0.5em; padding-bottom: 0.5em">Minhas
+							informações:</h3>
+						<div class="card_resposta"
+							style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24)">
+							<div class="card__padding">
+								<form class="col-md-12" method="get">
+									<div class="row">
+										<div class="col-md-8">
+											<br>
+											<h4>
+												Minha média:${media}
+												<c:if test="${empty media}">
+													<h4 id="nota">
+														Nenhuma <br> avaliação
+													</h4>
+												</c:if>
+											</h4>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<section class="contact_area section_gap">
+		<div class="container">
+			<div class="row">
+				<div class="wrapper1">
+					<div class="card1 radius shadowDepth1">
 						<h3 style="padding-top: 0.5em; padding-bottom: 0.5em">Novas
 							Requisições</h3>
 						<div class="card_resposta"

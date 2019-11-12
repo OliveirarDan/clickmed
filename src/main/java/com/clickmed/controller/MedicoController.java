@@ -64,7 +64,7 @@ public class MedicoController {
 			DecimalFormat df = new DecimalFormat ("#.##");
 			model.put("media", df.format(d));
 		}else {
-			model.put("media", "S/N");
+			model.put("media", "");
 		}
 		
 		

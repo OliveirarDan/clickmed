@@ -76,22 +76,7 @@
 							</div>
 						</div>
 						<!--================ Inicio Area de avaliacao  =================-->
-						<c:if test="${not empty usuarioAutenticado}">
-							<c:if test="${empty medicoAutenticado}">
-								<form class="row contact_form" action="/novaAvaliacao"
-									method="get" id="cadastro-paciente">
-									<br> <input type="hidden" id="id" name="id"
-										value="${medico.id}" />
 
-									<div class="col-md-12 text-center">
-										<button type="submit" name="selecionaPaciente"
-											value="/novaAvaliacao" class="primary-btn text-uppercase">Avaliar
-											Médico</button>
-									</div>
-
-								</form>
-							</c:if>
-						</c:if>
 						<!--================ Final Area de avaliacao =================-->
 
 
@@ -135,20 +120,44 @@
 				<div class="col-md-4">
 					<!-- Segundo card da primeira linha -->
 					<div class="row">
-						<div class="center">
-							<div class="circle">
-								<div class="nota">
-									<c:if test="${empty media}">
-										<h4 id="nota">
-											Nenhuma <br> avaliação
-										</h4>
-									</c:if>
-									<c:if test="${not empty media}">
+						<div class="col-md-12">
+							<div class="center">
+								<div class="circle">
+									<div class="nota">
+										<c:if test="${empty media}">
+											<h4 id="nota">
+												Nenhuma <br> avaliação
+											</h4>
+										</c:if>
+										<c:if test="${not empty media}">
 											<h1 id="nota">${media}/5</h1>
-									</c:if>
+										</c:if>
+									</div>
 								</div>
 							</div>
 						</div>
+					</div>
+					<br>
+					<div class="row">
+
+						<div class="center">
+							<c:if test="${not empty usuarioAutenticado}">
+								<c:if test="${not empty paciente}">
+								<form class="row contact_form" action="/novaAvaliacao"
+									method="get" id="cadastro-paciente">
+									<br> <input type="hidden" id="id" name="id"
+										value="${medico.id}" />
+
+									<div class="col-md-12 text-center">
+										<button type="submit" name="selecionaPaciente"
+											value="/novaAvaliacao" class="primary-btn text-uppercase">Avaliar
+											Médico</button>
+									</div>
+								</form>
+							</c:if>
+							</c:if>
+						</div>
+
 					</div>
 				</div>
 			</div>

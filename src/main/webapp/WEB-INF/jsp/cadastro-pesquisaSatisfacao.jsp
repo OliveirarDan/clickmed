@@ -51,7 +51,7 @@
 				<!--================Início dos campos de Cadastro =================-->
 				<div class="">
 					<form class="row contact_form" action="cadastraAvaliacao"
-						method="post" id="cadastro-medico" autocomplete="off">
+						method="post" id="cadastro-avaliacao" autocomplete="off">
 
 						<div class="col-md-12">
 							<!-- Primeiro card da primeira linha -->

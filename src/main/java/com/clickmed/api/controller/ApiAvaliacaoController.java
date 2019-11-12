@@ -1,6 +1,7 @@
 package com.clickmed.api.controller;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.List;
 
 import com.clickmed.entity.Medico;
@@ -110,5 +111,16 @@ public class ApiAvaliacaoController {
 			e.printStackTrace();
 		}
 		return "Avaliacao removida com sucesso";
+	}
+
+	@RequestMapping(method = RequestMethod.GET, value = "/api/avaliacao/media/{id}")
+	public @ResponseBody double buscaMediaDasAvaliacoes(@PathVariable("id") Long id){
+		Medico medico = medicoService.buscaMedico(id);
+		if(psService.calculaMediaAvaliacoesValidadas(medico) != null) {
+			//DecimalFormat df = new DecimalFormat ("#.##");
+			return Double.parseDouble(psService.calculaMediaAvaliacoesValidadas(medico));
+		}else {
+			return 0;
+		}
 	}
 }

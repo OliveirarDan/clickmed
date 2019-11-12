@@ -1,7 +1,6 @@
 package com.clickmed.api.controller;
 
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.util.List;
 
 import com.clickmed.entity.Medico;
@@ -122,5 +121,11 @@ public class ApiAvaliacaoController {
 		}else {
 			return 0;
 		}
+	}
+
+	@RequestMapping(method = RequestMethod.GET, value = "/api/avaliacao/aprovada/{id}")
+	public @ResponseBody List<PesquisaSatisfacao> buscaAvaliacoesAprovadas(@PathVariable("id") Long id){
+		Medico medico = medicoService.buscaMedico(id);
+		return psService.listaPSsValidadas(medico);
 	}
 }

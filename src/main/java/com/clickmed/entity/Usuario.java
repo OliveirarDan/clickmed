@@ -48,14 +48,6 @@ public class Usuario implements UserDetails {
 		this.permissoes = permissoes;
 	}
 
-	public void hashearSenha() {
-		try {
-			this.senha = DigestUtils.md5DigestAsHex(this.senha.getBytes("UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			throw new RuntimeException(e);
-		}
-	}
-	
 	public Usuario() {
 
 		super();

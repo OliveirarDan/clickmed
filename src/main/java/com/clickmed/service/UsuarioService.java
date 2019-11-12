@@ -89,12 +89,7 @@ public class UsuarioService {
 		if (mPasswordEncoder().matches(usuario.getSenha(), usuarioAutenticado.getSenha())) {
 			return usuarioAutenticado;
 		}
-		
-		
-//		if (usuarioAutenticado.getSenha().equals(usuario.getSenha())) {
-//
-//			return usuarioAutenticado;
-//		}
+
 		return null;
 	}
 

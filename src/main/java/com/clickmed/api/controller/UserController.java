@@ -1,6 +1,10 @@
 package com.clickmed.api.controller;
 
+import com.clickmed.entity.Medico;
+import com.clickmed.entity.Paciente;
 import com.clickmed.entity.Usuario;
+import com.clickmed.service.MedicoService;
+import com.clickmed.service.PacienteService;
 import com.clickmed.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,6 +19,12 @@ public class UserController {
 
     @Autowired
     UsuarioService usuarioService;
+
+    @Autowired
+    PacienteService pacienteService;
+
+    @Autowired
+    MedicoService medicoService;
 
     @RequestMapping(method = RequestMethod.POST, value = "/api/usuario", headers = "Accept=application/json")
     public @ResponseBody
@@ -36,11 +46,14 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/api/auth/usuario/{email:.+}/")
-    public @ResponseBody Usuario buscaPorEmail(@PathVariable("email") String email) throws IOException {
-        System.out.println("E-mail enviado " + email);
+    public @ResponseBody Object buscaPorEmail(@PathVariable("email") String email) throws IOException {
         Usuario usuario = usuarioService.buscaPorEmail(email);
-        System.out.println("Usuário retornado " + usuario + "\n");
-        return usuario;
+        Paciente paciente = pacienteService.buscaPacientePorUsuario(usuario);
+        if (paciente != null){
+            return paciente;
+        }else{
+            return medicoService.buscaMedicoPorUsuario(usuario);
+        }
     }
 
     @Bean

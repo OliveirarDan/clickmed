@@ -7,10 +7,6 @@ import javax.persistence.*;
 @Entity
 @Table(name ="permissoes")
 public class Permissao implements GrantedAuthority {
-	
-	
-
-   
 
 	/*
      * Permissões

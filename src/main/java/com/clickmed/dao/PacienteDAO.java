@@ -12,6 +12,6 @@ import com.clickmed.entity.Usuario;
 @Transactional
 public interface PacienteDAO extends JpaRepository<Paciente, Long> {
 
-	public Paciente findPacienteByUsuario(Usuario usuario);
-	
+	Paciente findPacienteByUsuario(Usuario usuario);
+
 }

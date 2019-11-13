@@ -4956,4 +4956,26 @@ h6 {
 	opacity:0.6;
 }
 
+.balloon{
+	border: 2px solid #dedede;
+	background-color: #f1f1f1;
+	border-radius: 5px;
+  	padding: 10px;
+  	margin: 10px 0;
+  	width:95%;
+  	margin-left:5%;
+}
+
+.cards_new {
+  /* transition: 0.3s; */
+  background-color:white;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, .125);
+  margin-bottom: 1.6rem;
+  overflow: auto;
+  max-height:400px;
+}
+
+
+
 /*# sourceMappingURL=style.css.map */

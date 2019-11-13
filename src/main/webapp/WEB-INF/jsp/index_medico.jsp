@@ -30,11 +30,10 @@
 
 	</header>
 	<!--================ Final Header Area =================-->
-	<!--================Início do Container principal =================-->
+	<!--================Início de minhas informações =================-->
 	<section class="contact_area section_gap">
 		<div class="container">
 			<div class="row">
-				<div class="wrapper1">
 					<div class="card1 radius shadowDepth1">
 						<h3 style="padding-top: 0.5em; padding-bottom: 0.5em">Minhas
 							informações:</h3>
@@ -59,23 +58,18 @@
 							</div>
 						</div>
 					</div>
-				</div>
 			</div>
-		</div>
-	</section>
 
+			<br>
 
+				<!--================Início de Novas Requisições =================-->
 
-
-	<section class="contact_area section_gap">
-		<div class="container">
-			<div class="row">
-				<div class="wrapper1">
+			<div class="row">				
 					<div class="card1 radius shadowDepth1">
 						<h3 style="padding-top: 0.5em; padding-bottom: 0.5em">Novas
 							Requisições</h3>
 						<div class="card_resposta"
-							style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24)">
+							style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24);">
 							<div class="card__padding">
 								<c:forEach items="${pesquisaSatisfacao}" var="p">
 									<form class="col-md-12" method="get">
@@ -112,47 +106,42 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				
 			</div>
-		</div>
-	</section>
+
+			<br>
 
 
-	<!--================Início do Container principal =================-->
-	<section class="contact_area section_gap">
-		<div class="container">
+			<!--================Início de Avaliações validadas =================-->
+
+
 			<div class="row">
-				<div class="wrapper1">
-					<div class="card1 radius shadowDepth1">
-						<h3 style="padding-top: 0.5em; padding-bottom: 0.5em">Avaliações
-							Validadas</h3>
-						<div class="card_resposta"
-							style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24)">
-							<div class="card__padding">
-								<div class="row">
-									<c:forEach items="${pesquisasValidadas}" var="a">
-										<hr class="line">
-										<div class="col-md-12">
-											<h5>Nome do usuário: ${a.paciente.nome} - Nota:
-												${a.pergunta1}</h5>
-											<p>Comentário do usuário: ${a.comentario}</p>
-											<p>Características: ${a.avaliacao}</p>
-											<p>${a.descricao}</p>
-											<!-- Ajustar quando a parte dos comentários estiver pronto -->
-											<c:forEach items="" var="o">
-												<h5>Nome do usuário:</h5>
-												<p>Comentário do usuário:</p>
-												<hr class="line">
-											</c:forEach>
-										</div>
-									</c:forEach>
-									<c:if test="${empty pesquisasValidadas}">
-										<h2 class="obs_index">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNenhuma
-											avaliação validada até o momento.</h2>
-									</c:if>
+				<div class="card1 radius shadowDepth1">
+					<h3 style="padding-top: 0.5em; padding-bottom: 0.5em">Avaliações
+						Validadas</h3>
+					<div class="row">
+						<c:forEach items="${pesquisasValidadas}" var="a">
+							<div class="col-md-12">
+								<div class="balloon">
+									<h5>
+										<b>Nome do usuário:</b> ${a.paciente.nome}
+									</h5>
+									<p style="line-height: 90%">
+										<b>Nota:</b> ${a.pergunta1}/5
+									</p>
+									<p style="line-height: 90%">
+										<b>Comentário do usuário:</b> ${a.comentario}
+									</p>
+									<p style="line-height: 90%">
+										<b>Características:</b> ${a.avaliacao}
+									</p>
 								</div>
 							</div>
-						</div>
+						</c:forEach>
+						<c:if test="${empty pesquisasValidadas}">
+							<h2 class="obs_index">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNenhuma
+								avaliação validada até o momento.</h2>
+						</c:if>
 					</div>
 				</div>
 			</div>

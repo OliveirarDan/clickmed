@@ -143,18 +143,18 @@
 						<div class="center">
 							<c:if test="${not empty usuarioAutenticado}">
 								<c:if test="${not empty paciente}">
-								<form class="row contact_form" action="/novaAvaliacao"
-									method="get" id="cadastro-paciente">
-									<br> <input type="hidden" id="id" name="id"
-										value="${medico.id}" />
+									<form class="row contact_form" action="/novaAvaliacao"
+										method="get" id="cadastro-paciente">
+										<br> <input type="hidden" id="id" name="id"
+											value="${medico.id}" />
 
-									<div class="col-md-12 text-center">
-										<button type="submit" name="selecionaPaciente"
-											value="/novaAvaliacao" class="primary-btn text-uppercase">Avaliar
-											Médico</button>
-									</div>
-								</form>
-							</c:if>
+										<div class="col-md-12 text-center">
+											<button type="submit" name="selecionaPaciente"
+												value="/novaAvaliacao" class="primary-btn text-uppercase">Avaliar
+												Médico</button>
+										</div>
+									</form>
+								</c:if>
 							</c:if>
 						</div>
 
@@ -166,7 +166,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<!-- Primeiro card da primeira linha -->
-					<div class="card_infos">
+					<div class="card_infos" style="max-height:250px;overflow: auto;">
 						<div class="row">
 							<div class="col-md-12">
 								<h3 class="title">Experiência Profissional</h3>
@@ -182,7 +182,7 @@
 				</div>
 				<div class="col-md-6">
 					<!-- Segundo card da primeira linha -->
-					<div class="card_infos">
+					<div class="card_infos" style="max-height:250px;overflow: auto;">
 						<div class="row">
 							<div class="col-md-12">
 								<h3 class="title">Formação Acadêmica</h3>
@@ -199,11 +199,11 @@
 			</div>
 			<!--================Fim da segunda linha=================-->
 			<!--================Inicio da terceira linha=================-->
-			<div class="row">
+			<div class="row" >
 				<div class="col-md-12">
 
 
-					<div class="card_infos">
+					<div class="cards_new"> 
 						<div class="row">
 							<div class="col-md-12">
 								<h3 class="title">Opiniões dos pacientes</h3>
@@ -213,20 +213,24 @@
 						</div>
 						<div class="row">
 							<c:forEach items="${avaliacoes}" var="a">
-								<hr class="line">
 								<div class="col-md-12">
-									<h5>Nome do usuário: ${a.paciente.nome}</h5>
-									<p>Comentário do usuário: ${a.comentario}</p>
-									<p>Características: ${a.avaliacao}</p>
-									<p>${a.descricao}</p>
-									<!-- Ajustar quando a parte dos comentários estiver pronto -->
-									<c:forEach items="" var="o">
-										<h5>Nome do usuário:</h5>
-										<p>Comentário do usuário:</p>
-										<hr class="line">
-									</c:forEach>
+									<div class="balloon">
+										<h5>
+											<b>Nome do usuário:</b> ${a.paciente.nome}
+										</h5>
+										<p style="line-height: 90%">
+											<b>Nota:</b> ${a.pergunta1}/5
+										</p>
+										<p style="line-height: 90%">
+											<b>Comentário do usuário:</b> ${a.comentario}
+										</p>
+										<p style="line-height: 90%">
+											<b>Características:</b> ${a.avaliacao}
+										</p>
+									</div>
 								</div>
 							</c:forEach>
+
 						</div>
 					</div>
 

@@ -60,7 +60,10 @@
 	background-color: #fff;
 	margin-bottom: 1.6rem;
 	width: 290px;
-	height: 400px; 
+	height: 360px;
+	max-height: 360px;
+	overflow: auto;
+	overflow-x: hidden;
 }
 
 .card1 {

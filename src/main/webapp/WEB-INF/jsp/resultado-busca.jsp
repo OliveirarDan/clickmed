@@ -216,7 +216,7 @@
 											<a class="card-title">Telefone:</a><br> <a>${m.telefone1}</a>
 											<br> <a>${m.telefone2}</a> <br>
 										</div>
-									</div>
+									</div>								
 								</div>
 
 								<%-- <div class="card__content card-line card__padding">

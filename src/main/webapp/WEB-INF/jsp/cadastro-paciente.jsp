@@ -153,7 +153,7 @@
 							<div class="form-group col-md-4">
 								<label for="pass">Crie uma senha</label> <input
 									class="single-input" type="password" id="senha"
-									name="usuario.senha" maxlength="8" minlength="8" required />
+									name="usuario.senha" maxlength="10" minlength="8" required />
 							</div>
 
 							<div class="col-md-12 text-center">

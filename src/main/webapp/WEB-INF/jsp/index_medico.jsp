@@ -45,12 +45,8 @@
 										<div class="col-md-8">
 											<br>
 											<h4>
-												Minha média:${media}
-												<c:if test="${empty media}">
-													<h4 id="nota">
-														Nenhuma <br> avaliação
-													</h4>
-												</c:if>
+												Minha média: ${media}
+												
 											</h4>
 										</div>
 									</div>

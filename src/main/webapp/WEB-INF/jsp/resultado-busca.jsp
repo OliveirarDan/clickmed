@@ -176,7 +176,7 @@
 			<div class="row">
 				<c:forEach items="${medicos}" var="m">
 					<form class="contact_form" action="selecionaMedico" method="get"
-						id="selecionaMedico">
+						id="selecionaMedico" style="width:33%">
 						<div class="wrapper col-md-4 col-4">
 							<div class="card radius shadowDepth1">
 								<div class="row card-line card__padding">

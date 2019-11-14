@@ -25,6 +25,7 @@
 <link rel="stylesheet" href="css/card.css">
 <link rel="stylesheet" href="css/rating.css">
 <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
 <!-- main css -->
@@ -55,6 +56,7 @@
 <script src="js/maps/map.js"></script>
 <script src="js/local.js"></script>
 <script src="js/ratingStar.js"></script>
+<script src="js/pagination.js"></script>
 
 <!-- JS Opcional  -->
 <script type="text/javascript">

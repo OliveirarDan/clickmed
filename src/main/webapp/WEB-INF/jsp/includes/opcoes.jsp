@@ -31,6 +31,19 @@
 											value="Editar Cadastro" onclick="submit()">
 									</form>
 									<br>
+									
+									<!-- <c:if test="${empty pacienteAutenticado}">
+									<form method="get" action="/listaAvaliacoesDoMedico" accept-charset="UTF-8">
+									
+										
+										<input class="btn btn-default btn-login" type="button"
+											value="Área do médico" onclick="submit()">
+									</form>
+									<br>
+								</c:if>-->
+									
+									
+									
 									<form method="post" action="sair" accept-charset="UTF-8">
 										<input class="btn btn-default btn-login" type="button"
 											value="Logout" onclick="submit()">

@@ -71,11 +71,6 @@
 									<br>
 									<h3>Nome: ${pesquisaSatisfacao.medico.nome} ${pesquisaSatisfacao.medico.sobrenome}</h3>
 									<h3>CRM: ${pesquisaSatisfacao.medico.crm}</h3>
-									<h3>Especialidades:</h3>
-									<c:forEach items="${pesquisaSatisfacao.medico.especialidades}" var="e">
-										<span>${e.nome}</span>
-										<br>
-									</c:forEach>
 									<!-- Treche necessário para resgatar medico e paciente -->
 									<input type="hidden" id="teste" name="medico.id" value="${pesquisaSatisfacao.medico.id}" /><label
 											class="full" for="star5"></label> 

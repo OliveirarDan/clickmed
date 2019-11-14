@@ -176,7 +176,7 @@
 			<div class="row">
 				<c:forEach items="${medicos}" var="m">
 					<form class="contact_form" action="selecionaMedico" method="get"
-						id="selecionaMedico">
+						id="selecionaMedico" style="width:33%">
 						<div class="wrapper col-md-4 col-4">
 							<div class="card radius shadowDepth1">
 								<div class="row card-line card__padding">
@@ -216,7 +216,7 @@
 											<a class="card-title">Telefone:</a><br> <a>${m.telefone1}</a>
 											<br> <a>${m.telefone2}</a> <br>
 										</div>
-									</div>
+									</div>								
 								</div>
 
 								<%-- <div class="card__content card-line card__padding">

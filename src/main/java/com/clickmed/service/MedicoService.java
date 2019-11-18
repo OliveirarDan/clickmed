@@ -102,7 +102,7 @@ public class MedicoService {
 		String parte1 = partesDoNome[0];
 		String parte2 = partesDoNome[1];
 
-		System.out.println("AGORA VAI - nome: " + parte1 + " sobrenome: " + parte2);
+		System.out.println("nome: " + parte1 + " sobrenome: " + parte2);
 
 		if (parte2 == "") {
 			// parte1 = variavelAuxNome;

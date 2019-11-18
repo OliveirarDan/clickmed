@@ -174,7 +174,11 @@
 		<div class="container">
 			<p>
 			<div align="center">
-				<img src="img/ListaVazia3.png">
+				<h2>
+						Algo de errado aconteceu: <br>
+						${mensagemDoSistema} <br>
+						
+					</h2>
 			</div>
 			</p>
 		</div>

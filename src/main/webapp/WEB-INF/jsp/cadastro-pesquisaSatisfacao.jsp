@@ -7,6 +7,12 @@
 <!-- Include de todos os imports e meta tags -->
 <jsp:include page="includes/imports.jsp" />
 
+
+<script>
+	var d = new Date;
+	var date = d.toLocaleDateString();
+</script>
+
 <title>ClickMed</title>
 
 </head>
@@ -69,14 +75,15 @@
 								</div>
 								<div class="col-md-8">
 									<br>
-									<h3>Nome: ${pesquisaSatisfacao.medico.nome} ${pesquisaSatisfacao.medico.sobrenome}</h3>
+									<h3>Nome: ${pesquisaSatisfacao.medico.nome}
+										${pesquisaSatisfacao.medico.sobrenome}</h3>
 									<h3>CRM: ${pesquisaSatisfacao.medico.crm}</h3>
 									<!-- Treche necessário para resgatar medico e paciente -->
-									<input type="hidden" id="teste" name="medico.id" value="${pesquisaSatisfacao.medico.id}" /><label
-											class="full" for="star5"></label> 
-											
-									<input type="hidden" id="teste" name="paciente.id" value="${pesquisaSatisfacao.paciente.id}" /><label
-											class="full" for="star5"></label> 
+									<input type="hidden" id="teste" name="medico.id"
+										value="${pesquisaSatisfacao.medico.id}" /><label class="full"
+										for="star5"></label> <input type="hidden" id="teste"
+										name="paciente.id" value="${pesquisaSatisfacao.paciente.id}" /><label
+										class="full" for="star5"></label>
 								</div>
 							</div>
 							<hr class="line">
@@ -119,9 +126,9 @@
 								<div class="col-md-6">
 									<div class="form-group col-md-8">
 										<input type="date" class="single-input" id="descricao"
-											name="descricao" placeholder="Data da consulta"
+											name="descricao" max="date" placeholder="Data da consulta"
 											required />
-											</div>
+									</div>
 								</div>
 							</div>
 							<br>

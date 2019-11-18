@@ -22,9 +22,9 @@
 								<c:if test="${empty usuarioAutenticado}">
 									<form method="post" action="autenticar" accept-charset="UTF-8">
 										<input id="email" class="form-control" type="text"
-											placeholder="E-mail" name="email"> 
+											placeholder="E-mail" name="email" required> 
 										<input id="password" class="form-control" type="password"
-											placeholder="Senha" name="senha" maxlength="10" minlength="8">
+											placeholder="Senha" name="senha" maxlength="10" minlength="8" required>
 										<input class="btn btn-default btn-login" type="button"
 											value="autenticar" onclick="submit()">
 									</form>

@@ -19,31 +19,31 @@
 					<div class="box">
 						<div class="content">
 							<div class="form loginBox">
-								
+
 
 								<c:if test="${not empty usuarioAutenticado}">
 
-									<h4 class="modal-title">${usuarioAutenticado.email} -
+									<h4 class="modal-title">${usuarioAutenticado.email}-
 										Logado</h4>
 									<br>
-									<form method="get" action="selecionaPaciente" accept-charset="UTF-8">
+									<form method="get" action="selecionaPaciente"
+										accept-charset="UTF-8">
 										<input class="btn btn-default btn-login" type="button"
 											value="Editar Cadastro" onclick="submit()">
 									</form>
 									<br>
 									
-									<!-- <c:if test="${empty pacienteAutenticado}">
-									<form method="get" action="/listaAvaliacoesDoMedico" accept-charset="UTF-8">
-									
-										
-										<input class="btn btn-default btn-login" type="button"
-											value="Área do médico" onclick="submit()">
-									</form>
-									<br>
-								</c:if>-->
-									
-									
-									
+									<!-- 	<c:if test="${not empty medico.crm}">
+											<form method="get" action="/listaAvaliacoesDoMedico"
+												accept-charset="UTF-8">
+
+
+												<input class="btn btn-default btn-login" type="button"
+													value="Área do médico" onclick="submit()">
+											</form>
+											<br>
+										</c:if>-->
+
 									<form method="post" action="sair" accept-charset="UTF-8">
 										<input class="btn btn-default btn-login" type="button"
 											value="Logout" onclick="submit()">
@@ -69,10 +69,10 @@
 
 				<div class="modal-footer">
 					<div class="forgot login-footer">
-<!-- 						<div class="division"> -->
-<!-- 							<span>Ainda não possui um cadastro? <br> <a -->
-<!-- 								href="/cadastro">Clique aqui</a></span> -->
-<!-- 						</div> -->
+						<!-- 						<div class="division"> -->
+						<!-- 							<span>Ainda não possui um cadastro? <br> <a -->
+						<!-- 								href="/cadastro">Clique aqui</a></span> -->
+						<!-- 						</div> -->
 
 					</div>
 				</div>

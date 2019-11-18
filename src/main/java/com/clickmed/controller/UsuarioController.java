@@ -55,7 +55,7 @@ public class UsuarioController {
 		Usuario usuarioAutenticado = usuarioService.autenticar(usuario);
 		if (usuarioAutenticado == null) {
 			bindingResult.addError(new FieldError("usuario", "email", "Email ou senha incorretos"));
-			model.addAttribute("mensagemDoSistema", "Login falhou, tente de novo");
+			model.addAttribute("mensagemDoSistema", "Login falhou, tente novamente");
 			return "/error";
 		}
 
@@ -66,10 +66,7 @@ public class UsuarioController {
 		//Criando permissões para comparação do tipo de usuario
 		Permissao pMedico = permissaoService.buscaPermissao((long)1);
 		Permissao pPaciente = permissaoService.buscaPermissao((long)2);
-		//Permissao pAdm = permissaoService.buscaPermissao((long)3);
-		
-		
-		
+
 		// Verifica se o usuário é medico
 		if (usuarioAutenticado.getPermissao().get(0) == pMedico) {
 			System.out.println("É médico");
@@ -87,7 +84,6 @@ public class UsuarioController {
 			model.addAttribute("paciente", pacienteAutenticado);
 			session.setAttribute("paciente", pacienteAutenticado);
 			System.out.println("Logou como paciente!");
-			
 			return "redirect:/";
 		}
 		

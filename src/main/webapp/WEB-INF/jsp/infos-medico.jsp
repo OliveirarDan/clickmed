@@ -51,11 +51,21 @@
 							<div class="col-md-4">
 								<div class="center">
 									<div class="foto-info">
-										<!-- User Profile Image -->
+										<c:if test="${not empty medico.foto}">
+											<img class="profile-pic" src="${medico.foto}">
+										</c:if>
+										<c:if test="${empty medico.foto}">
+											<img src="img/person.jpg" alt="image" class="profile-pic">
+										</c:if>
+
+
+
+
+										<!-- 	<!-- User Profile Image 
 										<img class="profile-pic" src="img/person.jpg">
 
-										<!-- Default Image -->
-										<i class="fa fa-user fa-5x"></i>
+										<!-- Default Image 
+										<i class="fa fa-user fa-5x"></i>-->
 									</div>
 								</div>
 							</div>
@@ -166,7 +176,7 @@
 			<div class="row">
 				<div class="col-md-6">
 					<!-- Primeiro card da primeira linha -->
-					<div class="card_infos" style="max-height:250px;overflow: auto;">
+					<div class="card_infos" style="max-height: 250px; overflow: auto;">
 						<div class="row">
 							<div class="col-md-12">
 								<h3 class="title">Experiência Profissional</h3>
@@ -182,7 +192,7 @@
 				</div>
 				<div class="col-md-6">
 					<!-- Segundo card da primeira linha -->
-					<div class="card_infos" style="max-height:250px;overflow: auto;">
+					<div class="card_infos" style="max-height: 250px; overflow: auto;">
 						<div class="row">
 							<div class="col-md-12">
 								<h3 class="title">Formação Acadêmica</h3>
@@ -199,11 +209,11 @@
 			</div>
 			<!--================Fim da segunda linha=================-->
 			<!--================Inicio da terceira linha=================-->
-			<div class="row" >
+			<div class="row">
 				<div class="col-md-12">
 
 
-					<div class="cards_new"> 
+					<div class="cards_new">
 						<div class="row">
 							<div class="col-md-12">
 								<h3 class="title">Opiniões dos pacientes</h3>
@@ -212,17 +222,20 @@
 							</div>
 						</div>
 						<div class="row">
+
+
+
 							<c:forEach items="${avaliacoes}" var="a">
 								<div class="col-md-12">
 									<div class="balloon">
 										<h5>
-											<b>Nome do usuário:</b> ${a.paciente.nome}
+											<b>Paciente:</b> ${a.paciente.nome}
 										</h5>
 										<p style="line-height: 90%">
 											<b>Nota:</b> ${a.pergunta1}/5
 										</p>
 										<p style="line-height: 90%">
-											<b>Comentário do usuário:</b> ${a.comentario}
+											<b>Comentário:</b> ${a.comentario}
 										</p>
 										<p style="line-height: 90%">
 											<b>Características:</b> ${a.avaliacao}
@@ -230,6 +243,13 @@
 									</div>
 								</div>
 							</c:forEach>
+
+							<c:if test="${empty avaliacoes}">
+								<div class="col-md-12">
+									<h3 style="text-align: center">Não há avaliações no
+										momento.</h3>
+								</div>
+							</c:if>
 
 						</div>
 					</div>

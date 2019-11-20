@@ -219,8 +219,62 @@
 									<br>
 									<div class="row">
 										<div class="col-md-12 col-12">
-											<a class="card-title">Telefone:</a><br> <a>${m.telefone1}</a>
-											<br> <a>${m.telefone2}</a> <br>
+											<a class="card-title">Média Avaliada:</a><br> 
+											<!-- <p input type="hidden" id="rating" name="rating" value="5">5</p> -->
+												<c:if test="${media} < 1">
+													<img src="img/star0.png" id="s1"></a>
+													<img src="img/star0.png" id="s2"></a>
+													<img src="img/star0.png" id="s3"></a>
+													<img src="img/star0.png" id="s4"></a>
+													<img src="img/star0.png" id="s5"></a>
+												</c:if>
+												<c:if test="${media} < 2">
+													<img src="img/star1.png" id="s1"></a>
+													<img src="img/star0.png" id="s2"></a>
+													<img src="img/star0.png" id="s3"></a>
+													<img src="img/star0.png" id="s4"></a>
+													<img src="img/star0.png" id="s5"></a>
+												</c:if>
+												<c:if test="${media} < 3">
+													<img src="img/star1.png" id="s1"></a>
+													<img src="img/star1.png" id="s2"></a>
+													<img src="img/star0.png" id="s3"></a>
+													<img src="img/star0.png" id="s4"></a>
+													<img src="img/star0.png" id="s5"></a>
+												</c:if>
+												<c:if test="${media} < 4">
+													<img src="img/star1.png" id="s1"></a>
+													<img src="img/star1.png" id="s2"></a>
+													<img src="img/star1.png" id="s3"></a>
+													<img src="img/star0.png" id="s4"></a>
+													<img src="img/star0.png" id="s5"></a>
+												</c:if>
+												<c:if test="${media} < 5">
+													<img src="img/star1.png" id="s1"></a>
+													<img src="img/star1.png" id="s2"></a>
+													<img src="img/star1.png" id="s3"></a>
+													<img src="img/star1.png" id="s4"></a>
+													<img src="img/star0.png" id="s5"></a>
+												</c:if>
+												<c:if test="${media} = 5">
+													<img src="img/star1.png" id="s1"></a>
+													<img src="img/star1.png" id="s2"></a>
+													<img src="img/star1.png" id="s3"></a>
+													<img src="img/star1.png" id="s4"></a>
+													<img src="img/star1.png" id="s5"></a>
+												</c:if>
+												<c:if test="${not empty media}">
+													<img src="img/star1.png" id="s1"></a>
+													<img src="img/star1.png" id="s2"></a>
+													<img src="img/star0.png" id="s3"></a>
+													<img src="img/star1.png" id="s4"></a>
+													<img src="img/star1.png" id="s5"></a> - Sem avaliação
+												</c:if>
+												<img src="img/star0.png" id="s1"></a>
+												<img src="img/star1.png" id="s2"></a>
+												<img src="img/star1e0.png" id="s3"></a>
+												<img src="img/star1.png" id="s4"></a>
+												<img src="img/star0.png" id="s5"></a> - 000
 										</div>
 									</div>
 								</div>

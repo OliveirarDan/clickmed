@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +12,10 @@
 		<div class="modal-dialog login animated">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title">Opções</h4>
+
+					<h4 class="modal-title">Opções - 
+						${usuarioAutenticado.permissao[0].descricao  }</h4>
+
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
 				</div>
@@ -23,7 +27,7 @@
 
 								<c:if test="${not empty usuarioAutenticado}">
 
-									<h4 class="modal-title">${usuarioAutenticado.email}-
+									<h4 class="modal-title">${usuarioAutenticado.email} -
 										Logado</h4>
 									<br>
 									<form method="get" action="selecionaPaciente"
@@ -31,18 +35,24 @@
 										<input class="btn btn-default btn-login" type="button"
 											value="Editar Cadastro" onclick="submit()">
 									</form>
+
+
+
+									<c:if
+										test="${usuarioAutenticado.permissao[0].permissao eq '1'}">
+										<br>
+										<form method="get" action="/listaAvaliacoesDoMedico"
+											accept-charset="UTF-8">
+
+											<input class="btn btn-default btn-login" type="button"
+												value="Área do médico" onclick="submit()">
+
+
+										</form>
+									</c:if>
 									<br>
-									
-									<!-- 	<c:if test="${not empty medico.crm}">
-											<form method="get" action="/listaAvaliacoesDoMedico"
-												accept-charset="UTF-8">
 
 
-												<input class="btn btn-default btn-login" type="button"
-													value="Área do médico" onclick="submit()">
-											</form>
-											<br>
-										</c:if>-->
 
 									<form method="post" action="sair" accept-charset="UTF-8">
 										<input class="btn btn-default btn-login" type="button"

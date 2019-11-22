@@ -132,6 +132,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="center">
+								<center>Média de Atendimento:</center>
 								<div class="circle">
 									<div class="nota">
 										<c:if test="${empty media}">
@@ -144,6 +145,104 @@
 										</c:if>
 									</div>
 								</div>
+								<center>
+								<c:choose>
+									<c:when test="${media <= 0.2}">
+										<img src="img/star0.png" id="s1">
+										<img src="img/star0.png" id="s2">
+										<img src="img/star0.png" id="s3">
+										<img src="img/star0.png" id="s4">
+										<img src="img/star0.png" id="s5"> 
+										<br />
+									</c:when>    
+									<c:when test="${media <= 0.7}">
+										<img src="img/star1e0.png" id="s1">
+										<img src="img/star0.png" id="s2">
+										<img src="img/star0.png" id="s3">
+										<img src="img/star0.png" id="s4">
+										<img src="img/star0.png" id="s5"> 
+										<br />
+									</c:when>
+									<c:when test="${media <= 1.2}">
+										<img src="img/star1.png" id="s1">
+										<img src="img/star0.png" id="s2">
+										<img src="img/star0.png" id="s3">
+										<img src="img/star0.png" id="s4">
+										<img src="img/star0.png" id="s5"> 
+										<br />
+									</c:when>    
+									<c:when test="${media <= 1.7}">
+										<img src="img/star1.png" id="s1">
+										<img src="img/star1e0.png" id="s2">
+										<img src="img/star0.png" id="s3">
+										<img src="img/star0.png" id="s4">
+										<img src="img/star0.png" id="s5"> 
+										<br />
+									</c:when>
+									<c:when test="${media <= 2.2}">
+										<img src="img/star1.png" id="s1">
+										<img src="img/star1.png" id="s2">
+										<img src="img/star0.png" id="s3">
+										<img src="img/star0.png" id="s4">
+										<img src="img/star0.png" id="s5"> 
+										<br />
+									</c:when>  
+									<c:when test="${media <= 2.7}">
+										<img src="img/star1.png" id="s1">
+										<img src="img/star1.png" id="s2">
+										<img src="img/star1e0.png" id="s3">
+										<img src="img/star0.png" id="s4">
+										<img src="img/star0.png" id="s5"> 
+										<br />
+									</c:when>
+									<c:when test="${media <= 3.2}">
+										<img src="img/star1.png" id="s1">
+										<img src="img/star1.png" id="s2">
+										<img src="img/star1.png" id="s3">
+										<img src="img/star0.png" id="s4">
+										<img src="img/star0.png" id="s5"> 
+										<br />
+									</c:when>  
+									<c:when test="${media <= 3.7}">
+										<img src="img/star1.png" id="s1">
+										<img src="img/star1.png" id="s2">
+										<img src="img/star1.png" id="s3">
+										<img src="img/star1e0.png" id="s4">
+										<img src="img/star0.png" id="s5"> 
+										<br />
+									</c:when>
+									<c:when test="${media <= 4.2}">
+										<img src="img/star1.png" id="s1">
+										<img src="img/star1.png" id="s2">
+										<img src="img/star1.png" id="s3">
+										<img src="img/star1.png" id="s4">
+										<img src="img/star0.png" id="s5"> 
+										<br />
+									</c:when>  
+									<c:when test="${media <= 4.7}">
+										<img src="img/star1.png" id="s1">
+										<img src="img/star1.png" id="s2">
+										<img src="img/star1.png" id="s3">
+										<img src="img/star1.png" id="s4">
+										<img src="img/star1e0.png" id="s5"> 
+										<br />
+									</c:when>
+									<c:when test="${media > 4.8}">
+										<img src="img/star1.png" id="s1">
+										<img src="img/star1.png" id="s2">
+										<img src="img/star1.png" id="s3">
+										<img src="img/star1.png" id="s4">
+										<img src="img/star1.png" id="s5"> 
+										<br />
+									</c:when>  
+									 
+									
+									<c:otherwise>
+										
+										<br />
+									</c:otherwise>
+								</c:choose>
+								</center>
 							</div>
 						</div>
 					</div>

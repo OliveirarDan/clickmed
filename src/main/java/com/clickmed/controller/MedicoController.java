@@ -74,6 +74,8 @@ public class MedicoController {
 	
 	@RequestMapping(value = "/selecionaEditaMedico", method = RequestMethod.GET)
 	public String selecionaEditaMedico(Medico medico, ModelMap model, HttpSession session) {
+		System.out.println(medico.getId());
+		System.out.println(medico.getNome());
 		medico = (Medico) session.getAttribute("medico");
 		medico = medicoService.buscaMedico(medico.getId());
 		System.out.println(medico.toString());

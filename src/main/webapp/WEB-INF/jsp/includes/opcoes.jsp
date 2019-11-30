@@ -30,11 +30,21 @@
 									<h4 class="modal-title">${usuarioAutenticado.email} -
 										Logado</h4>
 									<br>
-									<form method="get" action="selecionaPaciente"
+									<!-- Fazer o C:IF DE MEDICO -->
+									<c:if test="${usuarioAutenticado.permissao[0].permissao eq '2'}">
+										<form method="get" action="selecionaPaciente"
+											accept-charset="UTF-8">
+											<input class="btn btn-default btn-login" type="button"
+												value="Editar Cadastro" onclick="submit()">
+										</form>
+									</c:if>
+									<c:if test="${usuarioAutenticado.permissao[0].permissao eq '1'}">
+										<form method="get" action="selecionaEditaMedico"
 										accept-charset="UTF-8">
 										<input class="btn btn-default btn-login" type="button"
 											value="Editar Cadastro" onclick="submit()">
-									</form>
+										</form>
+									</c:if>
 
 
 

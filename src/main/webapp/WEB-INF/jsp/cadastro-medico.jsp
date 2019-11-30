@@ -130,6 +130,10 @@
 												<label for="pass">Crie uma senha</label> <input
 													class="single-input required" type="password" id="senha"
 													name="usuario.senha" maxlength="10" minlength="8">
+													<small id="passwordHelpInline" class="text-muted">
+     									 				Entre 8 e 10 caracteres.
+    												</small>
+													
 											</div>
 
 

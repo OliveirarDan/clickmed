@@ -13,7 +13,13 @@
 	var date = d.toLocaleDateString();
 </script>
 
+<script type="text/javascript">
+datePickerId.max = new Date().toISOString().split("T")[0];
+
+</script>
+
 <title>ClickMed</title>
+
 
 </head>
 
@@ -125,9 +131,10 @@
 								</div>
 								<div class="col-md-6">
 									<div class="form-group col-md-8">
-										<input type="date" class="single-input" id="descricao"
-											name="descricao" max="date" placeholder="Data da consulta"
-											required />
+										 <input type="date" class="single-input" id="datefield" id="datePickerId"
+											name="descricao" placeholder="Data da consulta" max="2019-12-03" onkeypress="return false"
+											required/>
+											
 									</div>
 								</div>
 							</div>

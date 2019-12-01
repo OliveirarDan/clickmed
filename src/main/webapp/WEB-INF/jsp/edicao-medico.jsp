@@ -105,11 +105,21 @@
 									</div>
 									<div class="row">
 										<div class="form-group col-md-4 required">
-											<label for="pass">Altere sua senha</label> <input
+											<label for="pass">Alteração de senha</label> <input
 												class="single-input required" type="password" id="senha"
-												value="${medico.usuario.senha}" name="usuario.senha"
-												maxlength="8" minlength="8">
+												placeholder="Senha atual" name="usuario.senha"
+												maxlength="8" minlength="10">
+												
 										</div>
+										<div class="form-group col-md-4 required">
+											<small id="passwordHelpInline" class="text-muted">
+											<br>
+     									 				Entre 8 e 10 caracteres. Se não houver mudança de senha, a senha atual
+     									 					deve ser informada.
+    												</small>
+												
+										</div>
+										
 									</div>
 								</div>
 							</div>
@@ -119,7 +129,7 @@
 								<div class="col-md-12">
 									<div class="control-group">
 										<label for="especialidades">Especilidades:</label>
-										<c:forEach items="${medico.especialidades}" var="m">
+										<c:forEach items="${medico.especialidades}" var="m" step="1">
 											<input type="text" name="especialidades" id="especialidades"
 												value="${m.id}"
 												placeholder="Começe a digitar para pesquisar" required />

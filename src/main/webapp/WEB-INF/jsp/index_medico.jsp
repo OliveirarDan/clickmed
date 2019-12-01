@@ -61,9 +61,7 @@
 				<div class="card1 radius shadowDepth1">
 					<h3 style="padding-top: 0.5em; padding-bottom: 0.5em">Novas
 						Requisições</h3>
-					<div class="card_resposta"
-						style="box-shadow: 0 1px 3px rgba(0, 0, 0, 0.24);">
-						<div class="card__padding">
+
 							<c:forEach items="${pesquisaSatisfacao}" var="p">
 								<form class="col-md-12" method="get">
 									<div class="row">
@@ -96,8 +94,6 @@
 								<h2 class="obs_index">No momento não há nenhuma requisição
 									pendente.</h2>
 							</c:if>
-						</div>
-					</div>
 				</div>
 
 			</div>

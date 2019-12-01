@@ -51,7 +51,7 @@
 <script src="js/selectize/selectize.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/jquery.mask.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHIUcekgvqG13i5UbxF5M8YQExsnzqYow&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=CHAVEAQUI&callback=myMap"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js"></script>
 <script src="js/maps/map.js"></script>
 <script src="js/local.js"></script>

@@ -94,10 +94,10 @@
 									<div class="col-md-8">
 										<label class="radio-inline" for="radios-0"> <input
 											type="radio" name="sexo" id="radios-0" value="Masculino">
-											Masculino
-										</label> <label class="radio-inline" for="radios-1"> <input
+											Masculino&nbsp&nbsp&nbsp&nbsp
+										</label><label class="radio-inline" for="radios-1"> <input
 											type="radio" name="sexo" id="radios-1" value="Feminino">
-											Feminino
+											Feminino&nbsp&nbsp&nbsp&nbsp 
 										</label> <label class="radio-inline" for="radios-2"> <input
 											type="radio" name="sexo" id="radios-2" value="Outro">
 											Outro
@@ -106,9 +106,10 @@
 								</div>
 								<div class="row">
 									<div class="form-group col-md-3">
-										<input type="date" class="single-input" id="datanasc"
-											name="dataNascimento" placeholder="Data de nascimento"
-											required />
+									<input type="date" class="single-input" id="datanasc"
+											name="dataNascimento" placeholder="Data de nascimento" min="1920-01-01" max="2019-12-03"
+											required onkeypress="return false"/>
+											
 									</div>
 
 									<div class="form-group col-md-3">
@@ -132,7 +133,7 @@
 									</div>
 									<div class="form-group col-md-4">
 										<input type="text" class="single-input" id="numero"
-											name="numero" placeholder="Nº" maxlength="5" required />
+											name="numero" placeholder="Nº" pattern="[0-9]" maxlength="3" required />
 									</div>
 								</div>
 								<div class="row">
@@ -154,6 +155,9 @@
 								<label for="pass">Crie uma senha</label> <input
 									class="single-input" type="password" id="senha"
 									name="usuario.senha" maxlength="10" minlength="8" required />
+									<small id="passwordHelpInline" class="text-muted">
+     									 Entre 8 e 10 caracteres.
+    								</small>
 							</div>
 
 							<div class="col-md-12 text-center">

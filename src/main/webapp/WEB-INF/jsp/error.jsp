@@ -22,7 +22,7 @@
 				<div class="banner_content">
 					<center>
 					<h2>
-						Algo de errado aconteceu: <br>
+						Algo de errado aconteceu. <br>
 						${mensagemDoSistema} <br>
 						
 					</h2>

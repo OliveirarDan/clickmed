@@ -174,11 +174,18 @@
 		<div class="container">
 			<p>
 			<div align="center">
+			<br>
+			<br>
+			<br>
 				<h2>
-						Algo de errado aconteceu: <br>
-						${mensagemDoSistema} <br>
-						
-					</h2>
+					Nenhum resultado encontrado.					
+				</h2>
+				<h3>
+					Refaça a busca.	
+				</h3>
+			<br>
+			<br>
+			<br>
 			</div>
 			</p>
 		</div>

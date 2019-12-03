@@ -72,6 +72,9 @@
 							<div class="col-md-8">
 								<h3>Nome: ${medico.nome} ${medico.sobrenome}</h3>
 								<h5>CRM: ${medico.crm}</h5>
+								<c:if test="${not empty usuarioAutenticado}">
+								<h5>Telefone: ${medico.telefone1} ${medico.telefone2}</h5>
+								</c:if>
 
 								<c:forEach items="${medico.clinicas}" var="c">
 									<input type=hidden class="single-input" id="rua" name="name"
